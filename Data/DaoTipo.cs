@@ -19,7 +19,8 @@ namespace Data
             var database = server.GetDatabase("test");
             var collection = database.GetCollection("test");
 
-            collection.Insert(tipo);
+            
+           collection.Insert(tipo);
         }
 
     }
