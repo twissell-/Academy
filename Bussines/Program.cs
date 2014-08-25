@@ -16,7 +16,7 @@ namespace Bussines
         {
             DaoTipo dao = new DaoTipo();
             Tipo tipo = new Tipo {id = 0, descripcion = "Administrativo" };
-            dao.addOne(tipo);
+            dao.insert(tipo);
 
         }
     }

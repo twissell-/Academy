@@ -7,8 +7,8 @@ namespace Entidades
 {
     public class Plan
     {
-        public int id { get; set; }
-        public String descripcion { get; set; }
-        public Especialidad especialidad { get; set; }
+        private int id { get; set; }
+        private String descripcion { get; set; }
+        private Especialidad especialidad { get; set; }
     }
 }

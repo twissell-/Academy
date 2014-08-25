@@ -7,8 +7,8 @@ namespace Entidades
 {
     public class Comision
     {
-        public int id { get; set; }
-        public String descripcion { get; set; }
-        public int anio { get; set; }
+        private int id { get; set; }
+        private String descripcion { get; set; }
+        private int anio { get; set; }
     }
 }

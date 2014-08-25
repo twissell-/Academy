@@ -14,6 +14,6 @@ namespace Entidades
             aprobado
         }
 
-        public int condicion { get; set; }
+        private int condicion { get; set; }
     }
 }

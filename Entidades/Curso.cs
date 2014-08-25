@@ -7,11 +7,11 @@ namespace Entidades
 {
     public class Curso
     {
-        public int id { get; set; }
-        public Comision comision { get; set; }
-        public Materia  materia { get; set; }
-        public Docente[] docentes { get; set; }
-        public Alumno[] alumnos { get; set; }
+        private int id { get; set; }
+        private Comision comision { get; set; }
+        private Materia  materia { get; set; }
+        private Docente[] docentes { get; set; }
+        private Alumno[] alumnos { get; set; }
 
     }
 }

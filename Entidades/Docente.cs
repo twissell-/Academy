@@ -14,6 +14,6 @@ namespace Entidades
             jtp,
             auxPrimera,
         }
-        public int rol { get; set; }
+        private int rol { get; set; }
     }
 }

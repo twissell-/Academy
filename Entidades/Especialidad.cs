@@ -7,7 +7,7 @@ namespace Entidades
 {
     public class Especialidad
     {
-        public int id { get; set; }
-        public String descripcion { get; set; }
+        private int id { get; set; }
+        private String descripcion { get; set; }
     }
 }
