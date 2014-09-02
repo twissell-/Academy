@@ -4,52 +4,53 @@ using MongoDB.Driver;
 
 namespace Data
 {
-    public class DaoTipo
+    class DaoAlumno
     {
-        private MongoCollection<Tipo> tipos;
+        private MongoCollection<Alumno> alumnos;
 
-        public DaoTipo()
+        public DaoAlumno()
         {
             MongoServer server = Connection.instance.server;
             MongoDatabase database = server.GetDatabase("test");
-            tipos = database.GetCollection<Tipo>("test");  
+            alumnos = database.GetCollection<Alumno>("test");  
         }
 
-        private void save(Tipo obj)
+        private void save(Alumno obj)
         {
-            tipos.Save(obj);
+            alumnos.Save(obj);
         }
 
-        public Tipo find(int id) 
+        public Alumno find(int id) 
         {
             QueryDocument query = new QueryDocument("_id", id);
-            return tipos.FindOneAs<Tipo>(query);
+            return alumnos.FindOneAs<Alumno>(query);
         }
 
-        public List<Tipo> find()
+        public List<Alumno> find()
         {
-            List<Tipo> ls = new List<Tipo>();
-            foreach (Tipo obj in tipos.FindAllAs<Tipo>())
+            List<Alumno> ls = new List<Alumno>();
+            foreach (Alumno obj in alumnos.FindAllAs<Alumno>())
             {
                 ls.Add(obj);
             }
             return ls;
         }
 
-        public void delete(Tipo obj)
+        public void delete(Alumno obj)
         {
             QueryDocument query = new QueryDocument("_id", obj.id);
-            tipos.Remove(query);
+            alumnos.Remove(query);
         }
 
-        public void update(Tipo obj)
+        public void update(Alumno obj)
         {
             save(obj);
         }
 
-        public void insert(Tipo obj)
+        public void insert(Alumno obj)
         {
             save(obj);
         }
+
     }
 }

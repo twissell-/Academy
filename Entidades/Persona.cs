@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Entidades
 {
-    public class Persona
+    public abstract class Persona
     {
         private int id { get; set; } // reemplaza a legajo
         private String nombre { get; set; }
@@ -14,6 +14,6 @@ namespace Entidades
         private String direccion { get; set; }
         private String mail { get; set; }
         private DateTime fNacimineto { get; set; }
-        private Tipo tipo { get; set; }
+        private Tipo tipo { get; set; } // <-- ojo! creo que esta al pedo o mal puesto
     }
 }

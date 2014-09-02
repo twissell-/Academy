@@ -7,13 +7,13 @@ namespace Entidades
 {
     public class Docente : Persona
     {
-        enum roles
+        enum cargo
         {
             titular,
             adjunto,
             jtp,
             auxPrimera,
         }
-        private int rol { get; set; }
+        private int cargo { get; set; }
     }
 }

@@ -47,7 +47,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Connection.cs" />
+    <Compile Include="DaoAlumno.cs" />
+    <Compile Include="DaoComision.cs" />
+    <Compile Include="DaoCurso.cs" />
+    <Compile Include="DaoDocente.cs" />
+    <Compile Include="DaoEspecialidad.cs" />
+    <Compile Include="DaoMateria.cs" />
+    <Compile Include="DaoPlan.cs" />
     <Compile Include="DaoTipo.cs" />
+    <Compile Include="IDao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -7,7 +7,7 @@ namespace Entidades
 {
     public class Tipo
     {
-        private int id { get; set; }
-        private String descripcion { get; set; }
+        public int id { get; set; }
+        public String descripcion { get; set; }
     }
 }
