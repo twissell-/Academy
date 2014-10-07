@@ -55,7 +55,6 @@
     <Compile Include="DaoMateria.cs" />
     <Compile Include="DaoPlan.cs" />
     <Compile Include="DaoTipo.cs" />
-    <Compile Include="IDao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
