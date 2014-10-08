@@ -4,7 +4,7 @@ using MongoDB.Driver;
 
 namespace Data
 {
-    class DaoComision
+    public class DaoComision
     {
         private MongoCollection<Comision> comisiones;
 

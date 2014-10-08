@@ -4,7 +4,7 @@ using MongoDB.Driver;
 
 namespace Data
 {
-    class DaoMateria
+    public class DaoMateria
     {
         private MongoCollection<Materia> materias;
 

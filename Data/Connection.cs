@@ -10,6 +10,7 @@ namespace Data
 {
     class Connection
     {
+        // Singleton
         private static Connection Instance;
 
         public MongoServer server { get; set; }

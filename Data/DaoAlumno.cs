@@ -4,7 +4,7 @@ using MongoDB.Driver;
 
 namespace Data
 {
-    class DaoAlumno
+    public class DaoAlumno
     {
         private MongoCollection<Alumno> alumnos;
 

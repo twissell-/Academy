@@ -7,10 +7,10 @@ namespace Entidades
 {
     public class Materia
     {
-        private int id { get; set; }
-        private String descripcion { get; set; }
-        private int hsSemanales { get; set; } // null
-        private int hsTotales { get; set; } // null
-        private Plan plan { get; set; }
+        public int id { get; set; }
+        public String descripcion { get; set; }
+        public int hsSemanales { get; set; } // null
+        public int hsTotales { get; set; } // null
+        public Plan plan { get; set; }
     }
 }

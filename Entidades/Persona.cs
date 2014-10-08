@@ -7,13 +7,15 @@ namespace Entidades
 {
     public abstract class Persona
     {
-        private int id { get; set; } // reemplaza a legajo
-        private String nombre { get; set; }
-        private String apellido { get; set; }
-        private String telefono { get; set; }
-        private String direccion { get; set; }
-        private String mail { get; set; }
-        private DateTime fNacimineto { get; set; }
-        private Tipo tipo { get; set; } // <-- ojo! creo que esta al pedo o mal puesto
+        public int id { get; set; } // reemplaza a legajo
+        public String nombre { get; set; }
+        public String apellido { get; set; }
+        public String dni { get; set; }
+        public String telefono { get; set; }
+        public String direccion { get; set; }
+        public String mail { get; set; }
+        public String nacimineto { get; set; }  // <--- Guardar como DateTime
+        public String password { get; set; }
+        public Tipo tipo { get; set; } // <-- ojo! creo que esta al pedo o mal puesto
     }
 }

@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bussines", "Bussines\Bussin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{696EA2F6-0200-4F7F-B4F6-62C9052C2AFF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GUI", "GUI\GUI.csproj", "{74EF6171-8795-4FF2-AF29-64FC8D8BE2D9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,16 @@ Global
 		{696EA2F6-0200-4F7F-B4F6-62C9052C2AFF}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{696EA2F6-0200-4F7F-B4F6-62C9052C2AFF}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{696EA2F6-0200-4F7F-B4F6-62C9052C2AFF}.Release|x86.ActiveCfg = Release|Any CPU
+		{74EF6171-8795-4FF2-AF29-64FC8D8BE2D9}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{74EF6171-8795-4FF2-AF29-64FC8D8BE2D9}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{74EF6171-8795-4FF2-AF29-64FC8D8BE2D9}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{74EF6171-8795-4FF2-AF29-64FC8D8BE2D9}.Debug|x86.ActiveCfg = Debug|x86
+		{74EF6171-8795-4FF2-AF29-64FC8D8BE2D9}.Debug|x86.Build.0 = Debug|x86
+		{74EF6171-8795-4FF2-AF29-64FC8D8BE2D9}.Release|Any CPU.ActiveCfg = Release|x86
+		{74EF6171-8795-4FF2-AF29-64FC8D8BE2D9}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{74EF6171-8795-4FF2-AF29-64FC8D8BE2D9}.Release|Mixed Platforms.Build.0 = Release|x86
+		{74EF6171-8795-4FF2-AF29-64FC8D8BE2D9}.Release|x86.ActiveCfg = Release|x86
+		{74EF6171-8795-4FF2-AF29-64FC8D8BE2D9}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

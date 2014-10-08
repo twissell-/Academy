@@ -12,7 +12,7 @@ using MongoDB.Driver.Linq;
 
 namespace Data
 {
-    public class DaoCurso : IDao
+    public class DaoCurso
     {
         private MongoCollection<Curso> Cursos;
 

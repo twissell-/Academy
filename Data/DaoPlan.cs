@@ -4,7 +4,7 @@ using MongoDB.Driver;
 
 namespace Data
 {
-    class DaoPlan
+    public class DaoPlan
     {
         private MongoCollection<Plan> planes;
 

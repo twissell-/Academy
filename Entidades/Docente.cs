@@ -7,7 +7,7 @@ namespace Entidades
 {
     public class Docente : Persona
     {
-        enum cargo
+        enum eCargo
         {
             titular,
             adjunto,
