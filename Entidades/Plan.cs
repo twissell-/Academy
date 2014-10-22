@@ -10,5 +10,13 @@ namespace Entidades
         public int id { get; set; }
         public String descripcion { get; set; }
         public Especialidad especialidad { get; set; }
+
+
+        public Plan(int id, String descripcion, Especialidad especialidad)
+        {
+            this.id = id;
+            this.descripcion = descripcion;
+            this.especialidad = especialidad;
+        }
     }
 }

@@ -12,5 +12,14 @@ namespace Entidades
         public int hsSemanales { get; set; } // null
         public int hsTotales { get; set; } // null
         public Plan plan { get; set; }
+
+        public Materia(int id, String descripcion, int hsSemanales, int hsTotales, Plan plan) 
+        {
+            this.id = id;
+            this.descripcion = descripcion;
+            this.hsSemanales = hsSemanales;
+            this.hsTotales = hsTotales;
+            this.plan = plan;
+        }
     }
 }

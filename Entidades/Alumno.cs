@@ -7,7 +7,7 @@ namespace Entidades
 {
     public class Alumno : Persona
     {
-        public Alumno(string dni, string apellido, string nombre, string nacimiento, string telefono, string direccion, string mail, string pass)
+       /* public Alumno(string dni, string apellido, string nombre, string nacimiento, string telefono, string direccion, string mail, string pass)
         {
             this.dni = dni;
             this.apellido = apellido;
@@ -17,6 +17,11 @@ namespace Entidades
             this.direccion = direccion;
             this.mail = mail;
             this.password = pass;
+        }*/
+        public Alumno(int id, String dni, String apellido, String nombre, String nacimiento, String telefono, String direccion,
+        String mail, String password/*, Tipo tipo, int condicion*/): base(id, nombre, apellido, dni, telefono, direccion, mail, nacimiento, password/*, tipo*/)
+        {
+            this.condicion = condicion;
         }
         enum condiciones
         {

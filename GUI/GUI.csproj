@@ -52,10 +52,100 @@
     <Compile Include="FrmAbmAlumno.Designer.cs">
       <DependentUpon>FrmAbmAlumno.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmAbmCurso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAbmCurso.Designer.cs">
+      <DependentUpon>FrmAbmCurso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAbmDocente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAbmDocente.Designer.cs">
+      <DependentUpon>FrmAbmDocente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAbmMateria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAbmMateria.Designer.cs">
+      <DependentUpon>FrmAbmMateria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmComisiones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmComisiones.Designer.cs">
+      <DependentUpon>FrmComisiones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmEspecialidades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEspecialidades.Designer.cs">
+      <DependentUpon>FrmEspecialidades.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmListaAlumnos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmListaAlumnos.Designer.cs">
+      <DependentUpon>FrmListaAlumnos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmListaDocentes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmListaDocentes.Designer.cs">
+      <DependentUpon>FrmListaDocentes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPlanes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPlanes.Designer.cs">
+      <DependentUpon>FrmPlanes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPrincipal.Designer.cs">
+      <DependentUpon>FrmPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPrincipal0.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPrincipal0.Designer.cs">
+      <DependentUpon>FrmPrincipal0.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmAbmAlumno.resx">
       <DependentUpon>FrmAbmAlumno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAbmCurso.resx">
+      <DependentUpon>FrmAbmCurso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAbmDocente.resx">
+      <DependentUpon>FrmAbmDocente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAbmMateria.resx">
+      <DependentUpon>FrmAbmMateria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmComisiones.resx">
+      <DependentUpon>FrmComisiones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmEspecialidades.resx">
+      <DependentUpon>FrmEspecialidades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmListaAlumnos.resx">
+      <DependentUpon>FrmListaAlumnos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmListaDocentes.resx">
+      <DependentUpon>FrmListaDocentes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPlanes.resx">
+      <DependentUpon>FrmPlanes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPrincipal.resx">
+      <DependentUpon>FrmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPrincipal0.resx">
+      <DependentUpon>FrmPrincipal0.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

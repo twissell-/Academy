@@ -1,6 +1,6 @@
 ﻿namespace GUI
 {
-    partial class FrmAbmAlumno
+    partial class FrmAbmDocente
     {
         /// <summary>
         /// Required designer variable.
@@ -30,15 +30,15 @@
         {
             this.lblId = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
-            this.grpDatosPersonales = new System.Windows.Forms.GroupBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtNacimiento = new System.Windows.Forms.TextBox();
             this.txtDni = new System.Windows.Forms.TextBox();
             this.lblNacimiento = new System.Windows.Forms.Label();
-            this.lblDni = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtApellido = new System.Windows.Forms.TextBox();
-            this.lblNombre = new System.Windows.Forms.Label();
-            this.lblApellido = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.gprDatosContacto = new System.Windows.Forms.GroupBox();
             this.txtMail = new System.Windows.Forms.TextBox();
             this.lblMail = new System.Windows.Forms.Label();
@@ -51,10 +51,10 @@
             this.txtPassword = new System.Windows.Forms.MaskedTextBox();
             this.lblConfirmar = new System.Windows.Forms.Label();
             this.lblPass = new System.Windows.Forms.Label();
-            this.btnGuardar = new System.Windows.Forms.Button();
-            this.btnBorrar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.grpDatosPersonales.SuspendLayout();
+            this.btnBorrar = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.groupBox1.SuspendLayout();
             this.gprDatosContacto.SuspendLayout();
             this.gprDatosAcceso.SuspendLayout();
             this.SuspendLayout();
@@ -62,35 +62,35 @@
             // lblId
             // 
             this.lblId.AutoSize = true;
-            this.lblId.Location = new System.Drawing.Point(13, 13);
+            this.lblId.Location = new System.Drawing.Point(39, 13);
             this.lblId.Name = "lblId";
             this.lblId.Size = new System.Drawing.Size(16, 13);
-            this.lblId.TabIndex = 0;
+            this.lblId.TabIndex = 1;
             this.lblId.Text = "Id";
             // 
             // txtId
             // 
-            this.txtId.Location = new System.Drawing.Point(35, 10);
+            this.txtId.Location = new System.Drawing.Point(64, 6);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(100, 20);
-            this.txtId.TabIndex = 1;
+            this.txtId.TabIndex = 2;
             // 
-            // grpDatosPersonales
+            // groupBox1
             // 
-            this.grpDatosPersonales.Controls.Add(this.txtNacimiento);
-            this.grpDatosPersonales.Controls.Add(this.txtDni);
-            this.grpDatosPersonales.Controls.Add(this.lblNacimiento);
-            this.grpDatosPersonales.Controls.Add(this.lblDni);
-            this.grpDatosPersonales.Controls.Add(this.txtNombre);
-            this.grpDatosPersonales.Controls.Add(this.txtApellido);
-            this.grpDatosPersonales.Controls.Add(this.lblNombre);
-            this.grpDatosPersonales.Controls.Add(this.lblApellido);
-            this.grpDatosPersonales.Location = new System.Drawing.Point(13, 42);
-            this.grpDatosPersonales.Name = "grpDatosPersonales";
-            this.grpDatosPersonales.Size = new System.Drawing.Size(276, 139);
-            this.grpDatosPersonales.TabIndex = 2;
-            this.grpDatosPersonales.TabStop = false;
-            this.grpDatosPersonales.Text = "Datos Personales";
+            this.groupBox1.Controls.Add(this.txtNacimiento);
+            this.groupBox1.Controls.Add(this.txtDni);
+            this.groupBox1.Controls.Add(this.lblNacimiento);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.txtNombre);
+            this.groupBox1.Controls.Add(this.txtApellido);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Location = new System.Drawing.Point(42, 32);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(276, 139);
+            this.groupBox1.TabIndex = 3;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Datos Personales";
             // 
             // txtNacimiento
             // 
@@ -98,6 +98,7 @@
             this.txtNacimiento.Name = "txtNacimiento";
             this.txtNacimiento.Size = new System.Drawing.Size(68, 20);
             this.txtNacimiento.TabIndex = 5;
+            this.txtNacimiento.Text = "__/__/____";
             // 
             // txtDni
             // 
@@ -115,14 +116,14 @@
             this.lblNacimiento.TabIndex = 8;
             this.lblNacimiento.Text = "Nacimiento";
             // 
-            // lblDni
+            // label1
             // 
-            this.lblDni.AutoSize = true;
-            this.lblDni.Location = new System.Drawing.Point(6, 26);
-            this.lblDni.Name = "lblDni";
-            this.lblDni.Size = new System.Drawing.Size(26, 13);
-            this.lblDni.TabIndex = 4;
-            this.lblDni.Text = "DNI";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 26);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(26, 13);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "DNI";
             // 
             // txtNombre
             // 
@@ -138,23 +139,23 @@
             this.txtApellido.Size = new System.Drawing.Size(195, 20);
             this.txtApellido.TabIndex = 3;
             // 
-            // lblNombre
+            // label2
             // 
-            this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(6, 78);
-            this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(44, 13);
-            this.lblNombre.TabIndex = 1;
-            this.lblNombre.Text = "Nombre";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 78);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(44, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Nombre";
             // 
-            // lblApellido
+            // label3
             // 
-            this.lblApellido.AutoSize = true;
-            this.lblApellido.Location = new System.Drawing.Point(6, 52);
-            this.lblApellido.Name = "lblApellido";
-            this.lblApellido.Size = new System.Drawing.Size(44, 13);
-            this.lblApellido.TabIndex = 0;
-            this.lblApellido.Text = "Apellido";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 52);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(44, 13);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Apellido";
             // 
             // gprDatosContacto
             // 
@@ -164,10 +165,10 @@
             this.gprDatosContacto.Controls.Add(this.lblDireccion);
             this.gprDatosContacto.Controls.Add(this.txtTelefono);
             this.gprDatosContacto.Controls.Add(this.lblTelefono);
-            this.gprDatosContacto.Location = new System.Drawing.Point(295, 42);
+            this.gprDatosContacto.Location = new System.Drawing.Point(324, 32);
             this.gprDatosContacto.Name = "gprDatosContacto";
             this.gprDatosContacto.Size = new System.Drawing.Size(281, 139);
-            this.gprDatosContacto.TabIndex = 3;
+            this.gprDatosContacto.TabIndex = 4;
             this.gprDatosContacto.TabStop = false;
             this.gprDatosContacto.Text = "Datos de Contacto";
             // 
@@ -225,10 +226,10 @@
             this.gprDatosAcceso.Controls.Add(this.txtPassword);
             this.gprDatosAcceso.Controls.Add(this.lblConfirmar);
             this.gprDatosAcceso.Controls.Add(this.lblPass);
-            this.gprDatosAcceso.Location = new System.Drawing.Point(13, 187);
+            this.gprDatosAcceso.Location = new System.Drawing.Point(42, 177);
             this.gprDatosAcceso.Name = "gprDatosAcceso";
             this.gprDatosAcceso.Size = new System.Drawing.Size(563, 54);
-            this.gprDatosAcceso.TabIndex = 4;
+            this.gprDatosAcceso.TabIndex = 5;
             this.gprDatosAcceso.TabStop = false;
             this.gprDatosAcceso.Text = "Datos de Acceso";
             // 
@@ -266,58 +267,53 @@
             this.lblPass.TabIndex = 9;
             this.lblPass.Text = "Contraseña";
             // 
-            // btnGuardar
-            // 
-            this.btnGuardar.Location = new System.Drawing.Point(340, 252);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(75, 23);
-            this.btnGuardar.TabIndex = 5;
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.UseVisualStyleBackColor = true;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
-            // btnBorrar
-            // 
-            this.btnBorrar.Location = new System.Drawing.Point(421, 252);
-            this.btnBorrar.Name = "btnBorrar";
-            this.btnBorrar.Size = new System.Drawing.Size(75, 23);
-            this.btnBorrar.TabIndex = 6;
-            this.btnBorrar.Text = "Borrar";
-            this.btnBorrar.UseVisualStyleBackColor = true;
-            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
-            // 
             // btnCancelar
             // 
             this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancelar.Location = new System.Drawing.Point(502, 252);
+            this.btnCancelar.Location = new System.Drawing.Point(528, 261);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 7;
+            this.btnCancelar.TabIndex = 10;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // FrmAbmAlumno
+            // btnBorrar
+            // 
+            this.btnBorrar.Location = new System.Drawing.Point(447, 261);
+            this.btnBorrar.Name = "btnBorrar";
+            this.btnBorrar.Size = new System.Drawing.Size(75, 23);
+            this.btnBorrar.TabIndex = 9;
+            this.btnBorrar.Text = "Borrar";
+            this.btnBorrar.UseVisualStyleBackColor = true;
+            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Location = new System.Drawing.Point(366, 261);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(75, 23);
+            this.btnGuardar.TabIndex = 8;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            // 
+            // FrmAbmDocente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.btnCancelar;
-            this.ClientSize = new System.Drawing.Size(589, 287);
+            this.ClientSize = new System.Drawing.Size(645, 296);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnBorrar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.gprDatosAcceso);
             this.Controls.Add(this.gprDatosContacto);
-            this.Controls.Add(this.grpDatosPersonales);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.lblId);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "FrmAbmAlumno";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Alumnos";
-            this.Load += new System.EventHandler(this.FrmAbmAlumno_Load);
-            this.grpDatosPersonales.ResumeLayout(false);
-            this.grpDatosPersonales.PerformLayout();
+            this.Name = "FrmAbmDocente";
+            this.Text = "Docentes";
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.gprDatosContacto.ResumeLayout(false);
             this.gprDatosContacto.PerformLayout();
             this.gprDatosAcceso.ResumeLayout(false);
@@ -331,30 +327,29 @@
 
         private System.Windows.Forms.Label lblId;
         private System.Windows.Forms.TextBox txtId;
-        private System.Windows.Forms.GroupBox grpDatosPersonales;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox txtNacimiento;
+        private System.Windows.Forms.TextBox txtDni;
+        private System.Windows.Forms.Label lblNacimiento;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtApellido;
-        private System.Windows.Forms.Label lblNombre;
-        private System.Windows.Forms.Label lblApellido;
-        private System.Windows.Forms.TextBox txtDni;
-        private System.Windows.Forms.Label lblDni;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox gprDatosContacto;
-        private System.Windows.Forms.TextBox txtTelefono;
-        private System.Windows.Forms.Label lblTelefono;
-        private System.Windows.Forms.TextBox txtDireccion;
-        private System.Windows.Forms.Label lblDireccion;
         private System.Windows.Forms.TextBox txtMail;
         private System.Windows.Forms.Label lblMail;
-        private System.Windows.Forms.TextBox txtNacimiento;
-        private System.Windows.Forms.Label lblNacimiento;
+        private System.Windows.Forms.TextBox txtDireccion;
+        private System.Windows.Forms.Label lblDireccion;
+        private System.Windows.Forms.TextBox txtTelefono;
+        private System.Windows.Forms.Label lblTelefono;
         private System.Windows.Forms.GroupBox gprDatosAcceso;
         private System.Windows.Forms.MaskedTextBox txtConfirmar;
         private System.Windows.Forms.MaskedTextBox txtPassword;
         private System.Windows.Forms.Label lblConfirmar;
         private System.Windows.Forms.Label lblPass;
-        private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.Button btnBorrar;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnBorrar;
+        private System.Windows.Forms.Button btnGuardar;
     }
 }
-

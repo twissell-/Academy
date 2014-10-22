@@ -9,5 +9,12 @@ namespace Entidades
     {
         public int id { get; set; }
         private String descripcion { get; set; }
+
+
+        public Especialidad(int id, String descripcion)
+        {
+            this.id = id;
+            this.descripcion = descripcion;
+        }
     }
 }

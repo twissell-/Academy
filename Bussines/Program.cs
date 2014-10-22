@@ -15,8 +15,6 @@ namespace Bussines
         static void Main(string[] args)
         {
             ControllerAlumno ca = new ControllerAlumno();
-
-
            
         }
     }
