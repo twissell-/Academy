@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using UserControls;
 
 namespace GUI
 {
@@ -25,8 +26,17 @@ namespace GUI
         {
             if (txtId.Text=="admin" && txtContraseña.Text=="admin")
             {
-                Form administrador = new FrmPrincipal();
-                administrador.ShowDialog();
+                try
+                {
+                    Form administrador = new FrmPrincipal();
+                    administrador.ShowDialog();
+                }
+                catch (ArgumentException)
+                {
+                    MessageBox.Show("Su programa es una mierda");
+                    throw;
+                }
+                    
             }
         }
 
@@ -34,5 +44,7 @@ namespace GUI
         {
             this.btnIngresar_Click(sender, e);
         }
+
+    
     }
 }

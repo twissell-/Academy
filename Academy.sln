@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GUI", "GUI\GUI.csproj", "{74EF6171-8795-4FF2-AF29-64FC8D8BE2D9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserControls", "UserControls\UserControls.csproj", "{F6D14104-DE8B-4DF1-B96A-DB40DDC323AE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,6 +61,16 @@ Global
 		{74EF6171-8795-4FF2-AF29-64FC8D8BE2D9}.Release|Mixed Platforms.Build.0 = Release|x86
 		{74EF6171-8795-4FF2-AF29-64FC8D8BE2D9}.Release|x86.ActiveCfg = Release|x86
 		{74EF6171-8795-4FF2-AF29-64FC8D8BE2D9}.Release|x86.Build.0 = Release|x86
+		{F6D14104-DE8B-4DF1-B96A-DB40DDC323AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6D14104-DE8B-4DF1-B96A-DB40DDC323AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6D14104-DE8B-4DF1-B96A-DB40DDC323AE}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{F6D14104-DE8B-4DF1-B96A-DB40DDC323AE}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{F6D14104-DE8B-4DF1-B96A-DB40DDC323AE}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F6D14104-DE8B-4DF1-B96A-DB40DDC323AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6D14104-DE8B-4DF1-B96A-DB40DDC323AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6D14104-DE8B-4DF1-B96A-DB40DDC323AE}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{F6D14104-DE8B-4DF1-B96A-DB40DDC323AE}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{F6D14104-DE8B-4DF1-B96A-DB40DDC323AE}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

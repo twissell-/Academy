@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F6D14104-DE8B-4DF1-B96A-DB40DDC323AE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UserControls</RootNamespace>
+    <AssemblyName>UserControls</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ABMDoc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ABMDoc.Designer.cs">
+      <DependentUpon>ABMDoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="agregarComision.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="agregarComision.Designer.cs">
+      <DependentUpon>agregarComision.cs</DependentUpon>
+    </Compile>
+    <Compile Include="agregarEspecialidad.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="agregarEspecialidad.Designer.cs">
+      <DependentUpon>agregarEspecialidad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListaAlumnos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ListaAlumnos.Designer.cs">
+      <DependentUpon>ListaAlumnos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListaComisiones.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ListaComisiones.Designer.cs">
+      <DependentUpon>ListaComisiones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Bussines\Bussines.csproj">
+      <Project>{51CFF99C-7595-42C7-A16F-A7421C1664FE}</Project>
+      <Name>Bussines</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entidades\Entidades.csproj">
+      <Project>{C5FB7D05-C21C-4952-82AA-217B371E374C}</Project>
+      <Name>Entidades</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ABMDoc.resx">
+      <DependentUpon>ABMDoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="agregarComision.resx">
+      <DependentUpon>agregarComision.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="agregarEspecialidad.resx">
+      <DependentUpon>agregarEspecialidad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListaAlumnos.resx">
+      <DependentUpon>ListaAlumnos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListaComisiones.resx">
+      <DependentUpon>ListaComisiones.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

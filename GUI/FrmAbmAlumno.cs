@@ -31,7 +31,7 @@ namespace GUI
             }
             catch (FormatException error)
             {
-                MessageBox.Show("error");
+                MessageBox.Show("error"+error);
                 throw;
             }
 

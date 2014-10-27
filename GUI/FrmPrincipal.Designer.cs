@@ -38,6 +38,7 @@
             this.btnAgregarPlan = new System.Windows.Forms.Button();
             this.grpMenu = new System.Windows.Forms.GroupBox();
             this.btnReportes = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.grpMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -148,15 +149,24 @@
             this.btnReportes.Text = "Reportes";
             this.btnReportes.UseVisualStyleBackColor = true;
             // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(193, 13);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(606, 323);
+            this.panel1.TabIndex = 10;
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(830, 391);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.grpMenu);
             this.Controls.Add(this.btnSalir);
             this.Name = "FrmPrincipal";
             this.Text = "Azhir Academia";
+           // this.Load += new System.EventHandler(this.FrmPrincipal_Load);
             this.grpMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -174,5 +184,11 @@
         private System.Windows.Forms.Button btnAgregarPlan;
         private System.Windows.Forms.GroupBox grpMenu;
         private System.Windows.Forms.Button btnReportes;
-    }
+        private System.Windows.Forms.Panel panel1;
+
+
+        public System.EventHandler FrmPrincipal_Load { get; set; }
+
+        public System.Windows.Forms.PaintEventHandler panel1_Paint { get; set; }
+    }      
 }
