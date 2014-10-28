@@ -1,6 +1,6 @@
 ﻿namespace UserControls
 {
-    partial class agregarEspecialidad
+    partial class ucAgregarEspecialidad
     {
         /// <summary> 
         /// Variable del diseñador requerida.

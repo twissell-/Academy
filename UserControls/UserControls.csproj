@@ -43,35 +43,41 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ABMDoc.cs">
+    <Compile Include="ucAMPersona.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ABMDoc.Designer.cs">
-      <DependentUpon>ABMDoc.cs</DependentUpon>
+    <Compile Include="ucAMPersona.Designer.cs">
+      <DependentUpon>ucAMPersona.cs</DependentUpon>
     </Compile>
-    <Compile Include="agregarComision.cs">
+    <Compile Include="ucAgregarComision.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="agregarComision.Designer.cs">
-      <DependentUpon>agregarComision.cs</DependentUpon>
+    <Compile Include="ucAgregarComision.Designer.cs">
+      <DependentUpon>ucAgregarComision.cs</DependentUpon>
     </Compile>
-    <Compile Include="agregarEspecialidad.cs">
+    <Compile Include="ucAgregarEspecialidad.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="agregarEspecialidad.Designer.cs">
-      <DependentUpon>agregarEspecialidad.cs</DependentUpon>
+    <Compile Include="ucAgregarEspecialidad.Designer.cs">
+      <DependentUpon>ucAgregarEspecialidad.cs</DependentUpon>
     </Compile>
-    <Compile Include="ListaAlumnos.cs">
+    <Compile Include="ucBPersona.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ListaAlumnos.Designer.cs">
-      <DependentUpon>ListaAlumnos.cs</DependentUpon>
+    <Compile Include="ucBPersona.Designer.cs">
+      <DependentUpon>ucBPersona.cs</DependentUpon>
     </Compile>
-    <Compile Include="ListaComisiones.cs">
+    <Compile Include="ucListaAlumnos.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ListaComisiones.Designer.cs">
-      <DependentUpon>ListaComisiones.cs</DependentUpon>
+    <Compile Include="ucListaAlumnos.Designer.cs">
+      <DependentUpon>ucListaAlumnos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucListaComisiones.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucListaComisiones.Designer.cs">
+      <DependentUpon>ucListaComisiones.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
@@ -87,20 +93,23 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="ABMDoc.resx">
-      <DependentUpon>ABMDoc.cs</DependentUpon>
+    <EmbeddedResource Include="ucAMPersona.resx">
+      <DependentUpon>ucAMPersona.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="agregarComision.resx">
-      <DependentUpon>agregarComision.cs</DependentUpon>
+    <EmbeddedResource Include="ucAgregarComision.resx">
+      <DependentUpon>ucAgregarComision.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="agregarEspecialidad.resx">
-      <DependentUpon>agregarEspecialidad.cs</DependentUpon>
+    <EmbeddedResource Include="ucAgregarEspecialidad.resx">
+      <DependentUpon>ucAgregarEspecialidad.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ListaAlumnos.resx">
-      <DependentUpon>ListaAlumnos.cs</DependentUpon>
+    <EmbeddedResource Include="ucBPersona.resx">
+      <DependentUpon>ucBPersona.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ListaComisiones.resx">
-      <DependentUpon>ListaComisiones.cs</DependentUpon>
+    <EmbeddedResource Include="ucListaAlumnos.resx">
+      <DependentUpon>ucListaAlumnos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucListaComisiones.resx">
+      <DependentUpon>ucListaComisiones.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

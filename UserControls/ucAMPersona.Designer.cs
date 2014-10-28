@@ -1,6 +1,6 @@
 ﻿namespace UserControls
 {
-    partial class ABMDoc
+    partial class ucAMPersona
     {
         /// <summary>
         /// Variable del diseñador requerida.
@@ -43,6 +43,7 @@
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.lblTelefono = new System.Windows.Forms.Label();
             this.grpDatosPersonales = new System.Windows.Forms.GroupBox();
+            this.lblAño = new System.Windows.Forms.Label();
             this.txtNacimiento = new System.Windows.Forms.TextBox();
             this.txtDni = new System.Windows.Forms.TextBox();
             this.lblNacimiento = new System.Windows.Forms.Label();
@@ -53,6 +54,8 @@
             this.lblApellido = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
             this.lblId = new System.Windows.Forms.Label();
+            this.cmbCargo = new System.Windows.Forms.ComboBox();
+            this.lblCargo = new System.Windows.Forms.Label();
             this.gprDatosAcceso.SuspendLayout();
             this.gprDatosContacto.SuspendLayout();
             this.grpDatosPersonales.SuspendLayout();
@@ -60,21 +63,23 @@
             // 
             // btnBorrar
             // 
-            this.btnBorrar.Location = new System.Drawing.Point(507, 278);
+            this.btnBorrar.Location = new System.Drawing.Point(491, 250);
             this.btnBorrar.Name = "btnBorrar";
             this.btnBorrar.Size = new System.Drawing.Size(75, 23);
             this.btnBorrar.TabIndex = 14;
             this.btnBorrar.Text = "Borrar";
             this.btnBorrar.UseVisualStyleBackColor = true;
+            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(426, 278);
+            this.btnGuardar.Location = new System.Drawing.Point(410, 250);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 13;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // gprDatosAcceso
             // 
@@ -82,7 +87,7 @@
             this.gprDatosAcceso.Controls.Add(this.txtPassword);
             this.gprDatosAcceso.Controls.Add(this.lblConfirmar);
             this.gprDatosAcceso.Controls.Add(this.lblPass);
-            this.gprDatosAcceso.Location = new System.Drawing.Point(30, 213);
+            this.gprDatosAcceso.Location = new System.Drawing.Point(14, 185);
             this.gprDatosAcceso.Name = "gprDatosAcceso";
             this.gprDatosAcceso.Size = new System.Drawing.Size(563, 54);
             this.gprDatosAcceso.TabIndex = 12;
@@ -131,7 +136,7 @@
             this.gprDatosContacto.Controls.Add(this.lblDireccion);
             this.gprDatosContacto.Controls.Add(this.txtTelefono);
             this.gprDatosContacto.Controls.Add(this.lblTelefono);
-            this.gprDatosContacto.Location = new System.Drawing.Point(312, 68);
+            this.gprDatosContacto.Location = new System.Drawing.Point(296, 40);
             this.gprDatosContacto.Name = "gprDatosContacto";
             this.gprDatosContacto.Size = new System.Drawing.Size(281, 139);
             this.gprDatosContacto.TabIndex = 11;
@@ -188,6 +193,7 @@
             // 
             // grpDatosPersonales
             // 
+            this.grpDatosPersonales.Controls.Add(this.lblAño);
             this.grpDatosPersonales.Controls.Add(this.txtNacimiento);
             this.grpDatosPersonales.Controls.Add(this.txtDni);
             this.grpDatosPersonales.Controls.Add(this.lblNacimiento);
@@ -196,12 +202,21 @@
             this.grpDatosPersonales.Controls.Add(this.txtApellido);
             this.grpDatosPersonales.Controls.Add(this.lblNombre);
             this.grpDatosPersonales.Controls.Add(this.lblApellido);
-            this.grpDatosPersonales.Location = new System.Drawing.Point(30, 68);
+            this.grpDatosPersonales.Location = new System.Drawing.Point(14, 40);
             this.grpDatosPersonales.Name = "grpDatosPersonales";
             this.grpDatosPersonales.Size = new System.Drawing.Size(276, 139);
             this.grpDatosPersonales.TabIndex = 10;
             this.grpDatosPersonales.TabStop = false;
             this.grpDatosPersonales.Text = "Datos Personales";
+            // 
+            // lblAño
+            // 
+            this.lblAño.AutoSize = true;
+            this.lblAño.Location = new System.Drawing.Point(147, 107);
+            this.lblAño.Name = "lblAño";
+            this.lblAño.Size = new System.Drawing.Size(75, 13);
+            this.lblAño.TabIndex = 9;
+            this.lblAño.Text = "(dd/mm/aaaa)";
             // 
             // txtNacimiento
             // 
@@ -269,7 +284,7 @@
             // 
             // txtId
             // 
-            this.txtId.Location = new System.Drawing.Point(52, 36);
+            this.txtId.Location = new System.Drawing.Point(36, 8);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(100, 20);
             this.txtId.TabIndex = 9;
@@ -277,16 +292,41 @@
             // lblId
             // 
             this.lblId.AutoSize = true;
-            this.lblId.Location = new System.Drawing.Point(30, 39);
+            this.lblId.Location = new System.Drawing.Point(14, 11);
             this.lblId.Name = "lblId";
             this.lblId.Size = new System.Drawing.Size(16, 13);
             this.lblId.TabIndex = 8;
             this.lblId.Text = "Id";
             // 
-            // ABMDoc
+            // cmbCargo
+            // 
+            this.cmbCargo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCargo.FormattingEnabled = true;
+            this.cmbCargo.Items.AddRange(new object[] {
+            "",
+            "Administrador",
+            "Docente",
+            "Alumno"});
+            this.cmbCargo.Location = new System.Drawing.Point(186, 7);
+            this.cmbCargo.Name = "cmbCargo";
+            this.cmbCargo.Size = new System.Drawing.Size(121, 21);
+            this.cmbCargo.TabIndex = 15;
+            // 
+            // lblCargo
+            // 
+            this.lblCargo.AutoSize = true;
+            this.lblCargo.Location = new System.Drawing.Point(142, 11);
+            this.lblCargo.Name = "lblCargo";
+            this.lblCargo.Size = new System.Drawing.Size(38, 13);
+            this.lblCargo.TabIndex = 16;
+            this.lblCargo.Text = "Cargo:";
+            // 
+            // ucAMPersona
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lblCargo);
+            this.Controls.Add(this.cmbCargo);
             this.Controls.Add(this.btnBorrar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.gprDatosAcceso);
@@ -294,8 +334,8 @@
             this.Controls.Add(this.grpDatosPersonales);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.lblId);
-            this.Name = "ABMDoc";
-            this.Size = new System.Drawing.Size(606, 323);
+            this.Name = "ucAMPersona";
+            this.Size = new System.Drawing.Size(720, 323);
             this.gprDatosAcceso.ResumeLayout(false);
             this.gprDatosAcceso.PerformLayout();
             this.gprDatosContacto.ResumeLayout(false);
@@ -334,5 +374,8 @@
         private System.Windows.Forms.Label lblApellido;
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Label lblId;
+        private System.Windows.Forms.Label lblAño;
+        private System.Windows.Forms.ComboBox cmbCargo;
+        private System.Windows.Forms.Label lblCargo;
     }
 }

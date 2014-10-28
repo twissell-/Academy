@@ -82,11 +82,11 @@
     <Compile Include="FrmEspecialidades.Designer.cs">
       <DependentUpon>FrmEspecialidades.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmListaAlumnos.cs">
+    <Compile Include="FrmInputId.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmListaAlumnos.Designer.cs">
-      <DependentUpon>FrmListaAlumnos.cs</DependentUpon>
+    <Compile Include="FrmInputId.Designer.cs">
+      <DependentUpon>FrmInputId.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmListaDocentes.cs">
       <SubType>Form</SubType>
@@ -132,8 +132,8 @@
     <EmbeddedResource Include="FrmEspecialidades.resx">
       <DependentUpon>FrmEspecialidades.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmListaAlumnos.resx">
-      <DependentUpon>FrmListaAlumnos.cs</DependentUpon>
+    <EmbeddedResource Include="FrmInputId.resx">
+      <DependentUpon>FrmInputId.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmListaDocentes.resx">
       <DependentUpon>FrmListaDocentes.cs</DependentUpon>

@@ -9,11 +9,16 @@ using System.Windows.Forms;
 
 namespace UserControls
 {
-    public partial class ListaAlumnos : UserControl
+    public partial class ucListaComisiones : UserControl
     {
-        public ListaAlumnos()
+        public ucListaComisiones()
         {
             InitializeComponent();
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

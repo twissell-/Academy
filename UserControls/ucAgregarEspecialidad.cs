@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace UserControls
 {
-    public partial class agregarEspecialidad : UserControl
+    public partial class ucAgregarEspecialidad : UserControl
     {
-        public agregarEspecialidad()
+        public ucAgregarEspecialidad()
         {
             InitializeComponent();
         }

@@ -1,17 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Drawing;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace UserControls
+namespace GUI
 {
-    public partial class agregarComision : UserControl
+    public partial class FrmInputId : Form
     {
-        public agregarComision()
+        public FrmInputId()
         {
             InitializeComponent();
         }

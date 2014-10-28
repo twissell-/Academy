@@ -19,52 +19,36 @@ namespace GUI
 
         private void btnVerCursos_Click(object sender, EventArgs e)
         {
-            this.panel1.Controls.Clear();
-            var uc = new ListaComisiones();
-            this.panel1.Controls.Add(uc);
+            this.panAdm.Controls.Clear();
+            var uc = new ucListaComisiones();
+            this.panAdm.Controls.Add(uc);
             uc.Dock = DockStyle.Fill;
-        }
-
-        private void btnAgregarAlumno_Click(object sender, EventArgs e)
-        {
-            this.panel1.Controls.Clear();
-          
-            var uc = new ABMDoc();
-            this.panel1.Controls.Add(uc);
-            uc.Dock = DockStyle.Fill;
-           // Form frmalu = new FrmAbmAlumno();
-           // frmalu.ShowDialog();
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            this.Dispose();
+            DialogResult resultado = MessageBox.Show("Esta seguro que desea salir?", "Esta por salir del programa", MessageBoxButtons.YesNo);
+            if (resultado == DialogResult.Yes)
+            {
+                this.Dispose();
+            }
         }
 
         private void btnVerAlumnos_Click(object sender, EventArgs e)
         {
-            this.panel1.Controls.Clear();
-            var uc = new ListaAlumnos();
-            this.panel1.Controls.Add(uc);
+            this.panAdm.Controls.Clear();
+            var uc = new ucListaAlumnos();
+            this.panAdm.Controls.Add(uc);
             uc.Dock = DockStyle.Fill;
          //   Form frmalu = new FrmListaAlumnos();
           //  frmalu.ShowDialog();
         }
 
-        private void btnAgregarDocente_Click(object sender, EventArgs e)
-        {
-            this.panel1.Controls.Clear();
-            var uc = new ABMDoc();
-            this.panel1.Controls.Add(uc);
-            uc.Dock = DockStyle.Fill;
-          
-        }
-
         private void btnAgregarEspecialidad_Click(object sender, EventArgs e)
         {
-            this.panel1.Controls.Clear();
-            var uc = new agregarEspecialidad();
-            this.panel1.Controls.Add(uc);
+            this.panAdm.Controls.Clear();
+            var uc = new ucAgregarEspecialidad();
+            this.panAdm.Controls.Add(uc);
             uc.Dock = DockStyle.Fill;
          //   Form esp = new FrmEspecialidades();
            // esp.ShowDialog();
@@ -72,9 +56,9 @@ namespace GUI
 
         private void btnAgregarComision_Click(object sender, EventArgs e)
         {
-            this.panel1.Controls.Clear();
-            var uc = new agregarComision();
-            this.panel1.Controls.Add(uc);
+            this.panAdm.Controls.Clear();
+            var uc = new ucAgregarComision();
+            this.panAdm.Controls.Add(uc);
             uc.Dock = DockStyle.Fill;
            // Form com = new FrmComisiones();
            // com.ShowDialog();
@@ -82,10 +66,49 @@ namespace GUI
 
         private void btnAgregarPlan_Click(object sender, EventArgs e)
         {
-            this.panel1.Controls.Clear();
+            this.panAdm.Controls.Clear();
             Form plan = new FrmPlanes();
             plan.ShowDialog();
-        } 
-             
+        }
+
+        private void tsmAgregarComision_Click(object sender, EventArgs e)
+        {
+            this.panAdm.Controls.Clear();
+            var uc = new ucAgregarComision();
+            this.panAdm.Controls.Add(uc);
+            uc.Dock = DockStyle.Fill;
+        }
+
+        private void tsmSalir_Click(object sender, EventArgs e)
+        {
+            this.btnSalir_Click(sender, e);
+        }
+
+        
+        private void tsmAMPersona_Click(object sender, EventArgs e)
+        {
+            this.panAdm.Controls.Clear();
+            var uc = new ucAMPersona();
+            if (sender==tsmAgregarAlumno || sender==tsmAgregarDocente)
+            {
+                //llenar el cmbID con el correlativo de la base de datos.
+            }
+            else
+            {
+                Form inputId = new FrmInputId();
+                //llenar el todos los controles con lo de la base de datos segun lo q venga del del MessageBox o Form
+            }
+            this.panAdm.Controls.Add(uc);
+            uc.Dock = DockStyle.Fill;
+        }
+
+        private void tsmEliminarPersona_Click(object sender, EventArgs e)
+        {
+            this.panAdm.Controls.Clear();
+            var uc = new ucBPersona();
+            this.panAdm.Controls.Add(uc);
+            uc.Dock = DockStyle.Fill;
+        }
+
     }
 }

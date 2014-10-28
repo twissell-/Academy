@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace UserControls
 {
-    public partial class ABMDoc : UserControl
+    public partial class ucAgregarComision : UserControl
     {
-        public ABMDoc()
+        public ucAgregarComision()
         {
             InitializeComponent();
         }

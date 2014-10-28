@@ -1,6 +1,6 @@
 ﻿namespace UserControls
 {
-    partial class ListaAlumnos
+    partial class ucListaComisiones
     {
         /// <summary> 
         /// Variable del diseñador requerida.
@@ -29,11 +29,8 @@
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.idAlumno = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreAlumno = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.apellidoAlumno = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telefonoAlumno = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailAlumno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdComision = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.turnoComision = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -41,55 +38,35 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idAlumno,
-            this.nombreAlumno,
-            this.apellidoAlumno,
-            this.telefonoAlumno,
-            this.emailAlumno});
+            this.IdComision,
+            this.turnoComision});
             this.dataGridView1.Location = new System.Drawing.Point(4, 4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(545, 283);
+            this.dataGridView1.Size = new System.Drawing.Size(450, 182);
             this.dataGridView1.TabIndex = 0;
             // 
-            // idAlumno
+            // IdComision
             // 
-            this.idAlumno.HeaderText = "ID";
-            this.idAlumno.Name = "idAlumno";
-            this.idAlumno.ReadOnly = true;
+            this.IdComision.HeaderText = "ID";
+            this.IdComision.Name = "IdComision";
+            this.IdComision.ReadOnly = true;
             // 
-            // nombreAlumno
+            // turnoComision
             // 
-            this.nombreAlumno.HeaderText = "Nombre";
-            this.nombreAlumno.Name = "nombreAlumno";
-            this.nombreAlumno.ReadOnly = true;
+            this.turnoComision.HeaderText = "Turno";
+            this.turnoComision.Name = "turnoComision";
+            this.turnoComision.ReadOnly = true;
             // 
-            // apellidoAlumno
-            // 
-            this.apellidoAlumno.HeaderText = "Apellido";
-            this.apellidoAlumno.Name = "apellidoAlumno";
-            this.apellidoAlumno.ReadOnly = true;
-            // 
-            // telefonoAlumno
-            // 
-            this.telefonoAlumno.HeaderText = "Telefono";
-            this.telefonoAlumno.Name = "telefonoAlumno";
-            this.telefonoAlumno.ReadOnly = true;
-            // 
-            // emailAlumno
-            // 
-            this.emailAlumno.HeaderText = "E-Mail";
-            this.emailAlumno.Name = "emailAlumno";
-            this.emailAlumno.ReadOnly = true;
-            // 
-            // ListaAlumnos
+            // ListaComisiones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.dataGridView1);
-            this.Name = "ListaAlumnos";
+            this.Name = "ListaComisiones";
             this.Size = new System.Drawing.Size(606, 323);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -99,10 +76,8 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idAlumno;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombreAlumno;
-        private System.Windows.Forms.DataGridViewTextBoxColumn apellidoAlumno;
-        private System.Windows.Forms.DataGridViewTextBoxColumn telefonoAlumno;
-        private System.Windows.Forms.DataGridViewTextBoxColumn emailAlumno;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdComision;
+        private System.Windows.Forms.DataGridViewTextBoxColumn turnoComision;
+
     }
 }
