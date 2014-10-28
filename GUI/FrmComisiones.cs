@@ -29,8 +29,8 @@ namespace GUI
 
         private void btnAlumnos_Click(object sender, EventArgs e)
         {
-            Form frmalu = new FrmListaAlumnos();
-            frmalu.ShowDialog();
+          //  Form frmalu = new FrmListaAlumnos();
+          //    frmalu.ShowDialog();
         }
 
         private void btnBorrar_Click(object sender, EventArgs e)

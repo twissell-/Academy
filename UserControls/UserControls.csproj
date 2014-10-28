@@ -43,6 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ucAMMateria.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucAMMateria.Designer.cs">
+      <DependentUpon>ucAMMateria.cs</DependentUpon>
+    </Compile>
     <Compile Include="ucAMPersona.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -93,6 +99,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="ucAMMateria.resx">
+      <DependentUpon>ucAMMateria.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ucAMPersona.resx">
       <DependentUpon>ucAMPersona.cs</DependentUpon>
     </EmbeddedResource>
