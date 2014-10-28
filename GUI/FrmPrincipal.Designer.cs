@@ -32,6 +32,12 @@
             this.panAdm = new System.Windows.Forms.Panel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.tsmMenuPrincipal = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmSalir = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmMaterias = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmAgregarMateria = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmModificarMateria = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmEliminarMateria = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmListadoDeMaterias = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmComisiones = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmAgregarComision = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmModificarComisiones = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,8 +49,8 @@
             this.tsmEliminarAlumno = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmListadoDeAlumnos = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmDocentes = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmAgregarDocente = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmModificarDocente = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmAgregarDocentes = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmModificarDocentes = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmEliminarDocente = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmListadoDeDocentes = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmEspecialidades = new System.Windows.Forms.ToolStripMenuItem();
@@ -57,10 +63,9 @@
             this.tsmModificarPlan = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmEliminarPlan = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmListadoDePlanes = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmReportes = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmReporteCursos = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmReporteComisiones = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmReportePlanes = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmSalir = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -87,7 +92,14 @@
             this.menuStrip1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.menuStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmMenuPrincipal});
+            this.tsmMenuPrincipal,
+            this.tsmMaterias,
+            this.tsmComisiones,
+            this.tsmAlumnos,
+            this.tsmDocentes,
+            this.tsmEspecialidades,
+            this.tsmPlanes,
+            this.reportesToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(872, 24);
@@ -97,16 +109,54 @@
             // tsmMenuPrincipal
             // 
             this.tsmMenuPrincipal.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmComisiones,
-            this.tsmAlumnos,
-            this.tsmDocentes,
-            this.tsmEspecialidades,
-            this.tsmPlanes,
-            this.tsmReportes,
             this.tsmSalir});
             this.tsmMenuPrincipal.Name = "tsmMenuPrincipal";
             this.tsmMenuPrincipal.Size = new System.Drawing.Size(50, 20);
             this.tsmMenuPrincipal.Text = "Menú";
+            // 
+            // tsmSalir
+            // 
+            this.tsmSalir.Name = "tsmSalir";
+            this.tsmSalir.Size = new System.Drawing.Size(96, 22);
+            this.tsmSalir.Text = "Salir";
+            this.tsmSalir.Click += new System.EventHandler(this.tsmSalir_Click);
+            // 
+            // tsmMaterias
+            // 
+            this.tsmMaterias.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmAgregarMateria,
+            this.tsmModificarMateria,
+            this.tsmEliminarMateria,
+            this.tsmListadoDeMaterias});
+            this.tsmMaterias.Name = "tsmMaterias";
+            this.tsmMaterias.Size = new System.Drawing.Size(64, 20);
+            this.tsmMaterias.Text = "Materias";
+            // 
+            // tsmAgregarMateria
+            // 
+            this.tsmAgregarMateria.Name = "tsmAgregarMateria";
+            this.tsmAgregarMateria.Size = new System.Drawing.Size(176, 22);
+            this.tsmAgregarMateria.Text = "Agregar";
+            this.tsmAgregarMateria.Click += new System.EventHandler(this.tsmAMMateria_Click);
+            // 
+            // tsmModificarMateria
+            // 
+            this.tsmModificarMateria.Name = "tsmModificarMateria";
+            this.tsmModificarMateria.Size = new System.Drawing.Size(176, 22);
+            this.tsmModificarMateria.Text = "Modificar";
+            this.tsmModificarMateria.Click += new System.EventHandler(this.tsmAMMateria_Click);
+            // 
+            // tsmEliminarMateria
+            // 
+            this.tsmEliminarMateria.Name = "tsmEliminarMateria";
+            this.tsmEliminarMateria.Size = new System.Drawing.Size(176, 22);
+            this.tsmEliminarMateria.Text = "Eliminar";
+            // 
+            // tsmListadoDeMaterias
+            // 
+            this.tsmListadoDeMaterias.Name = "tsmListadoDeMaterias";
+            this.tsmListadoDeMaterias.Size = new System.Drawing.Size(176, 22);
+            this.tsmListadoDeMaterias.Text = "Listado de Materias";
             // 
             // tsmComisiones
             // 
@@ -116,7 +166,7 @@
             this.tsmEliminarComisiones,
             this.tsmListadoDeComisiones});
             this.tsmComisiones.Name = "tsmComisiones";
-            this.tsmComisiones.Size = new System.Drawing.Size(152, 22);
+            this.tsmComisiones.Size = new System.Drawing.Size(81, 20);
             this.tsmComisiones.Text = "Comisiones";
             // 
             // tsmAgregarComision
@@ -152,73 +202,73 @@
             this.tsmEliminarAlumno,
             this.tsmListadoDeAlumnos});
             this.tsmAlumnos.Name = "tsmAlumnos";
-            this.tsmAlumnos.Size = new System.Drawing.Size(152, 22);
+            this.tsmAlumnos.Size = new System.Drawing.Size(67, 20);
             this.tsmAlumnos.Text = "Alumnos";
             // 
             // tsmAgregarAlumno
             // 
             this.tsmAgregarAlumno.Name = "tsmAgregarAlumno";
-            this.tsmAgregarAlumno.Size = new System.Drawing.Size(177, 22);
+            this.tsmAgregarAlumno.Size = new System.Drawing.Size(179, 22);
             this.tsmAgregarAlumno.Text = "Agregar";
             this.tsmAgregarAlumno.Click += new System.EventHandler(this.tsmAMPersona_Click);
             // 
             // tsmModificarAlumno
             // 
             this.tsmModificarAlumno.Name = "tsmModificarAlumno";
-            this.tsmModificarAlumno.Size = new System.Drawing.Size(177, 22);
+            this.tsmModificarAlumno.Size = new System.Drawing.Size(179, 22);
             this.tsmModificarAlumno.Text = "Modificar";
             this.tsmModificarAlumno.Click += new System.EventHandler(this.tsmAMPersona_Click);
             // 
             // tsmEliminarAlumno
             // 
             this.tsmEliminarAlumno.Name = "tsmEliminarAlumno";
-            this.tsmEliminarAlumno.Size = new System.Drawing.Size(177, 22);
+            this.tsmEliminarAlumno.Size = new System.Drawing.Size(179, 22);
             this.tsmEliminarAlumno.Text = "Eliminar";
             this.tsmEliminarAlumno.Click += new System.EventHandler(this.tsmEliminarPersona_Click);
             // 
             // tsmListadoDeAlumnos
             // 
             this.tsmListadoDeAlumnos.Name = "tsmListadoDeAlumnos";
-            this.tsmListadoDeAlumnos.Size = new System.Drawing.Size(177, 22);
-            this.tsmListadoDeAlumnos.Text = "Listado de alumnos";
+            this.tsmListadoDeAlumnos.Size = new System.Drawing.Size(179, 22);
+            this.tsmListadoDeAlumnos.Text = "Listado de Alumnos";
             // 
             // tsmDocentes
             // 
             this.tsmDocentes.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmAgregarDocente,
-            this.tsmModificarDocente,
+            this.tsmAgregarDocentes,
+            this.tsmModificarDocentes,
             this.tsmEliminarDocente,
             this.tsmListadoDeDocentes});
             this.tsmDocentes.Name = "tsmDocentes";
-            this.tsmDocentes.Size = new System.Drawing.Size(152, 22);
+            this.tsmDocentes.Size = new System.Drawing.Size(68, 20);
             this.tsmDocentes.Text = "Docentes";
             // 
-            // tsmAgregarDocente
+            // tsmAgregarDocentes
             // 
-            this.tsmAgregarDocente.Name = "tsmAgregarDocente";
-            this.tsmAgregarDocente.Size = new System.Drawing.Size(179, 22);
-            this.tsmAgregarDocente.Text = "Agregar";
-            this.tsmAgregarDocente.Click += new System.EventHandler(this.tsmAMPersona_Click);
+            this.tsmAgregarDocentes.Name = "tsmAgregarDocentes";
+            this.tsmAgregarDocentes.Size = new System.Drawing.Size(180, 22);
+            this.tsmAgregarDocentes.Text = "Agregar";
+            this.tsmAgregarDocentes.Click += new System.EventHandler(this.tsmAMPersona_Click);
             // 
-            // tsmModificarDocente
+            // tsmModificarDocentes
             // 
-            this.tsmModificarDocente.Name = "tsmModificarDocente";
-            this.tsmModificarDocente.Size = new System.Drawing.Size(179, 22);
-            this.tsmModificarDocente.Text = "Modificar";
-            this.tsmModificarDocente.Click += new System.EventHandler(this.tsmAMPersona_Click);
+            this.tsmModificarDocentes.Name = "tsmModificarDocentes";
+            this.tsmModificarDocentes.Size = new System.Drawing.Size(180, 22);
+            this.tsmModificarDocentes.Text = "Modificar";
+            this.tsmModificarDocentes.Click += new System.EventHandler(this.tsmAMPersona_Click);
             // 
             // tsmEliminarDocente
             // 
             this.tsmEliminarDocente.Name = "tsmEliminarDocente";
-            this.tsmEliminarDocente.Size = new System.Drawing.Size(179, 22);
+            this.tsmEliminarDocente.Size = new System.Drawing.Size(180, 22);
             this.tsmEliminarDocente.Text = "Eliminar";
             this.tsmEliminarDocente.Click += new System.EventHandler(this.tsmEliminarPersona_Click);
             // 
             // tsmListadoDeDocentes
             // 
             this.tsmListadoDeDocentes.Name = "tsmListadoDeDocentes";
-            this.tsmListadoDeDocentes.Size = new System.Drawing.Size(179, 22);
-            this.tsmListadoDeDocentes.Text = "Listado de docentes";
+            this.tsmListadoDeDocentes.Size = new System.Drawing.Size(180, 22);
+            this.tsmListadoDeDocentes.Text = "Listado de Docentes";
             // 
             // tsmEspecialidades
             // 
@@ -228,7 +278,7 @@
             this.tsmEliminarEspecialidad,
             this.tsmListadoDeEspecialidades});
             this.tsmEspecialidades.Name = "tsmEspecialidades";
-            this.tsmEspecialidades.Size = new System.Drawing.Size(152, 22);
+            this.tsmEspecialidades.Size = new System.Drawing.Size(95, 20);
             this.tsmEspecialidades.Text = "Especialidades";
             // 
             // tsmAgregarEspecialidad
@@ -263,7 +313,7 @@
             this.tsmEliminarPlan,
             this.tsmListadoDePlanes});
             this.tsmPlanes.Name = "tsmPlanes";
-            this.tsmPlanes.Size = new System.Drawing.Size(152, 22);
+            this.tsmPlanes.Size = new System.Drawing.Size(53, 20);
             this.tsmPlanes.Text = "Planes";
             // 
             // tsmAgregarPlan
@@ -288,35 +338,28 @@
             // 
             this.tsmListadoDePlanes.Name = "tsmListadoDePlanes";
             this.tsmListadoDePlanes.Size = new System.Drawing.Size(165, 22);
-            this.tsmListadoDePlanes.Text = "Listado de planes";
+            this.tsmListadoDePlanes.Text = "Listado de Planes";
             // 
-            // tsmReportes
+            // reportesToolStripMenuItem
             // 
-            this.tsmReportes.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmReporteCursos,
+            this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmReporteComisiones,
             this.tsmReportePlanes});
-            this.tsmReportes.Name = "tsmReportes";
-            this.tsmReportes.Size = new System.Drawing.Size(152, 22);
-            this.tsmReportes.Text = "Reportes";
+            this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
+            this.reportesToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.reportesToolStripMenuItem.Text = "Reportes";
             // 
-            // tsmReporteCursos
+            // tsmReporteComisiones
             // 
-            this.tsmReporteCursos.Name = "tsmReporteCursos";
-            this.tsmReporteCursos.Size = new System.Drawing.Size(110, 22);
-            this.tsmReporteCursos.Text = "Cursos";
+            this.tsmReporteComisiones.Name = "tsmReporteComisiones";
+            this.tsmReporteComisiones.Size = new System.Drawing.Size(136, 22);
+            this.tsmReporteComisiones.Text = "Comisiones";
             // 
             // tsmReportePlanes
             // 
             this.tsmReportePlanes.Name = "tsmReportePlanes";
-            this.tsmReportePlanes.Size = new System.Drawing.Size(110, 22);
+            this.tsmReportePlanes.Size = new System.Drawing.Size(136, 22);
             this.tsmReportePlanes.Text = "Planes";
-            // 
-            // tsmSalir
-            // 
-            this.tsmSalir.Name = "tsmSalir";
-            this.tsmSalir.Size = new System.Drawing.Size(152, 22);
-            this.tsmSalir.Text = "Salir";
-            this.tsmSalir.Click += new System.EventHandler(this.tsmSalir_Click);
             // 
             // FrmPrincipal
             // 
@@ -342,6 +385,7 @@
         private System.Windows.Forms.Panel panAdm;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem tsmMenuPrincipal;
+        private System.Windows.Forms.ToolStripMenuItem tsmSalir;
         private System.Windows.Forms.ToolStripMenuItem tsmComisiones;
         private System.Windows.Forms.ToolStripMenuItem tsmAgregarComision;
         private System.Windows.Forms.ToolStripMenuItem tsmModificarComisiones;
@@ -353,8 +397,8 @@
         private System.Windows.Forms.ToolStripMenuItem tsmEliminarAlumno;
         private System.Windows.Forms.ToolStripMenuItem tsmListadoDeAlumnos;
         private System.Windows.Forms.ToolStripMenuItem tsmDocentes;
-        private System.Windows.Forms.ToolStripMenuItem tsmAgregarDocente;
-        private System.Windows.Forms.ToolStripMenuItem tsmModificarDocente;
+        private System.Windows.Forms.ToolStripMenuItem tsmAgregarDocentes;
+        private System.Windows.Forms.ToolStripMenuItem tsmModificarDocentes;
         private System.Windows.Forms.ToolStripMenuItem tsmEliminarDocente;
         private System.Windows.Forms.ToolStripMenuItem tsmListadoDeDocentes;
         private System.Windows.Forms.ToolStripMenuItem tsmEspecialidades;
@@ -367,10 +411,14 @@
         private System.Windows.Forms.ToolStripMenuItem tsmModificarPlan;
         private System.Windows.Forms.ToolStripMenuItem tsmEliminarPlan;
         private System.Windows.Forms.ToolStripMenuItem tsmListadoDePlanes;
-        private System.Windows.Forms.ToolStripMenuItem tsmReportes;
-        private System.Windows.Forms.ToolStripMenuItem tsmReporteCursos;
+        private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tsmReporteComisiones;
         private System.Windows.Forms.ToolStripMenuItem tsmReportePlanes;
-        private System.Windows.Forms.ToolStripMenuItem tsmSalir;
+        private System.Windows.Forms.ToolStripMenuItem tsmMaterias;
+        private System.Windows.Forms.ToolStripMenuItem tsmAgregarMateria;
+        private System.Windows.Forms.ToolStripMenuItem tsmModificarMateria;
+        private System.Windows.Forms.ToolStripMenuItem tsmEliminarMateria;
+        private System.Windows.Forms.ToolStripMenuItem tsmListadoDeMaterias;
 
 
         public System.EventHandler FrmPrincipal_Load { get; set; }

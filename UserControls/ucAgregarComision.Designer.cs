@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.grpComision = new System.Windows.Forms.GroupBox();
+            this.txtHsTotales = new System.Windows.Forms.TextBox();
+            this.lblHsTotales = new System.Windows.Forms.Label();
+            this.txtHsSemanales = new System.Windows.Forms.TextBox();
+            this.lblHsSemanales = new System.Windows.Forms.Label();
             this.cmbTurno = new System.Windows.Forms.ComboBox();
             this.lblTurno = new System.Windows.Forms.Label();
             this.btnDocentes = new System.Windows.Forms.Button();
@@ -38,10 +42,6 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.txtId = new System.Windows.Forms.TextBox();
             this.lblId = new System.Windows.Forms.Label();
-            this.lblHsSemanales = new System.Windows.Forms.Label();
-            this.txtHsSemanales = new System.Windows.Forms.TextBox();
-            this.lblHsTotales = new System.Windows.Forms.Label();
-            this.txtHsTotales = new System.Windows.Forms.TextBox();
             this.grpComision.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,6 +61,38 @@
             this.grpComision.TabIndex = 17;
             this.grpComision.TabStop = false;
             this.grpComision.Text = "Datos Comision";
+            // 
+            // txtHsTotales
+            // 
+            this.txtHsTotales.Location = new System.Drawing.Point(101, 83);
+            this.txtHsTotales.Name = "txtHsTotales";
+            this.txtHsTotales.Size = new System.Drawing.Size(121, 20);
+            this.txtHsTotales.TabIndex = 11;
+            // 
+            // lblHsTotales
+            // 
+            this.lblHsTotales.AutoSize = true;
+            this.lblHsTotales.Location = new System.Drawing.Point(31, 90);
+            this.lblHsTotales.Name = "lblHsTotales";
+            this.lblHsTotales.Size = new System.Drawing.Size(64, 13);
+            this.lblHsTotales.TabIndex = 10;
+            this.lblHsTotales.Text = "Hs. Totales:";
+            // 
+            // txtHsSemanales
+            // 
+            this.txtHsSemanales.Location = new System.Drawing.Point(101, 53);
+            this.txtHsSemanales.Name = "txtHsSemanales";
+            this.txtHsSemanales.Size = new System.Drawing.Size(121, 20);
+            this.txtHsSemanales.TabIndex = 9;
+            // 
+            // lblHsSemanales
+            // 
+            this.lblHsSemanales.AutoSize = true;
+            this.lblHsSemanales.Location = new System.Drawing.Point(14, 60);
+            this.lblHsSemanales.Name = "lblHsSemanales";
+            this.lblHsSemanales.Size = new System.Drawing.Size(81, 13);
+            this.lblHsSemanales.TabIndex = 8;
+            this.lblHsSemanales.Text = "Hs. Semanales:";
             // 
             // cmbTurno
             // 
@@ -93,6 +125,7 @@
             this.btnDocentes.TabIndex = 6;
             this.btnDocentes.Text = "Docentes";
             this.btnDocentes.UseVisualStyleBackColor = true;
+            this.btnDocentes.Click += new System.EventHandler(this.btnDocentes_Click);
             // 
             // btnAlumnos
             // 
@@ -111,6 +144,7 @@
             this.btnBorrar.TabIndex = 16;
             this.btnBorrar.Text = "Borrar";
             this.btnBorrar.UseVisualStyleBackColor = true;
+            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
             // 
             // btnGuardar
             // 
@@ -145,38 +179,6 @@
             this.lblId.Size = new System.Drawing.Size(19, 13);
             this.lblId.TabIndex = 12;
             this.lblId.Text = "Id.";
-            // 
-            // lblHsSemanales
-            // 
-            this.lblHsSemanales.AutoSize = true;
-            this.lblHsSemanales.Location = new System.Drawing.Point(14, 60);
-            this.lblHsSemanales.Name = "lblHsSemanales";
-            this.lblHsSemanales.Size = new System.Drawing.Size(81, 13);
-            this.lblHsSemanales.TabIndex = 8;
-            this.lblHsSemanales.Text = "Hs. Semanales:";
-            // 
-            // txtHsSemanales
-            // 
-            this.txtHsSemanales.Location = new System.Drawing.Point(101, 53);
-            this.txtHsSemanales.Name = "txtHsSemanales";
-            this.txtHsSemanales.Size = new System.Drawing.Size(121, 20);
-            this.txtHsSemanales.TabIndex = 9;
-            // 
-            // lblHsTotales
-            // 
-            this.lblHsTotales.AutoSize = true;
-            this.lblHsTotales.Location = new System.Drawing.Point(31, 90);
-            this.lblHsTotales.Name = "lblHsTotales";
-            this.lblHsTotales.Size = new System.Drawing.Size(64, 13);
-            this.lblHsTotales.TabIndex = 10;
-            this.lblHsTotales.Text = "Hs. Totales:";
-            // 
-            // txtHsTotales
-            // 
-            this.txtHsTotales.Location = new System.Drawing.Point(101, 83);
-            this.txtHsTotales.Name = "txtHsTotales";
-            this.txtHsTotales.Size = new System.Drawing.Size(121, 20);
-            this.txtHsTotales.TabIndex = 11;
             // 
             // ucAgregarComision
             // 

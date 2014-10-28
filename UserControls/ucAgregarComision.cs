@@ -15,5 +15,16 @@ namespace UserControls
         {
             InitializeComponent();
         }
+
+        private void btnBorrar_Click(object sender, EventArgs e)
+        {
+            this.txtHsSemanales.Clear();
+            this.txtHsTotales.Clear();
+        }
+
+        private void btnDocentes_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
