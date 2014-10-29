@@ -53,6 +53,7 @@
     <Compile Include="DaoDocente.cs" />
     <Compile Include="DaoEspecialidad.cs" />
     <Compile Include="DaoMateria.cs" />
+    <Compile Include="DaoParameters.cs" />
     <Compile Include="DaoPlan.cs" />
     <Compile Include="DaoTipo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

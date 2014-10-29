@@ -45,6 +45,7 @@
     <Compile Include="Docente.cs" />
     <Compile Include="Especialidad.cs" />
     <Compile Include="Materia.cs" />
+    <Compile Include="Param.cs" />
     <Compile Include="Persona.cs" />
     <Compile Include="Plan.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

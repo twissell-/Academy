@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GUI", "GUI\GUI.csproj", "{7
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserControls", "UserControls\UserControls.csproj", "{F6D14104-DE8B-4DF1-B96A-DB40DDC323AE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Util", "Util\Util.csproj", "{F8706855-BAA4-427B-90C8-7A4478E6009A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -71,6 +73,16 @@ Global
 		{F6D14104-DE8B-4DF1-B96A-DB40DDC323AE}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{F6D14104-DE8B-4DF1-B96A-DB40DDC323AE}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{F6D14104-DE8B-4DF1-B96A-DB40DDC323AE}.Release|x86.ActiveCfg = Release|Any CPU
+		{F8706855-BAA4-427B-90C8-7A4478E6009A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8706855-BAA4-427B-90C8-7A4478E6009A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8706855-BAA4-427B-90C8-7A4478E6009A}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{F8706855-BAA4-427B-90C8-7A4478E6009A}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{F8706855-BAA4-427B-90C8-7A4478E6009A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F8706855-BAA4-427B-90C8-7A4478E6009A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8706855-BAA4-427B-90C8-7A4478E6009A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8706855-BAA4-427B-90C8-7A4478E6009A}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{F8706855-BAA4-427B-90C8-7A4478E6009A}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{F8706855-BAA4-427B-90C8-7A4478E6009A}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
