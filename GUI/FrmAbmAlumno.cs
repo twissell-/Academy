@@ -8,7 +8,6 @@ using System.Text;
 using System.Windows.Forms;
 using Bussines;
 using Entidades;
-using System.Text.RegularExpressions;   // Para validaciones
 
 namespace GUI
 {
@@ -42,56 +41,6 @@ namespace GUI
         {
             throw new NotImplementedException();
         }
-
-        private void validateForm()
-        {
-            // SEGUIR ACA <---------------------------------------------------------------
-           // this.validateDni(txtDni);
-        }
-
-#region Metodos para Validaciones 
-        // Se agrupan en esta region los metodos privados para la validacion de los campos.
-        // Probablente en un futuro convenga agruparlos en una clase, para que esten todos 
-        // juntos y sean reutilizables.
-
-        private bool validate(TextBox txt, String pattern) 
-        {
-            // Validacion generica para ahorar codigo
-            Regex regex = new Regex(pattern);
-            return regex.IsMatch(txt.Text);    
-        }
-
-        private bool validateMail(TextBox txt)
-        {
-            return validate(txt, @"\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*");
-        }
-
-        private bool validateDni(TextBox txt)
-        {
-            return validate(txt, @"\d{9}");
-        }
-
-        private bool validateTexto(TextBox txt)
-        {
-            return validate(txt, @"\w+");
-        }
-
-        private bool validateNacimiento(TextBox txt)
-        {
-            return validate(txt, @"(\d{2}/){2}/\d{4}");
-        }
-
-        private bool validateTelefono(TextBox txt)
-        {
-            return validate(txt, @"\d{3,5}-\d{9}");
-        }
-
-        private void FrmAbmAlumno_Load(object sender, EventArgs e)
-        {
-        
-        }
-
-#endregion
 
         private void btnBorrar_Click(object sender, EventArgs e)
         {
