@@ -21,6 +21,7 @@ namespace Entidades
         * 
         * Comment no! Delete it, or delete not. There is no comment
         
+        
         */
         public Alumno(int id, String dni, String apellido, String nombre, String nacimiento, String telefono, String direccion,
         String mail, String password/*, Tipo tipo, int condicion*/): base(id, nombre, apellido, dni, telefono, direccion, mail, nacimiento, password/*, tipo*/)
