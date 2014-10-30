@@ -33,6 +33,38 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|Itanium'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Itanium\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>Itanium</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\GUI.exe.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;c:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;c:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|Itanium'">
+    <OutputPath>bin\Itanium\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>Itanium</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\GUI.exe.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;c:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;c:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -46,36 +78,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FrmAbmAlumno.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmAbmAlumno.Designer.cs">
-      <DependentUpon>FrmAbmAlumno.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmAbmCurso.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmAbmCurso.Designer.cs">
-      <DependentUpon>FrmAbmCurso.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmAbmDocente.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmAbmDocente.Designer.cs">
-      <DependentUpon>FrmAbmDocente.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmAbmMateria.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmAbmMateria.Designer.cs">
-      <DependentUpon>FrmAbmMateria.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmComisiones.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmComisiones.Designer.cs">
-      <DependentUpon>FrmComisiones.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmEspecialidades.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,12 +89,6 @@
     </Compile>
     <Compile Include="FrmInputId.Designer.cs">
       <DependentUpon>FrmInputId.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmListaDocentes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmListaDocentes.Designer.cs">
-      <DependentUpon>FrmListaDocentes.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmPlanes.cs">
       <SubType>Form</SubType>
@@ -114,29 +110,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FrmAbmAlumno.resx">
-      <DependentUpon>FrmAbmAlumno.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmAbmCurso.resx">
-      <DependentUpon>FrmAbmCurso.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmAbmDocente.resx">
-      <DependentUpon>FrmAbmDocente.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmAbmMateria.resx">
-      <DependentUpon>FrmAbmMateria.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmComisiones.resx">
-      <DependentUpon>FrmComisiones.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FrmEspecialidades.resx">
       <DependentUpon>FrmEspecialidades.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmInputId.resx">
       <DependentUpon>FrmInputId.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmListaDocentes.resx">
-      <DependentUpon>FrmListaDocentes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPlanes.resx">
       <DependentUpon>FrmPlanes.cs</DependentUpon>

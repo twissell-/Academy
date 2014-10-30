@@ -10,10 +10,12 @@ namespace Entidades
         public int id { get; set; }
        // public String turno { get; set; }
         public int anioCursado { get; set; }
+        public  float HsSemanales { get; set; }
+        public  float HsTotales { get; set;} 
         public Materia materia { get; set; }
         public Docente[] docentes { get; set; }
         public Alumno[] alumnos { get; set; }
-
+        private int turno { get; set; }
         enum cTurno
         {
             Mañana,
@@ -21,9 +23,7 @@ namespace Entidades
             Noche
         }
 
-        private int turno { get; set; }
-
-        public Comision(int id, int anioCursado, Materia materia, Docente[] docentes, Alumno[] alumnos, int turnos)
+        public Comision(int id, int anioCursado,float hsSemanales,float hsTotales, Materia materia, Docente[] docentes, Alumno[] alumnos, int turnos)
         {
             this.id = id;
             this.anioCursado = anioCursado;
@@ -31,8 +31,11 @@ namespace Entidades
             this.docentes = docentes;
             this.alumnos = alumnos;
             this.turno = turnos;
+            this.HsSemanales=hsSemanales;
+            this.HsTotales= hsTotales;
         }
     }
-    
 }
+    
+
 

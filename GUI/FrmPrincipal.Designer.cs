@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.btnSalir = new System.Windows.Forms.Button();
-            this.panAdm = new System.Windows.Forms.Panel();
+            this.panAdmGral = new System.Windows.Forms.Panel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.tsmMenuPrincipal = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmSalir = new System.Windows.Forms.ToolStripMenuItem();
@@ -66,6 +66,8 @@
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmReporteComisiones = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmReportePlanes = new System.Windows.Forms.ToolStripMenuItem();
+            this.panAdmOtro = new System.Windows.Forms.Panel();
+            this.panAdmGral.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -79,13 +81,14 @@
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // panAdm
+            // panAdmGral
             // 
-            this.panAdm.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.panAdm.Location = new System.Drawing.Point(92, 46);
-            this.panAdm.Name = "panAdm";
-            this.panAdm.Size = new System.Drawing.Size(720, 323);
-            this.panAdm.TabIndex = 10;
+            this.panAdmGral.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panAdmGral.Controls.Add(this.panAdmOtro);
+            this.panAdmGral.Location = new System.Drawing.Point(92, 46);
+            this.panAdmGral.Name = "panAdmGral";
+            this.panAdmGral.Size = new System.Drawing.Size(720, 323);
+            this.panAdmGral.TabIndex = 10;
             // 
             // menuStrip1
             // 
@@ -151,12 +154,14 @@
             this.tsmEliminarMateria.Name = "tsmEliminarMateria";
             this.tsmEliminarMateria.Size = new System.Drawing.Size(176, 22);
             this.tsmEliminarMateria.Text = "Eliminar";
+            this.tsmEliminarMateria.Click += new System.EventHandler(this.tsmEliminarMateria_Click);
             // 
             // tsmListadoDeMaterias
             // 
             this.tsmListadoDeMaterias.Name = "tsmListadoDeMaterias";
             this.tsmListadoDeMaterias.Size = new System.Drawing.Size(176, 22);
             this.tsmListadoDeMaterias.Text = "Listado de Materias";
+            this.tsmListadoDeMaterias.Click += new System.EventHandler(this.tsmListadoDeMaterias_Click);
             // 
             // tsmComisiones
             // 
@@ -181,18 +186,21 @@
             this.tsmModificarComisiones.Name = "tsmModificarComisiones";
             this.tsmModificarComisiones.Size = new System.Drawing.Size(191, 22);
             this.tsmModificarComisiones.Text = "Modificar";
+            this.tsmModificarComisiones.Click += new System.EventHandler(this.tsmModificarComisiones_Click);
             // 
             // tsmEliminarComisiones
             // 
             this.tsmEliminarComisiones.Name = "tsmEliminarComisiones";
             this.tsmEliminarComisiones.Size = new System.Drawing.Size(191, 22);
             this.tsmEliminarComisiones.Text = "Eliminar";
+            this.tsmEliminarComisiones.Click += new System.EventHandler(this.tsmEliminarComisiones_Click);
             // 
             // tsmListadoDeComisiones
             // 
             this.tsmListadoDeComisiones.Name = "tsmListadoDeComisiones";
             this.tsmListadoDeComisiones.Size = new System.Drawing.Size(191, 22);
             this.tsmListadoDeComisiones.Text = "Listado de comisiones";
+            this.tsmListadoDeComisiones.Click += new System.EventHandler(this.tsmListadoDeComisiones_Click);
             // 
             // tsmAlumnos
             // 
@@ -231,6 +239,7 @@
             this.tsmListadoDeAlumnos.Name = "tsmListadoDeAlumnos";
             this.tsmListadoDeAlumnos.Size = new System.Drawing.Size(179, 22);
             this.tsmListadoDeAlumnos.Text = "Listado de Alumnos";
+            this.tsmListadoDeAlumnos.Click += new System.EventHandler(this.tsmListadoDeAlumnos_Click);
             // 
             // tsmDocentes
             // 
@@ -269,6 +278,7 @@
             this.tsmListadoDeDocentes.Name = "tsmListadoDeDocentes";
             this.tsmListadoDeDocentes.Size = new System.Drawing.Size(180, 22);
             this.tsmListadoDeDocentes.Text = "Listado de Docentes";
+            this.tsmListadoDeDocentes.Click += new System.EventHandler(this.tsmListadoDeDocentes_Click);
             // 
             // tsmEspecialidades
             // 
@@ -286,24 +296,28 @@
             this.tsmAgregarEspecialidad.Name = "tsmAgregarEspecialidad";
             this.tsmAgregarEspecialidad.Size = new System.Drawing.Size(207, 22);
             this.tsmAgregarEspecialidad.Text = "Agregar";
+            this.tsmAgregarEspecialidad.Click += new System.EventHandler(this.tsmAgregarEspecialidad_Click);
             // 
             // tsmModificarEspecialidad
             // 
             this.tsmModificarEspecialidad.Name = "tsmModificarEspecialidad";
             this.tsmModificarEspecialidad.Size = new System.Drawing.Size(207, 22);
             this.tsmModificarEspecialidad.Text = "Modificar";
+            this.tsmModificarEspecialidad.Click += new System.EventHandler(this.tsmModificarEspecialidad_Click);
             // 
             // tsmEliminarEspecialidad
             // 
             this.tsmEliminarEspecialidad.Name = "tsmEliminarEspecialidad";
             this.tsmEliminarEspecialidad.Size = new System.Drawing.Size(207, 22);
             this.tsmEliminarEspecialidad.Text = "Eliminar";
+            this.tsmEliminarEspecialidad.Click += new System.EventHandler(this.tsmEliminarEspecialidad_Click);
             // 
             // tsmListadoDeEspecialidades
             // 
             this.tsmListadoDeEspecialidades.Name = "tsmListadoDeEspecialidades";
             this.tsmListadoDeEspecialidades.Size = new System.Drawing.Size(207, 22);
             this.tsmListadoDeEspecialidades.Text = "Listado de Especialidades";
+            this.tsmListadoDeEspecialidades.Click += new System.EventHandler(this.tsmListadoDeEspecialidades_Click);
             // 
             // tsmPlanes
             // 
@@ -321,24 +335,28 @@
             this.tsmAgregarPlan.Name = "tsmAgregarPlan";
             this.tsmAgregarPlan.Size = new System.Drawing.Size(165, 22);
             this.tsmAgregarPlan.Text = "Agregar";
+            this.tsmAgregarPlan.Click += new System.EventHandler(this.tsmAgregarPlan_Click);
             // 
             // tsmModificarPlan
             // 
             this.tsmModificarPlan.Name = "tsmModificarPlan";
             this.tsmModificarPlan.Size = new System.Drawing.Size(165, 22);
             this.tsmModificarPlan.Text = "Modificar";
+            this.tsmModificarPlan.Click += new System.EventHandler(this.tsmModificarPlan_Click);
             // 
             // tsmEliminarPlan
             // 
             this.tsmEliminarPlan.Name = "tsmEliminarPlan";
             this.tsmEliminarPlan.Size = new System.Drawing.Size(165, 22);
             this.tsmEliminarPlan.Text = "Eliminar";
+            this.tsmEliminarPlan.Click += new System.EventHandler(this.tsmEliminarPlan_Click);
             // 
             // tsmListadoDePlanes
             // 
             this.tsmListadoDePlanes.Name = "tsmListadoDePlanes";
             this.tsmListadoDePlanes.Size = new System.Drawing.Size(165, 22);
             this.tsmListadoDePlanes.Text = "Listado de Planes";
+            this.tsmListadoDePlanes.Click += new System.EventHandler(this.tsmListadoDePlanes_Click);
             // 
             // reportesToolStripMenuItem
             // 
@@ -354,24 +372,35 @@
             this.tsmReporteComisiones.Name = "tsmReporteComisiones";
             this.tsmReporteComisiones.Size = new System.Drawing.Size(136, 22);
             this.tsmReporteComisiones.Text = "Comisiones";
+            this.tsmReporteComisiones.Click += new System.EventHandler(this.tsmReporteComisiones_Click);
             // 
             // tsmReportePlanes
             // 
             this.tsmReportePlanes.Name = "tsmReportePlanes";
             this.tsmReportePlanes.Size = new System.Drawing.Size(136, 22);
             this.tsmReportePlanes.Text = "Planes";
+            this.tsmReportePlanes.Click += new System.EventHandler(this.tsmReportePlanes_Click);
+            // 
+            // panAdmOtro
+            // 
+            this.panAdmOtro.Location = new System.Drawing.Point(1, 1);
+            this.panAdmOtro.Name = "panAdmOtro";
+            this.panAdmOtro.Size = new System.Drawing.Size(718, 321);
+            this.panAdmOtro.TabIndex = 0;
             // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(872, 424);
-            this.Controls.Add(this.panAdm);
+            this.Controls.Add(this.panAdmGral);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FrmPrincipal";
             this.Text = "Zahir Academia";
+            this.Load += new System.EventHandler(this.FrmPrincipal_Load);
+            this.panAdmGral.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -382,7 +411,7 @@
         #endregion
 
         private System.Windows.Forms.Button btnSalir;
-        private System.Windows.Forms.Panel panAdm;
+        private System.Windows.Forms.Panel panAdmGral;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem tsmMenuPrincipal;
         private System.Windows.Forms.ToolStripMenuItem tsmSalir;
@@ -419,6 +448,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsmModificarMateria;
         private System.Windows.Forms.ToolStripMenuItem tsmEliminarMateria;
         private System.Windows.Forms.ToolStripMenuItem tsmListadoDeMaterias;
+        private System.Windows.Forms.Panel panAdmOtro;
 
 
         public System.EventHandler FrmPrincipal_Load { get; set; }

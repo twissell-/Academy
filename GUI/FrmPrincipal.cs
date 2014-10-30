@@ -17,14 +17,6 @@ namespace GUI
             InitializeComponent();
         }
 
-        private void btnVerCursos_Click(object sender, EventArgs e)
-        {
-            this.panAdm.Controls.Clear();
-            var uc = new ucListaComisiones();
-            this.panAdm.Controls.Add(uc);
-            uc.Dock = DockStyle.Fill;
-        }
-
         private void btnSalir_Click(object sender, EventArgs e)
         {
             DialogResult resultado = MessageBox.Show("Esta seguro que desea salir?", "Esta por salir del programa", MessageBoxButtons.YesNo);
@@ -34,48 +26,11 @@ namespace GUI
             }
         }
 
-        private void btnVerAlumnos_Click(object sender, EventArgs e)
-        {
-            this.panAdm.Controls.Clear();
-            var uc = new ucListaAlumnos();
-            this.panAdm.Controls.Add(uc);
-            uc.Dock = DockStyle.Fill;
-         //   Form frmalu = new FrmListaAlumnos();
-          //  frmalu.ShowDialog();
-        }
-
-        private void btnAgregarEspecialidad_Click(object sender, EventArgs e)
-        {
-            this.panAdm.Controls.Clear();
-            var uc = new ucAgregarEspecialidad();
-            this.panAdm.Controls.Add(uc);
-            uc.Dock = DockStyle.Fill;
-         //   Form esp = new FrmEspecialidades();
-           // esp.ShowDialog();
-        }
-
-        private void btnAgregarComision_Click(object sender, EventArgs e)
-        {
-            this.panAdm.Controls.Clear();
-            var uc = new ucAgregarComision();
-            this.panAdm.Controls.Add(uc);
-            uc.Dock = DockStyle.Fill;
-           // Form com = new FrmComisiones();
-           // com.ShowDialog();
-        }
-
-        private void btnAgregarPlan_Click(object sender, EventArgs e)
-        {
-            this.panAdm.Controls.Clear();
-            Form plan = new FrmPlanes();
-            plan.ShowDialog();
-        }
-
         private void tsmAgregarComision_Click(object sender, EventArgs e)
         {
-            this.panAdm.Controls.Clear();
+            this.panAdmGral.Controls.Clear();
             var uc = new ucAgregarComision();
-            this.panAdm.Controls.Add(uc);
+            this.panAdmGral.Controls.Add(uc);
             uc.Dock = DockStyle.Fill;
         }
 
@@ -87,33 +42,44 @@ namespace GUI
         
         private void tsmAMPersona_Click(object sender, EventArgs e)
         {
-            this.panAdm.Controls.Clear();
+            this.panAdmGral.Controls.Clear();
             var uc = new ucAMPersona();
-            if (sender==tsmAgregarAlumno || sender==tsmAgregarDocente)
+            if (sender==tsmAgregarAlumno || sender==tsmAgregarDocentes)
             {
                 //llenar el cmbID con el correlativo de la base de datos.
             }
             else
-            {
-                Form inputId = new FrmInputId();
+            {   
+               // Form inputId = new FrmInputId();
+                
+            //    DialogResult res= inputId.ShowDialog();
+              //  DialogResult inputId.
+                
                 //llenar el todos los controles con lo de la base de datos segun lo q venga del del MessageBox o Form
             }
-            this.panAdm.Controls.Add(uc);
+            this.panAdmGral.Controls.Add(uc);
             uc.Dock = DockStyle.Fill;
         }
 
         private void tsmEliminarPersona_Click(object sender, EventArgs e)
         {
-            this.panAdm.Controls.Clear();
+            this.panAdmGral.Controls.Clear();
+            //string id;
+
+            Form inputId = new FrmInputId();
+       
+            inputId.ShowDialog();
+           
+            //string id = inputId.ShowDialog();
+            string id = inputId.Text;
             var uc = new ucBPersona();
-            Form inputId = new FrmInputId();// para q ingrese el id y se busque etc etc
-            this.panAdm.Controls.Add(uc);
+            this.panAdmGral.Controls.Add(uc);
             uc.Dock = DockStyle.Fill;
         }
 
         private void tsmAMMateria_Click(object sender, EventArgs e)
         {
-            this.panAdm.Controls.Clear();
+            this.panAdmGral.Controls.Clear();
             var uc = new ucAMMateria();
             if (sender == tsmAgregarMateria)
             {
@@ -121,15 +87,110 @@ namespace GUI
             }
             else
             {
-                Form inputId = new FrmInputId();
+             //   Form inputId = new FrmInputId();
                 //llenar el todos los controles con lo de la base de datos segun lo q venga del del MessageBox o Form
             }
-            this.panAdm.Controls.Add(uc);
+            this.panAdmGral.Controls.Add(uc);
             uc.Dock = DockStyle.Fill;
         }
 
+        private void tsmEliminarMateria_Click(object sender, EventArgs e)
+        {
+            //Form inputId = new FrmInputId();
+        }
+
+        private void tsmListadoDeMaterias_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tsmModificarComisiones_Click(object sender, EventArgs e)
+        {
+            Form inputId = new FrmInputId();
+        }
+
+        private void tsmEliminarComisiones_Click(object sender, EventArgs e)
+        {
+            Form inputId = new FrmInputId();
+        }
+
         
-  
+
+        private void tsmListadoDeComisiones_Click(object sender, EventArgs e)
+        {
+            this.panAdmGral.Controls.Clear();
+            var uc = new ucListaComisiones();
+            this.panAdmGral.Controls.Add(uc);
+            uc.Dock = DockStyle.Fill;
+        }
+
+        private void tsmListadoDeAlumnos_Click(object sender, EventArgs e)
+        {
+            this.panAdmGral.Controls.Clear();
+            var uc = new ucListaAlumnos();
+            this.panAdmGral.Controls.Add(uc);
+            uc.Dock = DockStyle.Fill;
+        }
+
+        private void tsmListadoDeDocentes_Click(object sender, EventArgs e)
+        {
+            //falta
+        }
+
+        private void tsmAgregarEspecialidad_Click(object sender, EventArgs e)
+        {
+            this.panAdmGral.Controls.Clear();
+            var uc = new ucAgregarEspecialidad();
+            this.panAdmGral.Controls.Add(uc);
+            uc.Dock = DockStyle.Fill;
+        }
+
+        private void tsmModificarEspecialidad_Click(object sender, EventArgs e)
+        {
+            Form inputId = new FrmInputId();
+        }
+
+        private void tsmEliminarEspecialidad_Click(object sender, EventArgs e)
+        {
+            Form inputId = new FrmInputId();
+        }
+
+        private void tsmListadoDeEspecialidades_Click(object sender, EventArgs e)
+        {
+            //falta
+        }
+
+        private void tsmAgregarPlan_Click(object sender, EventArgs e)
+        {
+            this.panAdmGral.Controls.Clear();
+            Form plan = new FrmPlanes();
+            plan.ShowDialog();
+        }
+
+        private void tsmModificarPlan_Click(object sender, EventArgs e)
+        {
+            Form inputId = new FrmInputId();
+        }
+
+        private void tsmEliminarPlan_Click(object sender, EventArgs e)
+        {
+            Form inputId = new FrmInputId();
+        }
+
+        private void tsmListadoDePlanes_Click(object sender, EventArgs e)
+        {
+            //falta
+        }
+
+        private void tsmReporteComisiones_Click(object sender, EventArgs e)
+        {
+            //falta
+        }
+
+        private void tsmReportePlanes_Click(object sender, EventArgs e)
+        {
+            //falta
+        }
 
     }
 }

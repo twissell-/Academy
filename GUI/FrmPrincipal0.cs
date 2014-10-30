@@ -34,7 +34,6 @@ namespace GUI
                 catch (ArgumentException)
                 {
                     MessageBox.Show("Su programa es una mierda");
-                    throw;
                 }
                     
             }

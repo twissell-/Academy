@@ -18,8 +18,8 @@ namespace GUI
 
         private void btnAgregarMateria_Click(object sender, EventArgs e)
         {
-            Form mate = new FrmAbmMateria();
-            mate.ShowDialog();
+         //   Form mate = new FrmAbmMateria();
+           // mate.ShowDialog();
         }
     }
 }
