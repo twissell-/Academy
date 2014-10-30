@@ -1,37 +1,51 @@
 ﻿using System.Collections.Generic;
 using Entidades;
+using Util;
 using MongoDB.Driver;
 
 namespace Data
 {
     public class DaoPlan
     {
-        private MongoCollection<Plan> planes;
+        private MongoCollection<MapperPlan> planes;
 
         public DaoPlan()
         {
             MongoServer server = Connection.instance.server;
             MongoDatabase database = server.GetDatabase("test");
-            planes = database.GetCollection<Plan>("test");  
+            planes = database.GetCollection<MapperPlan>("test");  
         }
 
         private void save(Plan obj)
         {
-            planes.Save(obj);
+            planes.Save(new MapperPlan(obj));
         }
 
-        public Plan find(int id) 
+        private Plan mapper(MapperPlan mapper)
+        {
+            DaoMateria dm = new DaoMateria();
+            DaoEspecialidad de = new DaoEspecialidad();
+            Materia[] materias = new Materia[mapper.materias.Length];
+            for (int i = 0; i < mapper.materias.Length; i++)
+            {
+                materias[i] = dm.find(mapper.materias[i]);
+            }
+
+            return new Plan(mapper.id, mapper.descripcion, de.find(mapper.especialidad), materias);
+        }
+        public Plan find(int id)
         {
             QueryDocument query = new QueryDocument("_id", id);
-            return planes.FindOneAs<Plan>(query);
-        }
+            return mapper(planes.FindOneAs<MapperPlan>(query));
+            
+        }     
 
         public List<Plan> find()
         {
             List<Plan> ls = new List<Plan>();
-            foreach (Plan obj in planes.FindAllAs<Plan>())
+            foreach (MapperPlan obj in planes.FindAllAs<MapperPlan>())
             {
-                ls.Add(obj);
+                ls.Add(mapper(obj));
             }
             return ls;
         }
