@@ -1,25 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace GUI
+namespace WindowsFormsControlLibrary1
 {
-    public partial class FrmPlanes : Form
+    public partial class EjemploUC : UserControl
     {
-        public FrmPlanes()
+        public EjemploUC()
         {
             InitializeComponent();
         }
 
-        private void btnAgregarMateria_Click(object sender, EventArgs e)
+        private void EjemploUC_Load(object sender, EventArgs e)
         {
-            Form mate = new FrmAbmMateria();
-            mate.ShowDialog();
+
         }
     }
 }

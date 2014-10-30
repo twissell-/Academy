@@ -11,12 +11,9 @@ namespace UserControls
 {
     public partial class ucBPersona : UserControl
     {
-        private DialogResult id;
-
         public ucBPersona()
         {
             InitializeComponent();
-         //   this.txtId.Text= id;
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -32,7 +29,5 @@ namespace UserControls
         {
             this.Dispose();
         }
-
-       
     }
 }

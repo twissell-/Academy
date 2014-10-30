@@ -214,7 +214,6 @@
             this.Controls.Add(this.lblId);
             this.Name = "ucBPersona";
             this.Size = new System.Drawing.Size(720, 323);
-  
             this.grpDatosPersonales.ResumeLayout(false);
             this.grpDatosPersonales.PerformLayout();
             this.ResumeLayout(false);

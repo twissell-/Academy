@@ -5,21 +5,24 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using Bussines;
+using Entidades;
 using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class FrmPlanes : Form
-    {
-        public FrmPlanes()
+    public partial class FrmAbmCurso : Form
+    {   
+        public FrmAbmCurso()
         {
             InitializeComponent();
         }
 
-        private void btnAgregarMateria_Click(object sender, EventArgs e)
+        private void FrmAbmCurso_Load(object sender, EventArgs e)
         {
-            Form mate = new FrmAbmMateria();
-            mate.ShowDialog();
+
         }
+
+      
     }
 }

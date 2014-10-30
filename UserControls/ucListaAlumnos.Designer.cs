@@ -84,13 +84,13 @@
             this.emailAlumno.Name = "emailAlumno";
             this.emailAlumno.ReadOnly = true;
             // 
-            // ucListaAlumnos
+            // ListaAlumnos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.dataGridView1);
-            this.Name = "ucListaAlumnos";
-            this.Size = new System.Drawing.Size(720, 323);
+            this.Name = "ListaAlumnos";
+            this.Size = new System.Drawing.Size(606, 323);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 

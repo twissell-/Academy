@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{F6D14104-DE8B-4DF1-B96A-DB40DDC323AE}</ProjectGuid>
+    <ProjectGuid>{823D58D2-E114-4E89-B25F-D22700BC93B9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>UserControls</RootNamespace>
-    <AssemblyName>UserControls</AssemblyName>
+    <RootNamespace>WindowsFormsControlLibrary1</RootNamespace>
+    <AssemblyName>WindowsFormsControlLibrary1</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
@@ -43,50 +43,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ucAMMateria.cs">
+    <Compile Include="EjemploUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucAMMateria.Designer.cs">
-      <DependentUpon>ucAMMateria.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ucAMPersona.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ucAMPersona.Designer.cs">
-      <DependentUpon>ucAMPersona.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ucAgregarComision.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ucAgregarComision.Designer.cs">
-      <DependentUpon>ucAgregarComision.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ucAgregarEspecialidad.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ucAgregarEspecialidad.Designer.cs">
-      <DependentUpon>ucAgregarEspecialidad.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ucBPersona.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ucBPersona.Designer.cs">
-      <DependentUpon>ucBPersona.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ucListaAlumnos.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ucListaAlumnos.Designer.cs">
-      <DependentUpon>ucListaAlumnos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ucListaComisiones.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ucListaComisiones.Designer.cs">
-      <DependentUpon>ucListaComisiones.cs</DependentUpon>
+    <Compile Include="EjemploUC.Designer.cs">
+      <DependentUpon>EjemploUC.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="EjemploUC.resx">
+      <DependentUpon>EjemploUC.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Bussines\Bussines.csproj">
@@ -97,29 +66,6 @@
       <Project>{C5FB7D05-C21C-4952-82AA-217B371E374C}</Project>
       <Name>Entidades</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="ucAMMateria.resx">
-      <DependentUpon>ucAMMateria.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ucAMPersona.resx">
-      <DependentUpon>ucAMPersona.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ucAgregarComision.resx">
-      <DependentUpon>ucAgregarComision.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ucAgregarEspecialidad.resx">
-      <DependentUpon>ucAgregarEspecialidad.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ucBPersona.resx">
-      <DependentUpon>ucBPersona.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ucListaAlumnos.resx">
-      <DependentUpon>ucListaAlumnos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ucListaComisiones.resx">
-      <DependentUpon>ucListaComisiones.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,6 +1,6 @@
 ﻿namespace GUI
 {
-    partial class FrmInputId
+    partial class FrmAbmCurso
     {
         /// <summary>
         /// Required designer variable.
@@ -29,56 +29,46 @@
         private void InitializeComponent()
         {
             this.lblId = new System.Windows.Forms.Label();
-            this.btnAceptar = new System.Windows.Forms.Button();
             this.txtId = new System.Windows.Forms.TextBox();
-            this.btnCancelar = new System.Windows.Forms.Button();
+            this.grpDatosCurso = new System.Windows.Forms.GroupBox();
             this.SuspendLayout();
             // 
             // lblId
             // 
             this.lblId.AutoSize = true;
-            this.lblId.Location = new System.Drawing.Point(22, 25);
+            this.lblId.Location = new System.Drawing.Point(34, 25);
             this.lblId.Name = "lblId";
             this.lblId.Size = new System.Drawing.Size(19, 13);
             this.lblId.TabIndex = 0;
             this.lblId.Text = "Id:";
             // 
-            // btnAceptar
-            // 
-            this.btnAceptar.Location = new System.Drawing.Point(57, 60);
-            this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(75, 23);
-            this.btnAceptar.TabIndex = 1;
-            this.btnAceptar.Text = "Aceptar";
-            this.btnAceptar.UseVisualStyleBackColor = true;
-            // 
             // txtId
             // 
-            this.txtId.Location = new System.Drawing.Point(47, 22);
+            this.txtId.Location = new System.Drawing.Point(60, 25);
             this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(167, 20);
-            this.txtId.TabIndex = 2;
+            this.txtId.Size = new System.Drawing.Size(100, 20);
+            this.txtId.TabIndex = 1;
             // 
-            // btnCancelar
+            // grpDatosCurso
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(139, 60);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 3;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.grpDatosCurso.Location = new System.Drawing.Point(60, 52);
+            this.grpDatosCurso.Name = "grpDatosCurso";
+            this.grpDatosCurso.Size = new System.Drawing.Size(200, 100);
+            this.grpDatosCurso.TabIndex = 2;
+            this.grpDatosCurso.TabStop = false;
+            this.grpDatosCurso.Text = "Datos curso";
             // 
-            // FrmInputId
+            // FrmAbmCurso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(256, 103);
-            this.Controls.Add(this.btnCancelar);
+            this.ClientSize = new System.Drawing.Size(581, 262);
+            this.Controls.Add(this.grpDatosCurso);
             this.Controls.Add(this.txtId);
-            this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.lblId);
-            this.Name = "FrmInputId";
-            this.Text = "Ingreso de Id";
+            this.Name = "FrmAbmCurso";
+            this.Text = "Curso";
+            this.Load += new System.EventHandler(this.FrmAbmCurso_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -87,8 +77,7 @@
         #endregion
 
         private System.Windows.Forms.Label lblId;
-        private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.TextBox txtId;
-        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.GroupBox grpDatosCurso;
     }
 }

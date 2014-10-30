@@ -9,17 +9,11 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class FrmPlanes : Form
+    public partial class FrmAbmMateria : Form
     {
-        public FrmPlanes()
+        public FrmAbmMateria()
         {
             InitializeComponent();
-        }
-
-        private void btnAgregarMateria_Click(object sender, EventArgs e)
-        {
-            Form mate = new FrmAbmMateria();
-            mate.ShowDialog();
         }
     }
 }
