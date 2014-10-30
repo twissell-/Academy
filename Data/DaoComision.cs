@@ -49,6 +49,10 @@ namespace Data
 
         public void insert(Comision obj)
         {
+            if (obj.id == null)
+            {
+                obj.id = DaoParameter.instance.getComisionNextId();
+            }
             save(obj);
         }
 

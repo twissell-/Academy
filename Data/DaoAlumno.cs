@@ -49,6 +49,10 @@ namespace Data
 
         public void insert(Alumno obj)
         {
+            if (obj.id == null)
+            {
+                obj.id = DaoParameter.instance.getAlumnoNextId();
+            }
             save(obj);
         }
 

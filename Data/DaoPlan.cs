@@ -49,6 +49,10 @@ namespace Data
 
         public void insert(Plan obj)
         {
+            if (obj.id == null)
+            {
+                obj.id = DaoParameter.instance.getPlanNextId();
+            }
             save(obj);
         }
 

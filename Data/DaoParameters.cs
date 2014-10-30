@@ -78,24 +78,24 @@ namespace Data
             Parameters.Save(obj);
         }
 
-        public Param find(string id)
+        private Param find(string id)
         {
             QueryDocument query = new QueryDocument("_id", id);
             return Parameters.FindOneAs<Param>(query);
         }
 
-        public void delete(Param obj)
+        private void delete(Param obj)
         {
             QueryDocument query = new QueryDocument("_id", obj.id);
             Parameters.Remove(query);
         }
 
-        public void update(Param obj)
+        private void update(Param obj)
         {
             save(obj);
         }
 
-        public void insert(Param obj)
+        private void insert(Param obj)
         {
             save(obj);
         }
