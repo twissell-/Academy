@@ -11,13 +11,13 @@ namespace UserControls
 {
     public partial class ucBPersona : UserControl
     {
-        private DialogResult id;
-
-        public ucBPersona()
-        {
-            InitializeComponent();
-         //   this.txtId.Text= id;
-        }
+        public static int inid;
+         public ucBPersona(Form ini)
+         {
+            ini.ShowDialog();
+            InitializeComponent();       
+         }
+        
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
@@ -33,6 +33,9 @@ namespace UserControls
             this.Dispose();
         }
 
-       
+        private void ucBPersona_Load(object sender, EventArgs e)
+        {
+           // txtId.Text 
+        }
     }
 }

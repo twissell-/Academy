@@ -117,7 +117,7 @@
             this.Controls.Add(this.gpbIngresar);
             this.Name = "FrmPrincipal0";
             this.Text = "Zahir Academia";
-            //this.Load += new System.EventHandler(this.FrmPrincipal0_Load);
+           // this.Load += new System.EventHandler(this.FrmPrincipal0_Load);
             this.gpbIngresar.ResumeLayout(false);
             this.gpbIngresar.PerformLayout();
             this.ResumeLayout(false);

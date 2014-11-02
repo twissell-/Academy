@@ -105,6 +105,12 @@
     <Compile Include="ucBPersona.Designer.cs">
       <DependentUpon>ucBPersona.cs</DependentUpon>
     </Compile>
+    <Compile Include="ucInput.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucInput.Designer.cs">
+      <DependentUpon>ucInput.cs</DependentUpon>
+    </Compile>
     <Compile Include="ucListaAlumnos.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -151,6 +157,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ucBPersona.resx">
       <DependentUpon>ucBPersona.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucInput.resx">
+      <DependentUpon>ucInput.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ucListaAlumnos.resx">
       <DependentUpon>ucListaAlumnos.cs</DependentUpon>

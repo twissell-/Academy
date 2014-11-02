@@ -399,7 +399,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FrmPrincipal";
             this.Text = "Zahir Academia";
-            this.Load += new System.EventHandler(this.FrmPrincipal_Load);
+           // this.Load += new System.EventHandler(this.FrmPrincipal_Load);
             this.panAdmGral.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

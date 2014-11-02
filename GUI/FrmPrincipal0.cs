@@ -42,8 +42,6 @@ namespace GUI
         private void Intro(object sender, KeyPressEventArgs e)
         {
             this.btnIngresar_Click(sender, e);
-        }
-
-    
+        }    
     }
 }

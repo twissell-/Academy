@@ -219,7 +219,6 @@
             this.grpDatosPersonales.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion

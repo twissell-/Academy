@@ -50,12 +50,11 @@ namespace GUI
             }
             else
             {   
-               // Form inputId = new FrmInputId();
+               // Form inputId = new FrmInputId(); 
+              //  DialogResult res= inputId.ShowDialog();
+             //   DialogResult inputId.
                 
-            //    DialogResult res= inputId.ShowDialog();
-              //  DialogResult inputId.
-                
-                //llenar el todos los controles con lo de la base de datos segun lo q venga del del MessageBox o Form
+           //     llenar el todos los controles con lo de la base de datos segun lo q venga del del MessageBox o Form
             }
             this.panAdmGral.Controls.Add(uc);
             uc.Dock = DockStyle.Fill;
@@ -63,16 +62,11 @@ namespace GUI
 
         private void tsmEliminarPersona_Click(object sender, EventArgs e)
         {
+            Form inp = new FrmInputId();
+            //inp.ShowDialog();
+         
             this.panAdmGral.Controls.Clear();
-            //string id;
-
-            Form inputId = new FrmInputId();
-       
-            inputId.ShowDialog();
-           
-            //string id = inputId.ShowDialog();
-            string id = inputId.Text;
-            var uc = new ucBPersona();
+            var uc = new ucBPersona(inp);
             this.panAdmGral.Controls.Add(uc);
             uc.Dock = DockStyle.Fill;
         }
@@ -106,12 +100,12 @@ namespace GUI
 
         private void tsmModificarComisiones_Click(object sender, EventArgs e)
         {
-            Form inputId = new FrmInputId();
+            //Form inputId = new FrmInputId();
         }
 
         private void tsmEliminarComisiones_Click(object sender, EventArgs e)
         {
-            Form inputId = new FrmInputId();
+            //Form inputId = new FrmInputId();
         }
 
         
@@ -147,12 +141,12 @@ namespace GUI
 
         private void tsmModificarEspecialidad_Click(object sender, EventArgs e)
         {
-            Form inputId = new FrmInputId();
+            //Form inputId = new FrmInputId();
         }
 
         private void tsmEliminarEspecialidad_Click(object sender, EventArgs e)
         {
-            Form inputId = new FrmInputId();
+           // Form inputId = new FrmInputId();
         }
 
         private void tsmListadoDeEspecialidades_Click(object sender, EventArgs e)
@@ -169,12 +163,12 @@ namespace GUI
 
         private void tsmModificarPlan_Click(object sender, EventArgs e)
         {
-            Form inputId = new FrmInputId();
+           // Form inputId = new FrmInputId();
         }
 
         private void tsmEliminarPlan_Click(object sender, EventArgs e)
         {
-            Form inputId = new FrmInputId();
+          //  Form inputId = new FrmInputId();
         }
 
         private void tsmListadoDePlanes_Click(object sender, EventArgs e)
