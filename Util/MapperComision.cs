@@ -9,7 +9,7 @@ namespace Util
     public class MapperComision
     {
         public int id { get; set; }
-       // public String turno { get; set; }
+        public String turno { get; set; }
         public int anioCursado { get; set; }
         public int materia { get; set; }
         public int[] docentes { get; set; }
