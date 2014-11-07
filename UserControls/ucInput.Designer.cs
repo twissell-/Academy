@@ -1,16 +1,16 @@
-﻿namespace GUI
+﻿namespace UserControls
 {
-    partial class FrmInputId
+    partial class ucInput
     {
-        /// <summary>
-        /// Required designer variable.
+        /// <summary> 
+        /// Variable del diseñador requerida.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
+        /// <summary> 
+        /// Limpiar los recursos que se estén utilizando.
         /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        /// <param name="disposing">true si los recursos administrados se deben eliminar; false en caso contrario, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -20,43 +20,42 @@
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
+        #region Código generado por el Diseñador de componentes
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
+        /// <summary> 
+        /// Método necesario para admitir el Diseñador. No se puede modificar 
+        /// el contenido del método con el editor de código.
         /// </summary>
         private void InitializeComponent()
         {
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.txtId = new System.Windows.Forms.TextBox();
+            this.txtIdIn = new System.Windows.Forms.TextBox();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.lblId = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(150, 50);
+            this.btnCancelar.Location = new System.Drawing.Point(351, 179);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 11;
+            this.btnCancelar.TabIndex = 19;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // txtId
+            // txtIdIn
             // 
-            this.txtId.Location = new System.Drawing.Point(58, 12);
-            this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(167, 20);
-            this.txtId.TabIndex = 10;
+            this.txtIdIn.Location = new System.Drawing.Point(259, 141);
+            this.txtIdIn.Name = "txtIdIn";
+            this.txtIdIn.Size = new System.Drawing.Size(167, 20);
+            this.txtIdIn.TabIndex = 18;
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(68, 50);
+            this.btnAceptar.Location = new System.Drawing.Point(269, 179);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
-            this.btnAceptar.TabIndex = 9;
+            this.btnAceptar.TabIndex = 17;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
@@ -64,23 +63,22 @@
             // lblId
             // 
             this.lblId.AutoSize = true;
-            this.lblId.Location = new System.Drawing.Point(33, 15);
+            this.lblId.Location = new System.Drawing.Point(234, 144);
             this.lblId.Name = "lblId";
             this.lblId.Size = new System.Drawing.Size(19, 13);
-            this.lblId.TabIndex = 8;
+            this.lblId.TabIndex = 16;
             this.lblId.Text = "Id:";
             // 
-            // FrmInputId
+            // ucInput
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(256, 103);
             this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.txtId);
+            this.Controls.Add(this.txtIdIn);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.lblId);
-            this.Name = "FrmInputId";
-            this.Text = "Ingrese ID";
+            this.Name = "ucInput";
+            this.Size = new System.Drawing.Size(718, 321);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -89,7 +87,7 @@
         #endregion
 
         private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.TextBox txtId;
+        private System.Windows.Forms.TextBox txtIdIn;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Label lblId;
     }

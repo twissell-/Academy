@@ -1,28 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.Data;
 using System.Linq;
 using System.Text;
-using Bussines;
-using Entidades;
 using System.Windows.Forms;
 
-namespace GUI
+namespace UserControls
 {
-    public partial class FrmAbmCurso : Form
-    {   
-        public FrmAbmCurso()
+    public partial class ucInput : UserControl
+    {
+        public ucInput()
         {
             InitializeComponent();
         }
 
-        private void FrmAbmCurso_Load(object sender, EventArgs e)
+        private void btnAceptar_Click(object sender, EventArgs e)
         {
-
+            
         }
-
-      
     }
 }

@@ -9,14 +9,12 @@ namespace Util
     public class MapperComision
     {
         public int id { get; set; }
-        public String turno { get; set; }
         public int anioCursado { get; set; }
         public int materia { get; set; }
         public int[] docentes { get; set; }
         public int[] alumnos { get; set; }
-
-        private int turno { get; set; }
-
+        public int turno { get; set; }
+        
         public MapperComision(Comision c)
         {
             this.id = c.id;
@@ -32,7 +30,7 @@ namespace Util
             {
                 this.alumnos[i] = c.alumnos[i].id;
             }
-            // this.turno = c.turno;
+            this.turno = c.turno;
         }
     }
 }

@@ -34,6 +34,7 @@
             this.apellidoAlumno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.telefonoAlumno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emailAlumno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnEliminar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,8 +50,10 @@
             this.telefonoAlumno,
             this.emailAlumno});
             this.dataGridView1.Location = new System.Drawing.Point(4, 4);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(545, 283);
             this.dataGridView1.TabIndex = 0;
             // 
@@ -84,13 +87,24 @@
             this.emailAlumno.Name = "emailAlumno";
             this.emailAlumno.ReadOnly = true;
             // 
-            // ListaAlumnos
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(474, 293);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminar.TabIndex = 1;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // ucListaAlumnos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "ListaAlumnos";
-            this.Size = new System.Drawing.Size(606, 323);
+            this.Name = "ucListaAlumnos";
+            this.Size = new System.Drawing.Size(720, 323);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
@@ -104,5 +118,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn apellidoAlumno;
         private System.Windows.Forms.DataGridViewTextBoxColumn telefonoAlumno;
         private System.Windows.Forms.DataGridViewTextBoxColumn emailAlumno;
+        private System.Windows.Forms.Button btnEliminar;
     }
 }

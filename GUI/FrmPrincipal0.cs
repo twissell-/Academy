@@ -34,7 +34,6 @@ namespace GUI
                 catch (ArgumentException)
                 {
                     MessageBox.Show("Su programa es una mierda");
-                    throw;
                 }
                     
             }
@@ -43,8 +42,6 @@ namespace GUI
         private void Intro(object sender, KeyPressEventArgs e)
         {
             this.btnIngresar_Click(sender, e);
-        }
-
-    
+        }    
     }
 }
