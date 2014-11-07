@@ -42,9 +42,9 @@ namespace UserControls
                     else{ turno=3;}
             
 	        
-            Comision com = new Comision(txtId, txtAñoCursado,txtHsSemanales,txtHsTotales, cmbMateria,,,turno);
-            ControllerComision controllerCom = new ControllerComision(); 
-            controllerCom.insert(com);
+            //Comision com = new Comision(txtId, txtAñoCursado,txtHsSemanales,txtHsTotales, cmbMateria,,,turno);
+            //ControllerComision controllerCom = new ControllerComision(); 
+            //controllerCom.insert(com);
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

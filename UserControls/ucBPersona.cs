@@ -14,7 +14,7 @@ namespace UserControls
         public static int inid;
          public ucBPersona(Form ini)
          {
-            ini.ShowDialog();
+            //ini.ShowDialog();
             InitializeComponent();       
          }
         

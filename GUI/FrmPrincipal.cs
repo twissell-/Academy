@@ -62,13 +62,16 @@ namespace GUI
 
         private void tsmEliminarPersona_Click(object sender, EventArgs e)
         {
+            /*
             Form inp = new FrmInputId();
             //inp.ShowDialog();
-         
+         */
             this.panAdmGral.Controls.Clear();
-            var uc = new ucBPersona(inp);
+           // var uc = new ucBPersona(inp);
+            var uc = new ucListaAlumnos();
             this.panAdmGral.Controls.Add(uc);
             uc.Dock = DockStyle.Fill;
+             
         }
 
         private void tsmAMMateria_Click(object sender, EventArgs e)
