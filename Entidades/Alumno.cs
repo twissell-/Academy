@@ -34,6 +34,7 @@ namespace Entidades
             regular,
             aprobado
         }
+        public Alumno() { }
 
         private int condicion { get; set; }
     }

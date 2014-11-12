@@ -30,6 +30,7 @@
         {
             this.btnSalir = new System.Windows.Forms.Button();
             this.panAdmGral = new System.Windows.Forms.Panel();
+            this.panAdmOtro = new System.Windows.Forms.Panel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.tsmMenuPrincipal = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmSalir = new System.Windows.Forms.ToolStripMenuItem();
@@ -66,7 +67,6 @@
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmReporteComisiones = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmReportePlanes = new System.Windows.Forms.ToolStripMenuItem();
-            this.panAdmOtro = new System.Windows.Forms.Panel();
             this.panAdmGral.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -89,6 +89,13 @@
             this.panAdmGral.Name = "panAdmGral";
             this.panAdmGral.Size = new System.Drawing.Size(720, 323);
             this.panAdmGral.TabIndex = 10;
+            // 
+            // panAdmOtro
+            // 
+            this.panAdmOtro.Location = new System.Drawing.Point(1, 1);
+            this.panAdmOtro.Name = "panAdmOtro";
+            this.panAdmOtro.Size = new System.Drawing.Size(718, 321);
+            this.panAdmOtro.TabIndex = 0;
             // 
             // menuStrip1
             // 
@@ -218,14 +225,14 @@
             this.tsmAgregarAlumno.Name = "tsmAgregarAlumno";
             this.tsmAgregarAlumno.Size = new System.Drawing.Size(179, 22);
             this.tsmAgregarAlumno.Text = "Agregar";
-            this.tsmAgregarAlumno.Click += new System.EventHandler(this.tsmAMPersona_Click);
+            this.tsmAgregarAlumno.Click += new System.EventHandler(this.tsmAPersona_Click);
             // 
             // tsmModificarAlumno
             // 
             this.tsmModificarAlumno.Name = "tsmModificarAlumno";
             this.tsmModificarAlumno.Size = new System.Drawing.Size(179, 22);
             this.tsmModificarAlumno.Text = "Modificar";
-            this.tsmModificarAlumno.Click += new System.EventHandler(this.tsmAMPersona_Click);
+            this.tsmModificarAlumno.Click += new System.EventHandler(this.tsmMPersona_Click);
             // 
             // tsmEliminarAlumno
             // 
@@ -257,14 +264,14 @@
             this.tsmAgregarDocentes.Name = "tsmAgregarDocentes";
             this.tsmAgregarDocentes.Size = new System.Drawing.Size(180, 22);
             this.tsmAgregarDocentes.Text = "Agregar";
-            this.tsmAgregarDocentes.Click += new System.EventHandler(this.tsmAMPersona_Click);
+            this.tsmAgregarDocentes.Click += new System.EventHandler(this.tsmAPersona_Click);
             // 
             // tsmModificarDocentes
             // 
             this.tsmModificarDocentes.Name = "tsmModificarDocentes";
             this.tsmModificarDocentes.Size = new System.Drawing.Size(180, 22);
             this.tsmModificarDocentes.Text = "Modificar";
-            this.tsmModificarDocentes.Click += new System.EventHandler(this.tsmAMPersona_Click);
+            this.tsmModificarDocentes.Click += new System.EventHandler(this.tsmAPersona_Click);
             // 
             // tsmEliminarDocente
             // 
@@ -381,13 +388,6 @@
             this.tsmReportePlanes.Text = "Planes";
             this.tsmReportePlanes.Click += new System.EventHandler(this.tsmReportePlanes_Click);
             // 
-            // panAdmOtro
-            // 
-            this.panAdmOtro.Location = new System.Drawing.Point(1, 1);
-            this.panAdmOtro.Name = "panAdmOtro";
-            this.panAdmOtro.Size = new System.Drawing.Size(718, 321);
-            this.panAdmOtro.TabIndex = 0;
-            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -399,7 +399,6 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FrmPrincipal";
             this.Text = "Zahir Academia";
-           // this.Load += new System.EventHandler(this.FrmPrincipal_Load);
             this.panAdmGral.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

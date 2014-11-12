@@ -29,6 +29,7 @@ namespace UserControls
             UserControl docentes = new ucListaDocentes();
          //   this.Hide();
             docentes.Show();
+           
         }
     
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -40,9 +41,7 @@ namespace UserControls
             else if (cmbTurno.Text=="Tarde")
 	                {turno=2;} 
                     else{ turno=3;}
-            
-	        
-            //Comision com = new Comision(txtId, txtAñoCursado,txtHsSemanales,txtHsTotales, cmbMateria,,,turno);
+            //Comision com = new Comision(int.Parse(txtId.Text), int.Parse(txtAñoCursado.Text),float.Parse(txtHsSemanales.Text),float.Parse(txtHsTotales.Text), cmbMateria,,,turno);
             //ControllerComision controllerCom = new ControllerComision(); 
             //controllerCom.insert(com);
         }

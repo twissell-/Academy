@@ -81,12 +81,6 @@
     <Compile Include="ucAMMateria.Designer.cs">
       <DependentUpon>ucAMMateria.cs</DependentUpon>
     </Compile>
-    <Compile Include="ucAMPersona.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ucAMPersona.Designer.cs">
-      <DependentUpon>ucAMPersona.cs</DependentUpon>
-    </Compile>
     <Compile Include="ucAgregarComision.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -99,17 +93,11 @@
     <Compile Include="ucAgregarEspecialidad.Designer.cs">
       <DependentUpon>ucAgregarEspecialidad.cs</DependentUpon>
     </Compile>
-    <Compile Include="ucBPersona.cs">
+    <Compile Include="ucAPersona.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucBPersona.Designer.cs">
-      <DependentUpon>ucBPersona.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ucInput.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ucInput.Designer.cs">
-      <DependentUpon>ucInput.cs</DependentUpon>
+    <Compile Include="ucAPersona.Designer.cs">
+      <DependentUpon>ucAPersona.cs</DependentUpon>
     </Compile>
     <Compile Include="ucListaAlumnos.cs">
       <SubType>UserControl</SubType>
@@ -130,6 +118,12 @@
     <Compile Include="ucListaDocentes.Designer.cs">
       <DependentUpon>ucListaDocentes.cs</DependentUpon>
     </Compile>
+    <Compile Include="ucMPersona.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucMPersona.Designer.cs">
+      <DependentUpon>ucMPersona.cs</DependentUpon>
+    </Compile>
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>
@@ -146,20 +140,14 @@
     <EmbeddedResource Include="ucAMMateria.resx">
       <DependentUpon>ucAMMateria.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucAMPersona.resx">
-      <DependentUpon>ucAMPersona.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ucAgregarComision.resx">
       <DependentUpon>ucAgregarComision.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ucAgregarEspecialidad.resx">
       <DependentUpon>ucAgregarEspecialidad.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucBPersona.resx">
-      <DependentUpon>ucBPersona.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ucInput.resx">
-      <DependentUpon>ucInput.cs</DependentUpon>
+    <EmbeddedResource Include="ucAPersona.resx">
+      <DependentUpon>ucAPersona.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ucListaAlumnos.resx">
       <DependentUpon>ucListaAlumnos.cs</DependentUpon>
@@ -169,6 +157,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ucListaDocentes.resx">
       <DependentUpon>ucListaDocentes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucMPersona.resx">
+      <DependentUpon>ucMPersona.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

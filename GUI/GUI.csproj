@@ -84,12 +84,6 @@
     <Compile Include="FrmEspecialidades.Designer.cs">
       <DependentUpon>FrmEspecialidades.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmInputId.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmInputId.Designer.cs">
-      <DependentUpon>FrmInputId.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmPlanes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,9 +106,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmEspecialidades.resx">
       <DependentUpon>FrmEspecialidades.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmInputId.resx">
-      <DependentUpon>FrmInputId.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPlanes.resx">
       <DependentUpon>FrmPlanes.cs</DependentUpon>
