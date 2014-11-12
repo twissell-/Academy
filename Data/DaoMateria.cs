@@ -24,7 +24,7 @@ namespace Data
         private Materia mapper(MapperMateria m)
         {
             DaoPlan dp = new DaoPlan();
-            return new Materia(m.id, m.descripcion, m.hsSemanales, m.hsTotales, dp.find(m.plan);
+            return new Materia(m.id, m.descripcion, m.hsSemanales, m.hsTotales, dp.find(m.plan));
         }
 
         public Materia find(int id) 
