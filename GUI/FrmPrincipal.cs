@@ -28,6 +28,7 @@ namespace GUI
 
         private void tsmAgregarComision_Click(object sender, EventArgs e)
         {
+            //ver
             this.panAdmGral.Controls.Clear();
             var uc = new ucAgregarComision();
             this.panAdmGral.Controls.Add(uc);
@@ -40,38 +41,32 @@ namespace GUI
         }
 
         
-        private void tsmAMPersona_Click(object sender, EventArgs e)
+        private void tsmAPersona_Click(object sender, EventArgs e)
         {
             this.panAdmGral.Controls.Clear();
-            var uc = new ucAMPersona();
-            if (sender==tsmAgregarAlumno || sender==tsmAgregarDocentes)
-            {
-                //llenar el cmbID con el correlativo de la base de datos.
-            }
-            else
-            {   
-               // Form inputId = new FrmInputId(); 
-              //  DialogResult res= inputId.ShowDialog();
-             //   DialogResult inputId.
-                
-           //     llenar el todos los controles con lo de la base de datos segun lo q venga del del MessageBox o Form
-            }
+            var uc = new ucAPersona();
             this.panAdmGral.Controls.Add(uc);
             uc.Dock = DockStyle.Fill;
+        }
+        private void tsmMPersona_Click(object sender, EventArgs e)
+        {
+            this.panAdmGral.Controls.Clear();
+            var uc = new ucMPersona();  
+            this.panAdmGral.Controls.Add(uc);
+            uc.Dock = DockStyle.Fill;
+           
         }
 
         private void tsmEliminarPersona_Click(object sender, EventArgs e)
         {
-            /*
-            Form inp = new FrmInputId();
-            //inp.ShowDialog();
-         */
-            this.panAdmGral.Controls.Clear();
-           // var uc = new ucBPersona(inp);
-            var uc = new ucListaAlumnos();
-            this.panAdmGral.Controls.Add(uc);
-            uc.Dock = DockStyle.Fill;
-             
+            if (sender == tsmEliminarAlumno)
+            {
+                tsmListadoDeAlumnos_Click(sender, e);
+            }
+            else
+            {
+                tsmListadoDeDocentes_Click(sender, e);
+            }
         }
 
         private void tsmAMMateria_Click(object sender, EventArgs e)
@@ -84,7 +79,7 @@ namespace GUI
             }
             else
             {
-             //   Form inputId = new FrmInputId();
+            
                 //llenar el todos los controles con lo de la base de datos segun lo q venga del del MessageBox o Form
             }
             this.panAdmGral.Controls.Add(uc);

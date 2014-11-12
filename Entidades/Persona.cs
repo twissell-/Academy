@@ -32,6 +32,7 @@ namespace Entidades
             this.password = password;
             this.tipo = tipo;
         }
+        public Persona() { }
        
 
         

@@ -11,11 +11,11 @@ using Entidades;
 
 namespace UserControls
 {
-    public partial class ucAMPersona : UserControl
+    public partial class ucAPersona : UserControl
     {
-        ControllerAlumno ca;
+       ControllerAlumno ca;
         //faltan controllers
-        public ucAMPersona()
+        public ucAPersona()
         {
             ca = new ControllerAlumno();
             InitializeComponent();
@@ -47,7 +47,5 @@ namespace UserControls
                 throw;
             }
         }
-
-       
     }
 }

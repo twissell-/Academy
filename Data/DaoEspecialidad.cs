@@ -49,7 +49,8 @@ namespace Data
 
         public void insert(Especialidad obj)
         {
-            if (obj.id == null)
+           
+            if (obj.id==null)
             {
                 obj.id = DaoParameter.instance.getEspecialidadNextId();
             }

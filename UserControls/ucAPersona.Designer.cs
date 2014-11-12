@@ -1,13 +1,13 @@
 ﻿namespace UserControls
 {
-    partial class ucAMPersona
+    partial class ucAPersona
     {
-        /// <summary>
+        /// <summary> 
         /// Variable del diseñador requerida.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
+        /// <summary> 
         /// Limpiar los recursos que se estén utilizando.
         /// </summary>
         /// <param name="disposing">true si los recursos administrados se deben eliminar; false en caso contrario, false.</param>
@@ -22,12 +22,14 @@
 
         #region Código generado por el Diseñador de componentes
 
-        /// <summary>
+        /// <summary> 
         /// Método necesario para admitir el Diseñador. No se puede modificar 
         /// el contenido del método con el editor de código.
         /// </summary>
         private void InitializeComponent()
         {
+            this.lblCargo = new System.Windows.Forms.Label();
+            this.cmbCargo = new System.Windows.Forms.ComboBox();
             this.btnBorrar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.gprDatosAcceso = new System.Windows.Forms.GroupBox();
@@ -54,29 +56,49 @@
             this.lblApellido = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
             this.lblId = new System.Windows.Forms.Label();
-            this.cmbCargo = new System.Windows.Forms.ComboBox();
-            this.lblCargo = new System.Windows.Forms.Label();
             this.gprDatosAcceso.SuspendLayout();
             this.gprDatosContacto.SuspendLayout();
             this.grpDatosPersonales.SuspendLayout();
             this.SuspendLayout();
             // 
+            // lblCargo
+            // 
+            this.lblCargo.AutoSize = true;
+            this.lblCargo.Location = new System.Drawing.Point(207, 32);
+            this.lblCargo.Name = "lblCargo";
+            this.lblCargo.Size = new System.Drawing.Size(38, 13);
+            this.lblCargo.TabIndex = 25;
+            this.lblCargo.Text = "Cargo:";
+            // 
+            // cmbCargo
+            // 
+            this.cmbCargo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCargo.FormattingEnabled = true;
+            this.cmbCargo.Items.AddRange(new object[] {
+            "",
+            "Administrador",
+            "Docente",
+            "Alumno"});
+            this.cmbCargo.Location = new System.Drawing.Point(251, 28);
+            this.cmbCargo.Name = "cmbCargo";
+            this.cmbCargo.Size = new System.Drawing.Size(121, 21);
+            this.cmbCargo.TabIndex = 24;
+            // 
             // btnBorrar
             // 
-            this.btnBorrar.Location = new System.Drawing.Point(491, 250);
+            this.btnBorrar.Location = new System.Drawing.Point(556, 271);
             this.btnBorrar.Name = "btnBorrar";
             this.btnBorrar.Size = new System.Drawing.Size(75, 23);
-            this.btnBorrar.TabIndex = 14;
+            this.btnBorrar.TabIndex = 23;
             this.btnBorrar.Text = "Borrar";
             this.btnBorrar.UseVisualStyleBackColor = true;
-            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(410, 250);
+            this.btnGuardar.Location = new System.Drawing.Point(475, 271);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
-            this.btnGuardar.TabIndex = 13;
+            this.btnGuardar.TabIndex = 22;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
@@ -87,10 +109,10 @@
             this.gprDatosAcceso.Controls.Add(this.txtPassword);
             this.gprDatosAcceso.Controls.Add(this.lblConfirmar);
             this.gprDatosAcceso.Controls.Add(this.lblPass);
-            this.gprDatosAcceso.Location = new System.Drawing.Point(14, 185);
+            this.gprDatosAcceso.Location = new System.Drawing.Point(79, 206);
             this.gprDatosAcceso.Name = "gprDatosAcceso";
             this.gprDatosAcceso.Size = new System.Drawing.Size(563, 54);
-            this.gprDatosAcceso.TabIndex = 12;
+            this.gprDatosAcceso.TabIndex = 21;
             this.gprDatosAcceso.TabStop = false;
             this.gprDatosAcceso.Text = "Datos de Acceso";
             // 
@@ -136,10 +158,10 @@
             this.gprDatosContacto.Controls.Add(this.lblDireccion);
             this.gprDatosContacto.Controls.Add(this.txtTelefono);
             this.gprDatosContacto.Controls.Add(this.lblTelefono);
-            this.gprDatosContacto.Location = new System.Drawing.Point(296, 40);
+            this.gprDatosContacto.Location = new System.Drawing.Point(361, 61);
             this.gprDatosContacto.Name = "gprDatosContacto";
             this.gprDatosContacto.Size = new System.Drawing.Size(281, 139);
-            this.gprDatosContacto.TabIndex = 11;
+            this.gprDatosContacto.TabIndex = 20;
             this.gprDatosContacto.TabStop = false;
             this.gprDatosContacto.Text = "Datos de Contacto";
             // 
@@ -202,10 +224,10 @@
             this.grpDatosPersonales.Controls.Add(this.txtApellido);
             this.grpDatosPersonales.Controls.Add(this.lblNombre);
             this.grpDatosPersonales.Controls.Add(this.lblApellido);
-            this.grpDatosPersonales.Location = new System.Drawing.Point(14, 40);
+            this.grpDatosPersonales.Location = new System.Drawing.Point(79, 61);
             this.grpDatosPersonales.Name = "grpDatosPersonales";
             this.grpDatosPersonales.Size = new System.Drawing.Size(276, 139);
-            this.grpDatosPersonales.TabIndex = 10;
+            this.grpDatosPersonales.TabIndex = 19;
             this.grpDatosPersonales.TabStop = false;
             this.grpDatosPersonales.Text = "Datos Personales";
             // 
@@ -284,44 +306,21 @@
             // 
             // txtId
             // 
-            this.txtId.Location = new System.Drawing.Point(36, 8);
+            this.txtId.Location = new System.Drawing.Point(101, 29);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(100, 20);
-            this.txtId.TabIndex = 9;
+            this.txtId.TabIndex = 18;
             // 
             // lblId
             // 
             this.lblId.AutoSize = true;
-            this.lblId.Location = new System.Drawing.Point(14, 11);
+            this.lblId.Location = new System.Drawing.Point(79, 32);
             this.lblId.Name = "lblId";
             this.lblId.Size = new System.Drawing.Size(16, 13);
-            this.lblId.TabIndex = 8;
+            this.lblId.TabIndex = 17;
             this.lblId.Text = "Id";
             // 
-            // cmbCargo
-            // 
-            this.cmbCargo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbCargo.FormattingEnabled = true;
-            this.cmbCargo.Items.AddRange(new object[] {
-            "",
-            "Administrador",
-            "Docente",
-            "Alumno"});
-            this.cmbCargo.Location = new System.Drawing.Point(186, 7);
-            this.cmbCargo.Name = "cmbCargo";
-            this.cmbCargo.Size = new System.Drawing.Size(121, 21);
-            this.cmbCargo.TabIndex = 15;
-            // 
-            // lblCargo
-            // 
-            this.lblCargo.AutoSize = true;
-            this.lblCargo.Location = new System.Drawing.Point(142, 11);
-            this.lblCargo.Name = "lblCargo";
-            this.lblCargo.Size = new System.Drawing.Size(38, 13);
-            this.lblCargo.TabIndex = 16;
-            this.lblCargo.Text = "Cargo:";
-            // 
-            // ucAMPersona
+            // ucAPersona
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -334,7 +333,7 @@
             this.Controls.Add(this.grpDatosPersonales);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.lblId);
-            this.Name = "ucAMPersona";
+            this.Name = "ucAPersona";
             this.Size = new System.Drawing.Size(720, 323);
             this.gprDatosAcceso.ResumeLayout(false);
             this.gprDatosAcceso.PerformLayout();
@@ -349,6 +348,8 @@
 
         #endregion
 
+        private System.Windows.Forms.Label lblCargo;
+        private System.Windows.Forms.ComboBox cmbCargo;
         private System.Windows.Forms.Button btnBorrar;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.GroupBox gprDatosAcceso;
@@ -364,6 +365,7 @@
         private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.Label lblTelefono;
         private System.Windows.Forms.GroupBox grpDatosPersonales;
+        private System.Windows.Forms.Label lblAño;
         private System.Windows.Forms.TextBox txtNacimiento;
         private System.Windows.Forms.TextBox txtDni;
         private System.Windows.Forms.Label lblNacimiento;
@@ -374,8 +376,5 @@
         private System.Windows.Forms.Label lblApellido;
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Label lblId;
-        private System.Windows.Forms.Label lblAño;
-        private System.Windows.Forms.ComboBox cmbCargo;
-        private System.Windows.Forms.Label lblCargo;
     }
 }
