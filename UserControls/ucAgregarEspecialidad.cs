@@ -27,5 +27,11 @@ namespace UserControls
             ce.insert(new Especialidad(0, txtDescripcion.Text));
             txtDescripcion.Text = "";
         }
+
+        private void btnBorrar_Click(object sender, EventArgs e)
+        {
+            txtDescripcion.Clear();
+            txtId.Clear();
+        }
     }
 }
