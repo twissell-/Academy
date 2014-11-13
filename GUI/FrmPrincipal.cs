@@ -50,11 +50,26 @@ namespace GUI
         }
         private void tsmMPersona_Click(object sender, EventArgs e)
         {
+            UserControl uc;
             this.panAdmGral.Controls.Clear();
-            var uc = new ucMPersona();  
-            this.panAdmGral.Controls.Add(uc);
-            uc.Dock = DockStyle.Fill;
-           
+            if (sender==tsmModificarAdministrativo)
+            {
+                uc = new ucMPersona("MAd");
+                this.panAdmGral.Controls.Add(uc);
+                uc.Dock = DockStyle.Fill;
+            }
+            else if (sender==tsmModificarAlumno)
+            {
+                uc = new ucMPersona("MA");
+                this.panAdmGral.Controls.Add(uc);
+                uc.Dock = DockStyle.Fill;
+            }
+            else
+            {
+                uc = new ucMPersona("MD");
+                this.panAdmGral.Controls.Add(uc);
+                uc.Dock = DockStyle.Fill;
+            }          
         }
 
         private void tsmEliminarPersona_Click(object sender, EventArgs e)
