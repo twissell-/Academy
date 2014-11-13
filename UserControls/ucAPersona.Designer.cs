@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblCargo = new System.Windows.Forms.Label();
-            this.cmbCargo = new System.Windows.Forms.ComboBox();
+            this.lblTipo = new System.Windows.Forms.Label();
+            this.cmbTipo = new System.Windows.Forms.ComboBox();
             this.btnBorrar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.gprDatosAcceso = new System.Windows.Forms.GroupBox();
@@ -61,28 +61,28 @@
             this.grpDatosPersonales.SuspendLayout();
             this.SuspendLayout();
             // 
-            // lblCargo
+            // lblTipo
             // 
-            this.lblCargo.AutoSize = true;
-            this.lblCargo.Location = new System.Drawing.Point(207, 32);
-            this.lblCargo.Name = "lblCargo";
-            this.lblCargo.Size = new System.Drawing.Size(38, 13);
-            this.lblCargo.TabIndex = 25;
-            this.lblCargo.Text = "Cargo:";
+            this.lblTipo.AutoSize = true;
+            this.lblTipo.Location = new System.Drawing.Point(207, 32);
+            this.lblTipo.Name = "lblTipo";
+            this.lblTipo.Size = new System.Drawing.Size(31, 13);
+            this.lblTipo.TabIndex = 25;
+            this.lblTipo.Text = "Tipo:";
             // 
-            // cmbCargo
+            // cmbTipo
             // 
-            this.cmbCargo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbCargo.FormattingEnabled = true;
-            this.cmbCargo.Items.AddRange(new object[] {
+            this.cmbTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTipo.FormattingEnabled = true;
+            this.cmbTipo.Items.AddRange(new object[] {
             "",
             "Administrador",
             "Docente",
             "Alumno"});
-            this.cmbCargo.Location = new System.Drawing.Point(251, 28);
-            this.cmbCargo.Name = "cmbCargo";
-            this.cmbCargo.Size = new System.Drawing.Size(121, 21);
-            this.cmbCargo.TabIndex = 24;
+            this.cmbTipo.Location = new System.Drawing.Point(251, 28);
+            this.cmbTipo.Name = "cmbTipo";
+            this.cmbTipo.Size = new System.Drawing.Size(121, 21);
+            this.cmbTipo.TabIndex = 24;
             // 
             // btnBorrar
             // 
@@ -308,6 +308,7 @@
             // 
             this.txtId.Location = new System.Drawing.Point(101, 29);
             this.txtId.Name = "txtId";
+            this.txtId.ReadOnly = true;
             this.txtId.Size = new System.Drawing.Size(100, 20);
             this.txtId.TabIndex = 18;
             // 
@@ -324,8 +325,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.lblCargo);
-            this.Controls.Add(this.cmbCargo);
+            this.Controls.Add(this.lblTipo);
+            this.Controls.Add(this.cmbTipo);
             this.Controls.Add(this.btnBorrar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.gprDatosAcceso);
@@ -335,6 +336,7 @@
             this.Controls.Add(this.lblId);
             this.Name = "ucAPersona";
             this.Size = new System.Drawing.Size(720, 323);
+            this.Load += new System.EventHandler(this.ucAPersona_Load);
             this.gprDatosAcceso.ResumeLayout(false);
             this.gprDatosAcceso.PerformLayout();
             this.gprDatosContacto.ResumeLayout(false);
@@ -348,8 +350,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblCargo;
-        private System.Windows.Forms.ComboBox cmbCargo;
+        private System.Windows.Forms.Label lblTipo;
+        private System.Windows.Forms.ComboBox cmbTipo;
         private System.Windows.Forms.Button btnBorrar;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.GroupBox gprDatosAcceso;

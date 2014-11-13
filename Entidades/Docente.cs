@@ -10,13 +10,26 @@ namespace Entidades
 
         private int cargo { get; set; }
 
-        public Docente (int id, String nombre, String apellido, String dni, String telefono, String direccion, 
-        String mail, String nacimiento, String password, Tipo tipo, int cargo): base (id,nombre,apellido,dni,telefono,direccion,mail,nacimiento,password/*,tipo*/)
+        public Docente(String nombre, String apellido, String dni, String telefono, String direccion,
+            String mail, String nacimiento, String password)
+            : base(nombre, apellido, dni, telefono, direccion, mail, nacimiento, password)
         {
-            
-            this.cargo = cargo;
+
         }
 
+        public Docente (int id, String nombre, String apellido, String dni, String telefono, String direccion, 
+            String mail, String nacimiento, String password)
+            : this(nombre,apellido,dni,telefono,direccion,mail,nacimiento,password)
+        {
+            this.id = id;
+        }
+
+        public Docente(int id, String nombre, String apellido, String dni, String telefono, String direccion,
+            String mail, String nacimiento, String password, int cargo)
+            : this(id, nombre, apellido, dni, telefono, direccion, mail, nacimiento, password)
+        {
+            this.cargo = cargo;
+        }
        
     }
      

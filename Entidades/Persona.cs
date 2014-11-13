@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Util;
 
 namespace Entidades
 {
@@ -14,14 +15,12 @@ namespace Entidades
         public String telefono { get; set; }
         public String direccion { get; set; }
         public String mail { get; set; }
-        public String nacimiento { get; set; }  // <--- Guardar como DateTime
+        public String nacimiento { get; set; }  // <--- TODO: Guardar como DateTime
         public String password { get; set; }
-        public Tipo tipo { get; set; } // <-- ojo! creo que esta al pedo o mal puesto
-        public DateTime enacimiento { get; set; }
 
-        public Persona(int id, String nombre, String apellido, String dni, String telefono, String direccion, String mail, String nacimiento, String password/*, Tipo tipo*/)
+        public Persona(String nombre, String apellido, String dni, String telefono, String direccion,
+           String mail, String nacimiento, String password)
         {
-            this.id = id;
             this.nombre = nombre;
             this.apellido = apellido;
             this.dni = dni;
@@ -29,12 +28,7 @@ namespace Entidades
             this.direccion = direccion;
             this.mail = mail;
             this.nacimiento = nacimiento;
-            this.password = password;
-            this.tipo = tipo;
-        }
-        public Persona() { }
-       
-
-        
+            this.password = Hasher.toMD5(password);
+        }        
     }
 }

@@ -48,7 +48,7 @@
             this.dgvListaDocentes = new System.Windows.Forms.DataGridView();
             this.dgvApellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dvgCargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvCargo = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.dvgAsignado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.grpComision.SuspendLayout();
             this.gpbMateria.SuspendLayout();
@@ -221,41 +221,47 @@
             // 
             // dgvListaDocentes
             // 
-            this.dgvListaDocentes.AllowUserToOrderColumns = true;
+            this.dgvListaDocentes.AllowUserToAddRows = false;
+            this.dgvListaDocentes.AllowUserToDeleteRows = false;
             this.dgvListaDocentes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvListaDocentes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dgvApellido,
             this.dgvNombre,
-            this.dvgCargo,
+            this.dgvCargo,
             this.dvgAsignado});
             this.dgvListaDocentes.Location = new System.Drawing.Point(6, 19);
             this.dgvListaDocentes.Name = "dgvListaDocentes";
+            this.dgvListaDocentes.ReadOnly = true;
             this.dgvListaDocentes.Size = new System.Drawing.Size(542, 127);
             this.dgvListaDocentes.TabIndex = 20;
             // 
             // dgvApellido
             // 
+            this.dgvApellido.DataPropertyName = "apellido";
             this.dgvApellido.HeaderText = "Apellido";
             this.dgvApellido.Name = "dgvApellido";
             this.dgvApellido.ReadOnly = true;
             // 
             // dgvNombre
             // 
+            this.dgvNombre.DataPropertyName = "nombre";
             this.dgvNombre.HeaderText = "Nombre";
             this.dgvNombre.Name = "dgvNombre";
             this.dgvNombre.ReadOnly = true;
             // 
-            // dvgCargo
+            // dgvCargo
             // 
-            this.dvgCargo.HeaderText = "Cargo";
-            this.dvgCargo.Name = "dvgCargo";
-            this.dvgCargo.ReadOnly = true;
-            this.dvgCargo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCargo.HeaderText = "Cargo";
+            this.dgvCargo.Name = "dgvCargo";
+            this.dgvCargo.ReadOnly = true;
+            this.dgvCargo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCargo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // dvgAsignado
             // 
             this.dvgAsignado.HeaderText = "Asignar";
             this.dvgAsignado.Name = "dvgAsignado";
+            this.dvgAsignado.ReadOnly = true;
             // 
             // ucAgregarComision
             // 
@@ -272,6 +278,7 @@
             this.Controls.Add(this.lblId);
             this.Name = "ucAgregarComision";
             this.Size = new System.Drawing.Size(848, 321);
+            this.Load += new System.EventHandler(this.ucAgregarComision_Load);
             this.grpComision.ResumeLayout(false);
             this.grpComision.PerformLayout();
             this.gpbMateria.ResumeLayout(false);
@@ -303,7 +310,7 @@
         private System.Windows.Forms.DataGridView dgvListaDocentes;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvApellido;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvNombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dvgCargo;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dgvCargo;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dvgAsignado;
     }
 }

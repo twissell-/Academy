@@ -79,6 +79,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Connection.cs" />
+    <Compile Include="DaoAdministrativo.cs" />
     <Compile Include="DaoAlumno.cs" />
     <Compile Include="DaoComision.cs" />
     <Compile Include="DaoDocente.cs" />
@@ -87,6 +88,9 @@
     <Compile Include="DaoParameters.cs" />
     <Compile Include="DaoPlan.cs" />
     <Compile Include="DaoTipo.cs" />
+    <Compile Include="MapperComision.cs" />
+    <Compile Include="MapperMateria.cs" />
+    <Compile Include="MapperPlan.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

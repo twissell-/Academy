@@ -7,35 +7,35 @@ namespace Entidades
 {
     public class Alumno : Persona
     {
-       /* public Alumno(string dni, string apellido, string nombre, string nacimiento, string telefono, string direccion, string mail, string pass)
+        private int condicion { get; set; }
+
+        public Alumno(String dni, String apellido, String nombre, String nacimiento, String telefono, 
+            String direccion, String mail, String password)
+            : base(nombre, apellido, dni, telefono, direccion, mail, nacimiento, password)
         {
-            this.dni = dni;
-            this.apellido = apellido;
-            this.nombre = nombre;
-            this.nacimineto = nacimineto;
-            this.telefono = telefono;
-            this.direccion = direccion;
-            this.mail = mail;
-            this.password = pass;
-        } 
-        * 
-        * Comment no! Delete it, or delete not. There is no comment
-        
-        
-        */
-        public Alumno(int id, String dni, String apellido, String nombre, String nacimiento, String telefono, String direccion,
-        String mail, String password/*, Tipo tipo, int condicion*/): base(id, nombre, apellido, dni, telefono, direccion, mail, nacimiento, password/*, tipo*/)
+
+        }
+
+        public Alumno(int id, String dni, String apellido, String nombre, String nacimiento, String telefono,
+            String direccion, String mail, String password)
+            : this(nombre, apellido, dni, telefono, direccion, mail, nacimiento, password)
+        {
+            this.id = id;
+        }
+
+        public Alumno(int id, String dni, String apellido, String nombre, String nacimiento, String telefono,
+            String direccion, String mail, String password, int condicion)
+            : this(id, nombre, apellido, dni, telefono, direccion, mail, nacimiento, password)
         {
             this.condicion = condicion;
         }
+
         enum condiciones
         {
             inscripto,
             regular,
             aprobado
         }
-        public Alumno() { }
 
-        private int condicion { get; set; }
     }
 }

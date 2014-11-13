@@ -21,5 +21,10 @@ namespace Entidades
             this.hsTotales = hsTotales;
             this.plan = plan;
         }
+
+        public override string ToString()
+        {
+            return this.descripcion;
+        }
     }
 }

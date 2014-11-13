@@ -71,6 +71,11 @@ namespace Data
             return getParameterValue("planNextId");
         }
 
+        public int getAdministrativoNextId()
+        {
+            return getParameterValue("administrativoNextId");
+        }
+
         #endregion
 
         private void save(Param obj)

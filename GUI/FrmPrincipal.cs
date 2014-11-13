@@ -73,15 +73,6 @@ namespace GUI
         {
             this.panAdmGral.Controls.Clear();
             var uc = new ucAMMateria();
-            if (sender == tsmAgregarMateria)
-            {
-                //llenar el cmbID con el correlativo de la base de datos.
-            }
-            else
-            {
-            
-                //llenar el todos los controles con lo de la base de datos segun lo q venga del del MessageBox o Form
-            }
             this.panAdmGral.Controls.Add(uc);
             uc.Dock = DockStyle.Fill;
         }

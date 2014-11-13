@@ -14,6 +14,7 @@ namespace UserControls
     public partial class ucAgregarComision : UserControl
     {
         ControllerMateria cm;
+        ControllerDocente cd;
 
 #region Enumeraciones
 
@@ -38,12 +39,16 @@ namespace UserControls
         {
             InitializeComponent();
             this.cm = new ControllerMateria();
+            this.cd = new ControllerDocente();
         }
 
-        private void ucFill()
+        private void ucAgregarComision_Load(object sender, EventArgs e)
         {
             cmbMateria.DataSource = cm.find();
             cmbTurno.DataSource = Enum.GetValues(typeof(eTurno)).Cast<eTurno>();
+            dgvListaDocentes.AutoGenerateColumns = false;
+            dgvCargo.DataSource = Enum.GetValues(typeof(eCargo)).Cast<eCargo>();
+            dgvListaDocentes.DataSource = cd.find();
             // TODO: Seguir Aca <---------------------------------------------
         }
 

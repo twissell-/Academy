@@ -20,5 +20,10 @@ namespace Entidades
             this.especialidad = especialidad;
             this.materias = materias;
         }
+
+        public override string ToString()
+        {
+            return this.descripcion;
+        }
     }
 }
