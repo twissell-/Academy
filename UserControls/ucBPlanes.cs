@@ -6,34 +6,33 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using Bussines;
 using Entidades;
+using Bussines;
 
 namespace UserControls
 {
-    public partial class ucListaAlumnos : UserControl
+    public partial class ucBPlanes : UserControl
     {
-        ControllerAlumno ca;
-        public ucListaAlumnos()
+        ControllerPlan cp;
+        public ucBPlanes()
         {
-            ca = new ControllerAlumno();
+            cp = new ControllerPlan();
             InitializeComponent();
-            this.dgvListaAlumnos.AutoGenerateColumns = false;
-            this.dgvListaAlumnos.DataSource=ca.find();
-            
+            dgvListaPlanesBaja.AutoGenerateColumns = false;
+            dgvListaPlanesBaja.DataSource = cp.find();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (this.dgvListaAlumnos.SelectedRows != null && this.dgvListaAlumnos.SelectedRows.Count > 0)
+            if (this.dgvListaPlanesBaja.SelectedRows != null && this.dgvListaPlanesBaja.SelectedRows.Count > 0)
             {
-                int id = (int)this.dgvListaAlumnos.SelectedRows[0].Cells[0].Value;
-                string nom = this.dgvListaAlumnos.SelectedRows[0].Cells[0].Value.ToString();
-                string ape = this.dgvListaAlumnos.SelectedRows[0].Cells[0].Value.ToString();
-                if (MessageBox.Show("¿Está seguro que desea eliminar a " + nom + " " + ape + "?",
+                int id = (int)this.dgvListaPlanesBaja.SelectedRows[0].Cells[0].Value;
+                string des = this.dgvListaPlanesBaja.SelectedRows[0].Cells[1].Value.ToString();
+                string esp = this.dgvListaPlanesBaja.SelectedRows[0].Cells[2].Value.ToString();
+                if (MessageBox.Show("¿Está seguro que desea eliminar el plan " + des + " de " + esp + "?",
                     "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    ca.delete(ca.find(id));
+                    cp.delete(cp.find(id));
                 }
 
             }
@@ -47,6 +46,5 @@ namespace UserControls
         {
             this.Dispose();
         }
-    
     }
 }

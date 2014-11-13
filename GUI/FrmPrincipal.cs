@@ -73,15 +73,14 @@ namespace GUI
         {
             this.panAdmGral.Controls.Clear();
             var uc = new ucAMMateria();
-            if (sender == tsmAgregarMateria)
+           /* if (sender == tsmAgregarMateria)
             {
                 //llenar el cmbID con el correlativo de la base de datos.
             }
             else
             {
-            
                 //llenar el todos los controles con lo de la base de datos segun lo q venga del del MessageBox o Form
-            }
+            }*/
             this.panAdmGral.Controls.Add(uc);
             uc.Dock = DockStyle.Fill;
         }
@@ -139,39 +138,58 @@ namespace GUI
 
         private void tsmModificarEspecialidad_Click(object sender, EventArgs e)
         {
-            //Form inputId = new FrmInputId();
+            this.panAdmGral.Controls.Clear();
+            var uc = new ucMEspecialidad();
+            this.panAdmGral.Controls.Add(uc);
+            uc.Dock = DockStyle.Fill;
         }
 
         private void tsmEliminarEspecialidad_Click(object sender, EventArgs e)
         {
-           // Form inputId = new FrmInputId();
+            this.panAdmGral.Controls.Clear();
+            var uc = new ucBEspecialidad();
+            this.panAdmGral.Controls.Add(uc);
+            uc.Dock = DockStyle.Fill;
         }
 
         private void tsmListadoDeEspecialidades_Click(object sender, EventArgs e)
         {
-            //falta
+            this.panAdmGral.Controls.Clear();
+            var uc = new ucListaEspecialidades();
+            this.panAdmGral.Controls.Add(uc);
+            uc.Dock = DockStyle.Fill;
         }
 
         private void tsmAgregarPlan_Click(object sender, EventArgs e)
         {
             this.panAdmGral.Controls.Clear();
-            Form plan = new FrmPlanes();
-            plan.ShowDialog();
+            UserControl uc = new ucAPlanes();
+            this.panAdmGral.Controls.Add(uc);
+            uc.Dock= DockStyle.Fill;       
         }
 
         private void tsmModificarPlan_Click(object sender, EventArgs e)
         {
-           // Form inputId = new FrmInputId();
+            this.panAdmGral.Controls.Clear();
+            UserControl uc = new ucMPlanes();
+            this.panAdmGral.Controls.Add(uc);
+            uc.Dock = DockStyle.Fill;   
         }
 
         private void tsmEliminarPlan_Click(object sender, EventArgs e)
         {
-          //  Form inputId = new FrmInputId();
+            this.panAdmGral.Controls.Clear();
+            UserControl uc = new ucBPlanes();
+            this.panAdmGral.Controls.Add(uc);
+            uc.Dock = DockStyle.Fill;   
         }
 
         private void tsmListadoDePlanes_Click(object sender, EventArgs e)
         {
-            //falta
+            this.panAdmGral.Controls.Clear();
+            UserControl uc = new ucListaPlanes();
+            this.panAdmGral.Controls.Add(uc);
+            uc.Dock = DockStyle.Fill;   
         }
 
         private void tsmReporteComisiones_Click(object sender, EventArgs e)
