@@ -13,7 +13,7 @@ namespace Data
         {
             MongoServer server = Connection.instance.server;
             MongoDatabase database = server.GetDatabase("test");
-            comisiones = database.GetCollection<MapperComision>("test");  
+            comisiones = database.GetCollection<MapperComision>("comisiones");  
         }
 
         private void save(Comision obj)
@@ -40,7 +40,7 @@ namespace Data
                 docentes[i] = dd.find(mapper.docentes[i]);
             }
 
-            return new Comision(mapper.id, mapper.anioCursado, dm.find(mapper.materia), docentes, alumnos, mapper.turno);
+            return new Comision(mapper.id, mapper.anioCursado, mapper.HsSemanales, mapper.HsTotales, dm.find(mapper.materia), docentes, alumnos, mapper.turno);
         }
 
         public Comision find(int id) 
@@ -72,7 +72,7 @@ namespace Data
 
         public void insert(Comision obj)
         {
-            if (obj.id == null)
+            if (obj.id == 0)
             {
                 obj.id = DaoParameter.instance.getComisionNextId();
             }

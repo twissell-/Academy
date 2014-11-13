@@ -10,6 +10,8 @@ namespace Util
     {
         public int id { get; set; }
         public int anioCursado { get; set; }
+        public float HsSemanales { get; set; }
+        public float HsTotales { get; set; }
         public int materia { get; set; }
         public int[] docentes { get; set; }
         public int[] alumnos { get; set; }
@@ -19,6 +21,8 @@ namespace Util
         {
             this.id = c.id;
             this.anioCursado = c.anioCursado;
+            this.HsSemanales = c.HsSemanales;
+            this.HsTotales = c.HsTotales;
             this.materia = c.materia.id;
             this.docentes = new int[c.docentes.Length];
             for (int i = 0; i < c.docentes.Length; i++)

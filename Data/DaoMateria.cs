@@ -13,7 +13,7 @@ namespace Data
         {
             MongoServer server = Connection.instance.server;
             MongoDatabase database = server.GetDatabase("test");
-            materias = database.GetCollection<MapperMateria>("test");  
+            materias = database.GetCollection<MapperMateria>("materias");  
         }
 
         private void save(Materia obj)
@@ -56,7 +56,7 @@ namespace Data
 
         public void insert(Materia obj)
         {
-            if (obj.id == null)
+            if (obj.id == 0)
             {
                 obj.id = DaoParameter.instance.getMateriaNextId();
             }

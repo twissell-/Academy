@@ -14,7 +14,7 @@ namespace Data
         {
             MongoServer server = Connection.instance.server;
             MongoDatabase database = server.GetDatabase("test");
-            Parameters = database.GetCollection<Param>("test");
+            Parameters = database.GetCollection<Param>("parametros");
         }
 
         public static DaoParameter instance
@@ -31,7 +31,7 @@ namespace Data
 
         private int getParameterValue(string id)
         {
-            Param p = this.find("AlumnoNextId");
+            Param p = this.find(id);
             int val = p.value;
             p.value += 1;
             this.save(p);

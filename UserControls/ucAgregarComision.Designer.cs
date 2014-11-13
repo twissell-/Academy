@@ -37,16 +37,22 @@
             this.lblHsSemanales = new System.Windows.Forms.Label();
             this.cmbTurno = new System.Windows.Forms.ComboBox();
             this.lblTurno = new System.Windows.Forms.Label();
-            this.btnDocentes = new System.Windows.Forms.Button();
             this.btnBorrar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.txtId = new System.Windows.Forms.TextBox();
             this.lblId = new System.Windows.Forms.Label();
-            this.gpbMateria = new System.Windows.Forms.GroupBox();
             this.cmbMateria = new System.Windows.Forms.ComboBox();
+            this.lblMateria = new System.Windows.Forms.Label();
+            this.gpbMateria = new System.Windows.Forms.GroupBox();
+            this.dgvListaDocentes = new System.Windows.Forms.DataGridView();
+            this.dgvApellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dvgCargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dvgAsignado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.grpComision.SuspendLayout();
             this.gpbMateria.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListaDocentes)).BeginInit();
             this.SuspendLayout();
             // 
             // grpComision
@@ -59,9 +65,9 @@
             this.grpComision.Controls.Add(this.lblHsSemanales);
             this.grpComision.Controls.Add(this.cmbTurno);
             this.grpComision.Controls.Add(this.lblTurno);
-            this.grpComision.Location = new System.Drawing.Point(35, 81);
+            this.grpComision.Location = new System.Drawing.Point(18, 81);
             this.grpComision.Name = "grpComision";
-            this.grpComision.Size = new System.Drawing.Size(245, 152);
+            this.grpComision.Size = new System.Drawing.Size(191, 152);
             this.grpComision.TabIndex = 17;
             this.grpComision.TabStop = false;
             this.grpComision.Text = "Datos Comision";
@@ -70,7 +76,7 @@
             // 
             this.txtAñoCursado.Location = new System.Drawing.Point(108, 19);
             this.txtAñoCursado.Name = "txtAñoCursado";
-            this.txtAñoCursado.Size = new System.Drawing.Size(121, 20);
+            this.txtAñoCursado.Size = new System.Drawing.Size(67, 20);
             this.txtAñoCursado.TabIndex = 13;
             // 
             // lblAñoCursado
@@ -86,7 +92,7 @@
             // 
             this.txtHsTotales.Location = new System.Drawing.Point(108, 119);
             this.txtHsTotales.Name = "txtHsTotales";
-            this.txtHsTotales.Size = new System.Drawing.Size(121, 20);
+            this.txtHsTotales.Size = new System.Drawing.Size(67, 20);
             this.txtHsTotales.TabIndex = 11;
             // 
             // lblHsTotales
@@ -102,7 +108,7 @@
             // 
             this.txtHsSemanales.Location = new System.Drawing.Point(108, 89);
             this.txtHsSemanales.Name = "txtHsSemanales";
-            this.txtHsSemanales.Size = new System.Drawing.Size(121, 20);
+            this.txtHsSemanales.Size = new System.Drawing.Size(67, 20);
             this.txtHsSemanales.TabIndex = 9;
             // 
             // lblHsSemanales
@@ -126,7 +132,7 @@
             "Noche"});
             this.cmbTurno.Location = new System.Drawing.Point(108, 55);
             this.cmbTurno.Name = "cmbTurno";
-            this.cmbTurno.Size = new System.Drawing.Size(121, 21);
+            this.cmbTurno.Size = new System.Drawing.Size(67, 21);
             this.cmbTurno.TabIndex = 3;
             // 
             // lblTurno
@@ -138,19 +144,9 @@
             this.lblTurno.TabIndex = 2;
             this.lblTurno.Text = "Turno:";
             // 
-            // btnDocentes
-            // 
-            this.btnDocentes.Location = new System.Drawing.Point(93, 74);
-            this.btnDocentes.Name = "btnDocentes";
-            this.btnDocentes.Size = new System.Drawing.Size(115, 35);
-            this.btnDocentes.TabIndex = 6;
-            this.btnDocentes.Text = "Docentes";
-            this.btnDocentes.UseVisualStyleBackColor = true;
-            this.btnDocentes.Click += new System.EventHandler(this.btnDocentes_Click);
-            // 
             // btnBorrar
             // 
-            this.btnBorrar.Location = new System.Drawing.Point(381, 267);
+            this.btnBorrar.Location = new System.Drawing.Point(678, 283);
             this.btnBorrar.Name = "btnBorrar";
             this.btnBorrar.Size = new System.Drawing.Size(75, 23);
             this.btnBorrar.TabIndex = 16;
@@ -160,7 +156,7 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(295, 267);
+            this.btnGuardar.Location = new System.Drawing.Point(592, 283);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 15;
@@ -170,7 +166,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(462, 267);
+            this.btnCancelar.Location = new System.Drawing.Point(759, 283);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 14;
@@ -180,7 +176,7 @@
             // 
             // txtId
             // 
-            this.txtId.Location = new System.Drawing.Point(70, 23);
+            this.txtId.Location = new System.Drawing.Point(57, 20);
             this.txtId.Name = "txtId";
             this.txtId.ReadOnly = true;
             this.txtId.Size = new System.Drawing.Size(121, 20);
@@ -195,30 +191,78 @@
             this.lblId.TabIndex = 12;
             this.lblId.Text = "Id.";
             // 
-            // gpbMateria
-            // 
-            this.gpbMateria.Controls.Add(this.cmbMateria);
-            this.gpbMateria.Controls.Add(this.btnDocentes);
-            this.gpbMateria.Location = new System.Drawing.Point(287, 81);
-            this.gpbMateria.Name = "gpbMateria";
-            this.gpbMateria.Size = new System.Drawing.Size(227, 152);
-            this.gpbMateria.TabIndex = 18;
-            this.gpbMateria.TabStop = false;
-            this.gpbMateria.Text = "Materia";
-            // 
             // cmbMateria
             // 
             this.cmbMateria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMateria.FormattingEnabled = true;
-            this.cmbMateria.Location = new System.Drawing.Point(7, 27);
+            this.cmbMateria.Location = new System.Drawing.Point(235, 19);
             this.cmbMateria.Name = "cmbMateria";
             this.cmbMateria.Size = new System.Drawing.Size(201, 21);
             this.cmbMateria.TabIndex = 8;
+            // 
+            // lblMateria
+            // 
+            this.lblMateria.AutoSize = true;
+            this.lblMateria.Location = new System.Drawing.Point(184, 23);
+            this.lblMateria.Name = "lblMateria";
+            this.lblMateria.Size = new System.Drawing.Size(45, 13);
+            this.lblMateria.TabIndex = 19;
+            this.lblMateria.Text = "Materia:";
+            // 
+            // gpbMateria
+            // 
+            this.gpbMateria.Controls.Add(this.dgvListaDocentes);
+            this.gpbMateria.Location = new System.Drawing.Point(215, 81);
+            this.gpbMateria.Name = "gpbMateria";
+            this.gpbMateria.Size = new System.Drawing.Size(554, 152);
+            this.gpbMateria.TabIndex = 18;
+            this.gpbMateria.TabStop = false;
+            this.gpbMateria.Text = "Materia";
+            // 
+            // dgvListaDocentes
+            // 
+            this.dgvListaDocentes.AllowUserToOrderColumns = true;
+            this.dgvListaDocentes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListaDocentes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvApellido,
+            this.dgvNombre,
+            this.dvgCargo,
+            this.dvgAsignado});
+            this.dgvListaDocentes.Location = new System.Drawing.Point(6, 19);
+            this.dgvListaDocentes.Name = "dgvListaDocentes";
+            this.dgvListaDocentes.Size = new System.Drawing.Size(542, 127);
+            this.dgvListaDocentes.TabIndex = 20;
+            // 
+            // dgvApellido
+            // 
+            this.dgvApellido.HeaderText = "Apellido";
+            this.dgvApellido.Name = "dgvApellido";
+            this.dgvApellido.ReadOnly = true;
+            // 
+            // dgvNombre
+            // 
+            this.dgvNombre.HeaderText = "Nombre";
+            this.dgvNombre.Name = "dgvNombre";
+            this.dgvNombre.ReadOnly = true;
+            // 
+            // dvgCargo
+            // 
+            this.dvgCargo.HeaderText = "Cargo";
+            this.dvgCargo.Name = "dvgCargo";
+            this.dvgCargo.ReadOnly = true;
+            this.dvgCargo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // dvgAsignado
+            // 
+            this.dvgAsignado.HeaderText = "Asignar";
+            this.dvgAsignado.Name = "dvgAsignado";
             // 
             // ucAgregarComision
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.cmbMateria);
+            this.Controls.Add(this.lblMateria);
             this.Controls.Add(this.gpbMateria);
             this.Controls.Add(this.grpComision);
             this.Controls.Add(this.btnBorrar);
@@ -227,10 +271,11 @@
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.lblId);
             this.Name = "ucAgregarComision";
-            this.Size = new System.Drawing.Size(606, 323);
+            this.Size = new System.Drawing.Size(848, 321);
             this.grpComision.ResumeLayout(false);
             this.grpComision.PerformLayout();
             this.gpbMateria.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListaDocentes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -241,7 +286,6 @@
         private System.Windows.Forms.GroupBox grpComision;
         private System.Windows.Forms.ComboBox cmbTurno;
         private System.Windows.Forms.Label lblTurno;
-        private System.Windows.Forms.Button btnDocentes;
         private System.Windows.Forms.Button btnBorrar;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnCancelar;
@@ -251,9 +295,15 @@
         private System.Windows.Forms.Label lblHsTotales;
         private System.Windows.Forms.TextBox txtHsSemanales;
         private System.Windows.Forms.Label lblHsSemanales;
-        private System.Windows.Forms.GroupBox gpbMateria;
         private System.Windows.Forms.ComboBox cmbMateria;
         private System.Windows.Forms.TextBox txtAñoCursado;
         private System.Windows.Forms.Label lblAñoCursado;
+        private System.Windows.Forms.Label lblMateria;
+        private System.Windows.Forms.GroupBox gpbMateria;
+        private System.Windows.Forms.DataGridView dgvListaDocentes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvApellido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvNombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dvgCargo;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dvgAsignado;
     }
 }

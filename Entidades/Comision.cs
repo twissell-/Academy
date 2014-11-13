@@ -16,16 +16,22 @@ namespace Entidades
         public Alumno[] alumnos { get; set; }
         public int turno { get; set; }
 
-        enum eTurno
-        {
-            Mañana,
-            Tarde,
-            Noche
-        }
-
         public Comision(int id, int anioCursado,float hsSemanales,float hsTotales, Materia materia, Docente[] docentes, Alumno[] alumnos, int turnos)
+        // TODO: Refactorizar el codigo para no repetir.        
         {
             this.id = id;
+            this.anioCursado = anioCursado;
+            this.materia = materia;
+            this.docentes = docentes;
+            this.alumnos = alumnos;
+            this.turno = turnos;
+            this.HsSemanales = hsSemanales;
+            this.HsTotales = hsTotales;
+        }
+        public Comision(int anioCursado, float hsSemanales, float hsTotales, Materia materia, Docente[] docentes, Alumno[] alumnos, int turnos)
+        // Cnstructor para nuevas comisiones.
+        {
+            this.id = 0;
             this.anioCursado = anioCursado;
             this.materia = materia;
             this.docentes = docentes;

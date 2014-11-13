@@ -46,6 +46,7 @@
             // 
             // txtId
             // 
+            this.txtId.Enabled = false;
             this.txtId.Location = new System.Drawing.Point(118, 46);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(156, 20);
@@ -86,6 +87,7 @@
             this.btnGuardar.TabIndex = 15;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnCancelar
             // 
@@ -97,7 +99,7 @@
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             // 
-            // agregarEspecialidad
+            // ucAgregarEspecialidad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -108,7 +110,7 @@
             this.Controls.Add(this.lblId);
             this.Controls.Add(this.btnBorrar);
             this.Controls.Add(this.btnGuardar);
-            this.Name = "agregarEspecialidad";
+            this.Name = "ucAgregarEspecialidad";
             this.Size = new System.Drawing.Size(606, 323);
             this.ResumeLayout(false);
             this.PerformLayout();

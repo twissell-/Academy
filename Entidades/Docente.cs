@@ -8,13 +8,6 @@ namespace Entidades
     public class Docente : Persona
     {
 
-        enum eCargo
-        {
-            titular,
-            adjunto,
-            jtp,
-            auxPrimera,
-        }
         private int cargo { get; set; }
 
         public Docente (int id, String nombre, String apellido, String dni, String telefono, String direccion, 

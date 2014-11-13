@@ -13,9 +13,38 @@ namespace UserControls
 {
     public partial class ucAgregarComision : UserControl
     {
+        ControllerMateria cm;
+
+#region Enumeraciones
+
+        enum eTurno
+        {
+            Mañana,
+            Tarde,
+            Noche
+        }
+
+        enum eCargo
+        {
+            Titular,
+            Adjunto,
+            JTP,
+            Auxiliar,
+        }
+
+#endregion
+
         public ucAgregarComision()
         {
             InitializeComponent();
+            this.cm = new ControllerMateria();
+        }
+
+        private void ucFill()
+        {
+            cmbMateria.DataSource = cm.find();
+            cmbTurno.DataSource = Enum.GetValues(typeof(eTurno)).Cast<eTurno>();
+            // TODO: Seguir Aca <---------------------------------------------
         }
 
         private void btnBorrar_Click(object sender, EventArgs e)
@@ -34,16 +63,12 @@ namespace UserControls
     
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            
-            int turno;
-            if (cmbTurno.Text=="Mañana")
-            { turno = 1;}
-            else if (cmbTurno.Text=="Tarde")
-	                {turno=2;} 
-                    else{ turno=3;}
-            //Comision com = new Comision(int.Parse(txtId.Text), int.Parse(txtAñoCursado.Text),float.Parse(txtHsSemanales.Text),float.Parse(txtHsTotales.Text), cmbMateria,,,turno);
-            //ControllerComision controllerCom = new ControllerComision(); 
-            //controllerCom.insert(com);
+         /*   foreach (DataGridViewRow row in this.dgvListaDocentes.Rows)
+	        {
+		        
+	        }
+            Comision c = new Comision(Convert.ToInt32(txtAñoCursado.Text), Convert.ToDecimal(txtHsSemanales.Text), 
+                Convert.ToDecimal(txtHsTotales.Text), cmbMateria.SelectedItem, */
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

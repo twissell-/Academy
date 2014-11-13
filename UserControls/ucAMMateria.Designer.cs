@@ -31,7 +31,7 @@
             this.lblMateria = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
             this.lblPlan = new System.Windows.Forms.Label();
-            this.cbmPlan = new System.Windows.Forms.ComboBox();
+            this.cmbPlan = new System.Windows.Forms.ComboBox();
             this.btnBorrar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.lblDescripcion = new System.Windows.Forms.Label();
@@ -49,6 +49,7 @@
             // 
             // txtId
             // 
+            this.txtId.Enabled = false;
             this.txtId.Location = new System.Drawing.Point(246, 18);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(146, 20);
@@ -63,13 +64,13 @@
             this.lblPlan.TabIndex = 2;
             this.lblPlan.Text = "Plan:";
             // 
-            // cbmPlan
+            // cmbPlan
             // 
-            this.cbmPlan.FormattingEnabled = true;
-            this.cbmPlan.Location = new System.Drawing.Point(246, 57);
-            this.cbmPlan.Name = "cbmPlan";
-            this.cbmPlan.Size = new System.Drawing.Size(146, 21);
-            this.cbmPlan.TabIndex = 3;
+            this.cmbPlan.FormattingEnabled = true;
+            this.cmbPlan.Location = new System.Drawing.Point(246, 57);
+            this.cmbPlan.Name = "cmbPlan";
+            this.cmbPlan.Size = new System.Drawing.Size(146, 21);
+            this.cmbPlan.TabIndex = 3;
             // 
             // btnBorrar
             // 
@@ -88,6 +89,7 @@
             this.btnGuardar.TabIndex = 15;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // lblDescripcion
             // 
@@ -113,12 +115,13 @@
             this.Controls.Add(this.lblDescripcion);
             this.Controls.Add(this.btnBorrar);
             this.Controls.Add(this.btnGuardar);
-            this.Controls.Add(this.cbmPlan);
+            this.Controls.Add(this.cmbPlan);
             this.Controls.Add(this.lblPlan);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.lblMateria);
             this.Name = "ucAMMateria";
             this.Size = new System.Drawing.Size(720, 323);
+            this.Load += new System.EventHandler(this.ucAMMateria_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -129,7 +132,7 @@
         private System.Windows.Forms.Label lblMateria;
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Label lblPlan;
-        private System.Windows.Forms.ComboBox cbmPlan;
+        private System.Windows.Forms.ComboBox cmbPlan;
         private System.Windows.Forms.Button btnBorrar;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Label lblDescripcion;

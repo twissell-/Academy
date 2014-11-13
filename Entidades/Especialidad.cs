@@ -8,7 +8,7 @@ namespace Entidades
     public class Especialidad
     {
         public int id { get; set; }
-        private String descripcion { get; set; }
+        public String descripcion { get; set; }
 
 
         public Especialidad(int id, String descripcion)

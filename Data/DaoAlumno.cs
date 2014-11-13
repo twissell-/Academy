@@ -12,7 +12,7 @@ namespace Data
         {
             MongoServer server = Connection.instance.server;
             MongoDatabase database = server.GetDatabase("test");
-            alumnos = database.GetCollection<Alumno>("test");  
+            alumnos = database.GetCollection<Alumno>("alumnos");  
         }
 
         private void save(Alumno obj)
@@ -49,7 +49,7 @@ namespace Data
 
         public void insert(Alumno obj)
         {
-            if (obj.id == null)
+            if (obj.id == 0)
             {
                 obj.id = DaoParameter.instance.getAlumnoNextId();
             }

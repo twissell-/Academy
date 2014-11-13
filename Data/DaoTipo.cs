@@ -12,7 +12,7 @@ namespace Data
         {
             MongoServer server = Connection.instance.server;
             MongoDatabase database = server.GetDatabase("test");
-            tipos = database.GetCollection<Tipo>("test");  
+            tipos = database.GetCollection<Tipo>("tipos");  
         }
 
         private void save(Tipo obj)

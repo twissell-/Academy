@@ -13,7 +13,7 @@ namespace Data
         {
             MongoServer server = Connection.instance.server;
             MongoDatabase database = server.GetDatabase("test");
-            planes = database.GetCollection<MapperPlan>("test");  
+            planes = database.GetCollection<MapperPlan>("planes");  
         }
 
         private void save(Plan obj)
@@ -63,7 +63,7 @@ namespace Data
 
         public void insert(Plan obj)
         {
-            if (obj.id == null)
+            if (obj.id == 0)
             {
                 obj.id = DaoParameter.instance.getPlanNextId();
             }
