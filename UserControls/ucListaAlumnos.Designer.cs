@@ -36,6 +36,7 @@
             this.telefonoAlumno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emailAlumno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaAlumnos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,7 +59,6 @@
             this.dgvListaAlumnos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListaAlumnos.Size = new System.Drawing.Size(644, 283);
             this.dgvListaAlumnos.TabIndex = 0;
-            this.dgvListaAlumnos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListaAlumnos_CellContentClick);
             // 
             // idAlumno
             // 
@@ -104,7 +104,7 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(573, 293);
+            this.btnEliminar.Location = new System.Drawing.Point(483, 293);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 1;
@@ -112,10 +112,21 @@
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(573, 293);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.TabIndex = 6;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
             // ucListaAlumnos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.dgvListaAlumnos);
             this.Name = "ucListaAlumnos";
@@ -135,5 +146,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreAlumno;
         private System.Windows.Forms.DataGridViewTextBoxColumn telefonoAlumno;
         private System.Windows.Forms.DataGridViewTextBoxColumn emailAlumno;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }

@@ -13,14 +13,27 @@ namespace UserControls
 {
     public partial class ucMPersona : UserControl
     {
-        ControllerAlumno ca;
-        public ucMPersona()
+       // cont;
+        ControllerAlumno cont;
+        public ucMPersona(string tipo)
         {
-            ca = new ControllerAlumno();
+            /* switch (tipo)
+            {
+                case "MAd": cont = new ControllerAdministrativo();
+                    break;
+                case "MA": cont = new ControllerAlumno();
+                    break;
+                case "MD": cont = new ControllerDocente();
+                    break;
+                default:
+                    break;
+            }*/
+
+           ControllerAlumno cont = new ControllerAlumno();
             InitializeComponent();
            
             this.dgvListaAlumnosMod.AutoGenerateColumns = false;
-            this.dgvListaAlumnosMod.DataSource = ca.find();
+            this.dgvListaAlumnosMod.DataSource = cont.find();
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
@@ -34,7 +47,7 @@ namespace UserControls
                 if (MessageBox.Show("¿Está seguro que desea modificar a " + nom + " " + ape + "?",
                     "Modificar", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                   var al = ca.find(id);
+                   var al = cont.find(id);
                    al.apellido =this.dgvListaAlumnosMod.SelectedRows[0].Cells[2].Value.ToString();
                  //al.direccion = this.dgvListaAlumnosMod.SelectedRows[0].Cells[2].Value.ToString();
                    al.dni = this.dgvListaAlumnosMod.SelectedRows[0].Cells[1].Value.ToString();
@@ -42,10 +55,10 @@ namespace UserControls
                    al.mail = this.dgvListaAlumnosMod.SelectedRows[0].Cells[5].Value.ToString();
                    al.nombre = this.dgvListaAlumnosMod.SelectedRows[0].Cells[3].Value.ToString();
                    al.telefono = this.dgvListaAlumnosMod.SelectedRows[0].Cells[4].Value.ToString();
-                   ca.update(al);
+                   cont.update(al);
                 }
-
-            }
+}
+            
             else
             {
                 MessageBox.Show("Debe seleccionar una fila para modificarla", "Modificar", MessageBoxButtons.OK, MessageBoxIcon.Error);

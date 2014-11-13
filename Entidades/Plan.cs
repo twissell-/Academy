@@ -13,11 +13,17 @@ namespace Entidades
         public Materia[] materias { get; set; }
 
 
-        public Plan(int id, String descripcion, Especialidad especialidad, Materia[] materias)
+        public Plan(int id, String descripcion, Especialidad especialidad)
         {
             this.id = id;
             this.descripcion = descripcion;
             this.especialidad = especialidad;
+           
+        }
+
+        public Plan(int id, String descripcion, Especialidad especialidad, Materia[] materias)   
+            : this(id,descripcion,especialidad)
+        {
             this.materias = materias;
         }
 

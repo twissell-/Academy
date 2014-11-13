@@ -99,6 +99,18 @@
     <Compile Include="ucAPersona.Designer.cs">
       <DependentUpon>ucAPersona.cs</DependentUpon>
     </Compile>
+    <Compile Include="ucBEspecialidad.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucBEspecialidad.Designer.cs">
+      <DependentUpon>ucBEspecialidad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucBPlanes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucBPlanes.Designer.cs">
+      <DependentUpon>ucBPlanes.cs</DependentUpon>
+    </Compile>
     <Compile Include="ucListaAlumnos.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -118,11 +130,41 @@
     <Compile Include="ucListaDocentes.Designer.cs">
       <DependentUpon>ucListaDocentes.cs</DependentUpon>
     </Compile>
+    <Compile Include="ucListaEspecialidades.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucListaEspecialidades.Designer.cs">
+      <DependentUpon>ucListaEspecialidades.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucListaPlanes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucListaPlanes.Designer.cs">
+      <DependentUpon>ucListaPlanes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucMEspecialidad.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucMEspecialidad.Designer.cs">
+      <DependentUpon>ucMEspecialidad.cs</DependentUpon>
+    </Compile>
     <Compile Include="ucMPersona.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="ucMPersona.Designer.cs">
       <DependentUpon>ucMPersona.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucAPlanes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucAPlanes.Designer.cs">
+      <DependentUpon>ucAPlanes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucMPlanes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucMPlanes.Designer.cs">
+      <DependentUpon>ucMPlanes.cs</DependentUpon>
     </Compile>
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
@@ -149,6 +191,12 @@
     <EmbeddedResource Include="ucAPersona.resx">
       <DependentUpon>ucAPersona.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ucBEspecialidad.resx">
+      <DependentUpon>ucBEspecialidad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucBPlanes.resx">
+      <DependentUpon>ucBPlanes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ucListaAlumnos.resx">
       <DependentUpon>ucListaAlumnos.cs</DependentUpon>
     </EmbeddedResource>
@@ -158,8 +206,23 @@
     <EmbeddedResource Include="ucListaDocentes.resx">
       <DependentUpon>ucListaDocentes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ucListaEspecialidades.resx">
+      <DependentUpon>ucListaEspecialidades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucListaPlanes.resx">
+      <DependentUpon>ucListaPlanes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucMEspecialidad.resx">
+      <DependentUpon>ucMEspecialidad.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ucMPersona.resx">
       <DependentUpon>ucMPersona.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucAPlanes.resx">
+      <DependentUpon>ucAPlanes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucMPlanes.resx">
+      <DependentUpon>ucMPlanes.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
