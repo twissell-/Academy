@@ -13,11 +13,11 @@ namespace UserControls
 {
     public partial class ucMPersona : UserControl
     {
-       // cont;
-        ControllerAlumno cont;
+        InterfaceControllers cont;
+        
         public ucMPersona(string tipo)
         {
-            /* switch (tipo)
+             switch (tipo)
             {
                 case "MAd": cont = new ControllerAdministrativo();
                     break;
@@ -27,9 +27,9 @@ namespace UserControls
                     break;
                 default:
                     break;
-            }*/
+            }
 
-           ControllerAlumno cont = new ControllerAlumno();
+          
             InitializeComponent();
            
             this.dgvListaAlumnosMod.AutoGenerateColumns = false;
@@ -69,13 +69,7 @@ namespace UserControls
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Dispose();
-        }
-
-        private void dgvListaAlumnosMod_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
+        }     
         
     }
 }

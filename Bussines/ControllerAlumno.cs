@@ -7,7 +7,7 @@ using Entidades;
 
 namespace Bussines
 {
-    public class ControllerAlumno
+    public class ControllerAlumno:InterfaceControllers
     {
         private DaoAlumno dao;
 
@@ -39,6 +39,31 @@ namespace Bussines
         public void insert(Alumno obj)
         {
             dao.insert(obj);
+        }
+
+        void InterfaceControllers.delete(Persona p)
+        {
+            this.delete(((Alumno)p));
+        }
+
+        void InterfaceControllers.update(Persona p)
+        {
+            this.update(((Alumno)p));
+        }
+
+        void InterfaceControllers.insert(Persona p)
+        {
+            this.insert(((Alumno)p));
+        }
+
+        List<Persona> InterfaceControllers.find()
+        {
+            return new List<Persona>();
+        }
+
+        Persona InterfaceControllers.find(int id)
+        {
+            return this.find(id);
         }
     }
 }

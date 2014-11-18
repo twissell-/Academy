@@ -13,7 +13,7 @@ body
 
 a:link, a:visited
 {
-    color: #034af3;
+    color: #f9f9f9;
 }
 
 a:hover
@@ -33,7 +33,7 @@ p
     line-height: 1.6em;
 }
 
-
+hyperlink{color: #f9f9f9;}
 /* HEADINGS   
 ----------------------------------------------------------*/
 
@@ -119,6 +119,8 @@ first child of the left and right table columns */
     padding: 0px 12px;
     margin: 12px 8px 8px 8px;
     min-height: 420px;
+  /*  float:right;
+*/    
 }
 
 .leftCol
@@ -131,11 +133,13 @@ first child of the left and right table columns */
 
 .footer
 {
+    
     color: #4e5766;
     padding: 8px 0px 0px 0px;
-    margin: 0px auto;
+    margin: 0px;
     text-align: center;
     line-height: normal;
+    background: #4b6c9e;
 }
 
 
@@ -147,10 +151,27 @@ div.hideSkiplink
     background-color:#3a4f63;
     width:100%;
 }
+div.footer
+{
+    position:absolute;
+    bottom:0px;
+    width:100%;
+    height:10%;
+}
 
 div.menu
 {
+    float:left;
     padding: 4px 0px 4px 8px;
+    background: #b6b7bc;
+    width:20%;
+    height:550px;
+}
+div.main
+{
+    float:auto;
+    height:20%;
+    width: 80%;   
 }
 
 div.menu ul
@@ -217,6 +238,7 @@ legend
     font-size: 1.1em;
     font-weight: 600;
     padding: 2px 4px 8px 4px;
+    text-align:center;
 }
 
 input.textEntry 
