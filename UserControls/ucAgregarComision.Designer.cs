@@ -49,7 +49,7 @@
             this.dgvApellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvCargo = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dvgAsignado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dgvAsignado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.grpComision.SuspendLayout();
             this.gpbMateria.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaDocentes)).BeginInit();
@@ -228,40 +228,45 @@
             this.dgvApellido,
             this.dgvNombre,
             this.dgvCargo,
-            this.dvgAsignado});
+            this.dgvAsignado});
+            this.dgvListaDocentes.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dgvListaDocentes.Location = new System.Drawing.Point(6, 19);
             this.dgvListaDocentes.Name = "dgvListaDocentes";
-            this.dgvListaDocentes.ReadOnly = true;
             this.dgvListaDocentes.Size = new System.Drawing.Size(542, 127);
             this.dgvListaDocentes.TabIndex = 20;
+            this.dgvListaDocentes.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvListaDocentes_DataError);
             // 
             // dgvApellido
             // 
+            this.dgvApellido.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dgvApellido.DataPropertyName = "apellido";
             this.dgvApellido.HeaderText = "Apellido";
             this.dgvApellido.Name = "dgvApellido";
-            this.dgvApellido.ReadOnly = true;
             // 
             // dgvNombre
             // 
+            this.dgvNombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dgvNombre.DataPropertyName = "nombre";
             this.dgvNombre.HeaderText = "Nombre";
             this.dgvNombre.Name = "dgvNombre";
-            this.dgvNombre.ReadOnly = true;
             // 
             // dgvCargo
             // 
+            this.dgvCargo.DataPropertyName = "cargo";
             this.dgvCargo.HeaderText = "Cargo";
             this.dgvCargo.Name = "dgvCargo";
-            this.dgvCargo.ReadOnly = true;
             this.dgvCargo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvCargo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
-            // dvgAsignado
+            // dgvAsignado
             // 
-            this.dvgAsignado.HeaderText = "Asignar";
-            this.dvgAsignado.Name = "dvgAsignado";
-            this.dvgAsignado.ReadOnly = true;
+            this.dgvAsignado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.dgvAsignado.DataPropertyName = "asignado";
+            this.dgvAsignado.FalseValue = "false";
+            this.dgvAsignado.HeaderText = "Asignar";
+            this.dgvAsignado.Name = "dgvAsignado";
+            this.dgvAsignado.TrueValue = "true";
+            this.dgvAsignado.Width = 48;
             // 
             // ucAgregarComision
             // 
@@ -311,6 +316,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvApellido;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvNombre;
         private System.Windows.Forms.DataGridViewComboBoxColumn dgvCargo;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dvgAsignado;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dgvAsignado;
     }
 }

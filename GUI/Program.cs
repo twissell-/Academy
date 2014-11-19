@@ -15,11 +15,7 @@ namespace GUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new FrmPRUEBA());
             Application.Run(new FrmPrincipal0());
-            //Application.Run(new FrmComisiones());
-           // Application.Run(new FrmAbmAlumno());
-            //Application.Run(new FrmPrincipal());
         }
     }
 }

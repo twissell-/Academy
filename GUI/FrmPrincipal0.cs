@@ -24,11 +24,14 @@ namespace GUI
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
+
+
             if (txtId.Text=="admin" && txtContraseña.Text=="admin")
             {
                 try
                 {
                     Form administrador = new FrmPrincipal();
+                    this.Hide();
                     administrador.ShowDialog();
                 }
                 catch (ArgumentException)

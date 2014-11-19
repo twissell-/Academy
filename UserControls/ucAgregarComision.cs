@@ -27,6 +27,7 @@ namespace UserControls
 
         enum eCargo
         {
+            Ninguno,
             Titular,
             Adjunto,
             JTP,
@@ -46,10 +47,15 @@ namespace UserControls
         {
             cmbMateria.DataSource = cm.find();
             cmbTurno.DataSource = Enum.GetValues(typeof(eTurno)).Cast<eTurno>();
+            dgvAsignado.TrueValue = true;
+            dgvAsignado.FalseValue = false;
+            foreach (var item in Enum.GetValues(typeof(eCargo)).Cast<eCargo>())
+            {
+                dgvCargo.Items.Add(item);
+            } 
             dgvListaDocentes.AutoGenerateColumns = false;
-            dgvCargo.DataSource = Enum.GetValues(typeof(eCargo)).Cast<eCargo>();
             dgvListaDocentes.DataSource = cd.find();
-            // TODO: Seguir Aca <---------------------------------------------
+            
         }
 
         private void btnBorrar_Click(object sender, EventArgs e)
@@ -58,27 +64,29 @@ namespace UserControls
             this.txtHsTotales.Clear();
         }
 
-        private void btnDocentes_Click(object sender, EventArgs e)
-        {   
-            UserControl docentes = new ucListaDocentes();
-         //   this.Hide();
-            docentes.Show();
-           
-        }
-    
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-         /*   foreach (DataGridViewRow row in this.dgvListaDocentes.Rows)
+            List<Docente> docentes =  new List<Docente>();
+            foreach (DataGridViewRow row in this.dgvListaDocentes.Rows)
 	        {
-		        
+		        if ((bool)row.Cells[3].Value)
+	            {
+                    docentes.Add((Docente)row.DataBoundItem);
+	            }
 	        }
-            Comision c = new Comision(Convert.ToInt32(txtAñoCursado.Text), Convert.ToDecimal(txtHsSemanales.Text), 
-                Convert.ToDecimal(txtHsTotales.Text), cmbMateria.SelectedItem, */
+            // TODO: Seguir Aca <---------------------------------------------
+           // Comision c = new Comision(Convert.ToInt32(txtAñoCursado.Text), Convert.ToDecimal(txtHsSemanales.Text), 
+           //     Convert.ToDecimal(txtHsTotales.Text), cmbMateria.SelectedItem, 
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void dgvListaDocentes_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+
         }
     }
 }

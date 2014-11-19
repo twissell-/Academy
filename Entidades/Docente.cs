@@ -8,7 +8,8 @@ namespace Entidades
     public class Docente : Persona
     {
 
-        private int cargo { get; set; }
+        public int cargo { get; set; }
+        public bool asignado { get; set; }
 
         public Docente(String nombre, String apellido, String dni, String telefono, String direccion,
             String mail, String nacimiento, String password)
