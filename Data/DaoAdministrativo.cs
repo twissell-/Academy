@@ -4,7 +4,8 @@ using MongoDB.Driver;
 
 namespace Data
 {
-    public class DaoAdministrativo
+    public class DaoAdministrativo : IDaoPersona
+
     {
         private MongoCollection<Administrativo> administrativos;
 
@@ -15,39 +16,39 @@ namespace Data
             administrativos = database.GetCollection<Administrativo>("administrativos");  
         }
 
-        private void save(Administrativo obj)
+        private void save(Persona obj)
         {
-            administrativos.Save(obj);
+            administrativos.Save((Administrativo)obj);
         }
 
-        public Administrativo find(int id) 
+        public Persona find(int id) 
         {
             QueryDocument query = new QueryDocument("_id", id);
-            return administrativos.FindOneAs<Administrativo>(query);
+            return (Persona)administrativos.FindOneAs<Administrativo>(query);
         }
 
-        public List<Administrativo> find()
+        public List<Persona> find()
         {
-            List<Administrativo> ls = new List<Administrativo>();
+            List<Persona> ls = new List<Persona>();
             foreach (Administrativo obj in administrativos.FindAllAs<Administrativo>())
             {
-                ls.Add(obj);
+                ls.Add((Persona)obj);
             }
             return ls;
         }
 
-        public void delete(Administrativo obj)
+        public void delete(Persona obj)
         {
             QueryDocument query = new QueryDocument("_id", obj.id);
             administrativos.Remove(query);
         }
 
-        public void update(Administrativo obj)
+        public void update(Persona obj)
         {
             save(obj);
         }
 
-        public void insert(Administrativo obj)
+        public void insert(Persona obj)
         {
             if (obj.id == 0)
             {

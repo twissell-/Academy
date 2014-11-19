@@ -88,6 +88,7 @@
     <Compile Include="DaoParameters.cs" />
     <Compile Include="DaoPlan.cs" />
     <Compile Include="DaoTipo.cs" />
+    <Compile Include="IDaoPersona.cs" />
     <Compile Include="MapperComision.cs" />
     <Compile Include="MapperMateria.cs" />
     <Compile Include="MapperPlan.cs" />

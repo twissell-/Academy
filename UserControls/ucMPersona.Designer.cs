@@ -70,7 +70,7 @@
             this.dgvListaAlumnosMod.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListaAlumnosMod.Size = new System.Drawing.Size(747, 283);
             this.dgvListaAlumnosMod.TabIndex = 2;
-            this.dgvListaAlumnosMod.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListaAlumnosMod_CellContentClick);
+            //this.dgvListaAlumnosMod.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListaAlumnosMod_CellContentClick);
             // 
             // btnCancelar
             // 

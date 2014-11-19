@@ -4,7 +4,7 @@ using MongoDB.Driver;
 
 namespace Data
 {
-    public class DaoAlumno
+    public class DaoAlumno : IDaoPersona
     {
         private MongoCollection<Alumno> alumnos;
 
@@ -15,39 +15,39 @@ namespace Data
             alumnos = database.GetCollection<Alumno>("alumnos");  
         }
 
-        private void save(Alumno obj)
+        private void save(Persona obj)
         {
-            alumnos.Save(obj);
+            alumnos.Save((Alumno)obj);
         }
 
-        public Alumno find(int id) 
+        public Persona find(int id) 
         {
             QueryDocument query = new QueryDocument("_id", id);
-            return alumnos.FindOneAs<Alumno>(query);
+            return (Persona)alumnos.FindOneAs<Alumno>(query);
         }
 
-        public List<Alumno> find()
+        public List<Persona> find()
         {
-            List<Alumno> ls = new List<Alumno>();
+            List<Persona> ls = new List<Persona>();
             foreach (Alumno obj in alumnos.FindAllAs<Alumno>())
             {
-                ls.Add(obj);
+                ls.Add((Persona)obj);
             }
             return ls;
         }
 
-        public void delete(Alumno obj)
+        public void delete(Persona obj)
         {
             QueryDocument query = new QueryDocument("_id", obj.id);
             alumnos.Remove(query);
         }
 
-        public void update(Alumno obj)
+        public void update(Persona obj)
         {
             save(obj);
         }
 
-        public void insert(Alumno obj)
+        public void insert(Persona obj)
         {
             if (obj.id == 0)
             {

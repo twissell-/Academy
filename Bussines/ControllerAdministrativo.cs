@@ -7,7 +7,7 @@ using Entidades;
 
 namespace Bussines
 {
-    public class ControllerAdministrativo 
+    public class ControllerAdministrativo : IControllerPersona
     {
         private DaoAdministrativo dao;
 
@@ -16,33 +16,30 @@ namespace Bussines
             dao = new DaoAdministrativo();
         }
 
-        
-
-        
-        /*public Administrativo find(int id)
+        public Persona find(int id)
         {
             return dao.find(id);
         }
 
-        public List<Administrativo> find()
+        public List<Persona> find()
         {
             return dao.find();
         }
 
-        public void delete(Administrativo obj)
+        public void delete(Persona obj)
         {
             dao.delete(obj);
         }
 
-        public void update(Administrativo obj)
+        public void update(Persona obj)
         {
             dao.update(obj);
         }
 
-        public void insert(Administrativo obj)
+        public void insert(Persona obj)
         {
             dao.insert(obj);
-        }*/
+        }
 
         
         

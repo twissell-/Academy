@@ -13,7 +13,7 @@ namespace UserControls
 {
     public partial class ucMPersona : UserControl
     {
-        InterfaceControllers cont;
+        IControllerPersona cont;
         
         public ucMPersona(string tipo)
         {
@@ -47,7 +47,7 @@ namespace UserControls
                 if (MessageBox.Show("¿Está seguro que desea modificar a " + nom + " " + ape + "?",
                     "Modificar", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                   var al = cont.find(id);
+                   Persona al = (Persona)cont.find(id);
                    al.apellido =this.dgvListaAlumnosMod.SelectedRows[0].Cells[2].Value.ToString();
                  //al.direccion = this.dgvListaAlumnosMod.SelectedRows[0].Cells[2].Value.ToString();
                    al.dni = this.dgvListaAlumnosMod.SelectedRows[0].Cells[1].Value.ToString();

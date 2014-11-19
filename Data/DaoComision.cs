@@ -31,13 +31,13 @@ namespace Data
             //  recupero los objetos Alumno
             for (int i = 0; i < mapper.alumnos.Length; i++)
             {
-                alumnos[i] = da.find(mapper.alumnos[i]);
+                alumnos[i] = (Alumno)da.find(mapper.alumnos[i]);
             }
             //  Recupero los objetos Docente
             Docente[] docentes = new Docente[mapper.docentes.Length];
             for (int i = 0; i < mapper.docentes.Length; i++)
             {
-                docentes[i] = dd.find(mapper.docentes[i]);
+                docentes[i] = (Docente)dd.find(mapper.docentes[i]);
             }
 
             return new Comision(mapper.id, mapper.anioCursado, mapper.HsSemanales, mapper.HsTotales, dm.find(mapper.materia), docentes, alumnos, mapper.turno);
