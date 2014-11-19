@@ -4,13 +4,17 @@
 
 
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="Menu">
-    <fieldset>
+    <form runat="server" id="Form1" padding=0>
+    <fieldset >
         <legend>Menu</legend>
-            <asp:HyperLink ID="linkInscMaterias" runat="server" NavigateUrl="~/inscMateria.aspx">Inscribirse a una Materias</asp:HyperLink><br />
-            <asp:HyperLink ID="linkEstadoAcademico" runat="server">Estado academico</asp:HyperLink><br />
-            <asp:HyperLink ID="linkCambiarPass" runat="server">Cambiar Contraseña</asp:HyperLink><br />
-            <asp:HyperLink ID="linkSalir" runat="server">Salir</asp:HyperLink><br />
+        <asp:Menu ID="Menu1" runat="server" >
+        <Items><asp:MenuItem NavigateUrl="~/inscMateria.aspx" Text="Materias"></asp:MenuItem></Items>
+        <Items><asp:MenuItem NavigateUrl="~/inscMateria.aspx" Text="Estado academico"></asp:MenuItem></Items>
+        <Items><asp:MenuItem NavigateUrl="~/inscMateria.aspx" Text="Cambiar Contraseña"></asp:MenuItem></Items>
+        <Items><asp:MenuItem NavigateUrl="~/inscMateria.aspx" Text="Salir"></asp:MenuItem></Items>        
+        </asp:Menu>      
     </fieldset>
+    </form>
 </asp:Content>
 
 <asp:Content ID="MainContent" runat="server" ContentPlaceHolderID="MainContent">
