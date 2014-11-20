@@ -4,18 +4,11 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using Entidades;
-using Bussines;
 
-
-public partial class inscMateria : System.Web.UI.Page
+public partial class EstadoAcademico : System.Web.UI.Page
 {
-    ControllerAlumno ca;
-    ControllerComision cc;
     protected void Page_Load(object sender, EventArgs e)
     {
-        cc = new ControllerComision();
-        ca = new ControllerAlumno();
         int Rows = 5;   //buscar cantidad de materias en db
         int Columns = 3; //desp ver bien los datos a mostrar
         int tblRows = Rows;
@@ -28,9 +21,9 @@ public partial class inscMateria : System.Web.UI.Page
         hc1.Text = "Descripcion";
         hr.Controls.Add(hc1);
         TableHeaderCell hc2 = new TableHeaderCell();
-        hc2.Text = "Inscribirse";
+        hc2.Text = "Estado";
         hr.Controls.Add(hc2);
-        this.tblMaterias.Rows.Add(hr);    
+        this.tblMaterias.Rows.Add(hr);
         for (int i = 0; i < tblRows; i++)
         {
             TableRow tr = new TableRow();
@@ -39,9 +32,9 @@ public partial class inscMateria : System.Web.UI.Page
                 TableCell tc = new TableCell();
                 TextBox txtBox = new TextBox();
                 txtBox.Text = "RowNo:" + i + " " + "ColumnNo:" + " " + j;
-                tc.Controls.Add(txtBox);   
+                tc.Controls.Add(txtBox);
                 tr.Cells.Add(tc);
-            }            
+            }
             this.tblMaterias.Rows.Add(tr);
         }
     }

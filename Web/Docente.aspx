@@ -4,11 +4,11 @@
 
 
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="Menu">
-    <fieldset>
-        <legend>Menu</legend>
-            <asp:HyperLink ID="linkMaterias" runat="server">Materias</asp:HyperLink><br />
-            <asp:HyperLink ID="linkCambiarPass" runat="server">Cambiar Contraseña</asp:HyperLink><br />
-            <asp:HyperLink ID="linkSalir" runat="server">Salir</asp:HyperLink><br />
+    <fieldset >
+            <legend>Menu</legend>
+                    <a href="docMaterias.aspx" id="Materias" target="_self">Materias</a><br />
+                    <a href="cambPass.aspx" id="CambPass" target="_self">Cambiar Contraseña</a><br />
+                    <a href="inscMateria.aspx" id="Salir" target="_self">Salir</a>        
     </fieldset>
 </asp:Content>
 

@@ -99,7 +99,7 @@ namespace GUI
 
         private void tsmListadoDeMaterias_Click(object sender, EventArgs e)
         {
-
+            //falta
         }
 
         private void tsmModificarComisiones_Click(object sender, EventArgs e)
@@ -205,6 +205,11 @@ namespace GUI
         }
 
         private void tsmReportePlanes_Click(object sender, EventArgs e)
+        {
+            //falta
+        }
+
+        private void tsmListadoDeAdministrativo_Click(object sender, EventArgs e)
         {
             //falta
         }

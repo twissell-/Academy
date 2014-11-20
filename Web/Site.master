@@ -9,27 +9,25 @@
 </head>
 <body>
     <div class="header">
-    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
-    <h1>Zahir Academia</h1>
-    </asp:ContentPlaceHolder>
-    </div>
-   
-    <div class="menu" align=left>
-        <asp:ContentPlaceHolder ID="Menu" runat="server">
+        <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+            <h1>Zahir Academia</h1>
         </asp:ContentPlaceHolder>
     </div>
-    
-    <div class="main" align="center">
-    <asp:ContentPlaceHolder ID="MainContent" runat="server">
-    </asp:ContentPlaceHolder>
+   
+    <div class="menu" align="left">
+        <asp:ContentPlaceHolder ID="Menu" runat="server">
+        </asp:ContentPlaceHolder>  
     </div>
     
+    <div class="main" align="center">         
+        <asp:ContentPlaceHolder ID="MainContent" runat="server">
+        </asp:ContentPlaceHolder>            
+    </div>
     
     <div class="footer">       
         <asp:ContentPlaceHolder ID="FooterContent" runat="server">
             <asp:HyperLink ID="lContacto" runat="server">Contacto</asp:HyperLink>
         </asp:ContentPlaceHolder>
     </div>
-    
 </body>
 </html>

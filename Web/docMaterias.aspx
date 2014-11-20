@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Alumno.aspx.cs" Inherits="Alumno" MasterPageFile="~/Site.master" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="docMaterias.aspx.cs" Inherits="docMaterias" 
+MasterPageFile="~/Site.master"%>
 
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="Menu">
     <fieldset >
@@ -10,6 +11,8 @@
     </fieldset>
 </asp:Content>
 
-<asp:Content ID="MainContent" runat="server" ContentPlaceHolderID="MainContent"> 
+<asp:Content ID="MainContent" runat="server" ContentPlaceHolderID="MainContent">
+    <form id="form1" runat="server">
+   
+    </form>
 </asp:Content>
- 

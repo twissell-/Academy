@@ -4,9 +4,12 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Entidades;
+using Bussines;
 
 public partial class _Default : System.Web.UI.Page
 {
+    IControllerPersona ic;
     protected void btnIngresar_onclick(object sender, EventArgs e)
     {
         if (txtUss.Text == "docente" && txtPss.Text == "docente")
