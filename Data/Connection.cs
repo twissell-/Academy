@@ -20,7 +20,7 @@ namespace Data
             String connectionString = "mongodb://localhost";
             MongoClient client = new MongoClient(connectionString);
             server = client.GetServer();
-        }
+       }
 
         public static Connection instance
         {

@@ -10,6 +10,7 @@
                 <asp:TextBox ID="txtPss" type="password" class="form-control" placeholder="Contraseña" runat="server" required="autofocus"></asp:TextBox>
                 <asp:Button ID="btnIngresar" class="btn btn-lg btn-primary btn-block" runat="server" onclick="btnIngresar_onclick" Text="INGRESAR" />
                 </form>               
-            </fieldset>          
+            </fieldset>
+            <asp:Label ID="error" runat="server"></asp:Label>          
     </div>  
 </asp:Content>

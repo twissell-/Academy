@@ -12,3 +12,7 @@
     </fieldset>
 </asp:Content>
 
+<asp:Content ID="MenuContent" runat="server" ContentPlaceHolderID="MainContent">
+    <asp:Label ID="lblNombre" runat="server"></asp:Label>
+</asp:Content>
+
