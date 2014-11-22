@@ -137,8 +137,7 @@ namespace UserControls
 
         private void dgvListaDocentes_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if ((e.ColumnIndex == 2 || e.ColumnIndex == 3 || e.ColumnIndex == 4 || e.ColumnIndex == 5) && 
-                ((bool)dgvListaDocentes.Rows[e.RowIndex].Cells[e.ColumnIndex].Value == true))
+            if (e.ColumnIndex == 2 || e.ColumnIndex == 3 || e.ColumnIndex == 4 || e.ColumnIndex == 5)
             {
                 switch (e.ColumnIndex)  
             	{

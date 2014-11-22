@@ -28,37 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
             this.dgvListaDocentes = new System.Windows.Forms.DataGridView();
             this.dgvApellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dvgCargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dvgAsignado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnBorrar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.dvgAsignado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaDocentes)).BeginInit();
             this.SuspendLayout();
-            // 
-            // vScrollBar1
-            // 
-            this.vScrollBar1.Location = new System.Drawing.Point(547, 36);
-            this.vScrollBar1.Name = "vScrollBar1";
-            this.vScrollBar1.Size = new System.Drawing.Size(19, 198);
-            this.vScrollBar1.TabIndex = 19;
             // 
             // dgvListaDocentes
             // 
             this.dgvListaDocentes.AllowUserToOrderColumns = true;
+            this.dgvListaDocentes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.dgvListaDocentes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvListaDocentes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dgvApellido,
             this.dgvNombre,
             this.dvgCargo,
             this.dvgAsignado});
-            this.dgvListaDocentes.Location = new System.Drawing.Point(105, 36);
+            this.dgvListaDocentes.Location = new System.Drawing.Point(154, 3);
             this.dgvListaDocentes.Name = "dgvListaDocentes";
-            this.dgvListaDocentes.Size = new System.Drawing.Size(461, 198);
+            this.dgvListaDocentes.Size = new System.Drawing.Size(461, 317);
             this.dgvListaDocentes.TabIndex = 17;
             // 
             // dgvApellido
@@ -80,10 +73,16 @@
             this.dvgCargo.ReadOnly = true;
             this.dvgCargo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
+            // dvgAsignado
+            // 
+            this.dvgAsignado.HeaderText = "Asignar";
+            this.dvgAsignado.Name = "dvgAsignado";
+            // 
             // btnCancelar
             // 
+            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancelar.Location = new System.Drawing.Point(491, 270);
+            this.btnCancelar.Location = new System.Drawing.Point(792, 297);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 16;
@@ -93,7 +92,8 @@
             // 
             // btnBorrar
             // 
-            this.btnBorrar.Location = new System.Drawing.Point(410, 270);
+            this.btnBorrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBorrar.Location = new System.Drawing.Point(711, 297);
             this.btnBorrar.Name = "btnBorrar";
             this.btnBorrar.Size = new System.Drawing.Size(75, 23);
             this.btnBorrar.TabIndex = 15;
@@ -102,29 +102,25 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(329, 270);
+            this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGuardar.Location = new System.Drawing.Point(630, 297);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 14;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
             // 
-            // dvgAsignado
-            // 
-            this.dvgAsignado.HeaderText = "Asignar";
-            this.dvgAsignado.Name = "dvgAsignado";
-            // 
             // ucListaDocentes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.vScrollBar1);
+            this.AutoSize = true;
             this.Controls.Add(this.dgvListaDocentes);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnBorrar);
             this.Controls.Add(this.btnGuardar);
             this.Name = "ucListaDocentes";
-            this.Size = new System.Drawing.Size(720, 323);
+            this.Size = new System.Drawing.Size(870, 323);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaDocentes)).EndInit();
             this.ResumeLayout(false);
 
@@ -132,7 +128,6 @@
 
         #endregion
 
-        private System.Windows.Forms.VScrollBar vScrollBar1;
         private System.Windows.Forms.DataGridView dgvListaDocentes;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvApellido;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvNombre;

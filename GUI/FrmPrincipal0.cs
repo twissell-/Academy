@@ -6,15 +6,23 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+
 using UserControls;
+using Bussines;
+using Entidades;
+using Util;
+
 
 namespace GUI
 {
     public partial class FrmPrincipal0 : Form
     {
+        ControllerAdministrativo cad;
+
         public FrmPrincipal0()
         {
             InitializeComponent();
+            cad = new ControllerAdministrativo();
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -24,27 +32,38 @@ namespace GUI
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-
-
-            if (txtId.Text=="admin" && txtContraseña.Text=="admin")
+            this.login();
+        }
+        private void login()
+        {
+            try
             {
-                try
+                Administrativo adm = (Administrativo)cad.find(Convert.ToInt32(txtId.Text));
+                if (adm.password == Hasher.toMD5(txtContraseña.Text))
                 {
-                    Form administrador = new FrmPrincipal();
+                    Form administrador = new FrmPrincipal(adm);
+                    this.clear();
                     this.Hide();
-                    administrador.ShowDialog();
+                    administrador.ShowDialog(this);
                 }
-                catch (ArgumentException)
+                else
                 {
-                    MessageBox.Show("Su programa es una mierda");
+                    MessageBox.Show("El par Usuario - Contraseña no coinciden", "Usuario o Contraseña Incorrecta", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                    
+            }
+            catch (NullReferenceException)
+            {
+                MessageBox.Show("El Usuario ingresado no existe", "Usuario Inexistente", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (ArgumentException ex)
+            {
+                MessageBox.Show(ex.ToString());
             }
         }
-
-        private void Intro(object sender, KeyPressEventArgs e)
+        private void clear()
         {
-            this.btnIngresar_Click(sender, e);
-        }    
+            txtId.Clear();
+            txtContraseña.Clear();
+        }
     }
 }

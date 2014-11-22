@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrincipal0));
             this.gpbIngresar = new System.Windows.Forms.GroupBox();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnIngresar = new System.Windows.Forms.Button();
@@ -80,7 +81,6 @@
             this.txtContraseña.Size = new System.Drawing.Size(163, 20);
             this.txtContraseña.TabIndex = 3;
             this.txtContraseña.UseSystemPasswordChar = true;
-            this.txtContraseña.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Intro);
             // 
             // txtId
             // 
@@ -116,7 +116,9 @@
             this.ClientSize = new System.Drawing.Size(307, 161);
             this.ControlBox = false;
             this.Controls.Add(this.gpbIngresar);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmPrincipal0";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Zahir Academia";
             this.gpbIngresar.ResumeLayout(false);
             this.gpbIngresar.PerformLayout();

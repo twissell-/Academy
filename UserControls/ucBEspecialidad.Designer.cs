@@ -38,7 +38,8 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(521, 293);
+            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancelar.Location = new System.Drawing.Point(770, 299);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 11;
@@ -48,7 +49,8 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(430, 293);
+            this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEliminar.Location = new System.Drawing.Point(679, 299);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 10;
@@ -60,16 +62,17 @@
             // 
             this.dgvListaEspecialidadesBaja.AllowUserToAddRows = false;
             this.dgvListaEspecialidadesBaja.AllowUserToDeleteRows = false;
+            this.dgvListaEspecialidadesBaja.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.dgvListaEspecialidadesBaja.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvListaEspecialidadesBaja.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDescripcion,
             this.descripcionEspecialidad});
-            this.dgvListaEspecialidadesBaja.Location = new System.Drawing.Point(253, 0);
+            this.dgvListaEspecialidadesBaja.Location = new System.Drawing.Point(252, 3);
             this.dgvListaEspecialidadesBaja.MultiSelect = false;
             this.dgvListaEspecialidadesBaja.Name = "dgvListaEspecialidadesBaja";
             this.dgvListaEspecialidadesBaja.ReadOnly = true;
             this.dgvListaEspecialidadesBaja.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvListaEspecialidadesBaja.Size = new System.Drawing.Size(343, 283);
+            this.dgvListaEspecialidadesBaja.Size = new System.Drawing.Size(343, 319);
             this.dgvListaEspecialidadesBaja.TabIndex = 9;
             // 
             // idDescripcion
@@ -92,11 +95,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.dgvListaEspecialidadesBaja);
             this.Name = "ucBEspecialidad";
-            this.Size = new System.Drawing.Size(848, 321);
+            this.Size = new System.Drawing.Size(848, 325);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaEspecialidadesBaja)).EndInit();
             this.ResumeLayout(false);
 

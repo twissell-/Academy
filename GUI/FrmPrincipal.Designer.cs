@@ -74,13 +74,20 @@
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmReporteComisiones = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmReportePlanes = new System.Windows.Forms.ToolStripMenuItem();
+            this.stsBarraEstado = new System.Windows.Forms.StatusStrip();
+            this.lblRelleno = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblUsuarioActivoNombre = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblUsuarioActivoId = new System.Windows.Forms.ToolStripStatusLabel();
             this.panAdmGral.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            this.stsBarraEstado.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(737, 389);
+            this.btnSalir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSalir.AutoSize = true;
+            this.btnSalir.Location = new System.Drawing.Point(785, 405);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 23);
             this.btnSalir.TabIndex = 4;
@@ -90,18 +97,22 @@
             // 
             // panAdmGral
             // 
+            this.panAdmGral.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.panAdmGral.AutoSize = true;
             this.panAdmGral.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.panAdmGral.Controls.Add(this.panAdmOtro);
-            this.panAdmGral.Location = new System.Drawing.Point(92, 46);
+            this.panAdmGral.Location = new System.Drawing.Point(12, 27);
             this.panAdmGral.Name = "panAdmGral";
-            this.panAdmGral.Size = new System.Drawing.Size(720, 323);
+            this.panAdmGral.Size = new System.Drawing.Size(848, 372);
             this.panAdmGral.TabIndex = 10;
             // 
             // panAdmOtro
             // 
-            this.panAdmOtro.Location = new System.Drawing.Point(-80, 1);
+            this.panAdmOtro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.panAdmOtro.AutoSize = true;
+            this.panAdmOtro.Location = new System.Drawing.Point(-16, 1);
             this.panAdmOtro.Name = "panAdmOtro";
-            this.panAdmOtro.Size = new System.Drawing.Size(848, 321);
+            this.panAdmOtro.Size = new System.Drawing.Size(0, 0);
             this.panAdmOtro.TabIndex = 0;
             // 
             // menuStrip1
@@ -443,21 +454,59 @@
             this.tsmReportePlanes.Text = "Planes";
             this.tsmReportePlanes.Click += new System.EventHandler(this.tsmReportePlanes_Click);
             // 
+            // stsBarraEstado
+            // 
+            this.stsBarraEstado.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lblRelleno,
+            this.lblUsuarioActivoNombre,
+            this.lblUsuarioActivoId});
+            this.stsBarraEstado.Location = new System.Drawing.Point(0, 431);
+            this.stsBarraEstado.Name = "stsBarraEstado";
+            this.stsBarraEstado.Size = new System.Drawing.Size(872, 24);
+            this.stsBarraEstado.TabIndex = 12;
+            this.stsBarraEstado.Text = "statusStrip1";
+            // 
+            // lblRelleno
+            // 
+            this.lblRelleno.Name = "lblRelleno";
+            this.lblRelleno.Size = new System.Drawing.Size(704, 19);
+            this.lblRelleno.Spring = true;
+            // 
+            // lblUsuarioActivoNombre
+            // 
+            this.lblUsuarioActivoNombre.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Left;
+            this.lblUsuarioActivoNombre.Name = "lblUsuarioActivoNombre";
+            this.lblUsuarioActivoNombre.Size = new System.Drawing.Size(105, 19);
+            this.lblUsuarioActivoNombre.Text = "Apellido, Nombre";
+            // 
+            // lblUsuarioActivoId
+            // 
+            this.lblUsuarioActivoId.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Left;
+            this.lblUsuarioActivoId.Name = "lblUsuarioActivoId";
+            this.lblUsuarioActivoId.Size = new System.Drawing.Size(48, 19);
+            this.lblUsuarioActivoId.Text = "ID: xxxx";
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(872, 424);
+            this.ClientSize = new System.Drawing.Size(872, 455);
+            this.Controls.Add(this.stsBarraEstado);
             this.Controls.Add(this.panAdmGral);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FrmPrincipal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Zahir Academia";
+            this.Load += new System.EventHandler(this.FrmPrincipal_Load);
             this.panAdmGral.ResumeLayout(false);
+            this.panAdmGral.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.stsBarraEstado.ResumeLayout(false);
+            this.stsBarraEstado.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -510,10 +559,11 @@
         private System.Windows.Forms.ToolStripMenuItem tsmModificarDocente;
         private System.Windows.Forms.ToolStripMenuItem tsmEliminarDocente;
         private System.Windows.Forms.ToolStripMenuItem tsmListadoDeDocentes;
-
-
-        public System.EventHandler FrmPrincipal_Load { get; set; }
-
+        private System.Windows.Forms.StatusStrip stsBarraEstado;
+        private System.Windows.Forms.ToolStripStatusLabel lblUsuarioActivoNombre;
+        private System.Windows.Forms.ToolStripStatusLabel lblUsuarioActivoId;
+        private System.Windows.Forms.ToolStripStatusLabel lblRelleno;
+    
         public System.Windows.Forms.PaintEventHandler panel1_Paint { get; set; }
     }      
 }

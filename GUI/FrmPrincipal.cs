@@ -6,14 +6,18 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+
 using UserControls;
+using Entidades;
 
 namespace GUI
 {
     public partial class FrmPrincipal : Form
     {
-        public FrmPrincipal()
+        private Administrativo usuarioActivo;
+        public FrmPrincipal(Administrativo adm)
         {
+            usuarioActivo = adm;
             InitializeComponent();
         }
 
@@ -22,6 +26,7 @@ namespace GUI
             DialogResult resultado = MessageBox.Show("Esta seguro que desea salir?", "Esta por salir del programa", MessageBoxButtons.YesNo);
             if (resultado == DialogResult.Yes)
             {
+                this.Owner.Show();
                 this.Dispose();
             }
         }
@@ -39,7 +44,6 @@ namespace GUI
         {
             this.btnSalir_Click(sender, e);
         }
-
         
         private void tsmAPersona_Click(object sender, EventArgs e)
         {
@@ -48,6 +52,7 @@ namespace GUI
             this.panAdmGral.Controls.Add(uc);
             uc.Dock = DockStyle.Fill;
         }
+
         private void tsmMPersona_Click(object sender, EventArgs e)
         {
             UserControl uc;
@@ -111,8 +116,6 @@ namespace GUI
         {
             //Form inputId = new FrmInputId();
         }
-
-        
 
         private void tsmListadoDeComisiones_Click(object sender, EventArgs e)
         {
@@ -212,6 +215,12 @@ namespace GUI
         private void tsmListadoDeAdministrativo_Click(object sender, EventArgs e)
         {
             //falta
+        }
+
+        private void FrmPrincipal_Load(object sender, EventArgs e)
+        {
+            lblUsuarioActivoNombre.Text = "Usuario Activo: " + usuarioActivo.apellido + ", " + usuarioActivo.nombre;
+            lblUsuarioActivoId.Text = "ID: " + usuarioActivo.id.ToString();
         }
 
     }

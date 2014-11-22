@@ -32,19 +32,20 @@
             this.btnBorrar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.grbPlan = new System.Windows.Forms.GroupBox();
+            this.cmbEspecialidad = new System.Windows.Forms.ComboBox();
+            this.lblEspecialidad = new System.Windows.Forms.Label();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.txtId = new System.Windows.Forms.TextBox();
             this.lblDescripcion = new System.Windows.Forms.Label();
             this.lblId = new System.Windows.Forms.Label();
-            this.lblEspecialidad = new System.Windows.Forms.Label();
-            this.cmbEspecialidad = new System.Windows.Forms.ComboBox();
             this.grbPlan.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnCancelar
             // 
+            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancelar.Location = new System.Drawing.Point(530, 219);
+            this.btnCancelar.Location = new System.Drawing.Point(615, 295);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 24;
@@ -54,7 +55,8 @@
             // 
             // btnBorrar
             // 
-            this.btnBorrar.Location = new System.Drawing.Point(449, 219);
+            this.btnBorrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBorrar.Location = new System.Drawing.Point(534, 295);
             this.btnBorrar.Name = "btnBorrar";
             this.btnBorrar.Size = new System.Drawing.Size(75, 23);
             this.btnBorrar.TabIndex = 23;
@@ -64,7 +66,8 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(368, 219);
+            this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGuardar.Location = new System.Drawing.Point(453, 295);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 22;
@@ -80,12 +83,29 @@
             this.grbPlan.Controls.Add(this.txtId);
             this.grbPlan.Controls.Add(this.lblDescripcion);
             this.grbPlan.Controls.Add(this.lblId);
-            this.grbPlan.Location = new System.Drawing.Point(247, 46);
+            this.grbPlan.Location = new System.Drawing.Point(188, 47);
             this.grbPlan.Name = "grbPlan";
-            this.grbPlan.Size = new System.Drawing.Size(289, 139);
+            this.grbPlan.Size = new System.Drawing.Size(289, 125);
             this.grbPlan.TabIndex = 29;
             this.grbPlan.TabStop = false;
             this.grbPlan.Text = "Agregar Plan";
+            // 
+            // cmbEspecialidad
+            // 
+            this.cmbEspecialidad.FormattingEnabled = true;
+            this.cmbEspecialidad.Location = new System.Drawing.Point(104, 83);
+            this.cmbEspecialidad.Name = "cmbEspecialidad";
+            this.cmbEspecialidad.Size = new System.Drawing.Size(156, 21);
+            this.cmbEspecialidad.TabIndex = 34;
+            // 
+            // lblEspecialidad
+            // 
+            this.lblEspecialidad.AutoSize = true;
+            this.lblEspecialidad.Location = new System.Drawing.Point(23, 91);
+            this.lblEspecialidad.Name = "lblEspecialidad";
+            this.lblEspecialidad.Size = new System.Drawing.Size(70, 13);
+            this.lblEspecialidad.TabIndex = 33;
+            this.lblEspecialidad.Text = "Especialidad:";
             // 
             // txtDescripcion
             // 
@@ -119,33 +139,17 @@
             this.lblId.TabIndex = 29;
             this.lblId.Text = "Id de plan:";
             // 
-            // lblEspecialidad
-            // 
-            this.lblEspecialidad.AutoSize = true;
-            this.lblEspecialidad.Location = new System.Drawing.Point(23, 91);
-            this.lblEspecialidad.Name = "lblEspecialidad";
-            this.lblEspecialidad.Size = new System.Drawing.Size(70, 13);
-            this.lblEspecialidad.TabIndex = 33;
-            this.lblEspecialidad.Text = "Especialidad:";
-            // 
-            // cmbEspecialidad
-            // 
-            this.cmbEspecialidad.FormattingEnabled = true;
-            this.cmbEspecialidad.Location = new System.Drawing.Point(104, 83);
-            this.cmbEspecialidad.Name = "cmbEspecialidad";
-            this.cmbEspecialidad.Size = new System.Drawing.Size(156, 21);
-            this.cmbEspecialidad.TabIndex = 34;
-            // 
             // ucAPlanes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.Controls.Add(this.grbPlan);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnBorrar);
             this.Controls.Add(this.btnGuardar);
             this.Name = "ucAPlanes";
-            this.Size = new System.Drawing.Size(848, 321);
+            this.Size = new System.Drawing.Size(693, 321);
             this.Load += new System.EventHandler(this.ucAPlanes_Load);
             this.grbPlan.ResumeLayout(false);
             this.grbPlan.PerformLayout();

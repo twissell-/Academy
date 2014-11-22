@@ -148,6 +148,7 @@
             // 
             // btnBorrar
             // 
+            this.btnBorrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnBorrar.Location = new System.Drawing.Point(559, 284);
             this.btnBorrar.Name = "btnBorrar";
             this.btnBorrar.Size = new System.Drawing.Size(75, 23);
@@ -158,6 +159,7 @@
             // 
             // btnGuardar
             // 
+            this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnGuardar.Location = new System.Drawing.Point(473, 284);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
@@ -168,6 +170,7 @@
             // 
             // btnCancelar
             // 
+            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancelar.Location = new System.Drawing.Point(640, 284);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
@@ -178,6 +181,7 @@
             // 
             // txtId
             // 
+            this.txtId.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtId.Location = new System.Drawing.Point(57, 20);
             this.txtId.Name = "txtId";
             this.txtId.ReadOnly = true;
@@ -186,6 +190,7 @@
             // 
             // lblId
             // 
+            this.lblId.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblId.AutoSize = true;
             this.lblId.Location = new System.Drawing.Point(32, 23);
             this.lblId.Name = "lblId";
@@ -195,6 +200,7 @@
             // 
             // cmbMateria
             // 
+            this.cmbMateria.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cmbMateria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMateria.FormattingEnabled = true;
             this.cmbMateria.Location = new System.Drawing.Point(235, 19);
@@ -204,6 +210,7 @@
             // 
             // lblMateria
             // 
+            this.lblMateria.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblMateria.AutoSize = true;
             this.lblMateria.Location = new System.Drawing.Point(184, 23);
             this.lblMateria.Name = "lblMateria";
@@ -213,10 +220,12 @@
             // 
             // gpbMateria
             // 
+            this.gpbMateria.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.gpbMateria.AutoSize = true;
             this.gpbMateria.Controls.Add(this.dgvListaDocentes);
             this.gpbMateria.Location = new System.Drawing.Point(215, 81);
             this.gpbMateria.Name = "gpbMateria";
-            this.gpbMateria.Size = new System.Drawing.Size(500, 152);
+            this.gpbMateria.Size = new System.Drawing.Size(500, 197);
             this.gpbMateria.TabIndex = 18;
             this.gpbMateria.TabStop = false;
             this.gpbMateria.Text = "Materia";
@@ -227,6 +236,7 @@
             this.dgvListaDocentes.AllowUserToDeleteRows = false;
             this.dgvListaDocentes.AllowUserToResizeColumns = false;
             this.dgvListaDocentes.AllowUserToResizeRows = false;
+            this.dgvListaDocentes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.dgvListaDocentes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvListaDocentes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvListaDocentes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -240,7 +250,7 @@
             this.dgvListaDocentes.Location = new System.Drawing.Point(6, 19);
             this.dgvListaDocentes.Name = "dgvListaDocentes";
             this.dgvListaDocentes.ReadOnly = true;
-            this.dgvListaDocentes.Size = new System.Drawing.Size(488, 127);
+            this.dgvListaDocentes.Size = new System.Drawing.Size(488, 159);
             this.dgvListaDocentes.TabIndex = 20;
             this.dgvListaDocentes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListaDocentes_CellClick);
             // 
@@ -299,6 +309,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.Controls.Add(this.cmbMateria);
             this.Controls.Add(this.lblMateria);
             this.Controls.Add(this.gpbMateria);
@@ -309,7 +320,7 @@
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.lblId);
             this.Name = "ucAgregarComision";
-            this.Size = new System.Drawing.Size(746, 321);
+            this.Size = new System.Drawing.Size(718, 310);
             this.Load += new System.EventHandler(this.ucAgregarComision_Load);
             this.grpComision.ResumeLayout(false);
             this.grpComision.PerformLayout();

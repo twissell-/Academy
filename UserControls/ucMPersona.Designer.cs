@@ -30,7 +30,6 @@
         {
             this.btnModificar = new System.Windows.Forms.Button();
             this.dgvListaAlumnosMod = new System.Windows.Forms.DataGridView();
-            this.btnCancelar = new System.Windows.Forms.Button();
             this.idAlumno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dniAlumno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellidoAlumno = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -38,12 +37,14 @@
             this.telefonoAlumno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emailAlumno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.alumnoDireccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnCancelar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaAlumnosMod)).BeginInit();
             this.SuspendLayout();
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(545, 297);
+            this.btnModificar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnModificar.Location = new System.Drawing.Point(579, 297);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(75, 23);
             this.btnModificar.TabIndex = 3;
@@ -55,6 +56,9 @@
             // 
             this.dgvListaAlumnosMod.AllowUserToAddRows = false;
             this.dgvListaAlumnosMod.AllowUserToDeleteRows = false;
+            this.dgvListaAlumnosMod.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvListaAlumnosMod.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvListaAlumnosMod.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idAlumno,
@@ -70,17 +74,6 @@
             this.dgvListaAlumnosMod.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListaAlumnosMod.Size = new System.Drawing.Size(747, 283);
             this.dgvListaAlumnosMod.TabIndex = 2;
-            //this.dgvListaAlumnosMod.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListaAlumnosMod_CellContentClick);
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Location = new System.Drawing.Point(638, 297);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 4;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // idAlumno
             // 
@@ -125,11 +118,23 @@
             this.alumnoDireccion.HeaderText = "Direccion";
             this.alumnoDireccion.Name = "alumnoDireccion";
             // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancelar.Location = new System.Drawing.Point(672, 297);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.TabIndex = 4;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
             // ucMPersona
             // 
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.dgvListaAlumnosMod);

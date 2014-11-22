@@ -39,7 +39,8 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(596, 293);
+            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancelar.Location = new System.Drawing.Point(770, 295);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 8;
@@ -49,7 +50,8 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(505, 293);
+            this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEliminar.Location = new System.Drawing.Point(679, 295);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 7;
@@ -61,17 +63,18 @@
             // 
             this.dgvListaPlanesBaja.AllowUserToAddRows = false;
             this.dgvListaPlanesBaja.AllowUserToDeleteRows = false;
+            this.dgvListaPlanesBaja.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.dgvListaPlanesBaja.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvListaPlanesBaja.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idPlan,
             this.descripcionPlan,
             this.especialidadPlan});
-            this.dgvListaPlanesBaja.Location = new System.Drawing.Point(177, 4);
+            this.dgvListaPlanesBaja.Location = new System.Drawing.Point(169, 3);
             this.dgvListaPlanesBaja.MultiSelect = false;
             this.dgvListaPlanesBaja.Name = "dgvListaPlanesBaja";
             this.dgvListaPlanesBaja.ReadOnly = true;
             this.dgvListaPlanesBaja.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvListaPlanesBaja.Size = new System.Drawing.Size(494, 283);
+            this.dgvListaPlanesBaja.Size = new System.Drawing.Size(494, 315);
             this.dgvListaPlanesBaja.TabIndex = 6;
             // 
             // idPlan
@@ -101,6 +104,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.dgvListaPlanesBaja);
