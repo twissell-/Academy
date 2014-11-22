@@ -4,22 +4,33 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-//using MongoDB.Bson;
-//using MongoDB.Driver;
+using Entidades;
+using Bussines;
+
 
 public partial class inscMateria : System.Web.UI.Page
 {
+    ControllerAlumno ca;
+    ControllerComision cc;
     protected void Page_Load(object sender, EventArgs e)
     {
-        ContentPlaceHolder MainContent = new ContentPlaceHolder();
+        cc = new ControllerComision();
+        ca = new ControllerAlumno();
         int Rows = 5;   //buscar cantidad de materias en db
-        int Columns = 6; //desp ver bien los datos a mostrar
+        int Columns = 3; //desp ver bien los datos a mostrar
         int tblRows = Rows;
         int tblCols = Columns;
-        
-        Table tbl = new Table();
-        MainContent.Controls.Add(tbl);
-        
+        TableHeaderRow hr = new TableHeaderRow();
+        TableHeaderCell hc = new TableHeaderCell();
+        hc.Text = "Id";
+        hr.Controls.Add(hc);
+        TableHeaderCell hc1 = new TableHeaderCell();
+        hc1.Text = "Descripcion";
+        hr.Controls.Add(hc1);
+        TableHeaderCell hc2 = new TableHeaderCell();
+        hc2.Text = "Inscribirse";
+        hr.Controls.Add(hc2);
+        this.tblMaterias.Rows.Add(hr);    
         for (int i = 0; i < tblRows; i++)
         {
             TableRow tr = new TableRow();
@@ -28,13 +39,10 @@ public partial class inscMateria : System.Web.UI.Page
                 TableCell tc = new TableCell();
                 TextBox txtBox = new TextBox();
                 txtBox.Text = "RowNo:" + i + " " + "ColumnNo:" + " " + j;
-                
-                tc.Controls.Add(txtBox);
-                
+                tc.Controls.Add(txtBox);   
                 tr.Cells.Add(tc);
-            }
-            
-            tbl.Rows.Add(tr);
+            }            
+            this.tblMaterias.Rows.Add(tr);
         }
     }
 }

@@ -262,6 +262,7 @@
             this.tsmListadoDeAdministrativo.Name = "tsmListadoDeAdministrativo";
             this.tsmListadoDeAdministrativo.Size = new System.Drawing.Size(212, 22);
             this.tsmListadoDeAdministrativo.Text = "Listado de administrativos";
+            this.tsmListadoDeAdministrativo.Click += new System.EventHandler(this.tsmListadoDeAdministrativo_Click);
             // 
             // tsmAlumnos
             // 
@@ -339,6 +340,7 @@
             this.tsmListadoDeDocentes.Name = "tsmListadoDeDocentes";
             this.tsmListadoDeDocentes.Size = new System.Drawing.Size(179, 22);
             this.tsmListadoDeDocentes.Text = "Listado de docentes";
+            this.tsmListadoDeDocentes.Click += new System.EventHandler(this.tsmListadoDeDocentes_Click);
             // 
             // tsmEspecialidades
             // 

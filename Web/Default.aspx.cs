@@ -4,21 +4,41 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Entidades;
+using Bussines;
+using Util;
 
 public partial class _Default : System.Web.UI.Page
 {
+    ControllerAlumno ca;
+    ControllerDocente cd;
     protected void btnIngresar_onclick(object sender, EventArgs e)
     {
-        if (txtUss.Text == "docente" && txtPss.Text == "docente")
+        ca = new ControllerAlumno();
+        cd = new ControllerDocente();
+        Persona d=null;
+        Persona al=null;
+        d = cd.find(Convert.ToInt32(txtUss.Text));
+        if (d == null)
         {
-            Response.Redirect("~/Docente.aspx");
-        }else if (txtUss.Text == "alumno" && txtPss.Text == "alumno")
-                {
-                    Response.Redirect("~/Alumno.aspx");
-                }else{
-                        Response.Write("Usuario y/o contraseña incorrectos");
+            al = ca.find(Convert.ToInt32(txtUss.Text));
+        }
+        if (d == null && al.password == Hasher.toMD5(txtPss.Text))
+        {
+            Session["Persona"] = al;
+            Response.Redirect("~/Alumno.aspx");
+            
+        }else if (al==null && d.password==Hasher.toMD5(txtPss.Text))
+	          {
+                Session["Persona"] = d; 
+		        Response.Redirect("~/Docente.aspx");
+                   
+	          }else if ((d==null && al.id!=Convert.ToInt32(txtUss.Text) || al.password!=Hasher.toMD5(txtPss.Text))
+            || (al==null && d.id != Convert.ToInt32(txtUss.Text) || d.password != Hasher.toMD5(txtPss.Text)))//al==null && d==null)
+                    {
+                        error.Text = "Usuario y/o contraseña incorrectos";
                         txtPss.Text = "";
-                     }
+                    }
     }
 
 }
