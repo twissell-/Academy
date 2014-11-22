@@ -7,7 +7,7 @@ namespace Entidades
 {
     public class Alumno : Persona
     {
-        private int condicion { get; set; }
+        public int condicion { get; set; }
 
         public Alumno(String dni, String apellido, String nombre, String nacimiento, String telefono, 
             String direccion, String mail, String password)

@@ -76,6 +76,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ControllerAlumno.cs" />
+    <Compile Include="ControllerCargos.cs" />
     <Compile Include="ControllerComision.cs" />
     <Compile Include="ControllerDocente.cs" />
     <Compile Include="ControllerEspecialidad.cs" />

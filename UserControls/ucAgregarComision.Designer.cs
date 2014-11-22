@@ -48,8 +48,10 @@
             this.dgvListaDocentes = new System.Windows.Forms.DataGridView();
             this.dgvApellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvCargo = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dgvAsignado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dgvTitular = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dgvAdjunto = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dgvJTP = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dgvAuxiliar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.grpComision.SuspendLayout();
             this.gpbMateria.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaDocentes)).BeginInit();
@@ -146,7 +148,7 @@
             // 
             // btnBorrar
             // 
-            this.btnBorrar.Location = new System.Drawing.Point(678, 283);
+            this.btnBorrar.Location = new System.Drawing.Point(559, 284);
             this.btnBorrar.Name = "btnBorrar";
             this.btnBorrar.Size = new System.Drawing.Size(75, 23);
             this.btnBorrar.TabIndex = 16;
@@ -156,7 +158,7 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(592, 283);
+            this.btnGuardar.Location = new System.Drawing.Point(473, 284);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 15;
@@ -166,7 +168,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(759, 283);
+            this.btnCancelar.Location = new System.Drawing.Point(640, 284);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 14;
@@ -214,7 +216,7 @@
             this.gpbMateria.Controls.Add(this.dgvListaDocentes);
             this.gpbMateria.Location = new System.Drawing.Point(215, 81);
             this.gpbMateria.Name = "gpbMateria";
-            this.gpbMateria.Size = new System.Drawing.Size(554, 152);
+            this.gpbMateria.Size = new System.Drawing.Size(500, 152);
             this.gpbMateria.TabIndex = 18;
             this.gpbMateria.TabStop = false;
             this.gpbMateria.Text = "Materia";
@@ -223,25 +225,34 @@
             // 
             this.dgvListaDocentes.AllowUserToAddRows = false;
             this.dgvListaDocentes.AllowUserToDeleteRows = false;
+            this.dgvListaDocentes.AllowUserToResizeColumns = false;
+            this.dgvListaDocentes.AllowUserToResizeRows = false;
+            this.dgvListaDocentes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvListaDocentes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvListaDocentes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dgvApellido,
             this.dgvNombre,
-            this.dgvCargo,
-            this.dgvAsignado});
+            this.dgvTitular,
+            this.dgvAdjunto,
+            this.dgvJTP,
+            this.dgvAuxiliar});
             this.dgvListaDocentes.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dgvListaDocentes.Location = new System.Drawing.Point(6, 19);
             this.dgvListaDocentes.Name = "dgvListaDocentes";
-            this.dgvListaDocentes.Size = new System.Drawing.Size(542, 127);
+            this.dgvListaDocentes.ReadOnly = true;
+            this.dgvListaDocentes.Size = new System.Drawing.Size(488, 127);
             this.dgvListaDocentes.TabIndex = 20;
-            this.dgvListaDocentes.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvListaDocentes_DataError);
+            this.dgvListaDocentes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListaDocentes_CellClick);
             // 
             // dgvApellido
             // 
-            this.dgvApellido.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dgvApellido.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.dgvApellido.DataPropertyName = "apellido";
             this.dgvApellido.HeaderText = "Apellido";
             this.dgvApellido.Name = "dgvApellido";
+            this.dgvApellido.ReadOnly = true;
+            this.dgvApellido.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvApellido.Width = 138;
             // 
             // dgvNombre
             // 
@@ -249,24 +260,40 @@
             this.dgvNombre.DataPropertyName = "nombre";
             this.dgvNombre.HeaderText = "Nombre";
             this.dgvNombre.Name = "dgvNombre";
+            this.dgvNombre.ReadOnly = true;
+            this.dgvNombre.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
-            // dgvCargo
+            // dgvTitular
             // 
-            this.dgvCargo.DataPropertyName = "cargo";
-            this.dgvCargo.HeaderText = "Cargo";
-            this.dgvCargo.Name = "dgvCargo";
-            this.dgvCargo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCargo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dgvTitular.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.dgvTitular.HeaderText = "Titular";
+            this.dgvTitular.Name = "dgvTitular";
+            this.dgvTitular.ReadOnly = true;
+            this.dgvTitular.Width = 42;
             // 
-            // dgvAsignado
+            // dgvAdjunto
             // 
-            this.dgvAsignado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.dgvAsignado.DataPropertyName = "asignado";
-            this.dgvAsignado.FalseValue = "false";
-            this.dgvAsignado.HeaderText = "Asignar";
-            this.dgvAsignado.Name = "dgvAsignado";
-            this.dgvAsignado.TrueValue = "true";
-            this.dgvAsignado.Width = 48;
+            this.dgvAdjunto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.dgvAdjunto.HeaderText = "Adjunto";
+            this.dgvAdjunto.Name = "dgvAdjunto";
+            this.dgvAdjunto.ReadOnly = true;
+            this.dgvAdjunto.Width = 49;
+            // 
+            // dgvJTP
+            // 
+            this.dgvJTP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.dgvJTP.HeaderText = "JTP";
+            this.dgvJTP.Name = "dgvJTP";
+            this.dgvJTP.ReadOnly = true;
+            this.dgvJTP.Width = 32;
+            // 
+            // dgvAuxiliar
+            // 
+            this.dgvAuxiliar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.dgvAuxiliar.HeaderText = "Auxiliar";
+            this.dgvAuxiliar.Name = "dgvAuxiliar";
+            this.dgvAuxiliar.ReadOnly = true;
+            this.dgvAuxiliar.Width = 46;
             // 
             // ucAgregarComision
             // 
@@ -282,7 +309,7 @@
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.lblId);
             this.Name = "ucAgregarComision";
-            this.Size = new System.Drawing.Size(848, 321);
+            this.Size = new System.Drawing.Size(746, 321);
             this.Load += new System.EventHandler(this.ucAgregarComision_Load);
             this.grpComision.ResumeLayout(false);
             this.grpComision.PerformLayout();
@@ -315,7 +342,9 @@
         private System.Windows.Forms.DataGridView dgvListaDocentes;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvApellido;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvNombre;
-        private System.Windows.Forms.DataGridViewComboBoxColumn dgvCargo;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dgvAsignado;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dgvTitular;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dgvAdjunto;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dgvJTP;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dgvAuxiliar;
     }
 }

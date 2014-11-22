@@ -27,17 +27,21 @@ namespace Data
             DaoDocente dd = new DaoDocente();
             DaoMateria dm = new DaoMateria();
 
-            Alumno[] alumnos = new Alumno[mapper.alumnos.Length];
+            List<Alumno> alumnos = new List<Alumno>();
             //  recupero los objetos Alumno
-            for (int i = 0; i < mapper.alumnos.Length; i++)
+            foreach (int[] aux in mapper.alumnos)
             {
-                alumnos[i] = (Alumno)da.find(mapper.alumnos[i]);
+                Alumno a = (Alumno)da.find(aux[0]);
+                a.condicion = aux[1];
+                alumnos.Add(a);
             }
             //  Recupero los objetos Docente
-            Docente[] docentes = new Docente[mapper.docentes.Length];
-            for (int i = 0; i < mapper.docentes.Length; i++)
+            List<Docente> docentes = new List<Docente>();
+            foreach (int[] aux in mapper.docentes)
             {
-                docentes[i] = (Docente)dd.find(mapper.docentes[i]);
+                Docente d = (Docente)dd.find(aux[0]);
+                d.cargo = aux[1];
+                docentes.Add(d);
             }
 
             return new Comision(mapper.id, mapper.anioCursado, mapper.HsSemanales, mapper.HsTotales, dm.find(mapper.materia), docentes, alumnos, mapper.turno);

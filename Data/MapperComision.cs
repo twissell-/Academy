@@ -10,11 +10,11 @@ namespace Util
     {
         public int id { get; set; }
         public int anioCursado { get; set; }
-        public float HsSemanales { get; set; }
-        public float HsTotales { get; set; }
+        public Decimal HsSemanales { get; set; }
+        public Decimal HsTotales { get; set; }
         public int materia { get; set; }
-        public int[] docentes { get; set; }
-        public int[] alumnos { get; set; }
+        public List<int[]> docentes { get; set; }
+        public List<int[]> alumnos { get; set; }
         public int turno { get; set; }
         
         public MapperComision(Comision c)
@@ -24,15 +24,21 @@ namespace Util
             this.HsSemanales = c.HsSemanales;
             this.HsTotales = c.HsTotales;
             this.materia = c.materia.id;
-            this.docentes = new int[c.docentes.Length];
-            for (int i = 0; i < c.docentes.Length; i++)
+            this.docentes = new List<int[]>();
+            foreach (Docente d in c.docentes)
             {
-                this.docentes[i] = c.docentes[i].id;
+                int[] aux = new int[2];
+                aux[0] = d.id;
+                aux[1] = d.cargo;
+                this.docentes.Add(aux);
             }
-            this.alumnos = new int[c.alumnos.Length];
-            for (int i = 0; i < c.alumnos.Length; i++)
+            this.alumnos = new List<int[]>();
+            foreach (Alumno a in c.alumnos)
             {
-                this.alumnos[i] = c.alumnos[i].id;
+                int[] aux = new int[2];
+                aux[0] = a.id;
+                aux[1] = a.condicion;
+                this.alumnos.Add(aux);
             }
             this.turno = c.turno;
         }

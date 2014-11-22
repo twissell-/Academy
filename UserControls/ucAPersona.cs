@@ -55,15 +55,15 @@ namespace UserControls
             switch (((Tipo)cmbTipo.SelectedItem).id)
             {
                 case 0:
-                    cad.insert(new Administrativo(txtNombre.Text, txtApellido.Text, txtDni.Text, txtTelefono.Text,
+                    cad.insert(new Administrativo(txtDni.Text, txtApellido.Text, txtNombre.Text, txtTelefono.Text,
                         txtDireccion.Text, txtMail.Text, txtNacimiento.Text, txtPassword.Text));
                     break;
                 case 1:
-                    cd.insert(new Docente(txtNombre.Text, txtApellido.Text, txtDni.Text, txtTelefono.Text,
+                    cd.insert(new Docente(txtDni.Text, txtApellido.Text, txtNombre.Text, txtTelefono.Text,
                         txtDireccion.Text, txtMail.Text, txtNacimiento.Text, txtPassword.Text));
                     break;
                 case 2:
-                    ca.insert(new Alumno(txtNombre.Text, txtApellido.Text, txtDni.Text, txtTelefono.Text,
+                    ca.insert(new Alumno(txtDni.Text, txtApellido.Text, txtNombre.Text, txtTelefono.Text,
                         txtDireccion.Text, txtMail.Text, txtNacimiento.Text, txtPassword.Text));
                     break;
                 default:

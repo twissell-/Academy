@@ -73,6 +73,7 @@
   <ItemGroup>
     <Compile Include="Administrativo.cs" />
     <Compile Include="Alumno.cs" />
+    <Compile Include="Cargo.cs" />
     <Compile Include="Comision.cs" />
     <Compile Include="Docente.cs" />
     <Compile Include="Especialidad.cs" />
