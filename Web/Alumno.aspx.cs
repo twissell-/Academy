@@ -26,7 +26,8 @@ public partial class Alumno : System.Web.UI.Page
     }
     protected void linkSalir_Click(object sender, EventArgs e)
     {
-        Session["Persona"] = null;
+        Session.RemoveAll();
+        //Session["Persona"] = null;
         Page.Response.Redirect("~/Default.aspx");
     }
 

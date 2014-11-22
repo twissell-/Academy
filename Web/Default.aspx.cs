@@ -16,29 +16,40 @@ public partial class _Default : System.Web.UI.Page
     {
         ca = new ControllerAlumno();
         cd = new ControllerDocente();
-        Persona d=null;
-        Persona al=null;
-        d = cd.find(Convert.ToInt32(txtUss.Text));
-        if (d == null)
+        Persona d = null;
+        Persona al = null;
+        int id = 0;
+        if (int.TryParse(txtUss.Text, out id))
         {
-            al = ca.find(Convert.ToInt32(txtUss.Text));
+            d = cd.find(id);
+            if (d == null)
+            {
+                al = ca.find(id);
+            }
+            if (d == null && al.password == Hasher.toMD5(txtPss.Text))
+            {
+                Session["Persona"] = al;
+                Response.Redirect("~/Alumno.aspx");
+
+            }
+            else if (al == null && d.password == Hasher.toMD5(txtPss.Text))
+            {
+                Session["Persona"] = d;
+                Response.Redirect("~/Docente.aspx");
+
+            }
+            else if ((d == null && al.id != Convert.ToInt32(txtUss.Text) || al.password != Hasher.toMD5(txtPss.Text))
+         || (al == null && d.id != Convert.ToInt32(txtUss.Text) || d.password != Hasher.toMD5(txtPss.Text)))//al==null && d==null)
+            {
+                error.Text = "Usuario y/o contraseña incorrectos";
+                txtPss.Text = "";
+            }
         }
-        if (d == null && al.password == Hasher.toMD5(txtPss.Text))
+        else
         {
-            Session["Persona"] = al;
-            Response.Redirect("~/Alumno.aspx");
-            
-        }else if (al==null && d.password==Hasher.toMD5(txtPss.Text))
-	          {
-                Session["Persona"] = d; 
-		        Response.Redirect("~/Docente.aspx");
-                   
-	          }else if ((d==null && al.id!=Convert.ToInt32(txtUss.Text) || al.password!=Hasher.toMD5(txtPss.Text))
-            || (al==null && d.id != Convert.ToInt32(txtUss.Text) || d.password != Hasher.toMD5(txtPss.Text)))//al==null && d==null)
-                    {
-                        error.Text = "Usuario y/o contraseña incorrectos";
-                        txtPss.Text = "";
-                    }
+            error.Text = "Usuario invalido";
+            txtPss.Text = "";
+        }
     }
 
 }
