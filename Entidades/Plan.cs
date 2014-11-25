@@ -10,21 +10,20 @@ namespace Entidades
         public int id { get; set; }
         public String descripcion { get; set; }
         public Especialidad especialidad { get; set; }
-        public Materia[] materias { get; set; }
+        public List<Materia> materias { get; set; }
 
-
-        public Plan(int id, String descripcion, Especialidad especialidad)
+        public Plan(int id, String descripcion, Especialidad especialidad, List<Materia> materias)   
         {
             this.id = id;
             this.descripcion = descripcion;
             this.especialidad = especialidad;
-           
+            this.materias = materias;
         }
 
-        public Plan(int id, String descripcion, Especialidad especialidad, Materia[] materias)   
-            : this(id,descripcion,especialidad)
+        public Plan(string descripcion, Especialidad especialidad)
+            : this(0, descripcion, especialidad, new List<Materia>()) 
         {
-            this.materias = materias;
+
         }
 
         public override string ToString()

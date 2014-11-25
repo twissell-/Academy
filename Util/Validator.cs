@@ -39,5 +39,10 @@ namespace Util
         {
             return validate(txt, @"\d{3,5}-\d{9}");
         }
+
+        public static bool validateNumero(String txt)
+        {
+            return validate(txt, @"\d");
+        }
     }
 }

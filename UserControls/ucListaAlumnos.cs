@@ -13,14 +13,31 @@ namespace UserControls
 {
     public partial class ucListaAlumnos : UserControl
     {
-        ControllerAlumno ca;
-        public ucListaAlumnos()
+        private IControllerPersona controller;
+
+        public ucListaAlumnos(int det)
+            //det 
+            //0: administrativo
+            //1: docente
+            //2: alumnos
         {
-            ca = new ControllerAlumno();
             InitializeComponent();
             this.dgvListaAlumnos.AutoGenerateColumns = false;
-            this.dgvListaAlumnos.DataSource=ca.find();
-            
+            switch (det)
+            {
+                case 0:
+                    controller = new ControllerAdministrativo();
+                    break;
+                case 1:
+                    controller = new ControllerDocente();
+                    break;
+                case 2:
+                    controller = new ControllerAlumno();
+                    break;
+                default:
+                    break;
+            }
+            this.dgvListaAlumnos.DataSource = controller.find();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -33,7 +50,7 @@ namespace UserControls
                 if (MessageBox.Show("¿Está seguro que desea eliminar a " + nom + " " + ape + "?",
                     "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    ca.delete(ca.find(id));
+                    controller.delete(controller.find(id));
                 }
 
             }

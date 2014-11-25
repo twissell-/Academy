@@ -36,28 +36,35 @@ namespace GUI
         }
         private void login()
         {
-            try
+            if (Validator.validateNumero(txtId.Text))
             {
-                Administrativo adm = (Administrativo)cad.find(Convert.ToInt32(txtId.Text));
-                if (adm.password == Hasher.toMD5(txtContraseña.Text))
+                try
                 {
-                    Form administrador = new FrmPrincipal(adm);
-                    this.clear();
-                    this.Hide();
-                    administrador.ShowDialog(this);
+                    Administrativo adm = (Administrativo)cad.find(Convert.ToInt32(txtId.Text));
+                    if (adm.password == Hasher.toMD5(txtContraseña.Text))
+                    {
+                        Form administrador = new FrmPrincipal(adm);
+                        this.clear();
+                        this.Hide();
+                        administrador.ShowDialog(this);
+                    }
+                    else
+                    {
+                        MessageBox.Show("El par Usuario - Contraseña no coinciden", "Usuario o Contraseña Incorrecta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
-                else
+                catch (NullReferenceException)
                 {
-                    MessageBox.Show("El par Usuario - Contraseña no coinciden", "Usuario o Contraseña Incorrecta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("El Usuario ingresado no existe", "Usuario Inexistente", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                catch (ArgumentException ex)
+                {
+                    MessageBox.Show(ex.ToString());
                 }
             }
-            catch (NullReferenceException)
+            else
             {
-                MessageBox.Show("El Usuario ingresado no existe", "Usuario Inexistente", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            catch (ArgumentException ex)
-            {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show("El Campo Id debe ser un numero", "Id no Valido", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void clear()

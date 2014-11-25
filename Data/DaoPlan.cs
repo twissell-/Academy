@@ -25,10 +25,10 @@ namespace Data
         {
             DaoMateria dm = new DaoMateria();
             DaoEspecialidad de = new DaoEspecialidad();
-            Materia[] materias = new Materia[mapper.materias.Length];
+            List<Materia> materias = new List<Materia>(mapper.materias.Length);
             for (int i = 0; i < mapper.materias.Length; i++)
             {
-                materias[i] = dm.find(mapper.materias[i]);
+                materias.Add(dm.find(mapper.materias[i]));
             }
 
             return new Plan(mapper.id, mapper.descripcion, de.find(mapper.especialidad), materias);

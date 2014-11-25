@@ -20,8 +20,8 @@ namespace Util
             this.id = p.id;
             this.descripcion = p.descripcion;
             this.especialidad = p.especialidad.id;
-            this.materias =  new int[p.materias.Length];
-            for (int i = 0; i < p.materias.Length; i++)
+            this.materias =  new int[p.materias.Count];
+            for (int i = 0; i < p.materias.Count; i++)
             {
                 this.materias[i] = p.materias[i].id;
             }

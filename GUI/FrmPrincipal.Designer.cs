@@ -46,6 +46,7 @@
             this.tsmEliminarComisiones = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmListadoDeComisiones = new System.Windows.Forms.ToolStripMenuItem();
             this.personalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nuevoUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmAdministrativo = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmAgregarAdministrativo = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmModificarAdministrativo = new System.Windows.Forms.ToolStripMenuItem();
@@ -71,9 +72,6 @@
             this.tsmModificarPlan = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmEliminarPlan = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmListadoDePlanes = new System.Windows.Forms.ToolStripMenuItem();
-            this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmReporteComisiones = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmReportePlanes = new System.Windows.Forms.ToolStripMenuItem();
             this.stsBarraEstado = new System.Windows.Forms.StatusStrip();
             this.lblRelleno = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblUsuarioActivoNombre = new System.Windows.Forms.ToolStripStatusLabel();
@@ -99,7 +97,6 @@
             // 
             this.panAdmGral.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.panAdmGral.AutoSize = true;
-            this.panAdmGral.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.panAdmGral.Controls.Add(this.panAdmOtro);
             this.panAdmGral.Location = new System.Drawing.Point(12, 27);
             this.panAdmGral.Name = "panAdmGral";
@@ -125,8 +122,7 @@
             this.tsmComisiones,
             this.personalToolStripMenuItem,
             this.tsmEspecialidades,
-            this.tsmPlanes,
-            this.reportesToolStripMenuItem});
+            this.tsmPlanes});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(872, 24);
@@ -229,12 +225,20 @@
             // personalToolStripMenuItem
             // 
             this.personalToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.nuevoUsuarioToolStripMenuItem,
             this.tsmAdministrativo,
             this.tsmAlumnos,
             this.tsmDocentes});
             this.personalToolStripMenuItem.Name = "personalToolStripMenuItem";
             this.personalToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
-            this.personalToolStripMenuItem.Text = "Personal";
+            this.personalToolStripMenuItem.Text = "Usuarios";
+            // 
+            // nuevoUsuarioToolStripMenuItem
+            // 
+            this.nuevoUsuarioToolStripMenuItem.Name = "nuevoUsuarioToolStripMenuItem";
+            this.nuevoUsuarioToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.nuevoUsuarioToolStripMenuItem.Text = "Nuevo Usuario...";
+            this.nuevoUsuarioToolStripMenuItem.Click += new System.EventHandler(this.nuevoUsuarioToolStripMenuItem_Click);
             // 
             // tsmAdministrativo
             // 
@@ -244,8 +248,9 @@
             this.tsmEliminarAdministrativoToolStripMenuItem1,
             this.tsmListadoDeAdministrativo});
             this.tsmAdministrativo.Name = "tsmAdministrativo";
-            this.tsmAdministrativo.Size = new System.Drawing.Size(157, 22);
+            this.tsmAdministrativo.Size = new System.Drawing.Size(161, 22);
             this.tsmAdministrativo.Text = "Administrativos";
+            this.tsmAdministrativo.Click += new System.EventHandler(this.tsmAdministrativo_Click);
             // 
             // tsmAgregarAdministrativo
             // 
@@ -283,8 +288,9 @@
             this.tsmEliminarAlumno,
             this.tsmListadoDeAlumnos});
             this.tsmAlumnos.Name = "tsmAlumnos";
-            this.tsmAlumnos.Size = new System.Drawing.Size(157, 22);
+            this.tsmAlumnos.Size = new System.Drawing.Size(161, 22);
             this.tsmAlumnos.Text = "Alumnos";
+            this.tsmAlumnos.Click += new System.EventHandler(this.tsmAlumnos_Click);
             // 
             // tsmAgregarAlumno
             // 
@@ -322,8 +328,9 @@
             this.tsmEliminarDocente,
             this.tsmListadoDeDocentes});
             this.tsmDocentes.Name = "tsmDocentes";
-            this.tsmDocentes.Size = new System.Drawing.Size(157, 22);
+            this.tsmDocentes.Size = new System.Drawing.Size(161, 22);
             this.tsmDocentes.Text = "Docentes";
+            this.tsmDocentes.Click += new System.EventHandler(this.tsmDocentes_Click);
             // 
             // tsmAgregarDocente
             // 
@@ -431,29 +438,6 @@
             this.tsmListadoDePlanes.Text = "Listado de Planes";
             this.tsmListadoDePlanes.Click += new System.EventHandler(this.tsmListadoDePlanes_Click);
             // 
-            // reportesToolStripMenuItem
-            // 
-            this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmReporteComisiones,
-            this.tsmReportePlanes});
-            this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
-            this.reportesToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
-            this.reportesToolStripMenuItem.Text = "Reportes";
-            // 
-            // tsmReporteComisiones
-            // 
-            this.tsmReporteComisiones.Name = "tsmReporteComisiones";
-            this.tsmReporteComisiones.Size = new System.Drawing.Size(136, 22);
-            this.tsmReporteComisiones.Text = "Comisiones";
-            this.tsmReporteComisiones.Click += new System.EventHandler(this.tsmReporteComisiones_Click);
-            // 
-            // tsmReportePlanes
-            // 
-            this.tsmReportePlanes.Name = "tsmReportePlanes";
-            this.tsmReportePlanes.Size = new System.Drawing.Size(136, 22);
-            this.tsmReportePlanes.Text = "Planes";
-            this.tsmReportePlanes.Click += new System.EventHandler(this.tsmReportePlanes_Click);
-            // 
             // stsBarraEstado
             // 
             this.stsBarraEstado.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -534,9 +518,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmModificarPlan;
         private System.Windows.Forms.ToolStripMenuItem tsmEliminarPlan;
         private System.Windows.Forms.ToolStripMenuItem tsmListadoDePlanes;
-        private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem tsmReporteComisiones;
-        private System.Windows.Forms.ToolStripMenuItem tsmReportePlanes;
         private System.Windows.Forms.ToolStripMenuItem tsmMaterias;
         private System.Windows.Forms.ToolStripMenuItem tsmAgregarMateria;
         private System.Windows.Forms.ToolStripMenuItem tsmModificarMateria;
@@ -563,6 +544,7 @@
         private System.Windows.Forms.ToolStripStatusLabel lblUsuarioActivoNombre;
         private System.Windows.Forms.ToolStripStatusLabel lblUsuarioActivoId;
         private System.Windows.Forms.ToolStripStatusLabel lblRelleno;
+        private System.Windows.Forms.ToolStripMenuItem nuevoUsuarioToolStripMenuItem;
     
         public System.Windows.Forms.PaintEventHandler panel1_Paint { get; set; }
     }      
