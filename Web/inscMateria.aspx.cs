@@ -45,4 +45,12 @@ public partial class inscMateria : System.Web.UI.Page
             this.tblMaterias.Rows.Add(tr);
         }
     }
+    protected void btnGuardar_Click(object sender, EventArgs e)
+    {
+        //no implementado
+    }
+    protected void btnVolver_Click(object sender, EventArgs e)
+    {
+        Page.Response.Redirect("~/Alumno.aspx");
+    }
 }

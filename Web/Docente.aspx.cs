@@ -15,7 +15,13 @@ public partial class Docente : System.Web.UI.Page
         {
             Page.Response.Redirect("~/Default.aspx");
         }
-        Persona doc = (Persona)Session["Persona"];
-        lblNombre.Text = "Bienvenido" + doc.apellido + " " + doc.nombre;
+        else if (Session["tipo"].ToString() == "alumno")
+        {
+            Page.Response.Redirect("~/Alumno.aspx");
+        }else
+            {
+                Persona alu = (Persona)Session["Persona"];
+                lblNombre.Text = "Bienvenido " + alu.apellido + " " + alu.nombre;
+            }
     }
 }

@@ -3,10 +3,11 @@
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="Menu">
     <fieldset >
             <legend>Menu</legend>
-                    <a href="inscMateria.aspx" id="Materias" target="_self">Materias</a><br />
-                    <a href="EstadoAcademico.aspx" id="Estado" target="_self">Estado academico</a><br />
-                    <a href="cambPass.aspx" id="CambPass" target="_self">Cambiar Contraseña</a><br />
-                    <a href="inscMateria.aspx" id="Salir" target="_self">Salir</a>        
+                    <asp:HyperLink runat="server" NavigateUrl="inscMateria.aspx" id="Materias" target="_self">Materias</asp:HyperLink><br />
+                    <asp:HyperLink  runat="server" NavigateUrl="EstadoAcademico.aspx" id="Estado" target="_self">Estado academico</asp:HyperLink><br />
+                    <asp:HyperLink   runat="server" NavigateUrl="cambPass.aspx" id="CambPass" target="_self">Cambiar Contraseña</asp:HyperLink><br />
+                    <!-- <a href="Default.aspx" id="Salir" target="_self">Salir</a><br /> -->
+                    <asp:HyperLink ID="Salir" runat="server" NavigateUrl="Salir.aspx">Salir</asp:HyperLink>       
     </fieldset>
 </asp:Content>
 

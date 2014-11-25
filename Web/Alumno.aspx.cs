@@ -15,50 +15,13 @@ public partial class Alumno : System.Web.UI.Page
         {
             Page.Response.Redirect("~/Default.aspx");
         }
-        else /*if (Session["Persona"].Equals(Docente))
+        else if (Session["tipo"].ToString() == "docente")
         {
-            
-        }*/
-        {
-            Persona alu = (Persona)Session["Persona"];
-            lblNombre.Text = "Bienvenido " + alu.apellido + " " + alu.nombre;
-        }
-    }
-    protected void linkSalir_Click(object sender, EventArgs e)
-    {
-        Session.RemoveAll();
-        //Session["Persona"] = null;
-        Page.Response.Redirect("~/Default.aspx");
-    }
-
-    protected void linkInscMaterias_Click(object sender, EventArgs e)
-    {
-       /* int Rows = 5;   //buscar cantidad de materias en db
-        int Columns = 6; //desp ver bien los datos a mostrar
-        int tblRows = Rows;
-        int tblCols = Columns;
-        Table tbl = new Table();
-        //   MainContent.Controls.Add(tbl);
-        this.Controls.Add(tbl);
-
-        for (int i = 0; i < tblRows; i++)
-        {
-            TableRow tr = new TableRow();
-            for (int j = 0; j < tblCols; j++)
+            Page.Response.Redirect("~/Docente.aspx");
+        }else
             {
-                TableCell tc = new TableCell();
-                TextBox txtBox = new TextBox();
-                txtBox.Text = "RowNo:" + i + " " + "ColumnNo:" + " " + j;
-
-                tc.Controls.Add(txtBox);
-
-                tr.Cells.Add(tc);
+                Persona alu = (Persona)Session["Persona"];
+                lblNombre.Text = "Bienvenido " + alu.apellido + " " + alu.nombre;
             }
-
-            tbl.Rows.Add(tr);
-        }
-      //  this.panel.Controls.Add(tbl);*/
-        Page.Response.Write("DSA");
-        //Page.Response.Redirect("~/inscMateria.aspx");
     }
 }

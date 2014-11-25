@@ -6,9 +6,9 @@
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="Menu">
     <fieldset >
             <legend>Menu</legend>
-                    <a href="docMaterias.aspx" id="Materias" target="_self">Materias</a><br />
-                    <a href="cambPass.aspx" id="CambPass" target="_self">Cambiar Contraseña</a><br />
-                    <a href="inscMateria.aspx" id="Salir" target="_self">Salir</a>        
+                    <asp:HyperLink runat="server" NavigateUrl="docMaterias.aspx" id="Materias" target="_self">Materias</asp:HyperLink><br />
+                    <asp:HyperLink runat="server" NavigateUrl="cambPass.aspx" id="CambPass" target="_self">Cambiar Contraseña</asp:HyperLink><br />
+                    <asp:HyperLink runat="server" NavigateUrl="Salir.aspx" id="Salir" target="_self">Salir</asp:HyperLink>                          
     </fieldset>
 </asp:Content>
 
