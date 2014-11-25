@@ -25016,3 +25016,74 @@ db.parametros.save(
     "_id" : "docenteNextId",
     "value" : 100
 });
+db.especialidades.insert([
+{_id : 0, descripcion : "Sistemas de Información"},
+{_id : 1, descripcion : "Quimica"},
+{_id : 2, descripcion : "Civil"},
+{_id : 3, descripcion : "Mecanica"},
+{_id : 4, descripcion : "Electrica"},
+	]);
+db.planes.insert(
+[
+{ _id : 0 , descripcion : "1995", especialidad : 0},
+{ _id : 1 , descripcion : "2008", especialidad : 0}
+]
+);
+db.materias.insert(
+[
+{ _id : 0, descripcion : "Análisis Matemático I", plan : 1 }, 
+{ _id : 1, descripcion : "Álgebra y Geometría Analítica", plan : 1 }, 
+{ _id : 2, descripcion : "Matemática Discreta", plan : 1 }, 
+{ _id : 3, descripcion : "Sistemas y Organizaciones", plan : 1 }, 
+{ _id : 4, descripcion : "Algoritmo y Estructuras de Datos", plan : 1 }, 
+{ _id : 5, descripcion : "Arquitectura de Computadoras", plan : 1 }, 
+{ _id : 6, descripcion : "Química", plan : 1 }, 
+{ _id : 7, descripcion : "Ingeniería y Sociedad", plan : 1 }, 
+{ _id : 8, descripcion : "Física I", plan : 1 }, 
+{ _id : 9, descripcion : "Inglés I", plan : 1 }, 
+{ _id : 10, descripcion : "Análisis Matemático II", plan : 1 }, 
+{ _id : 11, descripcion : "Análisis de Sistemas", plan : 1 }, 
+{ _id : 12, descripcion : "Sintaxis y Semántica de los Lenguajes", plan : 1 }, 
+{ _id : 13, descripcion : "Paradigmas de Programación", plan : 1 }, 
+{ _id : 14, descripcion : "Sistemas de Representación", plan : 1 }, 
+{ _id : 15, descripcion : "Probabilidad y Estadística", plan : 1 }, 
+{ _id : 16, descripcion : "Física II", plan : 1 }, 
+{ _id : 17, descripcion : "Sistemas Operativos", plan : 1 }, 
+{ _id : 18, descripcion : "Diseño de Sistemas", plan : 1 }, 
+{ _id : 19, descripcion : "Matemática Superior", plan : 1 }, 
+{ _id : 20, descripcion : "Gestión de Datos", plan : 1 }, 
+{ _id : 21, descripcion : "Economía", plan : 1 }, 
+{ _id : 22, descripcion : "Inglés II", plan : 1 }, 
+{ _id : 23, descripcion : "Legislación", plan : 1 }, 
+{ _id : 24, descripcion : "Redes de Información", plan : 1 }, 
+{ _id : 25, descripcion : "Administración de Recursos", plan : 1 }, 
+{ _id : 26, descripcion : "Investigación Operativa", plan : 1 }, 
+{ _id : 27, descripcion : "Simulación", plan : 1 }, 
+{ _id : 28, descripcion : "Ingeniería de Software", plan : 1 }, 
+{ _id : 29, descripcion : "Teoría de Control", plan : 1 }, 
+{ _id : 30, descripcion : "Comunicaciones", plan : 1 }, 
+{ _id : 31, descripcion : "Proyecto Final", plan : 1 }, 
+{ _id : 32, descripcion : "Inteligencia Artificial", plan : 1 }, 
+{ _id : 33, descripcion : "Administración Gerencial", plan : 1 }, 
+{ _id : 34, descripcion : "Sistemas de Gestión", plan : 1 }
+]);
+db.parametros.save(
+{
+    "_id" : "especialidadNextId",
+    "value" : 5
+});
+db.parametros.save(
+{
+    "_id" : "planNextId",
+    "value" : 3
+});
+db.parametros.save(
+{
+    "_id" : "materiaNextId",
+    "value" : 35
+});
+db.tipos.insert([
+{_id : 0, descripcion : "Administrativo"},
+{_id : 1, descripcion : "Docente"},
+{_id : 2, descripcion : "Alumno"}
+]);

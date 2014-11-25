@@ -37,7 +37,7 @@ namespace UserControls
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            Plan p = new Plan(Convert.ToInt32(txtId),txtDescripcion.Text,(Especialidad)cmbEspecialidad.SelectedItem);
+            Plan p = new Plan(txtDescripcion.Text,(Especialidad)cmbEspecialidad.SelectedItem);
             cp.insert(p);
         }
 

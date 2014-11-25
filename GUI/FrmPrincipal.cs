@@ -128,7 +128,7 @@ namespace GUI
         private void tsmListadoDeAlumnos_Click(object sender, EventArgs e)
         {
             this.panAdmGral.Controls.Clear();
-            var uc = new ucListaAlumnos();
+            var uc = new ucListaAlumnos(2);
             this.panAdmGral.Controls.Add(uc);
             uc.Dock = DockStyle.Fill;
         }
@@ -223,5 +223,36 @@ namespace GUI
             lblUsuarioActivoId.Text = "ID: " + usuarioActivo.id.ToString();
         }
 
+        private void nuevoUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.panAdmGral.Controls.Clear();
+            var uc = new ucAPersona();
+            this.panAdmGral.Controls.Add(uc);
+            uc.Dock = DockStyle.Fill;
+        }
+
+        private void tsmAdministrativo_Click(object sender, EventArgs e)
+        {
+            this.panAdmGral.Controls.Clear();
+            var uc = new ucListaAlumnos(0);
+            this.panAdmGral.Controls.Add(uc);
+            uc.Dock = DockStyle.Fill;
+        }
+
+        private void tsmAlumnos_Click(object sender, EventArgs e)
+        {
+            this.panAdmGral.Controls.Clear();
+            var uc = new ucListaAlumnos(2);
+            this.panAdmGral.Controls.Add(uc);
+            uc.Dock = DockStyle.Fill;
+        }
+
+        private void tsmDocentes_Click(object sender, EventArgs e)
+        {
+            this.panAdmGral.Controls.Clear();
+            var uc = new ucListaAlumnos(1);
+            this.panAdmGral.Controls.Add(uc);
+            uc.Dock = DockStyle.Fill;
+        }
     }
 }
