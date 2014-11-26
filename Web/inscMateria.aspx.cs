@@ -12,14 +12,20 @@ public partial class inscMateria : System.Web.UI.Page
 {
     ControllerAlumno ca;
     ControllerComision cc;
+    ControllerMateria cm;
     protected void Page_Load(object sender, EventArgs e)
     {
         cc = new ControllerComision();
         ca = new ControllerAlumno();
-        int Rows = 5;   //buscar cantidad de materias en db
+        cm = new ControllerMateria();
+        List<Materia> materias = new List<Materia>();
+        materias = cm.find();
+        int Rows=materias.Count;
+        //int Rows = 5;   /d/buscar cantidad de materias en db
         int Columns = 3; //desp ver bien los datos a mostrar
         int tblRows = Rows;
         int tblCols = Columns;
+      
         TableHeaderRow hr = new TableHeaderRow();
         TableHeaderCell hc = new TableHeaderCell();
         hc.Text = "Id";
@@ -30,21 +36,40 @@ public partial class inscMateria : System.Web.UI.Page
         TableHeaderCell hc2 = new TableHeaderCell();
         hc2.Text = "Inscribirse";
         hr.Controls.Add(hc2);
-        this.tblMaterias.Rows.Add(hr);    
-        for (int i = 0; i < tblRows; i++)
+        this.tblMaterias.Rows.Add(hr);
+        foreach (var mat in materias)
+	    {
+		    TableRow tr = new TableRow();
+            TableCell tc = new TableCell();
+            TextBox txtBox = new TextBox();
+            txtBox.Text = mat.id.ToString();
+            tc.Controls.Add(txtBox);
+            tr.Cells.Add(tc);
+            TableCell tc2 = new TableCell();
+            TextBox txtBox2 = new TextBox();
+            txtBox.Text = mat.descripcion.ToString();
+            tc.Controls.Add(txtBox);
+            tr.Cells.Add(tc);
+            this.tblMaterias.Rows.Add(tr);
+	    }
+        /*for (int i = 0; i < tblRows; i++)
         {
             TableRow tr = new TableRow();
-            for (int j = 0; j < tblCols; j++)
+            TableCell tc = new TableCell();
+            TextBox txtBox = new TextBox();
+            txtBox.Text = mat[i].id.ToString();
+            tc.Controls.Add(txtBox);
+            tr.Cells.Add(tc);
+            for (int j = 0; j < tblCols-1; j++)
             {
                 TableCell tc = new TableCell();
                 TextBox txtBox = new TextBox();
-                txtBox.Text = "RowNo:" + i + " " + "ColumnNo:" + " " + j;
+                txtBox.Text = mat[i].id.ToString();
                 tc.Controls.Add(txtBox);   
                 tr.Cells.Add(tc);
-            }            
-            this.tblMaterias.Rows.Add(tr);
-        }
-    }
+            } */           
+            //this.tblMaterias.Rows.Add(tr);
+}
     protected void btnGuardar_Click(object sender, EventArgs e)
     {
         //no implementado
