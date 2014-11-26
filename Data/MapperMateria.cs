@@ -10,8 +10,8 @@ namespace Util
     {
         public int id { get; set; }
         public String descripcion { get; set; }
-        public int hsSemanales { get; set; } // null
-        public int hsTotales { get; set; } // null
+        public decimal hsSemanales { get; set; } 
+        public decimal hsTotales { get; set; } 
         public int plan { get; set; }
 
         public MapperMateria(Materia m) 

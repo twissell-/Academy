@@ -43,5 +43,10 @@ namespace UserControls
         {
             Owner.edit(this.giveSelectedMateria());
         }
+
+        internal void reload()
+        {
+            dgvMaterias.DataSource = cm.find();
+        }
     }
 }

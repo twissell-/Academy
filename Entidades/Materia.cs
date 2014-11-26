@@ -9,17 +9,23 @@ namespace Entidades
     {
         public int id { get; set; }
         public String descripcion { get; set; }
-        public int hsSemanales { get; set; } // null
-        public int hsTotales { get; set; } // null
+        public decimal hsSemanales { get; set; } // null
+        public decimal hsTotales { get; set; } // null
         public Plan plan { get; set; }
 
-        public Materia(int id, String descripcion, int hsSemanales, int hsTotales, Plan plan) 
+        public Materia(int id, String descripcion, decimal hsSemanales, decimal hsTotales, Plan plan) 
         {
             this.id = id;
             this.descripcion = descripcion;
             this.hsSemanales = hsSemanales;
             this.hsTotales = hsTotales;
             this.plan = plan;
+        }
+
+        public Materia(String descripcion, decimal hsSemanales, decimal hsTotales, Plan plan)
+            : this(0, descripcion, hsSemanales, hsTotales, plan)
+        {
+
         }
 
         public override string ToString()

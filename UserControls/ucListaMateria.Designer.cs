@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.dgvMaterias = new System.Windows.Forms.DataGridView();
-            this.btnMondificar = new System.Windows.Forms.Button();
             this.dgcId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgcDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgcPlan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgcHsSemanales = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgcHsTotales = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnMondificar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMaterias)).BeginInit();
             this.SuspendLayout();
             // 
@@ -42,6 +42,7 @@
             // 
             this.dgvMaterias.AllowUserToAddRows = false;
             this.dgvMaterias.AllowUserToDeleteRows = false;
+            this.dgvMaterias.AllowUserToResizeRows = false;
             this.dgvMaterias.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
@@ -56,20 +57,11 @@
             this.dgvMaterias.MultiSelect = false;
             this.dgvMaterias.Name = "dgvMaterias";
             this.dgvMaterias.ReadOnly = true;
+            this.dgvMaterias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMaterias.ShowEditingIcon = false;
             this.dgvMaterias.Size = new System.Drawing.Size(393, 269);
             this.dgvMaterias.TabIndex = 0;
             this.dgvMaterias.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMaterias_CellDoubleClick);
-            // 
-            // btnMondificar
-            // 
-            this.btnMondificar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMondificar.Location = new System.Drawing.Point(321, 279);
-            this.btnMondificar.Name = "btnMondificar";
-            this.btnMondificar.Size = new System.Drawing.Size(75, 23);
-            this.btnMondificar.TabIndex = 1;
-            this.btnMondificar.Text = "Modificar";
-            this.btnMondificar.UseVisualStyleBackColor = true;
             // 
             // dgcId
             // 
@@ -119,6 +111,16 @@
             this.dgcHsTotales.ReadOnly = true;
             this.dgcHsTotales.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgcHsTotales.Width = 79;
+            // 
+            // btnMondificar
+            // 
+            this.btnMondificar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMondificar.Location = new System.Drawing.Point(321, 279);
+            this.btnMondificar.Name = "btnMondificar";
+            this.btnMondificar.Size = new System.Drawing.Size(75, 23);
+            this.btnMondificar.TabIndex = 1;
+            this.btnMondificar.Text = "Modificar";
+            this.btnMondificar.UseVisualStyleBackColor = true;
             // 
             // ucListaMateria
             // 

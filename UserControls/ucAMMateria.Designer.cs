@@ -37,16 +37,16 @@
             this.lblDescripcion = new System.Windows.Forms.Label();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.grpMateria = new System.Windows.Forms.GroupBox();
+            this.txtHsTotales = new System.Windows.Forms.NumericUpDown();
+            this.txtHsSemanales = new System.Windows.Forms.NumericUpDown();
+            this.lblHsTotales = new System.Windows.Forms.Label();
+            this.lblHsSemanales = new System.Windows.Forms.Label();
             this.pnlListado = new System.Windows.Forms.Panel();
             this.ucListado = new UserControls.ucListaMateria();
-            this.lblHsSemanales = new System.Windows.Forms.Label();
-            this.lblHsTotales = new System.Windows.Forms.Label();
-            this.txtHsSemanales = new System.Windows.Forms.NumericUpDown();
-            this.txtHsTotales = new System.Windows.Forms.NumericUpDown();
             this.grpMateria.SuspendLayout();
-            this.pnlListado.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtHsSemanales)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtHsTotales)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtHsSemanales)).BeginInit();
+            this.pnlListado.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblMateria
@@ -93,6 +93,7 @@
             this.btnBorrar.TabIndex = 16;
             this.btnBorrar.Text = "Borrar";
             this.btnBorrar.UseVisualStyleBackColor = true;
+            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
             // 
             // btnGuardar
             // 
@@ -144,6 +145,52 @@
             this.grpMateria.TabStop = false;
             this.grpMateria.Text = "Materia";
             // 
+            // txtHsTotales
+            // 
+            this.txtHsTotales.Enabled = false;
+            this.txtHsTotales.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            65536});
+            this.txtHsTotales.Location = new System.Drawing.Point(90, 125);
+            this.txtHsTotales.Name = "txtHsTotales";
+            this.txtHsTotales.Size = new System.Drawing.Size(134, 20);
+            this.txtHsTotales.TabIndex = 24;
+            this.txtHsTotales.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // txtHsSemanales
+            // 
+            this.txtHsSemanales.Enabled = false;
+            this.txtHsSemanales.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            65536});
+            this.txtHsSemanales.Location = new System.Drawing.Point(90, 99);
+            this.txtHsSemanales.Name = "txtHsSemanales";
+            this.txtHsSemanales.Size = new System.Drawing.Size(134, 20);
+            this.txtHsSemanales.TabIndex = 23;
+            this.txtHsSemanales.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // lblHsTotales
+            // 
+            this.lblHsTotales.AutoSize = true;
+            this.lblHsTotales.Location = new System.Drawing.Point(6, 127);
+            this.lblHsTotales.Name = "lblHsTotales";
+            this.lblHsTotales.Size = new System.Drawing.Size(61, 13);
+            this.lblHsTotales.TabIndex = 21;
+            this.lblHsTotales.Text = "Hs. Totales";
+            // 
+            // lblHsSemanales
+            // 
+            this.lblHsSemanales.AutoSize = true;
+            this.lblHsSemanales.Location = new System.Drawing.Point(6, 101);
+            this.lblHsSemanales.Name = "lblHsSemanales";
+            this.lblHsSemanales.Size = new System.Drawing.Size(78, 13);
+            this.lblHsSemanales.TabIndex = 19;
+            this.lblHsSemanales.Text = "Hs Semanales:";
+            // 
             // pnlListado
             // 
             this.pnlListado.AutoSize = true;
@@ -162,54 +209,9 @@
             this.ucListado.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ucListado.Location = new System.Drawing.Point(0, 0);
             this.ucListado.Name = "ucListado";
+            this.ucListado.Owner = null;
             this.ucListado.Size = new System.Drawing.Size(485, 323);
             this.ucListado.TabIndex = 0;
-            // 
-            // lblHsSemanales
-            // 
-            this.lblHsSemanales.AutoSize = true;
-            this.lblHsSemanales.Location = new System.Drawing.Point(6, 101);
-            this.lblHsSemanales.Name = "lblHsSemanales";
-            this.lblHsSemanales.Size = new System.Drawing.Size(78, 13);
-            this.lblHsSemanales.TabIndex = 19;
-            this.lblHsSemanales.Text = "Hs Semanales:";
-            // 
-            // lblHsTotales
-            // 
-            this.lblHsTotales.AutoSize = true;
-            this.lblHsTotales.Location = new System.Drawing.Point(6, 127);
-            this.lblHsTotales.Name = "lblHsTotales";
-            this.lblHsTotales.Size = new System.Drawing.Size(61, 13);
-            this.lblHsTotales.TabIndex = 21;
-            this.lblHsTotales.Text = "Hs. Totales";
-            // 
-            // txtHsSemanales
-            // 
-            this.txtHsSemanales.Enabled = false;
-            this.txtHsSemanales.Increment = new decimal(new int[] {
-            5,
-            0,
-            0,
-            65536});
-            this.txtHsSemanales.Location = new System.Drawing.Point(90, 99);
-            this.txtHsSemanales.Name = "txtHsSemanales";
-            this.txtHsSemanales.Size = new System.Drawing.Size(134, 20);
-            this.txtHsSemanales.TabIndex = 23;
-            this.txtHsSemanales.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // txtHsTotales
-            // 
-            this.txtHsTotales.Enabled = false;
-            this.txtHsTotales.Increment = new decimal(new int[] {
-            5,
-            0,
-            0,
-            65536});
-            this.txtHsTotales.Location = new System.Drawing.Point(90, 125);
-            this.txtHsTotales.Name = "txtHsTotales";
-            this.txtHsTotales.Size = new System.Drawing.Size(134, 20);
-            this.txtHsTotales.TabIndex = 24;
-            this.txtHsTotales.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // ucAMMateria
             // 
@@ -223,10 +225,10 @@
             this.Load += new System.EventHandler(this.ucAMMateria_Load);
             this.grpMateria.ResumeLayout(false);
             this.grpMateria.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtHsTotales)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtHsSemanales)).EndInit();
             this.pnlListado.ResumeLayout(false);
             this.pnlListado.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtHsSemanales)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtHsTotales)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

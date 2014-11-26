@@ -33,7 +33,6 @@ namespace UserControls
 
         private void enabler(bool p)
         {
-            txtId.Enabled = p;
             cmbPlan.Enabled = p;
             txtDescripcion.Enabled = p;
             txtHsSemanales.Enabled = p;
@@ -52,15 +51,36 @@ namespace UserControls
             this.enabler(true);
         }
 
+        private void clear()
+        {
+            txtId.Text = "";
+            cmbPlan.SelectedItem = "";
+            txtDescripcion.Text = "";
+            txtHsSemanales.Text = "";
+            txtHsTotales.Text = "";
+            this.enabler(false);
+            ucListado.reload();
+        }
         private void ucAMMateria_Load(object sender, EventArgs e)
         {
             this.loader();
         }
 
+        private Materia buildMateria()
+        {
+            return new Materia(Convert.ToInt32(txtId.Text), txtDescripcion.Text, txtHsSemanales.Value, txtHsTotales.Value, (Plan)cmbPlan.SelectedItem);
+        }
+            
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            cm.insert(new Materia(0, txtDescripcion.Text, 0, 0, (Plan)cmbPlan.SelectedItem));
-            txtDescripcion.Text = "";
+            cm.update(buildMateria());
+            this.clear();
+        }
+
+        private void btnBorrar_Click(object sender, EventArgs e)
+        {
+            cm.delete(buildMateria());
+            this.clear();
         }
     }
 }
