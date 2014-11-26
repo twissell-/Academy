@@ -21,16 +21,6 @@ namespace GUI
             InitializeComponent();
         }
 
-        private void btnSalir_Click(object sender, EventArgs e)
-        {
-            DialogResult resultado = MessageBox.Show("Esta seguro que desea salir?", "Esta por salir del programa", MessageBoxButtons.YesNo);
-            if (resultado == DialogResult.Yes)
-            {
-                this.Owner.Show();
-                this.Dispose();
-            }
-        }
-
         private void tsmAgregarComision_Click(object sender, EventArgs e)
         {
             //ver
@@ -42,7 +32,7 @@ namespace GUI
 
         private void tsmSalir_Click(object sender, EventArgs e)
         {
-            this.btnSalir_Click(sender, e);
+            this.cerrarSesion();
         }
         
         private void tsmAPersona_Click(object sender, EventArgs e)
@@ -253,6 +243,17 @@ namespace GUI
             var uc = new ucListaAlumnos(1);
             this.panAdmGral.Controls.Add(uc);
             uc.Dock = DockStyle.Fill;
+        }
+
+        private void cerrarSesion()
+        {
+            DialogResult resultado = MessageBox.Show("Esta seguro que desea salir?", "Esta por salir del programa", MessageBoxButtons.YesNo);
+            if (resultado == DialogResult.Yes)
+            {
+                this.usuarioActivo = null;
+                this.Owner.Show();
+                this.Dispose();
+            }
         }
     }
 }

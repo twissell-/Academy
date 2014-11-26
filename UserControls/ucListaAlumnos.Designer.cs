@@ -39,6 +39,7 @@
             this.direccionPersona = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.telefonoPersona = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emailPersona = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnGuardar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaAlumnos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,15 +61,15 @@
             this.dgvListaAlumnos.Location = new System.Drawing.Point(15, 4);
             this.dgvListaAlumnos.MultiSelect = false;
             this.dgvListaAlumnos.Name = "dgvListaAlumnos";
-            this.dgvListaAlumnos.ReadOnly = true;
             this.dgvListaAlumnos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListaAlumnos.Size = new System.Drawing.Size(694, 283);
             this.dgvListaAlumnos.TabIndex = 0;
+            this.dgvListaAlumnos.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListaAlumnos_CellValueChanged);
             // 
             // btnEliminar
             // 
             this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEliminar.Location = new System.Drawing.Point(552, 297);
+            this.btnEliminar.Location = new System.Drawing.Point(561, 297);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 1;
@@ -165,10 +166,23 @@
             this.emailPersona.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.emailPersona.Width = 61;
             // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGuardar.Enabled = false;
+            this.btnGuardar.Location = new System.Drawing.Point(480, 297);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(75, 23);
+            this.btnGuardar.TabIndex = 7;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
             // ucListaAlumnos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.dgvListaAlumnos);
@@ -192,5 +206,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn direccionPersona;
         private System.Windows.Forms.DataGridViewTextBoxColumn telefonoPersona;
         private System.Windows.Forms.DataGridViewTextBoxColumn emailPersona;
+        private System.Windows.Forms.Button btnGuardar;
     }
 }

@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrincipal));
-            this.btnSalir = new System.Windows.Forms.Button();
             this.panAdmGral = new System.Windows.Forms.Panel();
             this.panAdmOtro = new System.Windows.Forms.Panel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -81,18 +80,6 @@
             this.stsBarraEstado.SuspendLayout();
             this.SuspendLayout();
             // 
-            // btnSalir
-            // 
-            this.btnSalir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSalir.AutoSize = true;
-            this.btnSalir.Location = new System.Drawing.Point(785, 405);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(75, 23);
-            this.btnSalir.TabIndex = 4;
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = true;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
-            // 
             // panAdmGral
             // 
             this.panAdmGral.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
@@ -100,7 +87,7 @@
             this.panAdmGral.Controls.Add(this.panAdmOtro);
             this.panAdmGral.Location = new System.Drawing.Point(12, 27);
             this.panAdmGral.Name = "panAdmGral";
-            this.panAdmGral.Size = new System.Drawing.Size(848, 372);
+            this.panAdmGral.Size = new System.Drawing.Size(848, 401);
             this.panAdmGral.TabIndex = 10;
             // 
             // panAdmOtro
@@ -109,7 +96,7 @@
             this.panAdmOtro.AutoSize = true;
             this.panAdmOtro.Location = new System.Drawing.Point(-16, 1);
             this.panAdmOtro.Name = "panAdmOtro";
-            this.panAdmOtro.Size = new System.Drawing.Size(0, 0);
+            this.panAdmOtro.Size = new System.Drawing.Size(0, 29);
             this.panAdmOtro.TabIndex = 0;
             // 
             // menuStrip1
@@ -140,7 +127,7 @@
             // tsmSalir
             // 
             this.tsmSalir.Name = "tsmSalir";
-            this.tsmSalir.Size = new System.Drawing.Size(96, 22);
+            this.tsmSalir.Size = new System.Drawing.Size(152, 22);
             this.tsmSalir.Text = "Salir";
             this.tsmSalir.Click += new System.EventHandler(this.tsmSalir_Click);
             // 
@@ -477,7 +464,6 @@
             this.ClientSize = new System.Drawing.Size(872, 455);
             this.Controls.Add(this.stsBarraEstado);
             this.Controls.Add(this.panAdmGral);
-            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
@@ -498,7 +484,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Panel panAdmGral;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem tsmMenuPrincipal;

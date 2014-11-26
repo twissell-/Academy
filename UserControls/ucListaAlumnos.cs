@@ -42,15 +42,14 @@ namespace UserControls
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (this.dgvListaAlumnos.SelectedRows != null && this.dgvListaAlumnos.SelectedRows.Count > 0)
+            if (this.dgvListaAlumnos.SelectedRows != null)
             {
-                int id = (int)this.dgvListaAlumnos.SelectedRows[0].Cells[0].Value;
-                string nom = this.dgvListaAlumnos.SelectedRows[0].Cells[0].Value.ToString();
-                string ape = this.dgvListaAlumnos.SelectedRows[0].Cells[0].Value.ToString();
-                if (MessageBox.Show("¿Está seguro que desea eliminar a " + nom + " " + ape + "?",
+                if (MessageBox.Show("¿Está seguro que desea eliminar a " + 
+                    this.dgvListaAlumnos.SelectedRows[0].Cells["apellidoPersona"].Value + ", " + 
+                    this.dgvListaAlumnos.SelectedRows[0].Cells["nombrePersona"].Value + "?",
                     "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    controller.delete(controller.find(id));
+                    controller.delete((Persona)this.dgvListaAlumnos.SelectedRows[0].DataBoundItem);
                 }
 
             }
@@ -63,6 +62,24 @@ namespace UserControls
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            if (this.dgvListaAlumnos.SelectedRows != null)
+            {
+                if (MessageBox.Show("¿Desea guardar los cambios realizados?", "Guardar Cambios", 
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    controller.update((Persona)dgvListaAlumnos.SelectedRows[0].DataBoundItem);
+                }
+
+            }
+        }
+
+        private void dgvListaAlumnos_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            btnGuardar.Enabled = true;
         }
     
     }

@@ -73,6 +73,7 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="UserControls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ucAMMateria.cs">
@@ -129,6 +130,12 @@
     </Compile>
     <Compile Include="ucListaDocentes.Designer.cs">
       <DependentUpon>ucListaDocentes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucListaMateria.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucListaMateria.Designer.cs">
+      <DependentUpon>ucListaMateria.cs</DependentUpon>
     </Compile>
     <Compile Include="ucListaEspecialidades.cs">
       <SubType>UserControl</SubType>
@@ -205,6 +212,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ucListaDocentes.resx">
       <DependentUpon>ucListaDocentes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucListaMateria.resx">
+      <DependentUpon>ucListaMateria.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ucListaEspecialidades.resx">
       <DependentUpon>ucListaEspecialidades.cs</DependentUpon>

@@ -23,10 +23,38 @@ namespace UserControls
             cm = new ControllerMateria();
         }
 
+        private void loader()
+        {
+            cp = new ControllerPlan();
+            cm = new ControllerMateria();
+            cmbPlan.DataSource = cp.find();
+            ucListado.Owner = this;
+        }
+
+        private void enabler(bool p)
+        {
+            txtId.Enabled = p;
+            cmbPlan.Enabled = p;
+            txtDescripcion.Enabled = p;
+            txtHsSemanales.Enabled = p;
+            txtHsTotales.Enabled = p;
+            btnBorrar.Enabled = p;
+            btnGuardar.Enabled = p;
+        }
+
+        public void edit(Materia m)
+        {
+            txtId.Text = m.id.ToString();
+            cmbPlan.SelectedItem = m.plan;
+            txtDescripcion.Text = m.descripcion.ToString();
+            txtHsSemanales.Text = m.hsSemanales.ToString();
+            txtHsTotales.Text = m.hsTotales.ToString();
+            this.enabler(true);
+        }
+
         private void ucAMMateria_Load(object sender, EventArgs e)
         {
-            cmbPlan.DataSource = cp.find();
-            cmbPlan.DisplayMember = "Plan.name";
+            this.loader();
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
