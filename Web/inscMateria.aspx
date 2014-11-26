@@ -14,10 +14,15 @@ MasterPageFile="~/Site.master"%>
 
 <asp:Content ID="MainContent" runat="server" ContentPlaceHolderID="MainContent">
     <form id="materia" runat="server">
-        <asp:Table ID="tblMaterias" runat="server"></asp:Table>
-        <asp:Button ID="btnGuardar" runat="server" Text="Guardar" 
-            onclick="btnGuardar_Click" />   
-        <asp:Button ID="btnVolver" runat="server" Text="Volver" 
-            onclick="btnVolver_Click" />    
+            <asp:GridView ID="dvgMaterias" runat="server" AutoGenerateColumns="False">
+                <columns>
+                   <asp:BoundField  HeaderText="Id" ReadOnly="true" DataField="id"/>
+                   <asp:BoundField  HeaderText="Descripcion" ReadOnly="true" DataField="descripcion"/>
+                   <asp:CommandField HeaderText="Inscripcion" ButtonType="Link" ShowSelectButton="true" />
+                     
+                </columns>
+            </asp:GridView>
+        <asp:Button ID="btnVolver" runat="server" OnClick="btnVolver_Click" Text="Volver" />
+        <asp:Label ID="das" runat="server"></asp:Label>     
     </form>
 </asp:Content>

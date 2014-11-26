@@ -15,65 +15,35 @@ public partial class inscMateria : System.Web.UI.Page
     ControllerMateria cm;
     protected void Page_Load(object sender, EventArgs e)
     {
-        cc = new ControllerComision();
-        ca = new ControllerAlumno();
         cm = new ControllerMateria();
-        List<Materia> materias = new List<Materia>();
-        materias = cm.find();
-        int Rows=materias.Count;
-        //int Rows = 5;   /d/buscar cantidad de materias en db
-        int Columns = 3; //desp ver bien los datos a mostrar
-        int tblRows = Rows;
-        int tblCols = Columns;
-      
-        TableHeaderRow hr = new TableHeaderRow();
-        TableHeaderCell hc = new TableHeaderCell();
-        hc.Text = "Id";
-        hr.Controls.Add(hc);
-        TableHeaderCell hc1 = new TableHeaderCell();
-        hc1.Text = "Descripcion";
-        hr.Controls.Add(hc1);
-        TableHeaderCell hc2 = new TableHeaderCell();
-        hc2.Text = "Inscribirse";
-        hr.Controls.Add(hc2);
-        this.tblMaterias.Rows.Add(hr);
-        foreach (var mat in materias)
-	    {
-		    TableRow tr = new TableRow();
-            TableCell tc = new TableCell();
-            TextBox txtBox = new TextBox();
-            txtBox.Text = mat.id.ToString();
-            tc.Controls.Add(txtBox);
-            tr.Cells.Add(tc);
-            TableCell tc2 = new TableCell();
-            TextBox txtBox2 = new TextBox();
-            txtBox.Text = mat.descripcion.ToString();
-            tc.Controls.Add(txtBox);
-            tr.Cells.Add(tc);
-            this.tblMaterias.Rows.Add(tr);
-	    }
-        /*for (int i = 0; i < tblRows; i++)
-        {
-            TableRow tr = new TableRow();
-            TableCell tc = new TableCell();
-            TextBox txtBox = new TextBox();
-            txtBox.Text = mat[i].id.ToString();
-            tc.Controls.Add(txtBox);
-            tr.Cells.Add(tc);
-            for (int j = 0; j < tblCols-1; j++)
+     
+            cc = new ControllerComision();
+            ca = new ControllerAlumno();
+            if (!IsPostBack)
             {
-                TableCell tc = new TableCell();
-                TextBox txtBox = new TextBox();
-                txtBox.Text = mat[i].id.ToString();
-                tc.Controls.Add(txtBox);   
-                tr.Cells.Add(tc);
-            } */           
-            //this.tblMaterias.Rows.Add(tr);
+            List<Materia> materias = new List<Materia>();
+            dvgMaterias.DataSource = cm.find();
+            dvgMaterias.DataBind();
+        }
+        else
+        {
+            String eventarg = this.Request.Params.Get("__EVENTARGUMENT");
+            String[] das = eventarg.Split('$');
+            int index = Convert.ToInt32(das[1]);
+            int idM=0;
+            if (int.TryParse(dvgMaterias.Rows[index].Cells[0].Text, out idM))
+            {
+                Materia matSel = cm.find(idM);
+                Session["matSel"] = matSel;
+                Response.Redirect("~/Comisiones.aspx");
+            }
+        }      
 }
-    protected void btnGuardar_Click(object sender, EventArgs e)
+    protected void link_Click(Object sender, GridViewCommandEventArgs e)
     {
-        //no implementado
+      
     }
+
     protected void btnVolver_Click(object sender, EventArgs e)
     {
         Page.Response.Redirect("~/Alumno.aspx");
