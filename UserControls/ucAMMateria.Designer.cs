@@ -147,6 +147,7 @@
             // 
             // txtHsTotales
             // 
+            this.txtHsTotales.DecimalPlaces = 1;
             this.txtHsTotales.Enabled = false;
             this.txtHsTotales.Increment = new decimal(new int[] {
             5,
@@ -161,6 +162,7 @@
             // 
             // txtHsSemanales
             // 
+            this.txtHsSemanales.DecimalPlaces = 1;
             this.txtHsSemanales.Enabled = false;
             this.txtHsSemanales.Increment = new decimal(new int[] {
             5,
