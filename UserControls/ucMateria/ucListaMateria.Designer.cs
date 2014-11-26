@@ -34,7 +34,6 @@
             this.dgcPlan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgcHsSemanales = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgcHsTotales = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnMondificar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMaterias)).BeginInit();
             this.SuspendLayout();
             // 
@@ -112,23 +111,12 @@
             this.dgcHsTotales.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgcHsTotales.Width = 79;
             // 
-            // btnMondificar
-            // 
-            this.btnMondificar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMondificar.Location = new System.Drawing.Point(321, 279);
-            this.btnMondificar.Name = "btnMondificar";
-            this.btnMondificar.Size = new System.Drawing.Size(75, 23);
-            this.btnMondificar.TabIndex = 1;
-            this.btnMondificar.Text = "Modificar";
-            this.btnMondificar.UseVisualStyleBackColor = true;
-            // 
             // ucListaMateria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.Controls.Add(this.btnMondificar);
             this.Controls.Add(this.dgvMaterias);
             this.Name = "ucListaMateria";
             this.Size = new System.Drawing.Size(400, 305);
@@ -141,7 +129,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvMaterias;
-        private System.Windows.Forms.Button btnMondificar;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgcId;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgcDescripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgcPlan;

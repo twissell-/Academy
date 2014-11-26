@@ -15,16 +15,11 @@ namespace UserControls
     public partial class ucListaMateria : UserControl
     {
         private ControllerMateria cm;
-        public ucAMMateria Owner {get; set;}
+        public ucMBMateria Owner {get; set;}
 
         public ucListaMateria()
         {
             InitializeComponent();
-        }
-
-        private void ucListadoMateria_Load(object sender, EventArgs e)
-        {
-            this.loader();
         }
 
         private void loader()
@@ -41,12 +36,20 @@ namespace UserControls
 
         private void dgvMaterias_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            Owner.edit(this.giveSelectedMateria());
+            if (Owner != null)
+            {
+                Owner.edit(this.giveSelectedMateria());
+            }
         }
 
         internal void reload()
         {
             dgvMaterias.DataSource = cm.find();
+        }
+
+        private void ucListadoMateria_Load(object sender, EventArgs e)
+        {
+            this.loader();
         }
     }
 }

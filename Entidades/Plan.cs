@@ -20,8 +20,14 @@ namespace Entidades
             this.materias = materias;
         }
 
+        public Plan(int id, string descripcion, Especialidad especialidad)
+            : this(id, descripcion, especialidad, new List<Materia>())
+        {
+
+        }
+
         public Plan(string descripcion, Especialidad especialidad)
-            : this(0, descripcion, especialidad, new List<Materia>()) 
+            : this(0, descripcion, especialidad) 
         {
 
         }

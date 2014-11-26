@@ -1,6 +1,6 @@
 ﻿namespace UserControls
 {
-    partial class ucAMMateria
+    partial class ucMBMateria
     {
         /// <summary> 
         /// Variable del diseñador requerida.
@@ -86,8 +86,8 @@
             // 
             // btnBorrar
             // 
-            this.btnBorrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnBorrar.Location = new System.Drawing.Point(154, 294);
+            this.btnBorrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBorrar.Location = new System.Drawing.Point(68, 151);
             this.btnBorrar.Name = "btnBorrar";
             this.btnBorrar.Size = new System.Drawing.Size(75, 23);
             this.btnBorrar.TabIndex = 16;
@@ -97,8 +97,8 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGuardar.Location = new System.Drawing.Point(73, 294);
+            this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGuardar.Location = new System.Drawing.Point(149, 151);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 15;
@@ -125,6 +125,8 @@
             // 
             // grpMateria
             // 
+            this.grpMateria.AutoSize = true;
+            this.grpMateria.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.grpMateria.Controls.Add(this.txtHsTotales);
             this.grpMateria.Controls.Add(this.txtHsSemanales);
             this.grpMateria.Controls.Add(this.lblHsTotales);
@@ -138,9 +140,9 @@
             this.grpMateria.Controls.Add(this.txtId);
             this.grpMateria.Controls.Add(this.lblPlan);
             this.grpMateria.Dock = System.Windows.Forms.DockStyle.Right;
-            this.grpMateria.Location = new System.Drawing.Point(485, 0);
+            this.grpMateria.Location = new System.Drawing.Point(528, 0);
             this.grpMateria.Name = "grpMateria";
-            this.grpMateria.Size = new System.Drawing.Size(235, 323);
+            this.grpMateria.Size = new System.Drawing.Size(235, 391);
             this.grpMateria.TabIndex = 19;
             this.grpMateria.TabStop = false;
             this.grpMateria.Text = "Materia";
@@ -201,7 +203,7 @@
             this.pnlListado.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlListado.Location = new System.Drawing.Point(0, 0);
             this.pnlListado.Name = "pnlListado";
-            this.pnlListado.Size = new System.Drawing.Size(485, 323);
+            this.pnlListado.Size = new System.Drawing.Size(528, 391);
             this.pnlListado.TabIndex = 20;
             // 
             // ucListado
@@ -212,18 +214,18 @@
             this.ucListado.Location = new System.Drawing.Point(0, 0);
             this.ucListado.Name = "ucListado";
             this.ucListado.Owner = null;
-            this.ucListado.Size = new System.Drawing.Size(485, 323);
+            this.ucListado.Size = new System.Drawing.Size(528, 391);
             this.ucListado.TabIndex = 0;
             // 
-            // ucAMMateria
+            // ucMBMateria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.Controls.Add(this.pnlListado);
             this.Controls.Add(this.grpMateria);
-            this.Name = "ucAMMateria";
-            this.Size = new System.Drawing.Size(720, 323);
+            this.Name = "ucMBMateria";
+            this.Size = new System.Drawing.Size(763, 391);
             this.Load += new System.EventHandler(this.ucAMMateria_Load);
             this.grpMateria.ResumeLayout(false);
             this.grpMateria.PerformLayout();

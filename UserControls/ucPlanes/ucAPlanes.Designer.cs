@@ -28,10 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnBorrar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.grbPlan = new System.Windows.Forms.GroupBox();
+            this.btnBorrar = new System.Windows.Forms.Button();
             this.cmbEspecialidad = new System.Windows.Forms.ComboBox();
             this.lblEspecialidad = new System.Windows.Forms.Label();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
@@ -41,33 +40,10 @@
             this.grbPlan.SuspendLayout();
             this.SuspendLayout();
             // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancelar.Location = new System.Drawing.Point(615, 295);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 24;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
-            // btnBorrar
-            // 
-            this.btnBorrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnBorrar.Location = new System.Drawing.Point(534, 295);
-            this.btnBorrar.Name = "btnBorrar";
-            this.btnBorrar.Size = new System.Drawing.Size(75, 23);
-            this.btnBorrar.TabIndex = 23;
-            this.btnBorrar.Text = "Borrar";
-            this.btnBorrar.UseVisualStyleBackColor = true;
-            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
-            // 
             // btnGuardar
             // 
             this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGuardar.Location = new System.Drawing.Point(453, 295);
+            this.btnGuardar.Location = new System.Drawing.Point(185, 110);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 22;
@@ -77,18 +53,32 @@
             // 
             // grbPlan
             // 
+            this.grbPlan.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.grbPlan.Controls.Add(this.btnBorrar);
             this.grbPlan.Controls.Add(this.cmbEspecialidad);
+            this.grbPlan.Controls.Add(this.btnGuardar);
             this.grbPlan.Controls.Add(this.lblEspecialidad);
             this.grbPlan.Controls.Add(this.txtDescripcion);
             this.grbPlan.Controls.Add(this.txtId);
             this.grbPlan.Controls.Add(this.lblDescripcion);
             this.grbPlan.Controls.Add(this.lblId);
-            this.grbPlan.Location = new System.Drawing.Point(188, 47);
+            this.grbPlan.Location = new System.Drawing.Point(19, 3);
             this.grbPlan.Name = "grbPlan";
-            this.grbPlan.Size = new System.Drawing.Size(289, 125);
+            this.grbPlan.Size = new System.Drawing.Size(271, 186);
             this.grbPlan.TabIndex = 29;
             this.grbPlan.TabStop = false;
-            this.grbPlan.Text = "Agregar Plan";
+            this.grbPlan.Text = "Plan";
+            // 
+            // btnBorrar
+            // 
+            this.btnBorrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBorrar.Location = new System.Drawing.Point(104, 110);
+            this.btnBorrar.Name = "btnBorrar";
+            this.btnBorrar.Size = new System.Drawing.Size(75, 23);
+            this.btnBorrar.TabIndex = 35;
+            this.btnBorrar.Text = "Borrar";
+            this.btnBorrar.UseVisualStyleBackColor = true;
+            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
             // 
             // cmbEspecialidad
             // 
@@ -109,13 +99,14 @@
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(102, 54);
+            this.txtDescripcion.Location = new System.Drawing.Point(104, 54);
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(158, 20);
+            this.txtDescripcion.Size = new System.Drawing.Size(156, 20);
             this.txtDescripcion.TabIndex = 32;
             // 
             // txtId
             // 
+            this.txtId.Enabled = false;
             this.txtId.Location = new System.Drawing.Point(104, 24);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(156, 20);
@@ -145,11 +136,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.Controls.Add(this.grbPlan);
-            this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.btnBorrar);
-            this.Controls.Add(this.btnGuardar);
             this.Name = "ucAPlanes";
-            this.Size = new System.Drawing.Size(693, 321);
+            this.Size = new System.Drawing.Size(317, 247);
             this.Load += new System.EventHandler(this.ucAPlanes_Load);
             this.grbPlan.ResumeLayout(false);
             this.grbPlan.PerformLayout();
@@ -159,8 +147,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.Button btnBorrar;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.GroupBox grbPlan;
         private System.Windows.Forms.TextBox txtDescripcion;
@@ -169,5 +155,6 @@
         private System.Windows.Forms.Label lblId;
         private System.Windows.Forms.ComboBox cmbEspecialidad;
         private System.Windows.Forms.Label lblEspecialidad;
+        private System.Windows.Forms.Button btnBorrar;
     }
 }

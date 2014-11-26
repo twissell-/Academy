@@ -37,7 +37,6 @@
             this.tsmMaterias = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmAgregarMateria = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmModificarMateria = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmEliminarMateria = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmListadoDeMaterias = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmComisiones = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmAgregarComision = new System.Windows.Forms.ToolStripMenuItem();
@@ -69,7 +68,6 @@
             this.tsmPlanes = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmAgregarPlan = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmModificarPlan = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmEliminarPlan = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmListadoDePlanes = new System.Windows.Forms.ToolStripMenuItem();
             this.stsBarraEstado = new System.Windows.Forms.StatusStrip();
             this.lblRelleno = new System.Windows.Forms.ToolStripStatusLabel();
@@ -82,21 +80,20 @@
             // 
             // panAdmGral
             // 
-            this.panAdmGral.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.panAdmGral.AutoSize = true;
             this.panAdmGral.Controls.Add(this.panAdmOtro);
-            this.panAdmGral.Location = new System.Drawing.Point(12, 27);
+            this.panAdmGral.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panAdmGral.Location = new System.Drawing.Point(0, 24);
             this.panAdmGral.Name = "panAdmGral";
-            this.panAdmGral.Size = new System.Drawing.Size(848, 401);
+            this.panAdmGral.Size = new System.Drawing.Size(872, 431);
             this.panAdmGral.TabIndex = 10;
             // 
             // panAdmOtro
             // 
             this.panAdmOtro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.panAdmOtro.AutoSize = true;
-            this.panAdmOtro.Location = new System.Drawing.Point(-16, 1);
+            this.panAdmOtro.Location = new System.Drawing.Point(-4, 1);
             this.panAdmOtro.Name = "panAdmOtro";
-            this.panAdmOtro.Size = new System.Drawing.Size(0, 29);
+            this.panAdmOtro.Size = new System.Drawing.Size(0, 59);
             this.panAdmOtro.TabIndex = 0;
             // 
             // menuStrip1
@@ -127,7 +124,7 @@
             // tsmSalir
             // 
             this.tsmSalir.Name = "tsmSalir";
-            this.tsmSalir.Size = new System.Drawing.Size(152, 22);
+            this.tsmSalir.Size = new System.Drawing.Size(96, 22);
             this.tsmSalir.Text = "Salir";
             this.tsmSalir.Click += new System.EventHandler(this.tsmSalir_Click);
             // 
@@ -136,7 +133,6 @@
             this.tsmMaterias.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmAgregarMateria,
             this.tsmModificarMateria,
-            this.tsmEliminarMateria,
             this.tsmListadoDeMaterias});
             this.tsmMaterias.Name = "tsmMaterias";
             this.tsmMaterias.Size = new System.Drawing.Size(64, 20);
@@ -145,28 +141,21 @@
             // tsmAgregarMateria
             // 
             this.tsmAgregarMateria.Name = "tsmAgregarMateria";
-            this.tsmAgregarMateria.Size = new System.Drawing.Size(176, 22);
-            this.tsmAgregarMateria.Text = "Agregar";
-            this.tsmAgregarMateria.Click += new System.EventHandler(this.tsmAMMateria_Click);
+            this.tsmAgregarMateria.Size = new System.Drawing.Size(218, 22);
+            this.tsmAgregarMateria.Text = "Nueva Materia...";
+            this.tsmAgregarMateria.Click += new System.EventHandler(this.tsmAgregarMateria_Click);
             // 
             // tsmModificarMateria
             // 
             this.tsmModificarMateria.Name = "tsmModificarMateria";
-            this.tsmModificarMateria.Size = new System.Drawing.Size(176, 22);
-            this.tsmModificarMateria.Text = "Modificar";
-            this.tsmModificarMateria.Click += new System.EventHandler(this.tsmAMMateria_Click);
-            // 
-            // tsmEliminarMateria
-            // 
-            this.tsmEliminarMateria.Name = "tsmEliminarMateria";
-            this.tsmEliminarMateria.Size = new System.Drawing.Size(176, 22);
-            this.tsmEliminarMateria.Text = "Eliminar";
-            this.tsmEliminarMateria.Click += new System.EventHandler(this.tsmEliminarMateria_Click);
+            this.tsmModificarMateria.Size = new System.Drawing.Size(218, 22);
+            this.tsmModificarMateria.Text = "Modificar o Borrar Materias";
+            this.tsmModificarMateria.Click += new System.EventHandler(this.tsmModificarMateria_Click);
             // 
             // tsmListadoDeMaterias
             // 
             this.tsmListadoDeMaterias.Name = "tsmListadoDeMaterias";
-            this.tsmListadoDeMaterias.Size = new System.Drawing.Size(176, 22);
+            this.tsmListadoDeMaterias.Size = new System.Drawing.Size(218, 22);
             this.tsmListadoDeMaterias.Text = "Listado de Materias";
             this.tsmListadoDeMaterias.Click += new System.EventHandler(this.tsmListadoDeMaterias_Click);
             // 
@@ -391,7 +380,6 @@
             this.tsmPlanes.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmAgregarPlan,
             this.tsmModificarPlan,
-            this.tsmEliminarPlan,
             this.tsmListadoDePlanes});
             this.tsmPlanes.Name = "tsmPlanes";
             this.tsmPlanes.Size = new System.Drawing.Size(53, 20);
@@ -400,28 +388,21 @@
             // tsmAgregarPlan
             // 
             this.tsmAgregarPlan.Name = "tsmAgregarPlan";
-            this.tsmAgregarPlan.Size = new System.Drawing.Size(165, 22);
-            this.tsmAgregarPlan.Text = "Agregar";
+            this.tsmAgregarPlan.Size = new System.Drawing.Size(207, 22);
+            this.tsmAgregarPlan.Text = "Nuevo Plan...";
             this.tsmAgregarPlan.Click += new System.EventHandler(this.tsmAgregarPlan_Click);
             // 
             // tsmModificarPlan
             // 
             this.tsmModificarPlan.Name = "tsmModificarPlan";
-            this.tsmModificarPlan.Size = new System.Drawing.Size(165, 22);
-            this.tsmModificarPlan.Text = "Modificar";
+            this.tsmModificarPlan.Size = new System.Drawing.Size(207, 22);
+            this.tsmModificarPlan.Text = "Modificar o Borrar Planes";
             this.tsmModificarPlan.Click += new System.EventHandler(this.tsmModificarPlan_Click);
-            // 
-            // tsmEliminarPlan
-            // 
-            this.tsmEliminarPlan.Name = "tsmEliminarPlan";
-            this.tsmEliminarPlan.Size = new System.Drawing.Size(165, 22);
-            this.tsmEliminarPlan.Text = "Eliminar";
-            this.tsmEliminarPlan.Click += new System.EventHandler(this.tsmEliminarPlan_Click);
             // 
             // tsmListadoDePlanes
             // 
             this.tsmListadoDePlanes.Name = "tsmListadoDePlanes";
-            this.tsmListadoDePlanes.Size = new System.Drawing.Size(165, 22);
+            this.tsmListadoDePlanes.Size = new System.Drawing.Size(207, 22);
             this.tsmListadoDePlanes.Text = "Listado de Planes";
             this.tsmListadoDePlanes.Click += new System.EventHandler(this.tsmListadoDePlanes_Click);
             // 
@@ -501,12 +482,10 @@
         private System.Windows.Forms.ToolStripMenuItem tsmPlanes;
         private System.Windows.Forms.ToolStripMenuItem tsmAgregarPlan;
         private System.Windows.Forms.ToolStripMenuItem tsmModificarPlan;
-        private System.Windows.Forms.ToolStripMenuItem tsmEliminarPlan;
         private System.Windows.Forms.ToolStripMenuItem tsmListadoDePlanes;
         private System.Windows.Forms.ToolStripMenuItem tsmMaterias;
         private System.Windows.Forms.ToolStripMenuItem tsmAgregarMateria;
         private System.Windows.Forms.ToolStripMenuItem tsmModificarMateria;
-        private System.Windows.Forms.ToolStripMenuItem tsmEliminarMateria;
         private System.Windows.Forms.ToolStripMenuItem tsmListadoDeMaterias;
         private System.Windows.Forms.Panel panAdmOtro;
         private System.Windows.Forms.ToolStripMenuItem personalToolStripMenuItem;

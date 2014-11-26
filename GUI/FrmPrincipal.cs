@@ -79,22 +79,28 @@ namespace GUI
             }
         }
 
-        private void tsmAMMateria_Click(object sender, EventArgs e)
+        private void tsmAgregarMateria_Click(object sender, EventArgs e)
         {
             this.panAdmGral.Controls.Clear();
-            var uc = new ucAMMateria();
+            var uc = new ucAMateria();
             this.panAdmGral.Controls.Add(uc);
             uc.Dock = DockStyle.Fill;
         }
 
-        private void tsmEliminarMateria_Click(object sender, EventArgs e)
+        private void tsmModificarMateria_Click(object sender, EventArgs e)
         {
-            //Form inputId = new FrmInputId();
+            this.panAdmGral.Controls.Clear();
+            var uc = new ucMBMateria();
+            this.panAdmGral.Controls.Add(uc);
+            uc.Dock = DockStyle.Fill;
         }
 
         private void tsmListadoDeMaterias_Click(object sender, EventArgs e)
         {
-            //falta
+            this.panAdmGral.Controls.Clear();
+            var uc = new ucListaMateria();
+            this.panAdmGral.Controls.Add(uc);
+            uc.Dock = DockStyle.Fill;
         }
 
         private void tsmModificarComisiones_Click(object sender, EventArgs e)
@@ -171,15 +177,7 @@ namespace GUI
         private void tsmModificarPlan_Click(object sender, EventArgs e)
         {
             this.panAdmGral.Controls.Clear();
-            UserControl uc = new ucMPlanes();
-            this.panAdmGral.Controls.Add(uc);
-            uc.Dock = DockStyle.Fill;   
-        }
-
-        private void tsmEliminarPlan_Click(object sender, EventArgs e)
-        {
-            this.panAdmGral.Controls.Clear();
-            UserControl uc = new ucBPlanes();
+            UserControl uc = new ucMBPlanes();
             this.panAdmGral.Controls.Add(uc);
             uc.Dock = DockStyle.Fill;   
         }

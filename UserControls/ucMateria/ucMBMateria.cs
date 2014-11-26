@@ -11,22 +11,24 @@ using Entidades;
 
 namespace UserControls
 {
-    public partial class ucAMMateria : UserControl
+    public partial class ucMBMateria : UserControl
     {
         ControllerPlan cp;
         ControllerMateria cm;
 
-        public ucAMMateria()
+        public ucMBMateria()
         {
             InitializeComponent();
-            cp = new ControllerPlan();
-            cm = new ControllerMateria();
         }
+
+        #region Metodos Propios
 
         private void loader()
         {
             cp = new ControllerPlan();
             cm = new ControllerMateria();
+            cmbPlan.DisplayMember = "descripcion";
+            cmbPlan.ValueMember = "id";
             cmbPlan.DataSource = cp.find();
             ucListado.Owner = this;
         }
@@ -44,7 +46,7 @@ namespace UserControls
         public void edit(Materia m)
         {
             txtId.Text = m.id.ToString();
-            cmbPlan.SelectedItem = m.plan;
+            cmbPlan.SelectedValue = m.plan.id;
             txtDescripcion.Text = m.descripcion.ToString();
             txtHsSemanales.Text = m.hsSemanales.ToString();
             txtHsTotales.Text = m.hsTotales.ToString();
@@ -61,14 +63,17 @@ namespace UserControls
             this.enabler(false);
             ucListado.reload();
         }
-        private void ucAMMateria_Load(object sender, EventArgs e)
-        {
-            this.loader();
-        }
 
         private Materia buildMateria()
         {
             return new Materia(Convert.ToInt32(txtId.Text), txtDescripcion.Text, txtHsSemanales.Value, txtHsTotales.Value, (Plan)cmbPlan.SelectedItem);
+        }
+
+        #endregion
+
+        private void ucAMMateria_Load(object sender, EventArgs e)
+        {
+            this.loader();
         }
             
         private void btnGuardar_Click(object sender, EventArgs e)
