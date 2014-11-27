@@ -2,7 +2,7 @@
 
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
     <form id="frmSalir" runat="server">
-    <asp:Label ID="lblSalir" runat="server"></asp:Label>
+    <asp:Label ID="lblSalir" runat="server"></asp:Label><br />
     <asp:HyperLink ID="hypDef" runat="server" Target="_self" NavigateUrl="Default.aspx"></asp:HyperLink>
     </form>
 </asp:Content>

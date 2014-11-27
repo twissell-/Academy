@@ -7,7 +7,6 @@ MasterPageFile="~/Site.master"%>
                     <asp:HyperLink runat="server" NavigateUrl="inscMateria.aspx" id="Materias" target="_self">Materias</asp:HyperLink><br />
                     <asp:HyperLink  runat="server" NavigateUrl="EstadoAcademico.aspx" id="Estado" target="_self">Estado academico</asp:HyperLink><br />
                     <asp:HyperLink   runat="server" NavigateUrl="cambPass.aspx" id="CambPass" target="_self">Cambiar Contraseña</asp:HyperLink><br />
-                    <!-- <a href="Default.aspx" id="Salir" target="_self">Salir</a><br /> -->
                     <asp:HyperLink ID="Salir" runat="server" NavigateUrl="Salir.aspx">Salir</asp:HyperLink> 
         </fieldset>     
 </asp:Content>
@@ -19,7 +18,6 @@ MasterPageFile="~/Site.master"%>
                    <asp:BoundField  HeaderText="Id" ReadOnly="true" DataField="id"/>
                    <asp:BoundField  HeaderText="Descripcion" ReadOnly="true" DataField="descripcion"/>
                    <asp:CommandField HeaderText="Inscripcion" ButtonType="Link" ShowSelectButton="true" />
-                     
                 </columns>
             </asp:GridView>
         <asp:Button ID="btnVolver" runat="server" OnClick="btnVolver_Click" Text="Volver" />

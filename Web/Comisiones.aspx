@@ -1,5 +1,5 @@
-﻿<%@ Page Title="Acerca de nosotros" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true"
-    CodeFile="Comisiones.aspx.cs" Inherits="About" %>
+﻿<%@ Page Title="Comisiones" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true"
+    CodeFile="Comisiones.aspx.cs" Inherits="Comisiones" %>
 
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="Menu">
       <fieldset >
@@ -12,9 +12,15 @@
 </asp:Content>
 
 <asp:Content ID="MainContent" runat="server" ContentPlaceHolderID="MainContent">
-    <form id="comisiones" runat="server">
-        <asp:RadioButtonList ID="rblComisiones" runat="server"></asp:RadioButtonList>
-        <asp:Button ID="btnInscribirse" runat="server" OnClick="btnInscribirse_Click" Text="Inscribirse" />    
-        <asp:Button ID="btnVolver" runat="server" OnClick="btnVolver_Click" Text="Volver" />     
-    </form>
+     <form id="comisionesAlumnos" runat="server">
+        <asp:GridView ID="dvgComisionesAlumnos" runat="server" AutoGenerateColumns="false">
+            <Columns>
+                <asp:BoundField HeaderText="Id" ReadOnly="true" DataField="id" />
+                <asp:BoundField HeaderText="Materia" ReadOnly="true" DataField="descripcion" />
+                <asp:BoundField HeaderText="Condicion" ReadOnly="true" DataField="condicion" />
+            </Columns>  
+        </asp:GridView>
+       <asp:Button ID="btnVolver" runat="server" OnClick="btnVolver_Click" Text="Volver" />
+        <asp:Label ID="lblInscripto" runat="server" ></asp:Label>
+       </form>
 </asp:Content>
