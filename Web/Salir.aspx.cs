@@ -12,6 +12,8 @@ public partial class Salir : System.Web.UI.Page
         if (Session["Persona"] != null)
         {
             Session["Persona"] = null;
+            Session["matSel"] = null;
+            Session["tipo"] = null;
             lblSalir.Text = "Usted ha salido exitosamente";
         }
         else
