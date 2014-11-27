@@ -25,7 +25,7 @@ namespace GUI
         {
             //ver
             this.panAdmGral.Controls.Clear();
-            var uc = new ucAgregarComision();
+            var uc = new ucAComision();
             this.panAdmGral.Controls.Add(uc);
             uc.Dock = DockStyle.Fill;
         }

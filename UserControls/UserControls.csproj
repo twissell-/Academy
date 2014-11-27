@@ -88,11 +88,11 @@
     <Compile Include="ucMateria\ucMBMateria.Designer.cs">
       <DependentUpon>ucMBMateria.cs</DependentUpon>
     </Compile>
-    <Compile Include="ucAgregarComision.cs">
+    <Compile Include="ucAComision.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucAgregarComision.Designer.cs">
-      <DependentUpon>ucAgregarComision.cs</DependentUpon>
+    <Compile Include="ucAComision.Designer.cs">
+      <DependentUpon>ucAComision.cs</DependentUpon>
     </Compile>
     <Compile Include="ucAgregarEspecialidad.cs">
       <SubType>UserControl</SubType>
@@ -192,8 +192,8 @@
     <EmbeddedResource Include="ucMateria\ucMBMateria.resx">
       <DependentUpon>ucMBMateria.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucAgregarComision.resx">
-      <DependentUpon>ucAgregarComision.cs</DependentUpon>
+    <EmbeddedResource Include="ucAComision.resx">
+      <DependentUpon>ucAComision.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ucAgregarEspecialidad.resx">
       <DependentUpon>ucAgregarEspecialidad.cs</DependentUpon>

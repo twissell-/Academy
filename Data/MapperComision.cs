@@ -11,7 +11,7 @@ namespace Util
         public int id { get; set; }
         public int anioCursado { get; set; }
         public int materia { get; set; }
-        public List<int[]> docentes { get; set; }
+        public List<Object> docentes { get; set; }
         public List<int[]> alumnos { get; set; }
         public int turno { get; set; }
         
@@ -20,12 +20,10 @@ namespace Util
             this.id = c.id;
             this.anioCursado = c.anioCursado;
             this.materia = c.materia.id;
-            this.docentes = new List<int[]>();
+            this.docentes = new List<Object>();
             foreach (Docente d in c.docentes)
             {
-                int[] aux = new int[2];
-                aux[0] = d.id;
-                aux[1] = d.cargo;
+                var aux = new {id = d.id, cargo = d.cargo };
                 this.docentes.Add(aux);
             }
             this.alumnos = new List<int[]>();

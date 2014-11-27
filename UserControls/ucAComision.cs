@@ -11,7 +11,7 @@ using Entidades;
 
 namespace UserControls
 {
-    public partial class ucAgregarComision : UserControl
+    public partial class ucAComision : UserControl
     {
         ControllerMateria cm;
         ControllerDocente cd;
@@ -30,7 +30,7 @@ namespace UserControls
 
 #endregion
 
-        public ucAgregarComision()
+        public ucAComision()
         {
             InitializeComponent();
             this.cm = new ControllerMateria();

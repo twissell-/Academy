@@ -1,6 +1,6 @@
 ﻿namespace UserControls
 {
-    partial class ucAgregarComision
+    partial class ucAComision
     {
         /// <summary> 
         /// Variable del diseñador requerida.
