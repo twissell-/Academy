@@ -37,10 +37,10 @@ namespace Data
             }
             //  Recupero los objetos Docente
             List<Docente> docentes = new List<Docente>();
-            foreach (int[] aux in mapper.docentes)
+            foreach (var aux in mapper.docentes)
             {
-                Docente d = (Docente)dd.find(aux[0]);
-                d.cargo = aux[1];
+                Docente d = (Docente)dd.find((int)aux);
+                d.cargo = (int)aux;
                 docentes.Add(d);
             }
 
