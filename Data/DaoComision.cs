@@ -44,7 +44,7 @@ namespace Data
                 docentes.Add(d);
             }
 
-            return new Comision(mapper.id, mapper.anioCursado, mapper.HsSemanales, mapper.HsTotales, dm.find(mapper.materia), docentes, alumnos, mapper.turno);
+            return new Comision(mapper.id, mapper.anioCursado, dm.find(mapper.materia), docentes, alumnos, mapper.turno);
         }
 
         public Comision find(int id) 
@@ -57,6 +57,17 @@ namespace Data
         {
             List<Comision> ls = new List<Comision>();
             foreach (MapperComision obj in comisiones.FindAllAs<MapperComision>())
+            {
+                ls.Add(mapper(obj));
+            }
+            return ls;
+        }
+
+        public List<Comision> find(Materia m)
+        {
+            List<Comision> ls = new List<Comision>();
+            QueryDocument query = new QueryDocument("materia", m.id);
+            foreach (MapperComision obj in comisiones.Find(query))
             {
                 ls.Add(mapper(obj));
             }

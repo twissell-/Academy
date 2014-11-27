@@ -10,8 +10,6 @@ namespace Util
     {
         public int id { get; set; }
         public int anioCursado { get; set; }
-        public Decimal HsSemanales { get; set; }
-        public Decimal HsTotales { get; set; }
         public int materia { get; set; }
         public List<int[]> docentes { get; set; }
         public List<int[]> alumnos { get; set; }
@@ -21,8 +19,6 @@ namespace Util
         {
             this.id = c.id;
             this.anioCursado = c.anioCursado;
-            this.HsSemanales = c.HsSemanales;
-            this.HsTotales = c.HsTotales;
             this.materia = c.materia.id;
             this.docentes = new List<int[]>();
             foreach (Docente d in c.docentes)

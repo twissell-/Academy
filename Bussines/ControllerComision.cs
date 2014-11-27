@@ -27,6 +27,11 @@ namespace Bussines
             return dao.find();
         }
 
+        public List<Comision> find(Materia m)
+        {
+            return dao.find(m);
+        }
+
         public void delete(Comision obj)
         {
             dao.delete(obj);

@@ -31,10 +31,6 @@
             this.grpComision = new System.Windows.Forms.GroupBox();
             this.txtAñoCursado = new System.Windows.Forms.TextBox();
             this.lblAñoCursado = new System.Windows.Forms.Label();
-            this.txtHsTotales = new System.Windows.Forms.TextBox();
-            this.lblHsTotales = new System.Windows.Forms.Label();
-            this.txtHsSemanales = new System.Windows.Forms.TextBox();
-            this.lblHsSemanales = new System.Windows.Forms.Label();
             this.cmbTurno = new System.Windows.Forms.ComboBox();
             this.lblTurno = new System.Windows.Forms.Label();
             this.btnBorrar = new System.Windows.Forms.Button();
@@ -61,15 +57,11 @@
             // 
             this.grpComision.Controls.Add(this.txtAñoCursado);
             this.grpComision.Controls.Add(this.lblAñoCursado);
-            this.grpComision.Controls.Add(this.txtHsTotales);
-            this.grpComision.Controls.Add(this.lblHsTotales);
-            this.grpComision.Controls.Add(this.txtHsSemanales);
-            this.grpComision.Controls.Add(this.lblHsSemanales);
             this.grpComision.Controls.Add(this.cmbTurno);
             this.grpComision.Controls.Add(this.lblTurno);
             this.grpComision.Location = new System.Drawing.Point(18, 81);
             this.grpComision.Name = "grpComision";
-            this.grpComision.Size = new System.Drawing.Size(191, 152);
+            this.grpComision.Size = new System.Drawing.Size(191, 88);
             this.grpComision.TabIndex = 17;
             this.grpComision.TabStop = false;
             this.grpComision.Text = "Datos Comision";
@@ -89,38 +81,6 @@
             this.lblAñoCursado.Size = new System.Drawing.Size(70, 13);
             this.lblAñoCursado.TabIndex = 12;
             this.lblAñoCursado.Text = "Año cursado:";
-            // 
-            // txtHsTotales
-            // 
-            this.txtHsTotales.Location = new System.Drawing.Point(108, 119);
-            this.txtHsTotales.Name = "txtHsTotales";
-            this.txtHsTotales.Size = new System.Drawing.Size(67, 20);
-            this.txtHsTotales.TabIndex = 11;
-            // 
-            // lblHsTotales
-            // 
-            this.lblHsTotales.AutoSize = true;
-            this.lblHsTotales.Location = new System.Drawing.Point(38, 126);
-            this.lblHsTotales.Name = "lblHsTotales";
-            this.lblHsTotales.Size = new System.Drawing.Size(64, 13);
-            this.lblHsTotales.TabIndex = 10;
-            this.lblHsTotales.Text = "Hs. Totales:";
-            // 
-            // txtHsSemanales
-            // 
-            this.txtHsSemanales.Location = new System.Drawing.Point(108, 89);
-            this.txtHsSemanales.Name = "txtHsSemanales";
-            this.txtHsSemanales.Size = new System.Drawing.Size(67, 20);
-            this.txtHsSemanales.TabIndex = 9;
-            // 
-            // lblHsSemanales
-            // 
-            this.lblHsSemanales.AutoSize = true;
-            this.lblHsSemanales.Location = new System.Drawing.Point(21, 96);
-            this.lblHsSemanales.Name = "lblHsSemanales";
-            this.lblHsSemanales.Size = new System.Drawing.Size(81, 13);
-            this.lblHsSemanales.TabIndex = 8;
-            this.lblHsSemanales.Text = "Hs. Semanales:";
             // 
             // cmbTurno
             // 
@@ -149,7 +109,7 @@
             // btnBorrar
             // 
             this.btnBorrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnBorrar.Location = new System.Drawing.Point(559, 284);
+            this.btnBorrar.Location = new System.Drawing.Point(559, 319);
             this.btnBorrar.Name = "btnBorrar";
             this.btnBorrar.Size = new System.Drawing.Size(75, 23);
             this.btnBorrar.TabIndex = 16;
@@ -160,7 +120,7 @@
             // btnGuardar
             // 
             this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGuardar.Location = new System.Drawing.Point(473, 284);
+            this.btnGuardar.Location = new System.Drawing.Point(473, 319);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 15;
@@ -171,7 +131,7 @@
             // btnCancelar
             // 
             this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancelar.Location = new System.Drawing.Point(640, 284);
+            this.btnCancelar.Location = new System.Drawing.Point(640, 319);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 14;
@@ -225,7 +185,7 @@
             this.gpbMateria.Controls.Add(this.dgvListaDocentes);
             this.gpbMateria.Location = new System.Drawing.Point(215, 81);
             this.gpbMateria.Name = "gpbMateria";
-            this.gpbMateria.Size = new System.Drawing.Size(500, 197);
+            this.gpbMateria.Size = new System.Drawing.Size(500, 232);
             this.gpbMateria.TabIndex = 18;
             this.gpbMateria.TabStop = false;
             this.gpbMateria.Text = "Materia";
@@ -250,7 +210,7 @@
             this.dgvListaDocentes.Location = new System.Drawing.Point(6, 19);
             this.dgvListaDocentes.Name = "dgvListaDocentes";
             this.dgvListaDocentes.ReadOnly = true;
-            this.dgvListaDocentes.Size = new System.Drawing.Size(488, 159);
+            this.dgvListaDocentes.Size = new System.Drawing.Size(488, 194);
             this.dgvListaDocentes.TabIndex = 20;
             this.dgvListaDocentes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListaDocentes_CellClick);
             // 
@@ -320,7 +280,7 @@
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.lblId);
             this.Name = "ucAgregarComision";
-            this.Size = new System.Drawing.Size(718, 310);
+            this.Size = new System.Drawing.Size(718, 379);
             this.Load += new System.EventHandler(this.ucAgregarComision_Load);
             this.grpComision.ResumeLayout(false);
             this.grpComision.PerformLayout();
@@ -341,10 +301,6 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Label lblId;
-        private System.Windows.Forms.TextBox txtHsTotales;
-        private System.Windows.Forms.Label lblHsTotales;
-        private System.Windows.Forms.TextBox txtHsSemanales;
-        private System.Windows.Forms.Label lblHsSemanales;
         private System.Windows.Forms.ComboBox cmbMateria;
         private System.Windows.Forms.TextBox txtAñoCursado;
         private System.Windows.Forms.Label lblAñoCursado;

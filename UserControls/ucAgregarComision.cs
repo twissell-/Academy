@@ -84,8 +84,7 @@ namespace UserControls
                     }
                 }
 	        }
-            cc.insert(new Comision(Convert.ToInt32(txtAñoCursado.Text), Convert.ToDecimal(txtHsSemanales.Text), 
-                Convert.ToDecimal(txtHsTotales.Text), (Materia)cmbMateria.SelectedItem, docentes, (int)cmbTurno.SelectedValue));
+            cc.insert(new Comision(Convert.ToInt32(txtAñoCursado.Text), (Materia)cmbMateria.SelectedItem, docentes, (int)cmbTurno.SelectedValue));
             this.Clear();
             this.Loader();
         }
@@ -99,8 +98,6 @@ namespace UserControls
             this.txtId.Clear();
             this.txtAñoCursado.Clear();
             this.cmbTurno.SelectedIndex = 0;
-            this.txtHsSemanales.Clear();
-            this.txtHsTotales.Clear();
             this.dgvListaDocentes.Refresh();
 
         }
