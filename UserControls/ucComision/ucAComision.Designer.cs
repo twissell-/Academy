@@ -142,6 +142,7 @@
             // txtId
             // 
             this.txtId.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtId.Enabled = false;
             this.txtId.Location = new System.Drawing.Point(57, 20);
             this.txtId.Name = "txtId";
             this.txtId.ReadOnly = true;
@@ -265,7 +266,7 @@
             this.dgvAuxiliar.ReadOnly = true;
             this.dgvAuxiliar.Width = 46;
             // 
-            // ucAgregarComision
+            // ucAComision
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -279,7 +280,7 @@
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.lblId);
-            this.Name = "ucAgregarComision";
+            this.Name = "ucAComision";
             this.Size = new System.Drawing.Size(718, 379);
             this.Load += new System.EventHandler(this.ucAgregarComision_Load);
             this.grpComision.ResumeLayout(false);

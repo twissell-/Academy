@@ -9,16 +9,20 @@ using System.Windows.Forms;
 
 namespace UserControls
 {
-    public partial class ucListaComisiones : UserControl
+    public partial class ucMBComision : UserControl
     {
-        public ucListaComisiones()
+        public ucMBComision()
         {
             InitializeComponent();
         }
 
-        private void btnCerrar_Click(object sender, EventArgs e)
+        #region Metodos Propios
+
+        internal void edit(Entidades.Comision comision)
         {
-            this.Dispose();
+            throw new NotImplementedException();
         }
+
+        #endregion
     }
 }

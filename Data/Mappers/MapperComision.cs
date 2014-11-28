@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Entidades;
+using Data;
 
 namespace Util
 {
@@ -11,8 +12,8 @@ namespace Util
         public int id { get; set; }
         public int anioCursado { get; set; }
         public int materia { get; set; }
-        public List<Object> docentes { get; set; }
-        public List<int[]> alumnos { get; set; }
+        public List<MapperEstado> docentes { get; set; }
+        public List<MapperEstado> alumnos { get; set; }
         public int turno { get; set; }
         
         public MapperComision(Comision c)
@@ -20,19 +21,15 @@ namespace Util
             this.id = c.id;
             this.anioCursado = c.anioCursado;
             this.materia = c.materia.id;
-            this.docentes = new List<Object>();
+            this.docentes = new List<MapperEstado>();
             foreach (Docente d in c.docentes)
             {
-                var aux = new {id = d.id, cargo = d.cargo };
-                this.docentes.Add(aux);
+                this.docentes.Add(new MapperEstado(d.id, d.cargo));
             }
-            this.alumnos = new List<int[]>();
+            this.alumnos = new List<MapperEstado>();
             foreach (Alumno a in c.alumnos)
             {
-                int[] aux = new int[2];
-                aux[0] = a.id;
-                aux[1] = a.condicion;
-                this.alumnos.Add(aux);
+                this.alumnos.Add(new MapperEstado(a.id, a.condicion));
             }
             this.turno = c.turno;
         }

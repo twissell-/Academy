@@ -89,9 +89,10 @@
     <Compile Include="DaoPlan.cs" />
     <Compile Include="DaoTipo.cs" />
     <Compile Include="IDaoPersona.cs" />
-    <Compile Include="MapperComision.cs" />
-    <Compile Include="MapperMateria.cs" />
-    <Compile Include="MapperPlan.cs" />
+    <Compile Include="Mappers\MapperComision.cs" />
+    <Compile Include="Mappers\MapperMateria.cs" />
+    <Compile Include="Mappers\MapperPlan.cs" />
+    <Compile Include="Mappers\MapperEstado.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

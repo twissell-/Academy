@@ -40,21 +40,32 @@ namespace UserControls
             // <-------------------------- ACA
         }
 
-        private void ucAgregarComision_Load(object sender, EventArgs e)
+        #region Metodos Propios
+
+        private void loader()
         {
-            this.Loader();
+            cmbMateria.DataSource = cm.find();
+            cmbTurno.DataSource = Enum.GetValues(typeof(eTurno)).Cast<eTurno>();
+            dgvListaDocentes.AutoGenerateColumns = false;
+            dgvListaDocentes.DataSource = cd.find();
+            dgvListaDocentes.ReadOnly = false;
+            btnBorrar.Visible = btnBorrar.Enabled = false;            
         }
 
-        private void btnBorrar_Click(object sender, EventArgs e)
+        private void clear()
         {
-            this.Clear();
+            this.txtId.Clear();
+            this.txtAñoCursado.Clear();
+            this.cmbTurno.SelectedIndex = 0;
+            this.dgvListaDocentes.Refresh();
+
         }
 
-        private void btnGuardar_Click(object sender, EventArgs e)
+        private Comision buildComision()
         {
-            List<Docente> docentes =  new List<Docente>();
+            List<Docente> docentes = new List<Docente>();
             foreach (DataGridViewRow row in this.dgvListaDocentes.Rows)
-	        {
+            {
                 if (Convert.ToBoolean(row.Cells["dgvTitular"].Value) || Convert.ToBoolean(row.Cells["dgvAdjunto"].Value) ||
                     Convert.ToBoolean(row.Cells["dgvJTP"].Value) || Convert.ToBoolean(row.Cells["dgvAuxiliar"].Value))
                 {
@@ -83,32 +94,26 @@ namespace UserControls
                         docentes.Add(d);
                     }
                 }
-	        }
-            cc.insert(new Comision(Convert.ToInt32(txtAñoCursado.Text), (Materia)cmbMateria.SelectedItem, docentes, (int)cmbTurno.SelectedValue));
-            this.Clear();
-            this.Loader();
+            }
+            return new Comision(Convert.ToInt32(txtAñoCursado.Text), (Materia)cmbMateria.SelectedItem, docentes, (int)cmbTurno.SelectedValue);
         }
 
-        private void btnCancelar_Click(object sender, EventArgs e)
+        private void enabler(bool p)
         {
-            this.Dispose();
+            cmbMateria.Enabled = p;
+            txtAñoCursado.Enabled = p;
+            cmbTurno.Enabled = p;
+            dgvListaDocentes.Enabled = p;
+            btnBorrar.Visible = p;
+            btnBorrar.Enabled = p;
+            btnGuardar.Enabled = p;
         }
-        private void Clear()
-        {
-            this.txtId.Clear();
-            this.txtAñoCursado.Clear();
-            this.cmbTurno.SelectedIndex = 0;
-            this.dgvListaDocentes.Refresh();
 
-        }
-        private void Loader()
+        public void edit(Comision c)
         {
-            cmbMateria.DataSource = cm.find();
-            cmbTurno.DataSource = Enum.GetValues(typeof(eTurno)).Cast<eTurno>();
-            dgvListaDocentes.AutoGenerateColumns = false;
-            dgvListaDocentes.DataSource = cd.find();
-            dgvListaDocentes.ReadOnly = false;
-            // Esto lo guarod para cuando cargue una comision a ser modificada,
+            txtId.Text = c.id.ToString();
+            txtAñoCursado.Text = c.anioCursado.ToString();
+            cmbMateria.SelectedValue = c.materia.id;
             //foreach (DataGridViewRow row in this.dgvListaDocentes.Rows)
             //{
             //    Docente d = (Docente)row.DataBoundItem;
@@ -130,7 +135,36 @@ namespace UserControls
             //            break;
             //    }
             //}
-        }   
+            this.enabler(true);
+            if (!this.Enabled)
+            {
+                this.Enabled = true;
+            }
+        }
+
+        #endregion
+
+        private void ucAgregarComision_Load(object sender, EventArgs e)
+        {
+            this.loader();
+        }
+
+        private void btnBorrar_Click(object sender, EventArgs e)
+        {
+            this.clear();
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            cc.insert(this.buildComision());
+            this.clear();
+            this.loader();
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
 
         private void dgvListaDocentes_CellClick(object sender, DataGridViewCellEventArgs e)
         {

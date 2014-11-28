@@ -29,18 +29,18 @@ namespace Data
 
             List<Alumno> alumnos = new List<Alumno>();
             //  recupero los objetos Alumno
-            foreach (int[] aux in mapper.alumnos)
+            foreach (MapperEstado aux in mapper.alumnos)
             {
-                Alumno a = (Alumno)da.find(aux[0]);
-                a.condicion = aux[1];
+                Alumno a = (Alumno)da.find(aux.id);
+                a.condicion = aux.estado;
                 alumnos.Add(a);
             }
             //  Recupero los objetos Docente
             List<Docente> docentes = new List<Docente>();
-            foreach (var aux in mapper.docentes)
+            foreach (MapperEstado aux in mapper.docentes)
             {
-                Docente d = (Docente)dd.find((int)aux);
-                d.cargo = (int)aux;
+                Docente d = (Docente)dd.find(aux.id);
+                d.cargo = aux.estado;
                 docentes.Add(d);
             }
 
@@ -67,6 +67,17 @@ namespace Data
         {
             List<Comision> ls = new List<Comision>();
             QueryDocument query = new QueryDocument("materia", m.id);
+            foreach (MapperComision obj in comisiones.Find(query))
+            {
+                ls.Add(mapper(obj));
+            }
+            return ls;
+        }
+
+        public List<Comision> find(Docente d)
+        {
+            List<Comision> ls = new List<Comision>();
+            QueryDocument query = new QueryDocument("docentes._id", d.id);
             foreach (MapperComision obj in comisiones.Find(query))
             {
                 ls.Add(mapper(obj));

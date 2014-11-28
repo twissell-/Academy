@@ -16,8 +16,8 @@
         <asp:GridView ID="dvgComisionesAlumnos" runat="server" AutoGenerateColumns="false">
             <Columns>
                 <asp:BoundField HeaderText="Id" ReadOnly="true" DataField="id" />
-                <asp:BoundField HeaderText="Materia" ReadOnly="true" DataField="descripcion" />
-                <asp:BoundField HeaderText="Condicion" ReadOnly="true" DataField="condicion" />
+                <asp:BoundField HeaderText="Materia" ReadOnly="true" DataField="materia" />
+                <asp:BoundField HeaderText="Condicion" ReadOnly="true" DataField="anioCursado" />
             </Columns>  
         </asp:GridView>
        <asp:Button ID="btnVolver" runat="server" OnClick="btnVolver_Click" Text="Volver" />

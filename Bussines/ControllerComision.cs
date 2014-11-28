@@ -32,6 +32,11 @@ namespace Bussines
             return dao.find(m);
         }
 
+        public List<Comision> find(Docente d)
+        {
+            return dao.find(d);
+        }
+
         public void delete(Comision obj)
         {
             dao.delete(obj);

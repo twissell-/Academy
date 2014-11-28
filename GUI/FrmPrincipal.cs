@@ -105,7 +105,10 @@ namespace GUI
 
         private void tsmModificarComisiones_Click(object sender, EventArgs e)
         {
-            //Form inputId = new FrmInputId();
+            this.panAdmGral.Controls.Clear();
+            var uc = new ucMBComision();
+            this.panAdmGral.Controls.Add(uc);
+            uc.Dock = DockStyle.Fill;
         }
 
         private void tsmEliminarComisiones_Click(object sender, EventArgs e)

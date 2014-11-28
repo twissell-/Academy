@@ -15,6 +15,7 @@ namespace UserControls
     {
         ControllerPlan cp;
         ControllerMateria cm;
+        public ucListaComisiones Owner { get; set; }
 
         public ucAMateria()
         {
@@ -22,6 +23,8 @@ namespace UserControls
             cp = new ControllerPlan();
             cm = new ControllerMateria();
         }
+
+        #region Metodos Propios
 
         private void loader()
         {
@@ -52,6 +55,8 @@ namespace UserControls
             grpMateria.Left = (this.ClientSize.Width - grpMateria.Width) / 2;
             grpMateria.Top = (this.ClientSize.Height - grpMateria.Height) / 2;
         }
+
+        #endregion
 
         private void ucAMateria_Load(object sender, EventArgs e)
         {

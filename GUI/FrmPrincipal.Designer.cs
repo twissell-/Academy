@@ -34,15 +34,6 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.tsmMenuPrincipal = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmSalir = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmMaterias = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmAgregarMateria = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmModificarMateria = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmListadoDeMaterias = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmComisiones = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmAgregarComision = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmModificarComisiones = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmEliminarComisiones = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmListadoDeComisiones = new System.Windows.Forms.ToolStripMenuItem();
             this.personalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevoUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmAdministrativo = new System.Windows.Forms.ToolStripMenuItem();
@@ -69,6 +60,14 @@
             this.tsmAgregarPlan = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmModificarPlan = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmListadoDePlanes = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmMaterias = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmAgregarMateria = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmModificarMateria = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmListadoDeMaterias = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmComisiones = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmAgregarComision = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmModificarComisiones = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmListadoDeComisiones = new System.Windows.Forms.ToolStripMenuItem();
             this.stsBarraEstado = new System.Windows.Forms.StatusStrip();
             this.lblRelleno = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblUsuarioActivoNombre = new System.Windows.Forms.ToolStripStatusLabel();
@@ -127,76 +126,6 @@
             this.tsmSalir.Size = new System.Drawing.Size(96, 22);
             this.tsmSalir.Text = "Salir";
             this.tsmSalir.Click += new System.EventHandler(this.tsmSalir_Click);
-            // 
-            // tsmMaterias
-            // 
-            this.tsmMaterias.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmAgregarMateria,
-            this.tsmModificarMateria,
-            this.tsmListadoDeMaterias});
-            this.tsmMaterias.Name = "tsmMaterias";
-            this.tsmMaterias.Size = new System.Drawing.Size(64, 20);
-            this.tsmMaterias.Text = "Materias";
-            // 
-            // tsmAgregarMateria
-            // 
-            this.tsmAgregarMateria.Name = "tsmAgregarMateria";
-            this.tsmAgregarMateria.Size = new System.Drawing.Size(218, 22);
-            this.tsmAgregarMateria.Text = "Nueva Materia...";
-            this.tsmAgregarMateria.Click += new System.EventHandler(this.tsmAgregarMateria_Click);
-            // 
-            // tsmModificarMateria
-            // 
-            this.tsmModificarMateria.Name = "tsmModificarMateria";
-            this.tsmModificarMateria.Size = new System.Drawing.Size(218, 22);
-            this.tsmModificarMateria.Text = "Modificar o Borrar Materias";
-            this.tsmModificarMateria.Click += new System.EventHandler(this.tsmModificarMateria_Click);
-            // 
-            // tsmListadoDeMaterias
-            // 
-            this.tsmListadoDeMaterias.Name = "tsmListadoDeMaterias";
-            this.tsmListadoDeMaterias.Size = new System.Drawing.Size(218, 22);
-            this.tsmListadoDeMaterias.Text = "Listado de Materias";
-            this.tsmListadoDeMaterias.Click += new System.EventHandler(this.tsmListadoDeMaterias_Click);
-            // 
-            // tsmComisiones
-            // 
-            this.tsmComisiones.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmAgregarComision,
-            this.tsmModificarComisiones,
-            this.tsmEliminarComisiones,
-            this.tsmListadoDeComisiones});
-            this.tsmComisiones.Name = "tsmComisiones";
-            this.tsmComisiones.Size = new System.Drawing.Size(81, 20);
-            this.tsmComisiones.Text = "Comisiones";
-            // 
-            // tsmAgregarComision
-            // 
-            this.tsmAgregarComision.Name = "tsmAgregarComision";
-            this.tsmAgregarComision.Size = new System.Drawing.Size(191, 22);
-            this.tsmAgregarComision.Text = "Agregar";
-            this.tsmAgregarComision.Click += new System.EventHandler(this.tsmAgregarComision_Click);
-            // 
-            // tsmModificarComisiones
-            // 
-            this.tsmModificarComisiones.Name = "tsmModificarComisiones";
-            this.tsmModificarComisiones.Size = new System.Drawing.Size(191, 22);
-            this.tsmModificarComisiones.Text = "Modificar";
-            this.tsmModificarComisiones.Click += new System.EventHandler(this.tsmModificarComisiones_Click);
-            // 
-            // tsmEliminarComisiones
-            // 
-            this.tsmEliminarComisiones.Name = "tsmEliminarComisiones";
-            this.tsmEliminarComisiones.Size = new System.Drawing.Size(191, 22);
-            this.tsmEliminarComisiones.Text = "Eliminar";
-            this.tsmEliminarComisiones.Click += new System.EventHandler(this.tsmEliminarComisiones_Click);
-            // 
-            // tsmListadoDeComisiones
-            // 
-            this.tsmListadoDeComisiones.Name = "tsmListadoDeComisiones";
-            this.tsmListadoDeComisiones.Size = new System.Drawing.Size(191, 22);
-            this.tsmListadoDeComisiones.Text = "Listado de comisiones";
-            this.tsmListadoDeComisiones.Click += new System.EventHandler(this.tsmListadoDeComisiones_Click);
             // 
             // personalToolStripMenuItem
             // 
@@ -406,6 +335,68 @@
             this.tsmListadoDePlanes.Text = "Listado de Planes";
             this.tsmListadoDePlanes.Click += new System.EventHandler(this.tsmListadoDePlanes_Click);
             // 
+            // tsmMaterias
+            // 
+            this.tsmMaterias.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmAgregarMateria,
+            this.tsmModificarMateria,
+            this.tsmListadoDeMaterias});
+            this.tsmMaterias.Name = "tsmMaterias";
+            this.tsmMaterias.Size = new System.Drawing.Size(64, 20);
+            this.tsmMaterias.Text = "Materias";
+            // 
+            // tsmAgregarMateria
+            // 
+            this.tsmAgregarMateria.Name = "tsmAgregarMateria";
+            this.tsmAgregarMateria.Size = new System.Drawing.Size(218, 22);
+            this.tsmAgregarMateria.Text = "Nueva Materia...";
+            this.tsmAgregarMateria.Click += new System.EventHandler(this.tsmAgregarMateria_Click);
+            // 
+            // tsmModificarMateria
+            // 
+            this.tsmModificarMateria.Name = "tsmModificarMateria";
+            this.tsmModificarMateria.Size = new System.Drawing.Size(218, 22);
+            this.tsmModificarMateria.Text = "Modificar o Borrar Materias";
+            this.tsmModificarMateria.Click += new System.EventHandler(this.tsmModificarMateria_Click);
+            // 
+            // tsmListadoDeMaterias
+            // 
+            this.tsmListadoDeMaterias.Name = "tsmListadoDeMaterias";
+            this.tsmListadoDeMaterias.Size = new System.Drawing.Size(218, 22);
+            this.tsmListadoDeMaterias.Text = "Listado de Materias";
+            this.tsmListadoDeMaterias.Click += new System.EventHandler(this.tsmListadoDeMaterias_Click);
+            // 
+            // tsmComisiones
+            // 
+            this.tsmComisiones.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmAgregarComision,
+            this.tsmModificarComisiones,
+            this.tsmListadoDeComisiones});
+            this.tsmComisiones.Name = "tsmComisiones";
+            this.tsmComisiones.Size = new System.Drawing.Size(81, 20);
+            this.tsmComisiones.Text = "Comisiones";
+            // 
+            // tsmAgregarComision
+            // 
+            this.tsmAgregarComision.Name = "tsmAgregarComision";
+            this.tsmAgregarComision.Size = new System.Drawing.Size(235, 22);
+            this.tsmAgregarComision.Text = "Agregar";
+            this.tsmAgregarComision.Click += new System.EventHandler(this.tsmAgregarComision_Click);
+            // 
+            // tsmModificarComisiones
+            // 
+            this.tsmModificarComisiones.Name = "tsmModificarComisiones";
+            this.tsmModificarComisiones.Size = new System.Drawing.Size(235, 22);
+            this.tsmModificarComisiones.Text = "Modificar o Borrar Comisiones";
+            this.tsmModificarComisiones.Click += new System.EventHandler(this.tsmModificarComisiones_Click);
+            // 
+            // tsmListadoDeComisiones
+            // 
+            this.tsmListadoDeComisiones.Name = "tsmListadoDeComisiones";
+            this.tsmListadoDeComisiones.Size = new System.Drawing.Size(235, 22);
+            this.tsmListadoDeComisiones.Text = "Listado de comisiones";
+            this.tsmListadoDeComisiones.Click += new System.EventHandler(this.tsmListadoDeComisiones_Click);
+            // 
             // stsBarraEstado
             // 
             this.stsBarraEstado.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -472,7 +463,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmComisiones;
         private System.Windows.Forms.ToolStripMenuItem tsmAgregarComision;
         private System.Windows.Forms.ToolStripMenuItem tsmModificarComisiones;
-        private System.Windows.Forms.ToolStripMenuItem tsmEliminarComisiones;
         private System.Windows.Forms.ToolStripMenuItem tsmListadoDeComisiones;
         private System.Windows.Forms.ToolStripMenuItem tsmEspecialidades;
         private System.Windows.Forms.ToolStripMenuItem tsmAgregarEspecialidad;
