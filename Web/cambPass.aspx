@@ -16,8 +16,9 @@
         <asp:TextBox ID="txtPassNR" runat="server" TextMode="Password"></asp:TextBox><br />
 
         <asp:Button ID="btnCambiar" Text="Cambiar" runat="server" OnClick="cambPass_Click" />
-        <asp:Button ID="btnCancelar" Text="Cancelar" runat="server" OnClick="cancelar_Click" />  
+        <asp:Button ID="btnCancelar" Text="Cancelar" runat="server" OnClick="cancelar_Click" /> <br />
+        <asp:Button ID="btnVolver" runat="server" OnClick="cancelar_Click" Text="Volver" /> 
     </form>
     <asp:Label ID="lblFailPN" runat="server"></asp:Label>
-    <asp:Button ID="btnVolver" runat="server" OnClick="cancelar_Click" Text="Volver" />   
+       
 </asp:Content>
