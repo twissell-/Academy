@@ -21,12 +21,12 @@ public partial class cambPass : System.Web.UI.Page
    
     protected void cancelar_Click(object sender, EventArgs e)
     {
-        if (Session["tipo"].ToString() == "alumno")
+        if (Session["Persona"] is Alumno)
         {
-            Page.Response.Redirect("~/Alumno.aspx");
+            Page.Response.Redirect("~/pagAlumno.aspx");
         }
         else {
-            Page.Response.Redirect("~/Docente.aspx");
+            Page.Response.Redirect("~/pagDocente.aspx");
         }
     }
     protected void  cambPass_Click(object sender, EventArgs e)
@@ -35,7 +35,7 @@ public partial class cambPass : System.Web.UI.Page
         {
             lblFailPN.Text = "Las nuevas contraseñas no coinciden";   
         }
-        else if (Session["tipo"].ToString() == "alumno")
+        else if (Session["Persona"] is Alumno)
                 {
                     ic = new ControllerAlumno();
                 }

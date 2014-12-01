@@ -15,9 +15,9 @@ public partial class EstadoAcademico : System.Web.UI.Page
         {
             Page.Response.Redirect("~/Default.aspx");
         }
-        else if (Session["tipo"].ToString() == "docente")
+        else if (Session["tipo"] is Docente)
         {
-            Page.Response.Redirect("~/Docente.aspx");
+            Page.Response.Redirect("~/pagDocente.aspx");
         }else
             {
                 //dvgEstadoAcademico.DataSource=;
@@ -26,7 +26,7 @@ public partial class EstadoAcademico : System.Web.UI.Page
     }
     protected void btnVolver_Click(object sender, EventArgs e)
     {
-        Page.Response.Redirect("~/Alumno.aspx");
+        Page.Response.Redirect("~/pagAlumno.aspx");
         
     }
 }

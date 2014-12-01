@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Docente.aspx.cs" Inherits="Docente"
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="pagDocente.aspx.cs" Inherits="pagDocente"
   MasterPageFile="~/Site.master" %>
 
 

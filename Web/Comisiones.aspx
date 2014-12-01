@@ -17,10 +17,11 @@
             <Columns>
                 <asp:BoundField HeaderText="Id" ReadOnly="true" DataField="id" />
                 <asp:BoundField HeaderText="Materia" ReadOnly="true" DataField="materia" />
-                <asp:BoundField HeaderText="Condicion" ReadOnly="true" DataField="anioCursado" />
+                <asp:CommandField HeaderText="Inscripcion" ButtonType="Link" ShowSelectButton="true" />
             </Columns>  
         </asp:GridView>
+        <asp:Label ID="lblInscripto" runat="server" ></asp:Label> <br />
        <asp:Button ID="btnVolver" runat="server" OnClick="btnVolver_Click" Text="Volver" />
-        <asp:Label ID="lblInscripto" runat="server" ></asp:Label>
+        
        </form>
 </asp:Content>

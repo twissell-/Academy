@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 using Entidades;
 using Bussines;
 
-public partial class Docente : System.Web.UI.Page
+public partial class pagDocente : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -15,13 +15,13 @@ public partial class Docente : System.Web.UI.Page
         {
             Page.Response.Redirect("~/Default.aspx");
         }
-        else if (Session["tipo"].ToString() == "alumno")
+        else if (Session["Persona"] is Alumno)
         {
-            Page.Response.Redirect("~/Alumno.aspx");
+            Page.Response.Redirect("~/pagAlumno.aspx");
         }else
             {
-                Persona alu = (Persona)Session["Persona"];
-                lblNombre.Text = "Bienvenido " + alu.apellido + " " + alu.nombre;
+                Docente doc = (Docente)Session["Persona"];
+                lblNombre.Text = "Bienvenido " + doc.apellido + " " + doc.nombre;
             }
     }
 }

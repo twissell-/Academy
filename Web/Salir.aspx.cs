@@ -13,13 +13,12 @@ public partial class Salir : System.Web.UI.Page
         {
             Session["Persona"] = null;
             Session["matSel"] = null;
-            Session["tipo"] = null;
             lblSalir.Text = "Usted ha salido exitosamente";
         }
         else
         {
             lblSalir.Text = "No hay una sesion activa";
         }
-        hypDef.Text = "Haga click aqui para iniciar nuevamente una sesion";
+        hypDef.Text = "Haga click aqui para iniciar sesion";
     }
 }
