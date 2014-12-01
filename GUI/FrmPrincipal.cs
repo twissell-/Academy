@@ -156,7 +156,7 @@ namespace GUI
         private void tsmEliminarEspecialidad_Click(object sender, EventArgs e)
         {
             this.panAdmGral.Controls.Clear();
-            var uc = new ucBEspecialidad();
+            var uc = new ucMBEspecialidad();
             this.panAdmGral.Controls.Add(uc);
             uc.Dock = DockStyle.Fill;
         }

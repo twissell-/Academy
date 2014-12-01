@@ -19,13 +19,25 @@ public partial class EstadoAcademico : System.Web.UI.Page
         else if (Session["tipo"] is Docente)
         {
             Page.Response.Redirect("~/pagDocente.aspx");
-        }else
-            {
-                cc = new ControllerComision();
-                dvgEstadoAcademico.DataSource = cc.find((Alumno)Session["Persona"]);
-                dvgEstadoAcademico.DataBind();
-            }
+        }
+        else
+        {
+            /*cc = new ControllerComision();
+            //List<Comision> com = cc.find((Alumno)Session["Persona"]);
+            Alumno al = (Alumno)Session["Persona"];
+
+            dvgEstadoAcademico.DataSource = cc.find((Alumno)Session["Persona"]);
+            // foreach (var item in com)
+            // { 
+                BoundField bf = new BoundField();
+                string dsaff = al.condicion.ToString();
+            bf.DataField = dsaff;
+            dvgEstadoAcademico.Columns.Add(bf);
+            dvgEstadoAcademico.DataBind();
+             COSAS NET ESCRITORIO BLOCK DE NOTAS*/
+        }
     }
+
     protected void btnVolver_Click(object sender, EventArgs e)
     {
         Page.Response.Redirect("~/pagAlumno.aspx");

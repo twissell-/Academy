@@ -36,7 +36,8 @@ public partial class Comisiones : System.Web.UI.Page
                 dvgComisionesAlumnos.DataBind();
                 if (cc.find(mat).Count==0)
                 {
-                    noComFound.Text = "No hay comisiones de" + mat.descripcion;
+                    noComFound.Text = "No hay comisiones de " + mat.descripcion;
+                    Session["matSel"] = null;
                 }
             }
             else
@@ -66,7 +67,7 @@ public partial class Comisiones : System.Web.UI.Page
                 }
                 catch (NullReferenceException)
                 {
-                    Page.Response.Write("das");
+                    Page.Response.Redirect("~/pagAlumno.aspx");
                 }
             }
         }

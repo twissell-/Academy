@@ -25,25 +25,40 @@ public partial class docComisiones : System.Web.UI.Page
         {
             Page.Response.Redirect("~/docMaterias.aspx");
         }
-        
+
         if (!IsPostBack)
         {
             Materia mat = (Materia)Session["matSel"];
             lblMateria.Text = mat.descripcion;
             dvgMateriasDocentes.DataSource = cc.find(mat);
             dvgMateriasDocentes.DataBind();
+            
         }
         else
         {
             String eventarg = this.Request.Params.Get("__EVENTARGUMENT");
-            String[] das = eventarg.Split('$');
-            int index = Convert.ToInt32(das[1]);
-            int idC = 0;
-            if (int.TryParse(dvgMateriasDocentes.Rows[index].Cells[0].Text, out idC))
+            try
             {
-                Comision com = cc.find(idC);
-                Session["Comision"] = com;
-                Page.Response.Redirect("~/docAluCom.aspx");
+                String[] das = eventarg.Split('$');
+                try
+                {
+                    int index = Convert.ToInt32(das[1]);
+                    int idC = 0;
+                    if (int.TryParse(dvgMateriasDocentes.Rows[index].Cells[0].Text, out idC))
+                    {
+                        Comision com = cc.find(idC);
+                        Session["Comision"] = com;
+                        Page.Response.Redirect("~/docAluCom.aspx");
+                    }
+                }
+                catch (IndexOutOfRangeException)
+                {
+                    Page.Response.Redirect("~/pagDocente.aspx");
+                }
+            }
+            catch (NullReferenceException)
+            {
+                Page.Response.Redirect("~/pagDocente.aspx");
             }
         }
     }

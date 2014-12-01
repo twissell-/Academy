@@ -12,11 +12,12 @@
 
 <asp:Content ID="MainContent" runat="server" ContentPlaceHolderID="MainContent">
     <form id="frmMateriasDocentes" runat="server">
+    <asp:Label ID="noMatFound" runat="server"></asp:Label>
         <asp:GridView ID="dvgMateriasDocentes" runat="server" AutoGenerateColumns="False">
                 <columns>
-                   <asp:BoundField  HeaderText="Id" ReadOnly="true" DataField="id"/>
-                   <asp:BoundField  HeaderText="Descripcion" ReadOnly="true" DataField="materia.descripcion"/>
-                   <asp:CommandField HeaderText="Ver Comisiones" ButtonType="Link" ShowSelectButton="true" />
+                    <asp:BoundField  HeaderText="Id" ReadOnly="true" DataField="id"/>
+                    <asp:BoundField  HeaderText="Descripcion" ReadOnly="true" DataField="descripcion"/>
+                    <asp:CommandField HeaderText="Ver Comisiones" ButtonType="Link" ShowSelectButton="true" />
                 </columns>
             </asp:GridView>
         <asp:Button ID="btnVolver" runat="server" OnClick="btnVolver_Click" Text="Volver" />   

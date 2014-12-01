@@ -6,6 +6,8 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Entidades;
 using Bussines;
+using System.Data;
+
 
 public partial class docMaterias : System.Web.UI.Page
 {
@@ -13,7 +15,7 @@ public partial class docMaterias : System.Web.UI.Page
     ControllerMateria cm;
     protected void Page_Load(object sender, EventArgs e)
     {
-        cc=new ControllerComision();
+        cc = new ControllerComision();
         cm = new ControllerMateria();
         if (Session["Persona"] == null)
         {
@@ -25,22 +27,54 @@ public partial class docMaterias : System.Web.UI.Page
         }
         if (!IsPostBack)
         {
-            dvgMateriasDocentes.DataSource = cc.find((Docente)Session["Persona"]);
-            dvgMateriasDocentes.DataBind();
-        }else 
+            llenarGrid();
+        }
+        else
+        {
+            try
             {
                 String eventarg = this.Request.Params.Get("__EVENTARGUMENT");
-                String[] das = eventarg.Split('$');
-                int index = Convert.ToInt32(das[1]);
-                int idM = 0;
-                if (int.TryParse(dvgMateriasDocentes.Rows[index].Cells[0].Text, out idM))
+                try
                 {
-                    Materia mat = cm.find(idM); 
-                    Session["matSel"]=mat;
-                    Page.Response.Redirect("~/docComisiones.aspx");
+                    String[] das = eventarg.Split('$');
+                    int index = Convert.ToInt32(das[1]);
+                    int idM = 0;
+                    if (int.TryParse(dvgMateriasDocentes.Rows[index].Cells[0].Text, out idM))
+                    {
+                        Materia mat = cm.find(idM);
+                        Session["matSel"] = mat;
+                        Page.Response.Redirect("~/docComisiones.aspx");
+                    }
+                }
+                catch (IndexOutOfRangeException)
+                {
+                    Page.Response.Redirect("~/pagDocente.aspx");
                 }
             }
+            catch (NullReferenceException)
+            {
+                Page.Response.Redirect("~/pagDocente.aspx");
+            }
+        }
     }
+
+    private void llenarGrid()
+    {
+        List<Comision> comisionesProfesor = cc.find((Docente)Session["Persona"]);
+        List<Materia> materias = new List<Materia>();
+        foreach (Comision item in comisionesProfesor)
+        {
+            materias.Add(item.materia);
+        }
+        dvgMateriasDocentes.DataSource = materias;
+        dvgMateriasDocentes.DataBind();
+        if (materias.Count == 0)
+        {
+            noMatFound.Text = "Usted NO da clases en ninguna materia!";
+        }
+    }
+
+
     protected void btnVolver_Click(object sender, EventArgs e)
     {
         Page.Response.Redirect("~/pagDocente.aspx");

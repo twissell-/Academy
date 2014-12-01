@@ -28,8 +28,13 @@ public partial class docAluCom : System.Web.UI.Page
         if (!IsPostBack)
         {
             Comision com = (Comision)Session["Comision"];
-            dvgAluCom.DataSource = com.alumnos;
+            List<Alumno> alu = com.alumnos;
+            dvgAluCom.DataSource = alu;
             dvgAluCom.DataBind();
+            if (com.alumnos.Count==0)
+            {
+                noAlFound.Text = "Ud NO tiene alumnos inscriptos en esta materia, en esta comision";
+            }
         }
     }
     protected void btnGuardar_Click(object sender, EventArgs e)

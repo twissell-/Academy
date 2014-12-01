@@ -54,7 +54,6 @@ public partial class inscMateria : System.Web.UI.Page
                 try
                 {
                     int index = Convert.ToInt32(das[1]);
-
                     int idM = 0;
                     if (int.TryParse(dvgMaterias.Rows[index].Cells[0].Text, out idM))
                     {
