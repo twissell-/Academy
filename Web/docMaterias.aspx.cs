@@ -19,12 +19,12 @@ public partial class docMaterias : System.Web.UI.Page
         {
             Page.Response.Redirect("~/Default.aspx");
         }
-        else if (Session["tipo"].ToString() == "alumno")
+        else if (Session["tipo"] is Alumno)
         {
-            Page.Response.Redirect("~/Alumno.aspx");
+            Page.Response.Redirect("~/pagAlumno.aspx");
         }else if (Session["matSel"] == null)
         {
-            Page.Response.Redirect("~/Docente.aspx");
+            Page.Response.Redirect("~/docComisiones.aspx");
         }
         Materia mat = (Materia)Session["matSel"];
         if (!IsPostBack)
@@ -40,7 +40,7 @@ public partial class docMaterias : System.Web.UI.Page
                 if (int.TryParse(dvgMateriasDocentes.Rows[index].Cells[0].Text, out idC))
                 {
                     Comision comSel=cc.find(idC);
-                    Entidades.Alumno al = (Entidades.Alumno)Session["Persona"];
+                    Alumno al = (Alumno)Session["Persona"];
                     comSel.alumnos.Add(al);
                     cc.update(comSel);
                     //lblInscripto.Text = "Inscripto en la comision " + idC + " de la materia" + mat.descripcion;
@@ -50,7 +50,7 @@ public partial class docMaterias : System.Web.UI.Page
     }
     protected void btnVolver_Click(object sender, EventArgs e)
     {
-        Page.Response.Redirect("~/inscMateria.aspx");
+        Page.Response.Redirect("~/docComisiones.aspx");
         Session["matSel"] = null;
     }
 }

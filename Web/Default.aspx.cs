@@ -29,15 +29,13 @@ public partial class _Default : System.Web.UI.Page
             if (d == null && al.password == Hasher.toMD5(txtPss.Text))
             {
                 Session["Persona"] = al;
-                Session["tipo"] = "alumno";
-                Response.Redirect("~/Alumno.aspx");
+                Response.Redirect("~/pagAlumno.aspx");
 
             }
             else if (al == null && d.password == Hasher.toMD5(txtPss.Text))
             {
                 Session["Persona"] = d;
-                Session["tipo"] = "docente";
-                Response.Redirect("~/Docente.aspx");
+                Response.Redirect("~/pagDocente.aspx");
 
             }
             else if ((d == null && al.id != Convert.ToInt32(txtUss.Text) || al.password != Hasher.toMD5(txtPss.Text))

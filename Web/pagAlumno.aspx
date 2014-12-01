@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Alumno.aspx.cs" Inherits="Alumno" MasterPageFile="~/Site.master" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="pagAlumno.aspx.cs" Inherits="pagAlumno" MasterPageFile="~/Site.master" %>
 
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="Menu">
     <form id="form1" runat="server">

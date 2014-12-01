@@ -19,11 +19,10 @@ public partial class Comisiones : System.Web.UI.Page
         {
             Page.Response.Redirect("~/Default.aspx");
         }
-        else if (Session["tipo"].ToString() == "docente")
-            {
-                Page.Response.Redirect("~/Docente.aspx");
-            }
-        else if (Session["matSel"] == null)
+        else if (Session["tipo"] is Docente)
+        {
+            Page.Response.Redirect("~/pagDocente.aspx");
+        }else if (Session["matSel"] == null)
             {
                 Page.Response.Redirect("~/inscMateria.aspx");
             }
@@ -39,17 +38,31 @@ public partial class Comisiones : System.Web.UI.Page
             else
             {
                 String eventarg = this.Request.Params.Get("__EVENTARGUMENT");
-                String[] das = eventarg.Split('$');
-                int index = Convert.ToInt32(das[1]);
-                int idC = 0;
-                if (int.TryParse(dvgComisionesAlumnos.Rows[index].Cells[0].Text, out idC))
+                try
                 {
-                    Comision comSel = cc.find(idC);
-                    Entidades.Alumno al = (Entidades.Alumno)Session["Persona"];
-                    comSel.alumnos.Add(al);
-                    cc.update(comSel);
-                    lblInscripto.Text = "Inscripto en la comision " + idC + " de la materia" + mat.descripcion;
-                    Session["matSel"] = null;
+                    String[] das = eventarg.Split('$');
+                    try
+                    {
+                        int index = Convert.ToInt32(das[1]);
+                        int idC = 0;
+                        if (int.TryParse(dvgComisionesAlumnos.Rows[index].Cells[0].Text, out idC))
+                        {
+                            Comision comSel = cc.find(idC);
+                            Alumno al = (Alumno)Session["Persona"];
+                            comSel.alumnos.Add(al);
+                            cc.update(comSel);
+                            lblInscripto.Text = "Inscripto en la comision " + idC + " de la materia" + mat.descripcion;
+                            Session["matSel"] = null;
+                        }
+                    }
+                    catch (IndexOutOfRangeException)
+                    {
+                        Page.Response.Redirect("~/inscMateria.aspx");
+                    }
+                }
+                catch (NullReferenceException)
+                {
+                    Page.Response.Write("das");
                 }
             }
         }
