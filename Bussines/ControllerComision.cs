@@ -51,5 +51,9 @@ namespace Bussines
         {
             dao.insert(obj);
         }
+        public List<Comision> find(Alumno a)
+        {
+            return dao.find(a);
+        }
     }
 }
