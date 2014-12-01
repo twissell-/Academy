@@ -15,13 +15,11 @@ namespace UserControls
     {
         ControllerPlan cp;
         ControllerMateria cm;
-        public ucListaComisiones Owner { get; set; }
 
+        public ucListaComisiones Owner { get; set;}
         public ucAMateria()
         {
             InitializeComponent();
-            cp = new ControllerPlan();
-            cm = new ControllerMateria();
         }
 
         #region Metodos Propios
@@ -33,21 +31,27 @@ namespace UserControls
             cmbPlan.DisplayMember = "descripcion";
             cmbPlan.ValueMember = "id";
             cmbPlan.DataSource = cp.find();
+            btnBorrar.Visible = btnBorrar.Enabled = false;
             this.center();
         }
 
         private void clear()
         {
             txtId.Text = "";
-            cmbPlan.SelectedItem = "";
+            cmbPlan.DataSource = cp.find();
+            cmbPlan.SelectedIndex = 0;
             txtDescripcion.Text = "";
             txtHsSemanales.Text = "";
             txtHsTotales.Text = "";
+            if (Owner != null)
+            {
+                btnBorrar.Visible = btnBorrar.Enabled = true;
+            }
         }
 
         private Materia buildMateria()
         {
-            return new Materia(Convert.ToInt32(txtId.Text), txtDescripcion.Text, txtHsSemanales.Value, txtHsTotales.Value, (Plan)cmbPlan.SelectedItem);
+            return new Materia(Owner != null ? Convert.ToInt32(txtId.Text) : 0, txtDescripcion.Text, txtHsSemanales.Value, txtHsTotales.Value, (Plan)cmbPlan.SelectedItem);
         }
 
         private void center()
@@ -69,5 +73,9 @@ namespace UserControls
             this.clear();
         }
 
+        private void btnBorrar_Click(object sender, EventArgs e)
+        {
+            cm.delete(buildMateria());
+        }
     }
 }

@@ -30,6 +30,7 @@ namespace UserControls
             cmbPlan.DisplayMember = "descripcion";
             cmbPlan.ValueMember = "id";
             cmbPlan.DataSource = cp.find();
+            cmbPlan.DropDownStyle = ComboBoxStyle.DropDownList;
             ucListado.Owner = this;
         }
 

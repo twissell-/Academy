@@ -140,7 +140,7 @@ namespace GUI
         private void tsmAgregarEspecialidad_Click(object sender, EventArgs e)
         {
             this.panAdmGral.Controls.Clear();
-            var uc = new ucAgregarEspecialidad();
+            var uc = new ucAEspecialidad();
             this.panAdmGral.Controls.Add(uc);
             uc.Dock = DockStyle.Fill;
         }
@@ -148,7 +148,7 @@ namespace GUI
         private void tsmModificarEspecialidad_Click(object sender, EventArgs e)
         {
             this.panAdmGral.Controls.Clear();
-            var uc = new ucMEspecialidad();
+            var uc = new ucMBEspecialidad();
             this.panAdmGral.Controls.Add(uc);
             uc.Dock = DockStyle.Fill;
         }

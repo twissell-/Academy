@@ -54,7 +54,6 @@
             this.tsmEspecialidades = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmAgregarEspecialidad = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmModificarEspecialidad = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmEliminarEspecialidad = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmListadoDeEspecialidades = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmPlanes = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmAgregarPlan = new System.Windows.Forms.ToolStripMenuItem();
@@ -270,7 +269,6 @@
             this.tsmEspecialidades.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmAgregarEspecialidad,
             this.tsmModificarEspecialidad,
-            this.tsmEliminarEspecialidad,
             this.tsmListadoDeEspecialidades});
             this.tsmEspecialidades.Name = "tsmEspecialidades";
             this.tsmEspecialidades.Size = new System.Drawing.Size(95, 20);
@@ -279,28 +277,21 @@
             // tsmAgregarEspecialidad
             // 
             this.tsmAgregarEspecialidad.Name = "tsmAgregarEspecialidad";
-            this.tsmAgregarEspecialidad.Size = new System.Drawing.Size(207, 22);
+            this.tsmAgregarEspecialidad.Size = new System.Drawing.Size(249, 22);
             this.tsmAgregarEspecialidad.Text = "Agregar";
             this.tsmAgregarEspecialidad.Click += new System.EventHandler(this.tsmAgregarEspecialidad_Click);
             // 
             // tsmModificarEspecialidad
             // 
             this.tsmModificarEspecialidad.Name = "tsmModificarEspecialidad";
-            this.tsmModificarEspecialidad.Size = new System.Drawing.Size(207, 22);
-            this.tsmModificarEspecialidad.Text = "Modificar";
+            this.tsmModificarEspecialidad.Size = new System.Drawing.Size(249, 22);
+            this.tsmModificarEspecialidad.Text = "Modificar o Borrar Especialidades";
             this.tsmModificarEspecialidad.Click += new System.EventHandler(this.tsmModificarEspecialidad_Click);
-            // 
-            // tsmEliminarEspecialidad
-            // 
-            this.tsmEliminarEspecialidad.Name = "tsmEliminarEspecialidad";
-            this.tsmEliminarEspecialidad.Size = new System.Drawing.Size(207, 22);
-            this.tsmEliminarEspecialidad.Text = "Eliminar";
-            this.tsmEliminarEspecialidad.Click += new System.EventHandler(this.tsmEliminarEspecialidad_Click);
             // 
             // tsmListadoDeEspecialidades
             // 
             this.tsmListadoDeEspecialidades.Name = "tsmListadoDeEspecialidades";
-            this.tsmListadoDeEspecialidades.Size = new System.Drawing.Size(207, 22);
+            this.tsmListadoDeEspecialidades.Size = new System.Drawing.Size(249, 22);
             this.tsmListadoDeEspecialidades.Text = "Listado de Especialidades";
             this.tsmListadoDeEspecialidades.Click += new System.EventHandler(this.tsmListadoDeEspecialidades_Click);
             // 
@@ -467,7 +458,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmEspecialidades;
         private System.Windows.Forms.ToolStripMenuItem tsmAgregarEspecialidad;
         private System.Windows.Forms.ToolStripMenuItem tsmModificarEspecialidad;
-        private System.Windows.Forms.ToolStripMenuItem tsmEliminarEspecialidad;
         private System.Windows.Forms.ToolStripMenuItem tsmListadoDeEspecialidades;
         private System.Windows.Forms.ToolStripMenuItem tsmPlanes;
         private System.Windows.Forms.ToolStripMenuItem tsmAgregarPlan;

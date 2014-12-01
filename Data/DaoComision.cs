@@ -3,8 +3,6 @@ using Entidades;
 using Util;
 using MongoDB.Driver;
 
-using Entidades;
-
 namespace Data
 {
     public class DaoComision

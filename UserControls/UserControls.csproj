@@ -94,11 +94,11 @@
     <Compile Include="ucComision\ucAComision.Designer.cs">
       <DependentUpon>ucAComision.cs</DependentUpon>
     </Compile>
-    <Compile Include="ucAgregarEspecialidad.cs">
+    <Compile Include="ucEspecialidad\ucAEspecialidad.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucAgregarEspecialidad.Designer.cs">
-      <DependentUpon>ucAgregarEspecialidad.cs</DependentUpon>
+    <Compile Include="ucEspecialidad\ucAEspecialidad.Designer.cs">
+      <DependentUpon>ucAEspecialidad.cs</DependentUpon>
     </Compile>
     <Compile Include="ucAPersona.cs">
       <SubType>UserControl</SubType>
@@ -137,10 +137,10 @@
     <Compile Include="ucMateria\ucListaMateria.Designer.cs">
       <DependentUpon>ucListaMateria.cs</DependentUpon>
     </Compile>
-    <Compile Include="ucListaEspecialidades.cs">
+    <Compile Include="ucEspecialidad\ucListaEspecialidades.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucListaEspecialidades.Designer.cs">
+    <Compile Include="ucEspecialidad\ucListaEspecialidades.Designer.cs">
       <DependentUpon>ucListaEspecialidades.cs</DependentUpon>
     </Compile>
     <Compile Include="ucComision\ucMBComision.cs">
@@ -155,11 +155,11 @@
     <Compile Include="ucPlanes\ucListaPlanes.Designer.cs">
       <DependentUpon>ucListaPlanes.cs</DependentUpon>
     </Compile>
-    <Compile Include="ucMEspecialidad.cs">
+    <Compile Include="ucMBEspecialidad.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucMEspecialidad.Designer.cs">
-      <DependentUpon>ucMEspecialidad.cs</DependentUpon>
+    <Compile Include="ucMBEspecialidad.Designer.cs">
+      <DependentUpon>ucMBEspecialidad.cs</DependentUpon>
     </Compile>
     <Compile Include="ucMPersona.cs">
       <SubType>UserControl</SubType>
@@ -201,8 +201,8 @@
     <EmbeddedResource Include="ucComision\ucAComision.resx">
       <DependentUpon>ucAComision.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucAgregarEspecialidad.resx">
-      <DependentUpon>ucAgregarEspecialidad.cs</DependentUpon>
+    <EmbeddedResource Include="ucEspecialidad\ucAEspecialidad.resx">
+      <DependentUpon>ucAEspecialidad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ucAPersona.resx">
       <DependentUpon>ucAPersona.cs</DependentUpon>
@@ -222,7 +222,7 @@
     <EmbeddedResource Include="ucMateria\ucListaMateria.resx">
       <DependentUpon>ucListaMateria.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucListaEspecialidades.resx">
+    <EmbeddedResource Include="ucEspecialidad\ucListaEspecialidades.resx">
       <DependentUpon>ucListaEspecialidades.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ucComision\ucMBComision.resx">
@@ -231,8 +231,8 @@
     <EmbeddedResource Include="ucPlanes\ucListaPlanes.resx">
       <DependentUpon>ucListaPlanes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucMEspecialidad.resx">
-      <DependentUpon>ucMEspecialidad.cs</DependentUpon>
+    <EmbeddedResource Include="ucMBEspecialidad.resx">
+      <DependentUpon>ucMBEspecialidad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ucMPersona.resx">
       <DependentUpon>ucMPersona.cs</DependentUpon>
@@ -244,6 +244,7 @@
       <DependentUpon>ucMBPlanes.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
