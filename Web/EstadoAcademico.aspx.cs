@@ -11,6 +11,7 @@ public partial class EstadoAcademico : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        ControllerComision cc;
         if (Session["Persona"] == null)
         {
             Page.Response.Redirect("~/Default.aspx");
@@ -20,7 +21,8 @@ public partial class EstadoAcademico : System.Web.UI.Page
             Page.Response.Redirect("~/pagDocente.aspx");
         }else
             {
-                //dvgEstadoAcademico.DataSource=;
+                cc = new ControllerComision();
+                dvgEstadoAcademico.DataSource = cc.find((Alumno)Session["Persona"]);
                 dvgEstadoAcademico.DataBind();
             }
     }

@@ -22,35 +22,28 @@ public partial class docMaterias : System.Web.UI.Page
         else if (Session["tipo"] is Alumno)
         {
             Page.Response.Redirect("~/pagAlumno.aspx");
-        }else if (Session["matSel"] == null)
-        {
-            Page.Response.Redirect("~/docComisiones.aspx");
         }
-        Materia mat = (Materia)Session["matSel"];
         if (!IsPostBack)
         {
-            //dvgMateriasDocentes.DataSource = //algun metodo q me de las materias de este profe //cc.find(mat);
-            //dvgMateriasDocentes.DataBind();
+            dvgMateriasDocentes.DataSource = cc.find((Docente)Session["Persona"]);
+            dvgMateriasDocentes.DataBind();
         }else 
             {
                 String eventarg = this.Request.Params.Get("__EVENTARGUMENT");
                 String[] das = eventarg.Split('$');
                 int index = Convert.ToInt32(das[1]);
-                int idC = 0;
-                if (int.TryParse(dvgMateriasDocentes.Rows[index].Cells[0].Text, out idC))
+                int idM = 0;
+                if (int.TryParse(dvgMateriasDocentes.Rows[index].Cells[0].Text, out idM))
                 {
-                    Comision comSel=cc.find(idC);
-                    Alumno al = (Alumno)Session["Persona"];
-                    comSel.alumnos.Add(al);
-                    cc.update(comSel);
-                    //lblInscripto.Text = "Inscripto en la comision " + idC + " de la materia" + mat.descripcion;
-                    Session["matSel"] = null;
+                    Materia mat = cm.find(idM); 
+                    Session["matSel"]=mat;
+                    Page.Response.Redirect("~/docComisiones.aspx");
                 }
             }
     }
     protected void btnVolver_Click(object sender, EventArgs e)
     {
-        Page.Response.Redirect("~/docComisiones.aspx");
+        Page.Response.Redirect("~/pagDocente.aspx");
         Session["matSel"] = null;
     }
 }

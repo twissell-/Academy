@@ -13,6 +13,7 @@
 
 <asp:Content ID="MainContent" runat="server" ContentPlaceHolderID="MainContent">
      <form id="comisionesAlumnos" runat="server">
+     <asp:Label ID="noComFound" runat="server"></asp:Label>
         <asp:GridView ID="dvgComisionesAlumnos" runat="server" AutoGenerateColumns="false">
             <Columns>
                 <asp:BoundField HeaderText="Id" ReadOnly="true" DataField="id" />

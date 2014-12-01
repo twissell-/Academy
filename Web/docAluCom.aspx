@@ -1,5 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="docComisiones.aspx.cs" Inherits="docComisiones" 
-MasterPageFile="~/Site.master"%>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="docAluCom.aspx.cs" Inherits="docAluCom" MasterPageFile="~/Site.master"%>
 
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="Menu">
     <fieldset >
@@ -11,15 +10,16 @@ MasterPageFile="~/Site.master"%>
 </asp:Content>
 
 <asp:Content ID="MainContent" runat="server" ContentPlaceHolderID="MainContent">
-    <form id="frmComisionesDocentes" runat="server">
-    <asp:Label ID="lblMateria" runat="server"></asp:Label>
-        <asp:GridView ID="dvgMateriasDocentes" runat="server" AutoGenerateColumns="False">
+    <form id="frmAluCom" runat="server">
+        <asp:GridView ID="dvgAluCom" runat="server" AutoGenerateColumns="False">
                 <columns>
                    <asp:BoundField  HeaderText="Id" ReadOnly="true" DataField="id"/>
-                   <asp:BoundField  HeaderText="Turno" ReadOnly="true" DataField="turno"/>
-                   <asp:CommandField HeaderText="Ver Alumnos" ButtonType="Link" ShowSelectButton="true" />
+                   <asp:BoundField  HeaderText="Apellido" ReadOnly="true" DataField="apellido"/>
+                   <asp:BoundField  HeaderText="Nombre" ReadOnly="true" DataField="nombre"/>
+                   <asp:BoundField  HeaderText="Condicion" ReadOnly="False" DataField="condicion"/>
                 </columns>
-            </asp:GridView>
+            </asp:GridView><br />
+            <asp:Button ID="btnGuardar" runat="server" OnClick="btnGuardar_Click" Text="Guardar" />
         <asp:Button ID="btnVolver" runat="server" OnClick="btnVolver_Click" Text="Volver" />   
     </form>
 </asp:Content>

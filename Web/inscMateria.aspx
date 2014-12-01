@@ -13,6 +13,7 @@ MasterPageFile="~/Site.master"%>
 
 <asp:Content ID="MainContent" runat="server" ContentPlaceHolderID="MainContent">
     <form id="materia" runat="server">
+    <asp:Label ID="noMatFound" runat="server"></asp:Label>
             <asp:GridView ID="dvgMaterias" runat="server" AutoGenerateColumns="False">
                 <columns>
                    <asp:BoundField  HeaderText="Id" ReadOnly="true" DataField="id"/>
