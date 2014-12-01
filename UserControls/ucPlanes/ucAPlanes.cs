@@ -42,6 +42,7 @@ namespace UserControls
             if (this.Owner != null)
             {
                 Owner.reload();
+                btnBorrar.Visible = btnBorrar.Enabled = false;
             }
         }
 

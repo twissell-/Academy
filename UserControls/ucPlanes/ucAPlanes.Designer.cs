@@ -43,7 +43,7 @@
             // btnGuardar
             // 
             this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGuardar.Location = new System.Drawing.Point(185, 110);
+            this.btnGuardar.Location = new System.Drawing.Point(185, 109);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 22;
@@ -64,7 +64,7 @@
             this.grbPlan.Controls.Add(this.lblId);
             this.grbPlan.Location = new System.Drawing.Point(19, 3);
             this.grbPlan.Name = "grbPlan";
-            this.grbPlan.Size = new System.Drawing.Size(271, 186);
+            this.grbPlan.Size = new System.Drawing.Size(271, 185);
             this.grbPlan.TabIndex = 29;
             this.grbPlan.TabStop = false;
             this.grbPlan.Text = "Plan";
@@ -72,7 +72,7 @@
             // btnBorrar
             // 
             this.btnBorrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnBorrar.Location = new System.Drawing.Point(104, 110);
+            this.btnBorrar.Location = new System.Drawing.Point(104, 109);
             this.btnBorrar.Name = "btnBorrar";
             this.btnBorrar.Size = new System.Drawing.Size(75, 23);
             this.btnBorrar.TabIndex = 35;
@@ -82,6 +82,7 @@
             // 
             // cmbEspecialidad
             // 
+            this.cmbEspecialidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEspecialidad.FormattingEnabled = true;
             this.cmbEspecialidad.Location = new System.Drawing.Point(104, 83);
             this.cmbEspecialidad.Name = "cmbEspecialidad";

@@ -3,6 +3,8 @@ using Entidades;
 using Util;
 using MongoDB.Driver;
 
+using Entidades;
+
 namespace Data
 {
     public class DaoComision
@@ -78,6 +80,17 @@ namespace Data
         {
             List<Comision> ls = new List<Comision>();
             QueryDocument query = new QueryDocument("docentes._id", d.id);
+            foreach (MapperComision obj in comisiones.Find(query))
+            {
+                ls.Add(mapper(obj));
+            }
+            return ls;
+        }
+
+        public List<Comision> find(Alumno a)
+        {
+            List<Comision> ls = new List<Comision>();
+            QueryDocument query = new QueryDocument("alumnos._id", a.id);
             foreach (MapperComision obj in comisiones.Find(query))
             {
                 ls.Add(mapper(obj));
