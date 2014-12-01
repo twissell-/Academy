@@ -19,7 +19,7 @@ public partial class Comisiones : System.Web.UI.Page
         {
             Page.Response.Redirect("~/Default.aspx");
         }
-        else if (Session["tipo"] is Docente)
+        else if (Session["Persona"] is Docente)
         {
             Page.Response.Redirect("~/pagDocente.aspx");
         }else if (Session["matSel"] == null)
@@ -34,6 +34,10 @@ public partial class Comisiones : System.Web.UI.Page
             {
                 dvgComisionesAlumnos.DataSource = cc.find(mat);
                 dvgComisionesAlumnos.DataBind();
+                if (cc.find(mat).Count==0)
+                {
+                    noComFound.Text = "No hay comisiones de" + mat.descripcion;
+                }
             }
             else
             {

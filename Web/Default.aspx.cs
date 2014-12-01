@@ -16,6 +16,7 @@ public partial class _Default : System.Web.UI.Page
     {
         ca = new ControllerAlumno();
         cd = new ControllerDocente();
+        Session["Persona"] = null;
         Persona d = null;
         Persona al = null;
         int id = 0;

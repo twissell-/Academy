@@ -4,8 +4,7 @@
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="Menu">
       <fieldset >
             <legend>Menu</legend>
-                    <asp:HyperLink runat="server" NavigateUrl="inscMateria.aspx" id="Materias" target="_self">Materias</asp:HyperLink><br />
-                    <asp:HyperLink  runat="server" NavigateUrl="EstadoAcademico.aspx" id="Estado" target="_self">Estado academico</asp:HyperLink><br />
+                    <asp:HyperLink runat="server" NavigateUrl="docMaterias.aspx" id="Materias" target="_self">Materias</asp:HyperLink><br />
                     <asp:HyperLink   runat="server" NavigateUrl="cambPass.aspx" id="CambPass" target="_self">Cambiar Contraseña</asp:HyperLink><br />
                     <asp:HyperLink ID="Salir" runat="server" NavigateUrl="Salir.aspx">Salir</asp:HyperLink> 
         </fieldset>     
@@ -16,7 +15,7 @@
         <asp:GridView ID="dvgMateriasDocentes" runat="server" AutoGenerateColumns="False">
                 <columns>
                    <asp:BoundField  HeaderText="Id" ReadOnly="true" DataField="id"/>
-                   <asp:BoundField  HeaderText="Descripcion" ReadOnly="true" DataField="descripcion"/>
+                   <asp:BoundField  HeaderText="Descripcion" ReadOnly="true" DataField="materia.descripcion"/>
                    <asp:CommandField HeaderText="Ver Comisiones" ButtonType="Link" ShowSelectButton="true" />
                 </columns>
             </asp:GridView>

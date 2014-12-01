@@ -30,9 +30,22 @@ public partial class inscMateria : System.Web.UI.Page
             ca = new ControllerAlumno();
             if (!IsPostBack)
             {
+                List<Comision> comisionesCursando=new List<Comision>();
+                List<Comision> comi = new List<Comision>();
                 List<Materia> materias = new List<Materia>();
-                dvgMaterias.DataSource = cm.find();
+                materias = cm.find();
+                comisionesCursando = cc.find((Alumno)Session["Persona"]);
+                foreach (Comision item in comisionesCursando)
+                {
+                    var mr =materias.Find(x => x.id==(item.materia.id));
+                    materias.Remove(mr);
+                }
+                dvgMaterias.DataSource = materias;
                 dvgMaterias.DataBind();
+                if (materias.Count==0)
+                {
+                    noMatFound.Text = "Usted esta inscripto o aprobo todas las materias";
+                }
             }
             else
             {
