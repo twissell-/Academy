@@ -2,12 +2,12 @@
 
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="Menu">
     <form id="form1" runat="server">
-    <fieldset >
+    <fieldset  >
             <legend>Menu</legend>
-                    <asp:HyperLink runat="server" NavigateUrl="inscMateria.aspx" id="Materias" target="_self">Materias</asp:HyperLink><br />
-                    <asp:HyperLink  runat="server" NavigateUrl="EstadoAcademico.aspx" id="Estado" target="_self">Estado academico</asp:HyperLink><br />
-                    <asp:HyperLink  runat="server" NavigateUrl="cambPass.aspx" id="CambPass" target="_self">Cambiar Contraseña</asp:HyperLink><br />
-                    <asp:HyperLink ID="Salir" runat="server" NavigateUrl="Salir.aspx">Salir</asp:HyperLink>
+                    <asp:HyperLink CssClass="btn btn-primary btn-xs"  runat="server" NavigateUrl="inscMateria.aspx" id="Materias" target="_self">Materias</asp:HyperLink><br />
+                    <asp:HyperLink  runat="server" CssClass="btn btn-primary btn-xs" NavigateUrl="EstadoAcademico.aspx" id="Estado" target="_self">Estado academico</asp:HyperLink><br />
+                    <asp:HyperLink  runat="server" CssClass="btn btn-primary btn-xs" NavigateUrl="cambPass.aspx" id="CambPass" target="_self">Cambiar Contraseña</asp:HyperLink><br />
+                    <asp:HyperLink ID="Salir" CssClass="btn btn-primary btn-xs" runat="server" NavigateUrl="Salir.aspx">Salir</asp:HyperLink>
     </fieldset>
     </form>
 </asp:Content>

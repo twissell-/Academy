@@ -114,14 +114,7 @@ first child of the left and right table columns */
     font-size: 2em;
 }
 
-.main
-{
-    padding: 0px 12px;
-    margin: 12px 8px 8px 8px;
-    min-height: 420px;
-  /*  float:right;
-*/    
-}
+
 
 .leftCol
 {
@@ -130,18 +123,6 @@ first child of the left and right table columns */
     width: 200px;
     min-height: 200px;
 }
-
-.footer
-{
-    
-    color: #4e5766;
-    padding: 8px 0px 0px 0px;
-    margin: 0px;
-    text-align: center;
-    line-height: normal;
-    background: #4b6c9e;
-}
-
 
 /* TAB MENU   
 ----------------------------------------------------------*/
@@ -153,10 +134,13 @@ div.hideSkiplink
 }
 div.footer
 {
-    position:relative;
-    bottom:0px;
+    text-align: center;
+    background: #4b6c9e;
+    color: #4e5766;
     width:100%;
-    height:10%;
+    height:3em;
+    bottom:0;
+    clear: both;
 }
 
 div.menu
@@ -165,11 +149,14 @@ div.menu
     padding: 4px 0px 4px 8px;
     background: #b6b7bc;
     width:15%;
-    height:550px;
+    height:570px;
 }
 div.main
 {
-    float:inherit;    
+    float:inherit;
+    padding: 0px 12px;
+    margin: 12px 8px 8px 8px;
+    height:auto;   
 }
 
 div.menu ul

@@ -22,25 +22,37 @@ public partial class EstadoAcademico : System.Web.UI.Page
         }
         else
         {
-            /*cc = new ControllerComision();
-            //List<Comision> com = cc.find((Alumno)Session["Persona"]);
+            cc = new ControllerComision();
+            List<Comision> com = cc.find((Alumno)Session["Persona"]);
             Alumno al = (Alumno)Session["Persona"];
 
-            dvgEstadoAcademico.DataSource = cc.find((Alumno)Session["Persona"]);
-            // foreach (var item in com)
-            // { 
-                BoundField bf = new BoundField();
-                string dsaff = al.condicion.ToString();
-            bf.DataField = dsaff;
-            dvgEstadoAcademico.Columns.Add(bf);
-            dvgEstadoAcademico.DataBind();
-             COSAS NET ESCRITORIO BLOCK DE NOTAS*/
+            dvgEstadoAcademico.DataSource = com; //cc.find((Alumno)Session["Persona"]);
+            
+            foreach (var item in com)
+            {
+               // int indice= item.alumnos.Count;
+                int indice = 0;
+                for (int i = 0; i <= indice; i++)
+			    {
+                    if (item.alumnos[indice].id == al.id)
+                    {
+                        BoundField bf = new BoundField();
+                        string dsaff = item.alumnos[indice].condicion.ToString();
+                        if (dsaff=="0")
+                        {
+                            
+                        }
+                        bf.DataField = dsaff;
+                        dvgEstadoAcademico.Columns.Add(bf);
+                        dvgEstadoAcademico.DataBind();
+                    }
+			    }     
+            }
         }
     }
 
     protected void btnVolver_Click(object sender, EventArgs e)
     {
-        Page.Response.Redirect("~/pagAlumno.aspx");
-        
+        Page.Response.Redirect("~/pagAlumno.aspx");   
     }
 }
