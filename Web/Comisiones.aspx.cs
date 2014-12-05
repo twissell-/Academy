@@ -53,8 +53,9 @@ public partial class Comisiones : System.Web.UI.Page
                         if (int.TryParse(dvgComisionesAlumnos.Rows[index].Cells[0].Text, out idC))
                         {
                             Comision comSel = cc.find(idC);
-                            comSel.alumnos.Add((Alumno)Session["Persona"]);
-                            
+                            List<Alumno> alum = comSel.alumnos;
+                            alum.Add((Alumno)Session["Persona"]);
+                            comSel.alumnos = alum;
                             cc.update(comSel);
                             lblInscripto.Text = "Inscripto en la comision " + idC + " de la materia" + mat.descripcion;
                             Session["matSel"] = null;
