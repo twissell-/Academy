@@ -16,7 +16,8 @@
      <asp:Label ID="noComFound" runat="server"></asp:Label>
         <asp:GridView ID="dvgComisionesAlumnos" runat="server" AutoGenerateColumns="false">
             <Columns>
-                <asp:BoundField HeaderText="Id" ReadOnly="true" DataField="id" />
+                <asp:BoundField HeaderText="Id Comision" ReadOnly="true" DataField="id" />
+                <asp:BoundField HeaderText="Turno" ReadOnly="true" DataField="turno" />
                 <asp:BoundField HeaderText="Materia" ReadOnly="true" DataField="materia" />
                 <asp:CommandField HeaderText="Inscripcion" ButtonType="Link" ShowSelectButton="true" />
             </Columns>  

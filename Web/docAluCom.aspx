@@ -17,7 +17,17 @@
                    <asp:BoundField  HeaderText="Id" ReadOnly="true" DataField="id"/>
                    <asp:BoundField  HeaderText="Apellido" ReadOnly="true" DataField="apellido"/>
                    <asp:BoundField  HeaderText="Nombre" ReadOnly="true" DataField="nombre"/>
-                  
+                   <asp:TemplateField HeaderText="Regular">
+                       <ItemTemplate>
+                            <asp:CheckBox ID="ckbRegular"  runat="server" AutoPostBack="true" OnCheckedChanged="validar"/>
+                       </ItemTemplate>
+                   </asp:TemplateField>    
+                   <asp:TemplateField HeaderText="Aprobado">
+                       <ItemTemplate>
+                            <asp:CheckBox ID="ckbAprobado"  runat="server" AutoPostBack="true" OnCheckedChanged="validar"/>
+                       </ItemTemplate>
+                   </asp:TemplateField>
+                                   
                 </columns>
             </asp:GridView><br />
             <asp:Button ID="btnGuardar" runat="server" OnClick="btnGuardar_Click" Text="Guardar" />

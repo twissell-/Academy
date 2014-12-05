@@ -12,10 +12,9 @@
 
 <asp:Content ID="MainContent" runat="server" ContentPlaceHolderID="MainContent">
     <form id="materia" runat="server">
-        <asp:GridView ID="dvgEstadoAcademico" runat="server" AutoGenerateColumns="false">
+        <asp:GridView ID="dvgEstadoAcademico" runat="server" AutoGenerateColumns="true">
             <Columns>
-                <asp:BoundField HeaderText="Id" ReadOnly="true" DataField="materia.id" />
-                <asp:BoundField HeaderText="Materia" ReadOnly="true" DataField="materia.descripcion" />   
+                 
             </Columns>  
         </asp:GridView>
        <asp:Button ID="btnVolver" runat="server" OnClick="btnVolver_Click" Text="Volver" />

@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Entidades;
 using Bussines;
+using System.Data;
 
 public partial class docAluCom : System.Web.UI.Page
 {
@@ -29,40 +30,113 @@ public partial class docAluCom : System.Web.UI.Page
         {
             Comision com = (Comision)Session["Comision"];
             List<Alumno> alu = com.alumnos;
-            dvgAluCom.DataSource = alu;
-            dvgAluCom.DataBind();
+            DataTable table = new DataTable();
+            DataColumn dc = new DataColumn();
+            dc.ColumnName = "id";
+            DataColumn dc1 = new DataColumn();
+            dc1.ColumnName = "apellido";
+            DataColumn dc2 = new DataColumn();
+            dc2.ColumnName = "nombre";
+            DataColumn dc3 = new DataColumn();
+            dc3.ColumnName = "condicion";
+            table.Columns.Add(dc);
+            table.Columns.Add(dc1);
+            table.Columns.Add(dc2);
+            table.Columns.Add(dc3);
             if (com.alumnos.Count==0)
             {
                 noAlFound.Text = "Ud NO tiene alumnos inscriptos en esta materia, en esta comision";
             }
+            else
+            {
+                foreach (var item in com.alumnos)
+                {
+                    bool condicion = false;
+                    string dsaff = item.condicion.ToString();
+                    
+                    if (dsaff == "0")
+                    {
+                        condicion = false;
+                    }
+                    else if (dsaff == "1")
+                    {
+                        condicion = true;
+                    }
+                    table.Rows.Add(item.id.ToString(), item.apellido, item.nombre, condicion);
+                }
+                dvgAluCom.DataSource = table;
+                dvgAluCom.DataBind();
+            }    
         }
     }
     protected void btnGuardar_Click(object sender, EventArgs e)
     {
-        int index=dvgAluCom.Rows.Count;
-        for (int i = 0; i < index; i++)
+        cc = new ControllerComision();
+        Comision comis =(Comision) Session["Comision"];
+        try
         {
-            if (dvgAluCom.Rows[index].Cells[3].Text==" ")
+            for (int i = 0; i < dvgAluCom.Rows.Count; i++)
             {
-                //ya veremos
+                CheckBox ckbReg = new CheckBox();
+                ckbReg = dvgAluCom.Rows[i].FindControl("ckbRegular") as CheckBox;
+                CheckBox ckbApr = new CheckBox();
+                ckbApr = dvgAluCom.Rows[i].FindControl("ckbAprobado") as CheckBox;
+                if (ckbReg.Checked == true)
+                {
+                    setCondicion(comis, i, 1);
+                }
+                else if (ckbApr.Checked == true)
+                {
+                    setCondicion(comis, i, 2);
+                }
             }
-            switch (dvgAluCom.Rows[index].Cells[3].Text)
+            cc.update(comis);
+        }
+        catch (ArgumentOutOfRangeException)
+        {
+            Page.Response.Redirect("~/pagDocente.aspx");
+        }
+            
+    }
+
+    private void setCondicion(Comision comis, int i, int cond)
+    {
+        int idAl = 0;
+        if (int.TryParse(dvgAluCom.Rows[i].Cells[0].Text, out idAl))
+        {
+            foreach (var item in comis.alumnos)
             {
-                case "A": break;
-                case "a": break;
-                case "P": break;
-                case "p": break;
-                case "i": break;
-                case "I": break;
-                
-                default:// tmb ya veremos
-                    break;
+                if (item.id == idAl)
+                {
+                    item.condicion = cond;
+                }
             }
         }
     }
 
     protected void btnVolver_Click(object sender, EventArgs e)
     {
+        Session["Comision"] = null;
         Page.Response.Redirect("~/pagDocente.aspx");
+    }
+    protected void validar(object sender, EventArgs e)
+    {
+        CheckBox ckb = sender as CheckBox;
+        for (int i = 0; i < dvgAluCom.Rows.Count; i++)
+        {
+            CheckBox ckbReg = new CheckBox();
+            ckbReg = dvgAluCom.Rows[i].FindControl("ckbRegular") as CheckBox;
+            CheckBox ckbApr = new CheckBox();
+            ckbApr = dvgAluCom.Rows[i].FindControl("ckbAprobado") as CheckBox;
+            
+            if (ckbApr.Checked == ckbReg.Checked && ckbApr == ckb)
+            {
+                ckbReg.Checked = false;
+            }
+            if (ckbReg.Checked == ckbApr.Checked && ckbReg == ckb)
+            {
+                ckbApr.Checked = false;
+            }
+        }
     }
 }
