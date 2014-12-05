@@ -18,6 +18,7 @@ namespace Entidades
             : this(anioCursado, materia, docentes, turno)       
         {
             this.id = id;
+            this.alumnos=alumnos;
         }
         public Comision(int anioCursado, Materia materia, List<Docente> docentes, int turno)
         // Constructor para nuevas comisiones.
