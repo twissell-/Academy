@@ -32,71 +32,83 @@ public partial class docAluCom : System.Web.UI.Page
             List<Alumno> alu = com.alumnos;
             DataTable table = new DataTable();
             DataColumn dc = new DataColumn();
-            dc.ColumnName = "id";
+            dc.ColumnName = "Id";
             DataColumn dc1 = new DataColumn();
-            dc1.ColumnName = "apellido";
+            dc1.ColumnName = "Apellido";
             DataColumn dc2 = new DataColumn();
-            dc2.ColumnName = "nombre";
-            DataColumn dc3 = new DataColumn();
-            dc3.ColumnName = "condicion";
+            dc2.ColumnName = "Nombre";
             table.Columns.Add(dc);
             table.Columns.Add(dc1);
             table.Columns.Add(dc2);
+            DataColumn dc3 = new DataColumn("Regular",typeof (bool));
+            DataColumn dc4 = new DataColumn("Aprobado", typeof (bool));
             table.Columns.Add(dc3);
-            if (com.alumnos.Count==0)
+            table.Columns.Add(dc4);
+            if (com.alumnos.Count == 0)
             {
                 noAlFound.Text = "Ud NO tiene alumnos inscriptos en esta materia, en esta comision";
             }
             else
             {
+                bool reg = false; 
+                bool apr = false;
                 foreach (var item in com.alumnos)
                 {
-                    bool condicion = false;
-                    string dsaff = item.condicion.ToString();
-                    
-                    if (dsaff == "0")
+                    if (item.condicion == 1)
                     {
-                        condicion = false;
+                        reg = true;
+                        apr = false;
+                        table.Rows.Add(item.id.ToString(), item.apellido, item.nombre, reg, apr);
                     }
-                    else if (dsaff == "1")
+                    else if (item.condicion == 2)
                     {
-                        condicion = true;
+                        reg = false;
+                        apr = true;
+                        table.Rows.Add(item.id.ToString(), item.apellido, item.nombre, reg, apr);
                     }
-                    table.Rows.Add(item.id.ToString(), item.apellido, item.nombre, condicion);
+                    else
+                    {
+                        table.Rows.Add(item.id.ToString(), item.apellido, item.nombre, reg, apr);
+                    }
+                    dvgAluCom.DataSource = table;
+                    dvgAluCom.DataBind(); 
                 }
-                dvgAluCom.DataSource = table;
-                dvgAluCom.DataBind();
-            }    
+            }
         }
     }
     protected void btnGuardar_Click(object sender, EventArgs e)
     {
         cc = new ControllerComision();
-        Comision comis =(Comision) Session["Comision"];
+        Comision comis = (Comision)Session["Comision"];
         try
         {
             for (int i = 0; i < dvgAluCom.Rows.Count; i++)
             {
-                CheckBox ckbReg = new CheckBox();
-                ckbReg = dvgAluCom.Rows[i].FindControl("ckbRegular") as CheckBox;
-                CheckBox ckbApr = new CheckBox();
-                ckbApr = dvgAluCom.Rows[i].FindControl("ckbAprobado") as CheckBox;
-                if (ckbReg.Checked == true)
+                CheckBox cbReg = new CheckBox();
+                cbReg = dvgAluCom.Rows[i].FindControl("cbRegular") as CheckBox;
+                CheckBox cbApr = new CheckBox();
+                cbApr = dvgAluCom.Rows[i].FindControl("cbAprobado") as CheckBox;
+                if (cbReg.Checked == true)
                 {
                     setCondicion(comis, i, 1);
                 }
-                else if (ckbApr.Checked == true)
+                else if (cbApr.Checked == true)
                 {
                     setCondicion(comis, i, 2);
                 }
+                else
+                {
+                    setCondicion(comis, i, 0);
+                }
             }
             cc.update(comis);
+            lblAct.Text = "Se han actualizado los estados";
         }
         catch (ArgumentOutOfRangeException)
         {
             Page.Response.Redirect("~/pagDocente.aspx");
         }
-            
+
     }
 
     private void setCondicion(Comision comis, int i, int cond)
@@ -124,18 +136,18 @@ public partial class docAluCom : System.Web.UI.Page
         CheckBox ckb = sender as CheckBox;
         for (int i = 0; i < dvgAluCom.Rows.Count; i++)
         {
-            CheckBox ckbReg = new CheckBox();
-            ckbReg = dvgAluCom.Rows[i].FindControl("ckbRegular") as CheckBox;
-            CheckBox ckbApr = new CheckBox();
-            ckbApr = dvgAluCom.Rows[i].FindControl("ckbAprobado") as CheckBox;
-            
-            if (ckbApr.Checked == ckbReg.Checked && ckbApr == ckb)
+            CheckBox cbReg = new CheckBox();
+            cbReg = dvgAluCom.Rows[i].FindControl("cbRegular") as CheckBox;
+            CheckBox cbApr = new CheckBox();
+            cbApr = dvgAluCom.Rows[i].FindControl("cbAprobado") as CheckBox;
+
+            if (cbApr.Checked == cbReg.Checked && cbApr == ckb)
             {
-                ckbReg.Checked = false;
+                cbReg.Checked = false;
             }
-            if (ckbReg.Checked == ckbApr.Checked && ckbReg == ckb)
+            if (cbReg.Checked == cbApr.Checked && cbReg == ckb)
             {
-                ckbApr.Checked = false;
+                cbApr.Checked = false;
             }
         }
     }
