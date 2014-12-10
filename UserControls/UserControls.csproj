@@ -155,11 +155,11 @@
     <Compile Include="ucPlanes\ucListaPlanes.Designer.cs">
       <DependentUpon>ucListaPlanes.cs</DependentUpon>
     </Compile>
-    <Compile Include="ucMPersona.cs">
+    <Compile Include="ucMBPersona.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucMPersona.Designer.cs">
-      <DependentUpon>ucMPersona.cs</DependentUpon>
+    <Compile Include="ucMBPersona.Designer.cs">
+      <DependentUpon>ucMBPersona.cs</DependentUpon>
     </Compile>
     <Compile Include="ucPlanes\ucAPlanes.cs">
       <SubType>UserControl</SubType>
@@ -225,8 +225,8 @@
     <EmbeddedResource Include="ucPlanes\ucListaPlanes.resx">
       <DependentUpon>ucListaPlanes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucMPersona.resx">
-      <DependentUpon>ucMPersona.cs</DependentUpon>
+    <EmbeddedResource Include="ucMBPersona.resx">
+      <DependentUpon>ucMBPersona.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ucPlanes\ucAPlanes.resx">
       <DependentUpon>ucAPlanes.cs</DependentUpon>

@@ -30,8 +30,6 @@
         {
             this.lblTipo = new System.Windows.Forms.Label();
             this.cmbTipo = new System.Windows.Forms.ComboBox();
-            this.btnBorrar = new System.Windows.Forms.Button();
-            this.btnGuardar = new System.Windows.Forms.Button();
             this.gprDatosAcceso = new System.Windows.Forms.GroupBox();
             this.txtConfirmar = new System.Windows.Forms.MaskedTextBox();
             this.txtPassword = new System.Windows.Forms.MaskedTextBox();
@@ -56,15 +54,19 @@
             this.lblApellido = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
             this.lblId = new System.Windows.Forms.Label();
+            this.grpPersona = new System.Windows.Forms.GroupBox();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.btnBorrar = new System.Windows.Forms.Button();
             this.gprDatosAcceso.SuspendLayout();
             this.gprDatosContacto.SuspendLayout();
             this.grpDatosPersonales.SuspendLayout();
+            this.grpPersona.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblTipo
             // 
             this.lblTipo.AutoSize = true;
-            this.lblTipo.Location = new System.Drawing.Point(207, 32);
+            this.lblTipo.Location = new System.Drawing.Point(133, 22);
             this.lblTipo.Name = "lblTipo";
             this.lblTipo.Size = new System.Drawing.Size(31, 13);
             this.lblTipo.TabIndex = 25;
@@ -79,31 +81,10 @@
             "Administrador",
             "Docente",
             "Alumno"});
-            this.cmbTipo.Location = new System.Drawing.Point(251, 28);
+            this.cmbTipo.Location = new System.Drawing.Point(177, 18);
             this.cmbTipo.Name = "cmbTipo";
             this.cmbTipo.Size = new System.Drawing.Size(121, 21);
             this.cmbTipo.TabIndex = 24;
-            // 
-            // btnBorrar
-            // 
-            this.btnBorrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnBorrar.Location = new System.Drawing.Point(594, 303);
-            this.btnBorrar.Name = "btnBorrar";
-            this.btnBorrar.Size = new System.Drawing.Size(75, 23);
-            this.btnBorrar.TabIndex = 23;
-            this.btnBorrar.Text = "Borrar";
-            this.btnBorrar.UseVisualStyleBackColor = true;
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGuardar.Location = new System.Drawing.Point(513, 303);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(75, 23);
-            this.btnGuardar.TabIndex = 22;
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.UseVisualStyleBackColor = true;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // gprDatosAcceso
             // 
@@ -111,7 +92,7 @@
             this.gprDatosAcceso.Controls.Add(this.txtPassword);
             this.gprDatosAcceso.Controls.Add(this.lblConfirmar);
             this.gprDatosAcceso.Controls.Add(this.lblPass);
-            this.gprDatosAcceso.Location = new System.Drawing.Point(79, 206);
+            this.gprDatosAcceso.Location = new System.Drawing.Point(5, 196);
             this.gprDatosAcceso.Name = "gprDatosAcceso";
             this.gprDatosAcceso.Size = new System.Drawing.Size(563, 54);
             this.gprDatosAcceso.TabIndex = 21;
@@ -160,7 +141,7 @@
             this.gprDatosContacto.Controls.Add(this.lblDireccion);
             this.gprDatosContacto.Controls.Add(this.txtTelefono);
             this.gprDatosContacto.Controls.Add(this.lblTelefono);
-            this.gprDatosContacto.Location = new System.Drawing.Point(361, 61);
+            this.gprDatosContacto.Location = new System.Drawing.Point(287, 51);
             this.gprDatosContacto.Name = "gprDatosContacto";
             this.gprDatosContacto.Size = new System.Drawing.Size(281, 139);
             this.gprDatosContacto.TabIndex = 20;
@@ -226,7 +207,7 @@
             this.grpDatosPersonales.Controls.Add(this.txtApellido);
             this.grpDatosPersonales.Controls.Add(this.lblNombre);
             this.grpDatosPersonales.Controls.Add(this.lblApellido);
-            this.grpDatosPersonales.Location = new System.Drawing.Point(79, 61);
+            this.grpDatosPersonales.Location = new System.Drawing.Point(5, 51);
             this.grpDatosPersonales.Name = "grpDatosPersonales";
             this.grpDatosPersonales.Size = new System.Drawing.Size(276, 139);
             this.grpDatosPersonales.TabIndex = 19;
@@ -308,7 +289,7 @@
             // 
             // txtId
             // 
-            this.txtId.Location = new System.Drawing.Point(101, 29);
+            this.txtId.Location = new System.Drawing.Point(27, 19);
             this.txtId.Name = "txtId";
             this.txtId.ReadOnly = true;
             this.txtId.Size = new System.Drawing.Size(100, 20);
@@ -317,28 +298,62 @@
             // lblId
             // 
             this.lblId.AutoSize = true;
-            this.lblId.Location = new System.Drawing.Point(79, 32);
+            this.lblId.Location = new System.Drawing.Point(5, 22);
             this.lblId.Name = "lblId";
             this.lblId.Size = new System.Drawing.Size(16, 13);
             this.lblId.TabIndex = 17;
             this.lblId.Text = "Id";
+            // 
+            // grpPersona
+            // 
+            this.grpPersona.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.grpPersona.Controls.Add(this.gprDatosAcceso);
+            this.grpPersona.Controls.Add(this.gprDatosContacto);
+            this.grpPersona.Controls.Add(this.grpDatosPersonales);
+            this.grpPersona.Controls.Add(this.lblTipo);
+            this.grpPersona.Controls.Add(this.cmbTipo);
+            this.grpPersona.Controls.Add(this.btnBorrar);
+            this.grpPersona.Controls.Add(this.btnGuardar);
+            this.grpPersona.Controls.Add(this.txtId);
+            this.grpPersona.Controls.Add(this.lblId);
+            this.grpPersona.Location = new System.Drawing.Point(11, 3);
+            this.grpPersona.Name = "grpPersona";
+            this.grpPersona.Size = new System.Drawing.Size(574, 285);
+            this.grpPersona.TabIndex = 26;
+            this.grpPersona.TabStop = false;
+            this.grpPersona.Text = "Usuario";
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGuardar.Location = new System.Drawing.Point(493, 256);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(75, 23);
+            this.btnGuardar.TabIndex = 22;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // btnBorrar
+            // 
+            this.btnBorrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBorrar.Location = new System.Drawing.Point(412, 256);
+            this.btnBorrar.Name = "btnBorrar";
+            this.btnBorrar.Size = new System.Drawing.Size(75, 23);
+            this.btnBorrar.TabIndex = 23;
+            this.btnBorrar.Text = "Borrar";
+            this.btnBorrar.UseVisualStyleBackColor = true;
             // 
             // ucAPersona
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.Controls.Add(this.lblTipo);
-            this.Controls.Add(this.cmbTipo);
-            this.Controls.Add(this.btnBorrar);
-            this.Controls.Add(this.btnGuardar);
-            this.Controls.Add(this.gprDatosAcceso);
-            this.Controls.Add(this.gprDatosContacto);
-            this.Controls.Add(this.grpDatosPersonales);
-            this.Controls.Add(this.txtId);
-            this.Controls.Add(this.lblId);
+            this.Controls.Add(this.grpPersona);
             this.Name = "ucAPersona";
-            this.Size = new System.Drawing.Size(672, 329);
+            this.Size = new System.Drawing.Size(602, 302);
             this.Load += new System.EventHandler(this.ucAPersona_Load);
             this.gprDatosAcceso.ResumeLayout(false);
             this.gprDatosAcceso.PerformLayout();
@@ -346,8 +361,9 @@
             this.gprDatosContacto.PerformLayout();
             this.grpDatosPersonales.ResumeLayout(false);
             this.grpDatosPersonales.PerformLayout();
+            this.grpPersona.ResumeLayout(false);
+            this.grpPersona.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -355,8 +371,6 @@
 
         private System.Windows.Forms.Label lblTipo;
         private System.Windows.Forms.ComboBox cmbTipo;
-        private System.Windows.Forms.Button btnBorrar;
-        private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.GroupBox gprDatosAcceso;
         private System.Windows.Forms.MaskedTextBox txtConfirmar;
         private System.Windows.Forms.MaskedTextBox txtPassword;
@@ -381,5 +395,8 @@
         private System.Windows.Forms.Label lblApellido;
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Label lblId;
+        private System.Windows.Forms.GroupBox grpPersona;
+        private System.Windows.Forms.Button btnBorrar;
+        private System.Windows.Forms.Button btnGuardar;
     }
 }

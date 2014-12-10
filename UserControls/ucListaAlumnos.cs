@@ -14,16 +14,31 @@ namespace UserControls
     public partial class ucListaAlumnos : UserControl
     {
         private IControllerPersona controller;
+        public ucAPersona Owner { get; set; }
+        public int det { get; private set; }
+
+
+        public ucListaAlumnos()
+        {
+            InitializeComponent();
+        }
 
         public ucListaAlumnos(int det)
+            :this()
             //det 
             //0: administrativo
             //1: docente
             //2: alumnos
         {
-            InitializeComponent();
+            this.det = det;
+        }
+
+        #region Metodos Propios
+
+        private void loader()
+        {
             this.dgvListaAlumnos.AutoGenerateColumns = false;
-            switch (det)
+            switch (this.det)
             {
                 case 0:
                     controller = new ControllerAdministrativo();
@@ -38,7 +53,16 @@ namespace UserControls
                     break;
             }
             this.dgvListaAlumnos.DataSource = controller.find();
+            if (this.Owner != null)
+            {
+                this.dgvListaAlumnos.Columns[4].Visible = false;
+                this.dgvListaAlumnos.Columns[5].Visible = false;
+                this.dgvListaAlumnos.Columns[6].Visible = false;
+                this.dgvListaAlumnos.Columns[7].Visible = false;
+            }
         }
+
+        #endregion
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
@@ -58,29 +82,5 @@ namespace UserControls
                 MessageBox.Show("Debe seleccionar una fila para eliminarla", "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            this.Dispose();
-        }
-
-        private void btnGuardar_Click(object sender, EventArgs e)
-        {
-            if (this.dgvListaAlumnos.SelectedRows != null)
-            {
-                if (MessageBox.Show("¿Desea guardar los cambios realizados?", "Guardar Cambios", 
-                    MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    controller.update((Persona)dgvListaAlumnos.SelectedRows[0].DataBoundItem);
-                }
-
-            }
-        }
-
-        private void dgvListaAlumnos_CellValueChanged(object sender, DataGridViewCellEventArgs e)
-        {
-            btnGuardar.Enabled = true;
-        }
-    
     }
 }

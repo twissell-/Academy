@@ -49,19 +49,19 @@ namespace GUI
             this.panAdmGral.Controls.Clear();
             if (sender==tsmModificarAdministrativo)
             {
-                uc = new ucMPersona("MAd");
+                uc = new ucMBPersona(0);
                 this.panAdmGral.Controls.Add(uc);
                 uc.Dock = DockStyle.Fill;
             }
             else if (sender==tsmModificarAlumno)
             {
-                uc = new ucMPersona("MA");
+                uc = new ucMBPersona(2);
                 this.panAdmGral.Controls.Add(uc);
                 uc.Dock = DockStyle.Fill;
             }
             else
             {
-                uc = new ucMPersona("MD");
+                uc = new ucMBPersona(1);
                 this.panAdmGral.Controls.Add(uc);
                 uc.Dock = DockStyle.Fill;
             }          

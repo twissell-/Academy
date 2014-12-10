@@ -13,26 +13,54 @@ namespace UserControls
 {
     public partial class ucAPersona : UserControl
     {
-        ControllerAlumno ca;
-        ControllerDocente cd;
-        ControllerTipo ct;
-        ControllerAdministrativo cad;
+        private ControllerAlumno ca;
+        private ControllerDocente cd;
+        private ControllerTipo ct;
+        private ControllerAdministrativo cad;
+        public ucListaAlumnos Owner { get; set; }
+
 
         public ucAPersona()
         {
-            ca = new ControllerAlumno();
-            cd = new ControllerDocente();
-            cad = new ControllerAdministrativo();
-            ct = new ControllerTipo();
             InitializeComponent();
         }
 
         private void ucAPersona_Load(object sender, EventArgs e)
         {
-            cmbTipo.DataSource = ct.find();
+            this.loader();
         }
 
-        private void Clear()
+        #region Metodos Propios
+
+        public void edit(Persona p)
+        {
+            this.txtId.Text = p.id.ToString();
+            this.cmbTipo.SelectedIndex = this.Owner.det;
+            this.txtApellido.Text = p.apellido;
+            this.txtNombre.Text = p.nombre;
+            this.txtDireccion.Text = p.direccion;
+            this.txtDni.Text = p.dni;
+            this.txtMail.Text = p.mail;
+            this.txtNacimiento.Text = p.nacimiento;
+            this.txtTelefono.Text = p.telefono;
+            btnBorrar.Enabled = btnBorrar.Visible = true;
+            if (!this.Enabled)
+            {
+                this.Enabled = true;
+            }
+        }
+
+        private void loader()
+        {
+            this.ca = new ControllerAlumno();
+            this.cd = new ControllerDocente();
+            this.cad = new ControllerAdministrativo();
+            this.ct = new ControllerTipo();
+            this.cmbTipo.DataSource = ct.find();
+            btnBorrar.Enabled = btnBorrar.Visible = false;
+        }
+
+        private void clear()
         {
             this.txtApellido.Clear();
             this.txtNombre.Clear();
@@ -45,9 +73,11 @@ namespace UserControls
             this.txtConfirmar.Clear();
         }
 
+        #endregion
+
         private void btnBorrar_Click(object sender, EventArgs e)
         {
-            this.Clear();
+            this.clear();
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -69,7 +99,7 @@ namespace UserControls
                 default:
                     break;
             }
-            this.Clear();
+            this.clear();
         }
 
  
