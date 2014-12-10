@@ -12,45 +12,55 @@ public partial class _Default : System.Web.UI.Page
 {
     ControllerAlumno ca;
     ControllerDocente cd;
-    protected void btnIngresar_onclick(object sender, EventArgs e)
+    protected void page_Load()
     {
         ca = new ControllerAlumno();
         cd = new ControllerDocente();
         Session["Persona"] = null;
-        Persona d = null;
-        Persona al = null;
-        int id = 0;
-        if (int.TryParse(txtUss.Text, out id))
+    }
+    protected void btnIngresar_onclick(object sender, EventArgs e)
+    {
+        try
         {
-            d = cd.find(id);
-            if (d == null)
+            Persona per = null;
+            int id = 0;
+            if (int.TryParse(txtUss.Text, out id))
             {
-                al = ca.find(id);
-            }
-            if (d == null && al.password == Hasher.toMD5(txtPss.Text))
-            {
-                Session["Persona"] = al;
-                Response.Redirect("~/pagAlumno.aspx");
+                per = cd.find(id);
+                if (per == null)
+                {
+                    per = ca.find(id);
+                }
+                if (per is Alumno && per.password == Hasher.toMD5(txtPss.Text))
+                {
+                    Session["Persona"] = per;
+                    Response.Redirect("~/pagAlumno.aspx");
 
-            }
-            else if (al == null && d.password == Hasher.toMD5(txtPss.Text))
-            {
-                Session["Persona"] = d;
-                Response.Redirect("~/pagDocente.aspx");
+                }
+                else if (per is Docente && per.password == Hasher.toMD5(txtPss.Text))
+                {
+                    Session["Persona"] = per;
+                    Response.Redirect("~/pagDocente.aspx");
 
+                }
+                else
+                {
+                    error.Text = " ";
+                    error.Text = "Usuario y/o contraseña incorrectos";
+                    txtPss.Text = "";
+                }
             }
-            else if ((d == null && al.id != Convert.ToInt32(txtUss.Text) || al.password != Hasher.toMD5(txtPss.Text))
-         || (al == null && d.id != Convert.ToInt32(txtUss.Text) || d.password != Hasher.toMD5(txtPss.Text)))
+            if (per == null)
             {
-                error.Text = "Usuario y/o contraseña incorrectos";
+                error.Text = " ";
+                error.Text = "Usuario invalido";
                 txtPss.Text = "";
             }
         }
-        else
+        catch (System.Net.Sockets.SocketException)
         {
-            error.Text = "Usuario invalido";
-            txtPss.Text = "";
+            error.Text="Ocurrio un error al intentar conectarse a la Base de Datos, comuniquese con el administrador";
         }
     }
-
 }
+

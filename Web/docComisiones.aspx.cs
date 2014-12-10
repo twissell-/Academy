@@ -53,12 +53,14 @@ public partial class docComisiones : System.Web.UI.Page
                 }
                 catch (IndexOutOfRangeException)
                 {
-                    Page.Response.Redirect("~/pagDocente.aspx");
+                    Page.Response.Redirect("~/docMaterias.aspx");
+                    Session["matSel"] = null;
                 }
             }
             catch (NullReferenceException)
             {
-                Page.Response.Redirect("~/pagDocente.aspx");
+                Page.Response.Redirect("~/docMaterias.aspx");
+                Session["matSel"] = null;
             }
         }
     }
