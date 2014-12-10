@@ -15,7 +15,7 @@ namespace UserControls
     public partial class ucListaComisiones : UserControl
     {
         ControllerComision cc;
-        public ucMBComision Owner {get; set;}
+        public ucAComision Owner {get; set;}
 
         public ucListaComisiones()
         {

@@ -14,15 +14,23 @@ namespace UserControls
         public ucMBComision()
         {
             InitializeComponent();
+            this.loader();
         }
 
         #region Metodos Propios
 
-        internal void edit(Entidades.Comision comision)
+        private void loader()
         {
-            throw new NotImplementedException();
+            this.ucModificaciones.Enabled = false;
+            this.ucListado.Owner = this.ucModificaciones;
+            this.ucModificaciones.Owner = this.ucListado;
         }
 
         #endregion
+
+        private void ucListado_Load(object sender, EventArgs e)
+        {
+            this.loader();
+        }
     }
 }

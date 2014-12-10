@@ -30,8 +30,8 @@
         {
             this.pnlListado = new System.Windows.Forms.Panel();
             this.pnlModificaciones = new System.Windows.Forms.Panel();
-            this.ucListado = new UserControls.ucListaComisiones();
             this.ucModificaciones = new UserControls.ucAComision();
+            this.ucListado = new UserControls.ucListaComisiones();
             this.pnlListado.SuspendLayout();
             this.pnlModificaciones.SuspendLayout();
             this.SuspendLayout();
@@ -39,20 +39,30 @@
             // pnlListado
             // 
             this.pnlListado.Controls.Add(this.ucListado);
-            this.pnlListado.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlListado.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlListado.Location = new System.Drawing.Point(0, 0);
             this.pnlListado.Name = "pnlListado";
-            this.pnlListado.Size = new System.Drawing.Size(928, 275);
+            this.pnlListado.Size = new System.Drawing.Size(326, 454);
             this.pnlListado.TabIndex = 0;
             // 
             // pnlModificaciones
             // 
             this.pnlModificaciones.Controls.Add(this.ucModificaciones);
-            this.pnlModificaciones.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlModificaciones.Location = new System.Drawing.Point(0, 275);
+            this.pnlModificaciones.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlModificaciones.Location = new System.Drawing.Point(326, 0);
             this.pnlModificaciones.Name = "pnlModificaciones";
-            this.pnlModificaciones.Size = new System.Drawing.Size(928, 179);
+            this.pnlModificaciones.Size = new System.Drawing.Size(451, 454);
             this.pnlModificaciones.TabIndex = 1;
+            // 
+            // ucModificaciones
+            // 
+            this.ucModificaciones.AutoSize = true;
+            this.ucModificaciones.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucModificaciones.Location = new System.Drawing.Point(0, 0);
+            this.ucModificaciones.Name = "ucModificaciones";
+            this.ucModificaciones.Owner = null;
+            this.ucModificaciones.Size = new System.Drawing.Size(451, 454);
+            this.ucModificaciones.TabIndex = 0;
             // 
             // ucListado
             // 
@@ -61,26 +71,18 @@
             this.ucListado.Location = new System.Drawing.Point(0, 0);
             this.ucListado.Name = "ucListado";
             this.ucListado.Owner = null;
-            this.ucListado.Size = new System.Drawing.Size(928, 275);
+            this.ucListado.Size = new System.Drawing.Size(326, 454);
             this.ucListado.TabIndex = 0;
-            // 
-            // ucModificaciones
-            // 
-            this.ucModificaciones.AutoSize = true;
-            this.ucModificaciones.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucModificaciones.Location = new System.Drawing.Point(0, 0);
-            this.ucModificaciones.Name = "ucModificaciones";
-            this.ucModificaciones.Size = new System.Drawing.Size(928, 179);
-            this.ucModificaciones.TabIndex = 0;
+            this.ucListado.Load += new System.EventHandler(this.ucListado_Load);
             // 
             // ucMBComision
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.pnlListado);
             this.Controls.Add(this.pnlModificaciones);
+            this.Controls.Add(this.pnlListado);
             this.Name = "ucMBComision";
-            this.Size = new System.Drawing.Size(928, 454);
+            this.Size = new System.Drawing.Size(777, 454);
             this.pnlListado.ResumeLayout(false);
             this.pnlListado.PerformLayout();
             this.pnlModificaciones.ResumeLayout(false);

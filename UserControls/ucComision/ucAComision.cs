@@ -13,10 +13,12 @@ namespace UserControls
 {
     public partial class ucAComision : UserControl
     {
-        ControllerMateria cm;
-        ControllerDocente cd;
-        ControllerComision cc;
-        ControllerCargos ccar;
+        private ControllerMateria cm;
+        private ControllerDocente cd;
+        private ControllerComision cc;
+        private ControllerCargos ccar;
+        private List<Alumno> al;
+        public ucListaComisiones Owner { get; set; }
 
 
 #region Enumeraciones
@@ -33,23 +35,24 @@ namespace UserControls
         public ucAComision()
         {
             InitializeComponent();
-            this.cm = new ControllerMateria();
-            this.cd = new ControllerDocente();
-            this.cc = new ControllerComision();
-            this.ccar = new ControllerCargos();
-            // <-------------------------- ACA
         }
 
         #region Metodos Propios
 
         private void loader()
         {
+            this.cm = new ControllerMateria();
+            this.cd = new ControllerDocente();
+            this.cc = new ControllerComision();
+            this.ccar = new ControllerCargos();
+            this.al = new List<Alumno>();
+            cmbMateria.ValueMember = "id";
+            cmbMateria.DisplayMember = "descripcion";
             cmbMateria.DataSource = cm.find();
             cmbTurno.DataSource = Enum.GetValues(typeof(eTurno)).Cast<eTurno>();
             dgvListaDocentes.AutoGenerateColumns = false;
             dgvListaDocentes.DataSource = cd.find();
-            dgvListaDocentes.ReadOnly = false;
-            btnBorrar.Visible = btnBorrar.Enabled = false;            
+            this.btnBorrar.Enabled = this.btnBorrar.Visible = false;
         }
 
         private void clear()
@@ -57,7 +60,13 @@ namespace UserControls
             this.txtId.Clear();
             this.txtAñoCursado.Clear();
             this.cmbTurno.SelectedIndex = 0;
-            this.dgvListaDocentes.Refresh();
+            cmbMateria.DataSource = cm.find();
+            dgvListaDocentes.DataSource = cd.find();
+            if (this.Owner != null)
+            {
+                this.Owner.reload();
+                this.Enabled = false;
+            }
 
         }
 
@@ -72,41 +81,30 @@ namespace UserControls
                     if (Convert.ToBoolean(row.Cells["dgvTitular"].Value))
                     {
                         Docente d = (Docente)row.DataBoundItem;
-                        d.cargo = 0;
+                        d.cargo = 1;
                         docentes.Add(d);
                     }
                     else if (Convert.ToBoolean(row.Cells["dgvAdjunto"].Value))
                     {
                         Docente d = (Docente)row.DataBoundItem;
-                        d.cargo = 1;
+                        d.cargo = 2;
                         docentes.Add(d);
                     }
                     else if (Convert.ToBoolean(row.Cells["dgvJTP"].Value))
                     {
                         Docente d = (Docente)row.DataBoundItem;
-                        d.cargo = 2;
+                        d.cargo = 3;
                         docentes.Add(d);
                     }
                     else if (Convert.ToBoolean(row.Cells["dgvAuxiliar"].Value))
                     {
                         Docente d = (Docente)row.DataBoundItem;
-                        d.cargo = 3;
+                        d.cargo = 4;
                         docentes.Add(d);
                     }
                 }
             }
-            return new Comision(Convert.ToInt32(txtAñoCursado.Text), (Materia)cmbMateria.SelectedItem, docentes, (int)cmbTurno.SelectedValue);
-        }
-
-        private void enabler(bool p)
-        {
-            cmbMateria.Enabled = p;
-            txtAñoCursado.Enabled = p;
-            cmbTurno.Enabled = p;
-            dgvListaDocentes.Enabled = p;
-            btnBorrar.Visible = p;
-            btnBorrar.Enabled = p;
-            btnGuardar.Enabled = p;
+            return new Comision(txtId.Text == "" ? 0 : Convert.ToInt32(txtId.Text), Convert.ToInt32(txtAñoCursado.Text), (Materia)cmbMateria.SelectedItem, docentes, al, (int)cmbTurno.SelectedValue);
         }
 
         public void edit(Comision c)
@@ -114,31 +112,44 @@ namespace UserControls
             txtId.Text = c.id.ToString();
             txtAñoCursado.Text = c.anioCursado.ToString();
             cmbMateria.SelectedValue = c.materia.id;
-            //foreach (DataGridViewRow row in this.dgvListaDocentes.Rows)
-            //{
-            //    Docente d = (Docente)row.DataBoundItem;
-            //    switch (d.cargo)
-            //    {
-            //        case 0:
-            //            row.Cells["dgvTitular"].Value = true;
-            //            break;
-            //        case 1:
-            //            row.Cells["dgvAdjunto"].Value = true;
-            //            break;
-            //        case 2:
-            //            row.Cells["dgvJTP"].Value = true;
-            //            break;
-            //        case 3:
-            //            row.Cells["dgvAuxiliar"].Value = true;
-            //            break;
-            //        default:
-            //            break;
-            //    }
-            //}
-            this.enabler(true);
+            if (c.alumnos != null)
+            {
+                al = c.alumnos;
+            }
+            List<Persona> docentes = cd.find();
+            foreach (Docente d in c.docentes)
+            {
+                var mr = docentes.Find(x => x.id == (d.id));
+                docentes.Remove(mr);
+            }
+            docentes.AddRange(c.docentes);
+            docentes.Reverse();
+            dgvListaDocentes.DataSource = docentes;
+            foreach (DataGridViewRow row in this.dgvListaDocentes.Rows)
+            {
+                Docente d = (Docente)row.DataBoundItem;
+                switch (d.cargo)
+                {
+                    case 1:
+                        row.Cells["dgvTitular"].Value = true;
+                        break;
+                    case 2:
+                        row.Cells["dgvAdjunto"].Value = true;
+                        break;
+                    case 3:
+                        row.Cells["dgvJTP"].Value = true;
+                        break;
+                    case 4:
+                        row.Cells["dgvAuxiliar"].Value = true;
+                        break;
+                    default:
+                        break;
+                }
+            }
             if (!this.Enabled)
             {
                 this.Enabled = true;
+                this.btnBorrar.Enabled = this.btnBorrar.Visible = true;
             }
         }
 
@@ -151,6 +162,7 @@ namespace UserControls
 
         private void btnBorrar_Click(object sender, EventArgs e)
         {
+            cc.delete(this.buildComision());
             this.clear();
         }
 
@@ -161,11 +173,6 @@ namespace UserControls
             this.loader();
         }
 
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            this.Dispose();
-        }
-
         private void dgvListaDocentes_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == 2 || e.ColumnIndex == 3 || e.ColumnIndex == 4 || e.ColumnIndex == 5)
@@ -173,24 +180,28 @@ namespace UserControls
                 switch (e.ColumnIndex)  
             	{
                     case 2:
+                        dgvListaDocentes.Rows[e.RowIndex].Cells[2].Value = true;
                         dgvListaDocentes.Rows[e.RowIndex].Cells[3].Value = false;
                         dgvListaDocentes.Rows[e.RowIndex].Cells[4].Value = false;
                         dgvListaDocentes.Rows[e.RowIndex].Cells[5].Value = false;
                         break;
                     case 3:
                         dgvListaDocentes.Rows[e.RowIndex].Cells[2].Value = false;
+                        dgvListaDocentes.Rows[e.RowIndex].Cells[3].Value = true;
                         dgvListaDocentes.Rows[e.RowIndex].Cells[4].Value = false;
                         dgvListaDocentes.Rows[e.RowIndex].Cells[5].Value = false;
                         break;
                     case 4:
                         dgvListaDocentes.Rows[e.RowIndex].Cells[2].Value = false;
                         dgvListaDocentes.Rows[e.RowIndex].Cells[3].Value = false;
+                        dgvListaDocentes.Rows[e.RowIndex].Cells[4].Value = true;
                         dgvListaDocentes.Rows[e.RowIndex].Cells[5].Value = false;
                         break;
                     case 5:
                         dgvListaDocentes.Rows[e.RowIndex].Cells[2].Value = false;
                         dgvListaDocentes.Rows[e.RowIndex].Cells[3].Value = false;
                         dgvListaDocentes.Rows[e.RowIndex].Cells[4].Value = false;
+                        dgvListaDocentes.Rows[e.RowIndex].Cells[5].Value = true;
                         break;
             		default:
                         break;
