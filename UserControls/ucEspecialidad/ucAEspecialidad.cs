@@ -62,7 +62,7 @@ namespace UserControls
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            ce.insert(new Especialidad(0, txtDescripcion.Text));
+            ce.insert(new Especialidad(this.Owner != null ? Convert.ToInt32(txtId.Text) : 0, txtDescripcion.Text));
             this.clear();
         }
 

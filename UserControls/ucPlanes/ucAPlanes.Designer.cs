@@ -42,8 +42,8 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGuardar.Location = new System.Drawing.Point(185, 109);
+            this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGuardar.Location = new System.Drawing.Point(185, 110);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 22;
@@ -53,7 +53,7 @@
             // 
             // grbPlan
             // 
-            this.grbPlan.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.grbPlan.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.grbPlan.Controls.Add(this.btnBorrar);
             this.grbPlan.Controls.Add(this.cmbEspecialidad);
             this.grbPlan.Controls.Add(this.btnGuardar);
@@ -62,17 +62,17 @@
             this.grbPlan.Controls.Add(this.txtId);
             this.grbPlan.Controls.Add(this.lblDescripcion);
             this.grbPlan.Controls.Add(this.lblId);
-            this.grbPlan.Location = new System.Drawing.Point(19, 3);
+            this.grbPlan.Location = new System.Drawing.Point(19, 4);
             this.grbPlan.Name = "grbPlan";
-            this.grbPlan.Size = new System.Drawing.Size(271, 185);
+            this.grbPlan.Size = new System.Drawing.Size(271, 141);
             this.grbPlan.TabIndex = 29;
             this.grbPlan.TabStop = false;
             this.grbPlan.Text = "Plan";
             // 
             // btnBorrar
             // 
-            this.btnBorrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnBorrar.Location = new System.Drawing.Point(104, 109);
+            this.btnBorrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBorrar.Location = new System.Drawing.Point(104, 110);
             this.btnBorrar.Name = "btnBorrar";
             this.btnBorrar.Size = new System.Drawing.Size(75, 23);
             this.btnBorrar.TabIndex = 35;
@@ -138,7 +138,7 @@
             this.AutoSize = true;
             this.Controls.Add(this.grbPlan);
             this.Name = "ucAPlanes";
-            this.Size = new System.Drawing.Size(317, 247);
+            this.Size = new System.Drawing.Size(317, 157);
             this.Load += new System.EventHandler(this.ucAPlanes_Load);
             this.grbPlan.ResumeLayout(false);
             this.grbPlan.PerformLayout();
