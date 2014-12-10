@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Bussines;
 using Entidades;
+using System.Data;
 
 public partial class EstadoAcademico : System.Web.UI.Page
 {
@@ -25,29 +26,43 @@ public partial class EstadoAcademico : System.Web.UI.Page
             cc = new ControllerComision();
             List<Comision> com = cc.find((Alumno)Session["Persona"]);
             Alumno al = (Alumno)Session["Persona"];
-
-            dvgEstadoAcademico.DataSource = com; //cc.find((Alumno)Session["Persona"]);
-            
+            DataTable table = new DataTable();
+            DataColumn dc = new DataColumn();
+            dc.ColumnName = "id";
+            DataColumn dc1 = new DataColumn();
+            dc1.ColumnName = "descripcion";
+            DataColumn dc2 = new DataColumn();
+            dc2.ColumnName = "condicion";
+            table.Columns.Add(dc);
+            table.Columns.Add(dc1);
+            table.Columns.Add(dc2);
             foreach (var item in com)
             {
-               // int indice= item.alumnos.Count;
-                int indice = 0;
-                for (int i = 0; i <= indice; i++)
+                foreach(var dsa in item.alumnos)
 			    {
-                    if (item.alumnos[indice].id == al.id)
+                    if (dsa.id == al.id)
                     {
-                        BoundField bf = new BoundField();
-                        string dsaff = item.alumnos[indice].condicion.ToString();
+                        string condicion = null;
+                        string dsaff = dsa.condicion.ToString();
                         if (dsaff=="0")
                         {
-                            
+                            condicion = "Inscripto";
                         }
-                        bf.DataField = dsaff;
-                        dvgEstadoAcademico.Columns.Add(bf);
-                        dvgEstadoAcademico.DataBind();
+                        else if (dsaff=="1")
+                        {
+                            condicion = "Regular";
+                        }
+                        else
+                        {
+                            condicion = "Aprobado";
+                        }
+                       
+                        table.Rows.Add(item.materia.id.ToString(),item.materia.descripcion.ToString(), condicion);
                     }
 			    }     
             }
+            dvgEstadoAcademico.DataSource = table;
+            dvgEstadoAcademico.DataBind();
         }
     }
 
