@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using Bussines;
 using Entidades;
+using Util;
 
 namespace UserControls
 {
@@ -84,16 +85,23 @@ namespace UserControls
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (txtId.Text == "")
+            if (Validator.validateTexto(txtDescripcion.Text))
             {
-                cp.insert(this.bulidPlan());
+                if (txtId.Text == "")
+                {
+                    cp.insert(this.bulidPlan());
+                }
+                else
+                {
+                    cp.update(this.bulidPlan());
+                    this.enabler(false);
+                }
+                this.clear();
             }
             else
             {
-                cp.update(this.bulidPlan());
-                this.enabler(false);
+                MessageBox.Show("La descripcion debe ser solo de letras");
             }
-            this.clear();
         }
 
         private void ucAPlanes_Load(object sender, EventArgs e)

@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using Bussines;
 using Entidades;
+using Util;
 
 namespace UserControls
 {
@@ -69,8 +70,15 @@ namespace UserControls
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            cm.update(buildMateria());
-            this.clear();
+            if (Validator.validateTexto(txtDescripcion.Text))
+            {
+                cm.update(buildMateria());
+                this.clear();
+            }
+            else
+            {
+                MessageBox.Show("La descripcion debe ser solo letras");
+            }
         }
 
         private void btnBorrar_Click(object sender, EventArgs e)

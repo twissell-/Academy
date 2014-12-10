@@ -156,7 +156,9 @@ div.main
     float:inherit;
     padding: 0px 12px;
     margin: 12px 8px 8px 8px;
-    height:auto;   
+    height:auto; 
+    color:White;  
+    font-weight:bold;
 }
 
 div.menu ul
