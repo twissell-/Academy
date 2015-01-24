@@ -67,18 +67,6 @@ namespace GUI
             }          
         }
 
-        private void tsmEliminarPersona_Click(object sender, EventArgs e)
-        {
-            if (sender == tsmEliminarAlumno)
-            {
-                tsmListadoDeAlumnos_Click(sender, e);
-            }
-            else
-            {
-                tsmListadoDeDocentes_Click(sender, e);
-            }
-        }
-
         private void tsmAgregarMateria_Click(object sender, EventArgs e)
         {
             this.panAdmGral.Controls.Clear();
@@ -134,7 +122,10 @@ namespace GUI
 
         private void tsmListadoDeDocentes_Click(object sender, EventArgs e)
         {
-            //falta
+            this.panAdmGral.Controls.Clear();
+            var uc = new ucListaAlumnos(1);
+            this.panAdmGral.Controls.Add(uc);
+            uc.Dock = DockStyle.Fill;
         }
 
         private void tsmAgregarEspecialidad_Click(object sender, EventArgs e)
@@ -205,7 +196,10 @@ namespace GUI
 
         private void tsmListadoDeAdministrativo_Click(object sender, EventArgs e)
         {
-            //falta
+            this.panAdmGral.Controls.Clear();
+            var uc = new ucListaAlumnos(0);
+            this.panAdmGral.Controls.Add(uc);
+            uc.Dock = DockStyle.Fill;
         }
 
         private void FrmPrincipal_Load(object sender, EventArgs e)
@@ -224,26 +218,17 @@ namespace GUI
 
         private void tsmAdministrativo_Click(object sender, EventArgs e)
         {
-            this.panAdmGral.Controls.Clear();
-            var uc = new ucListaAlumnos(0);
-            this.panAdmGral.Controls.Add(uc);
-            uc.Dock = DockStyle.Fill;
+            //Borrar este metodo
         }
 
         private void tsmAlumnos_Click(object sender, EventArgs e)
         {
-            this.panAdmGral.Controls.Clear();
-            var uc = new ucListaAlumnos(2);
-            this.panAdmGral.Controls.Add(uc);
-            uc.Dock = DockStyle.Fill;
+            //Borrar este metodo
         }
 
         private void tsmDocentes_Click(object sender, EventArgs e)
         {
-            this.panAdmGral.Controls.Clear();
-            var uc = new ucListaAlumnos(1);
-            this.panAdmGral.Controls.Add(uc);
-            uc.Dock = DockStyle.Fill;
+            //Borrar este metodo
         }
 
         private void cerrarSesion()
