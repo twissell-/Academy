@@ -188,28 +188,56 @@ namespace UserControls
                 switch (e.ColumnIndex)  
             	{
                     case 2:
-                        dgvListaDocentes.Rows[e.RowIndex].Cells[2].Value = true;
-                        dgvListaDocentes.Rows[e.RowIndex].Cells[3].Value = false;
-                        dgvListaDocentes.Rows[e.RowIndex].Cells[4].Value = false;
-                        dgvListaDocentes.Rows[e.RowIndex].Cells[5].Value = false;
+                        if (dgvListaDocentes.Rows[e.RowIndex].Cells[2].Value != null && (bool)dgvListaDocentes.Rows[e.RowIndex].Cells[2].Value != false)
+                        {
+                            dgvListaDocentes.Rows[e.RowIndex].Cells[2].Value = false;
+                        }
+                        else
+                        {
+                            dgvListaDocentes.Rows[e.RowIndex].Cells[2].Value = true;
+                            dgvListaDocentes.Rows[e.RowIndex].Cells[3].Value = false;
+                            dgvListaDocentes.Rows[e.RowIndex].Cells[4].Value = false;
+                            dgvListaDocentes.Rows[e.RowIndex].Cells[5].Value = false;
+                        }
                         break;
                     case 3:
-                        dgvListaDocentes.Rows[e.RowIndex].Cells[2].Value = false;
-                        dgvListaDocentes.Rows[e.RowIndex].Cells[3].Value = true;
-                        dgvListaDocentes.Rows[e.RowIndex].Cells[4].Value = false;
-                        dgvListaDocentes.Rows[e.RowIndex].Cells[5].Value = false;
+                        if (dgvListaDocentes.Rows[e.RowIndex].Cells[3].Value != null && (bool)dgvListaDocentes.Rows[e.RowIndex].Cells[3].Value != false)
+                        {
+                            dgvListaDocentes.Rows[e.RowIndex].Cells[3].Value = false;
+                        }
+                        else
+                        {
+                            dgvListaDocentes.Rows[e.RowIndex].Cells[2].Value = false;
+                            dgvListaDocentes.Rows[e.RowIndex].Cells[3].Value = true;
+                            dgvListaDocentes.Rows[e.RowIndex].Cells[4].Value = false;
+                            dgvListaDocentes.Rows[e.RowIndex].Cells[5].Value = false;
+                        }
                         break;
                     case 4:
-                        dgvListaDocentes.Rows[e.RowIndex].Cells[2].Value = false;
-                        dgvListaDocentes.Rows[e.RowIndex].Cells[3].Value = false;
-                        dgvListaDocentes.Rows[e.RowIndex].Cells[4].Value = true;
-                        dgvListaDocentes.Rows[e.RowIndex].Cells[5].Value = false;
+                        if (dgvListaDocentes.Rows[e.RowIndex].Cells[4].Value != null && (bool)dgvListaDocentes.Rows[e.RowIndex].Cells[4].Value != false)
+                        {
+                            dgvListaDocentes.Rows[e.RowIndex].Cells[4].Value = false;
+                        }
+                        else
+                        {
+                            dgvListaDocentes.Rows[e.RowIndex].Cells[2].Value = false;
+                            dgvListaDocentes.Rows[e.RowIndex].Cells[3].Value = false;
+                            dgvListaDocentes.Rows[e.RowIndex].Cells[4].Value = true;
+                            dgvListaDocentes.Rows[e.RowIndex].Cells[5].Value = false;
+                        }
                         break;
                     case 5:
-                        dgvListaDocentes.Rows[e.RowIndex].Cells[2].Value = false;
-                        dgvListaDocentes.Rows[e.RowIndex].Cells[3].Value = false;
-                        dgvListaDocentes.Rows[e.RowIndex].Cells[4].Value = false;
-                        dgvListaDocentes.Rows[e.RowIndex].Cells[5].Value = true;
+                        if (dgvListaDocentes.Rows[e.RowIndex].Cells[5].Value != null && (bool)dgvListaDocentes.Rows[e.RowIndex].Cells[5].Value != false)
+                        {
+                            dgvListaDocentes.Rows[e.RowIndex].Cells[5].Value = false;
+                        }
+                        else
+                        {
+                            dgvListaDocentes.Rows[e.RowIndex].Cells[2].Value = false;
+                            dgvListaDocentes.Rows[e.RowIndex].Cells[3].Value = false;
+                            dgvListaDocentes.Rows[e.RowIndex].Cells[4].Value = false;
+                            dgvListaDocentes.Rows[e.RowIndex].Cells[5].Value = true;
+                        }
                         break;
             		default:
                         break;
