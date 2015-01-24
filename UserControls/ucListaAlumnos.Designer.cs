@@ -63,6 +63,8 @@
             this.dgvListaAlumnos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListaAlumnos.Size = new System.Drawing.Size(694, 283);
             this.dgvListaAlumnos.TabIndex = 0;
+            this.dgvListaAlumnos.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListaAlumnos_CellContentDoubleClick);
+            this.dgvListaAlumnos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListaAlumnos_CellDoubleClick);
             // 
             // idPersona
             // 
@@ -86,61 +88,59 @@
             // 
             // apellidoPersona
             // 
-            this.apellidoPersona.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.apellidoPersona.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.apellidoPersona.DataPropertyName = "apellido";
             this.apellidoPersona.HeaderText = "Apellido";
             this.apellidoPersona.Name = "apellidoPersona";
             this.apellidoPersona.ReadOnly = true;
             this.apellidoPersona.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.apellidoPersona.Width = 69;
             // 
             // nombrePersona
             // 
-            this.nombrePersona.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nombrePersona.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.nombrePersona.DataPropertyName = "nombre";
             this.nombrePersona.HeaderText = "Nombre";
             this.nombrePersona.Name = "nombrePersona";
             this.nombrePersona.ReadOnly = true;
             this.nombrePersona.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.nombrePersona.Width = 69;
             // 
             // nacimientoPersona
             // 
-            this.nacimientoPersona.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.nacimientoPersona.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.nacimientoPersona.DataPropertyName = "nacimiento";
             this.nacimientoPersona.HeaderText = "Fecha de Nac.";
             this.nacimientoPersona.Name = "nacimientoPersona";
             this.nacimientoPersona.ReadOnly = true;
             this.nacimientoPersona.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.nacimientoPersona.Width = 74;
             // 
             // direccionPersona
             // 
-            this.direccionPersona.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.direccionPersona.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.direccionPersona.DataPropertyName = "direccion";
             this.direccionPersona.HeaderText = "Direccion";
             this.direccionPersona.Name = "direccionPersona";
             this.direccionPersona.ReadOnly = true;
             this.direccionPersona.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.direccionPersona.Width = 77;
             // 
             // telefonoPersona
             // 
-            this.telefonoPersona.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.telefonoPersona.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.telefonoPersona.DataPropertyName = "telefono";
             this.telefonoPersona.HeaderText = "Telefono";
             this.telefonoPersona.Name = "telefonoPersona";
             this.telefonoPersona.ReadOnly = true;
             this.telefonoPersona.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.telefonoPersona.Width = 74;
             // 
             // emailPersona
             // 
-            this.emailPersona.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.emailPersona.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.emailPersona.DataPropertyName = "mail";
             this.emailPersona.HeaderText = "E-Mail";
             this.emailPersona.Name = "emailPersona";
             this.emailPersona.ReadOnly = true;
             this.emailPersona.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.emailPersona.Width = 61;
             // 
             // ucListaAlumnos
             // 
@@ -150,6 +150,7 @@
             this.Controls.Add(this.dgvListaAlumnos);
             this.Name = "ucListaAlumnos";
             this.Size = new System.Drawing.Size(720, 323);
+            this.Load += new System.EventHandler(this.ucListaAlumnos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaAlumnos)).EndInit();
             this.ResumeLayout(false);
 

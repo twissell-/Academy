@@ -84,6 +84,7 @@
             this.Controls.Add(this.pnlListado);
             this.Name = "ucMBPersona";
             this.Size = new System.Drawing.Size(741, 344);
+            this.Load += new System.EventHandler(this.ucMBPersona_Load);
             this.pnlModificacion.ResumeLayout(false);
             this.pnlModificacion.PerformLayout();
             this.pnlListado.ResumeLayout(false);

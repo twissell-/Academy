@@ -18,7 +18,6 @@ namespace UserControls
         public ucMBPersona()
         {
             InitializeComponent();
-            this.loader();
         }
 
         public ucMBPersona(int det)
@@ -38,6 +37,11 @@ namespace UserControls
         }
 
         #endregion
+
+        private void ucMBPersona_Load(object sender, EventArgs e)
+        {
+            this.loader();
+        }
 
     }
 }

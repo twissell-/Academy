@@ -62,24 +62,28 @@ namespace UserControls
             }
         }
 
+        private Persona giveSelectedPersona()
+        {
+            return (Persona)dgvListaAlumnos.SelectedRows[0].DataBoundItem;
+        }
+
         #endregion
 
-        private void btnEliminar_Click(object sender, EventArgs e)
+        private void ucListaAlumnos_Load(object sender, EventArgs e)
         {
-            if (this.dgvListaAlumnos.SelectedRows != null)
-            {
-                if (MessageBox.Show("¿Está seguro que desea eliminar a " + 
-                    this.dgvListaAlumnos.SelectedRows[0].Cells["apellidoPersona"].Value + ", " + 
-                    this.dgvListaAlumnos.SelectedRows[0].Cells["nombrePersona"].Value + "?",
-                    "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    controller.delete((Persona)this.dgvListaAlumnos.SelectedRows[0].DataBoundItem);
-                }
+            this.loader();
+        }
 
-            }
-            else
+        private void dgvListaAlumnos_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgvListaAlumnos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (Owner != null)
             {
-                MessageBox.Show("Debe seleccionar una fila para eliminarla", "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Owner.edit(this.giveSelectedPersona());
             }
         }
     }
