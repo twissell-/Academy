@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Entidades;
 using Bussines;
+using System.Data;
 
 public partial class docComisiones : System.Web.UI.Page
 {
@@ -28,11 +29,34 @@ public partial class docComisiones : System.Web.UI.Page
 
         if (!IsPostBack)
         {
-            Materia mat = (Materia)Session["matSel"];
-            lblMateria.Text = mat.descripcion;
-            dvgMateriasDocentes.DataSource = cc.find(mat);
-            dvgMateriasDocentes.DataBind();
             
+            Materia mat = (Materia)Session["matSel"];
+            List<Comision> com=cc.find(mat);
+            lblMateria.Text = mat.descripcion;
+            DataTable table = new DataTable();
+            DataColumn dc = new DataColumn();
+            dc.ColumnName = "id";
+            DataColumn dc1 = new DataColumn();
+            dc1.ColumnName = "turno";
+            table.Columns.Add(dc);
+            table.Columns.Add(dc1);
+            foreach (Comision item in com)
+            {
+                if (item.turno == 0)
+                {
+                    table.Rows.Add(mat.id, "Mañana");
+                }
+                else if (item.turno == 1)
+                {
+                    table.Rows.Add(mat.id, "Tarde");
+                }
+                else
+                {
+                    table.Rows.Add(mat.id, "Noche");
+                }
+            }
+            dvgMateriasDocentes.DataSource = table;
+            dvgMateriasDocentes.DataBind();
         }
         else
         {

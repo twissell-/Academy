@@ -15,11 +15,11 @@ using Util;
 
 namespace GUI
 {
-    public partial class FrmPrincipal0 : Form
+    public partial class FrmLogin : Form
     {
         ControllerAdministrativo cad;
 
-        public FrmPrincipal0()
+        public FrmLogin()
         {
             InitializeComponent();
             cad = new ControllerAdministrativo();
@@ -36,7 +36,7 @@ namespace GUI
         }
         private void login()
         {
-            if (Validator.validateNumero(txtId.Text))
+           if (Validator.validateNumero(txtId.Text))
             {
                 try
                 {
@@ -64,13 +64,21 @@ namespace GUI
             }
             else
             {
-                MessageBox.Show("El Campo Id debe ser un numero", "Id no Valido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+               MessageBox.Show("El Campo Id debe ser un numero", "Id no Valido", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void clear()
         {
             txtId.Clear();
             txtContraseña.Clear();
+        }
+
+        private void txtContraseña_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar=='\r')
+            {
+                this.login(); 
+            }
         }
     }
 }

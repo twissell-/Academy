@@ -1,6 +1,6 @@
 ﻿namespace GUI
 {
-    partial class FrmPrincipal0
+    partial class FrmLogin
     {
         /// <summary>
         /// Required designer variable.
@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrincipal0));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
             this.gpbIngresar = new System.Windows.Forms.GroupBox();
+            this.txtId = new System.Windows.Forms.TextBox();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnIngresar = new System.Windows.Forms.Button();
             this.txtContraseña = new System.Windows.Forms.TextBox();
-            this.txtId = new System.Windows.Forms.TextBox();
             this.lblContraseña = new System.Windows.Forms.Label();
             this.lblId = new System.Windows.Forms.Label();
             this.gpbIngresar.SuspendLayout();
@@ -41,10 +41,10 @@
             // 
             // gpbIngresar
             // 
+            this.gpbIngresar.Controls.Add(this.txtId);
             this.gpbIngresar.Controls.Add(this.btnSalir);
             this.gpbIngresar.Controls.Add(this.btnIngresar);
             this.gpbIngresar.Controls.Add(this.txtContraseña);
-            this.gpbIngresar.Controls.Add(this.txtId);
             this.gpbIngresar.Controls.Add(this.lblContraseña);
             this.gpbIngresar.Controls.Add(this.lblId);
             this.gpbIngresar.Location = new System.Drawing.Point(12, 12);
@@ -53,6 +53,13 @@
             this.gpbIngresar.TabIndex = 0;
             this.gpbIngresar.TabStop = false;
             this.gpbIngresar.Text = "Ingresar";
+            // 
+            // txtId
+            // 
+            this.txtId.Location = new System.Drawing.Point(108, 20);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(163, 20);
+            this.txtId.TabIndex = 2;
             // 
             // btnSalir
             // 
@@ -81,14 +88,7 @@
             this.txtContraseña.Size = new System.Drawing.Size(163, 20);
             this.txtContraseña.TabIndex = 3;
             this.txtContraseña.UseSystemPasswordChar = true;
-            this.txtContraseña.Enter += new System.EventHandler(this.btnIngresar_Click);
-            // 
-            // txtId
-            // 
-            this.txtId.Location = new System.Drawing.Point(108, 27);
-            this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(163, 20);
-            this.txtId.TabIndex = 2;
+            this.txtContraseña.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtContraseña_KeyPress);
             // 
             // lblContraseña
             // 
@@ -117,7 +117,9 @@
             this.ClientSize = new System.Drawing.Size(307, 161);
             this.ControlBox = false;
             this.Controls.Add(this.gpbIngresar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "FrmPrincipal0";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Zahir Academia";
@@ -133,8 +135,8 @@
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnIngresar;
         private System.Windows.Forms.TextBox txtContraseña;
-        private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Label lblContraseña;
         private System.Windows.Forms.Label lblId;
+        private System.Windows.Forms.TextBox txtId;
     }
 }
