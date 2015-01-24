@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using Bussines;
 using Entidades;
+using Util;
 
 namespace UserControls
 {
@@ -62,8 +63,15 @@ namespace UserControls
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            ce.insert(new Especialidad(this.Owner != null ? Convert.ToInt32(txtId.Text) : 0, txtDescripcion.Text));
-            this.clear();
+            if (Validator.validateTexto(txtDescripcion.Text))
+            {
+                ce.insert(new Especialidad(this.Owner != null ? Convert.ToInt32(txtId.Text) : 0, txtDescripcion.Text));
+                this.clear();
+            }
+            else
+            {
+                MessageBox.Show("La descripcion de la especialidad debe ser solo letras");
+            }
         }
 
         private void btnBorrar_Click(object sender, EventArgs e)

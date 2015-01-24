@@ -67,7 +67,8 @@ public partial class Comisiones : System.Web.UI.Page
                 }
                 catch (NullReferenceException)
                 {
-                    Page.Response.Redirect("~/pagAlumno.aspx");
+                    Page.Response.Redirect("~/inscMateria.aspx");
+                    Session["matSel"] = null;
                 }
             }
         }

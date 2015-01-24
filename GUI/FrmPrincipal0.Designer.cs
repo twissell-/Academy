@@ -81,6 +81,7 @@
             this.txtContraseña.Size = new System.Drawing.Size(163, 20);
             this.txtContraseña.TabIndex = 3;
             this.txtContraseña.UseSystemPasswordChar = true;
+            this.txtContraseña.Enter += new System.EventHandler(this.btnIngresar_Click);
             // 
             // txtId
             // 

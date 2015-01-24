@@ -8,7 +8,7 @@
                 <form id="formLogin" class="form-signin" runat="server">
                 <asp:TextBox ID="txtUss" type="text" class="form-control" placeholder="Usuario" runat="server" required="autofocus"></asp:TextBox><br />
                 <asp:TextBox ID="txtPss" type="password" class="form-control" placeholder="Contraseña" runat="server" required="autofocus"></asp:TextBox>
-                <asp:Button ID="btnIngresar" class="btn btn-lg btn-primary btn-block" runat="server" onclick="btnIngresar_onclick" Text="INGRESAR" />
+                <asp:Button ID="btnIngresar" runat="server" onclick="btnIngresar_onclick" Text="INGRESAR" />
                 </form>               
             </fieldset>
             <asp:Label ID="error" runat="server"></asp:Label>          

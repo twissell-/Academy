@@ -184,6 +184,10 @@
       <Project>{C5FB7D05-C21C-4952-82AA-217B371E374C}</Project>
       <Name>Entidades</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Util\Util.csproj">
+      <Project>{F8706855-BAA4-427B-90C8-7A4478E6009A}</Project>
+      <Name>Util</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="ucEspecialidad\ucMBEspecialidad.resx">

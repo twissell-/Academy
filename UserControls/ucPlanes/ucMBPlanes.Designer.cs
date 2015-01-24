@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.pnlListado = new System.Windows.Forms.Panel();
-            this.pnlModificaciones = new System.Windows.Forms.Panel();
             this.ucListado = new UserControls.ucListaPlanes();
+            this.pnlModificaciones = new System.Windows.Forms.Panel();
             this.ucModificaciones = new UserControls.ucAPlanes();
             this.pnlListado.SuspendLayout();
             this.pnlModificaciones.SuspendLayout();
@@ -45,15 +45,6 @@
             this.pnlListado.Size = new System.Drawing.Size(549, 407);
             this.pnlListado.TabIndex = 0;
             // 
-            // pnlModificaciones
-            // 
-            this.pnlModificaciones.Controls.Add(this.ucModificaciones);
-            this.pnlModificaciones.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnlModificaciones.Location = new System.Drawing.Point(549, 0);
-            this.pnlModificaciones.Name = "pnlModificaciones";
-            this.pnlModificaciones.Size = new System.Drawing.Size(291, 407);
-            this.pnlModificaciones.TabIndex = 1;
-            // 
             // ucListado
             // 
             this.ucListado.AutoSize = true;
@@ -64,6 +55,15 @@
             this.ucListado.Size = new System.Drawing.Size(549, 407);
             this.ucListado.TabIndex = 0;
             // 
+            // pnlModificaciones
+            // 
+            this.pnlModificaciones.Controls.Add(this.ucModificaciones);
+            this.pnlModificaciones.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pnlModificaciones.Location = new System.Drawing.Point(549, 0);
+            this.pnlModificaciones.Name = "pnlModificaciones";
+            this.pnlModificaciones.Size = new System.Drawing.Size(291, 407);
+            this.pnlModificaciones.TabIndex = 1;
+            // 
             // ucModificaciones
             // 
             this.ucModificaciones.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
@@ -71,6 +71,7 @@
             this.ucModificaciones.AutoSize = true;
             this.ucModificaciones.Location = new System.Drawing.Point(3, 3);
             this.ucModificaciones.Name = "ucModificaciones";
+            this.ucModificaciones.Owner = null;
             this.ucModificaciones.Size = new System.Drawing.Size(284, 264);
             this.ucModificaciones.TabIndex = 0;
             // 

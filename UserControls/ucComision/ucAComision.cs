@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using Bussines;
 using Entidades;
+using Util;
 
 namespace UserControls
 {
@@ -104,7 +105,7 @@ namespace UserControls
                     }
                 }
             }
-            return new Comision(txtId.Text == "" ? 0 : Convert.ToInt32(txtId.Text), Convert.ToInt32(txtAñoCursado.Text), (Materia)cmbMateria.SelectedItem, docentes, al, (int)cmbTurno.SelectedValue);
+                return new Comision(txtId.Text == "" ? 0 : Convert.ToInt32(txtId.Text), Convert.ToInt32(txtAñoCursado.Text), (Materia)cmbMateria.SelectedItem, docentes, al, (int)cmbTurno.SelectedValue);
         }
 
         public void edit(Comision c)
@@ -168,9 +169,16 @@ namespace UserControls
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            cc.insert(this.buildComision());
-            this.clear();
-            this.loader();
+            if (Validator.validateNumero(txtAñoCursado.Text))
+            {
+                cc.insert(this.buildComision());
+                this.clear();
+                this.loader();
+            }
+            else
+            {
+                MessageBox.Show("El año de cursado deben ser solo numeros");
+            }
         }
 
         private void dgvListaDocentes_CellClick(object sender, DataGridViewCellEventArgs e)
