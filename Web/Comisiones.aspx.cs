@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Entidades;
 using Bussines;
+using System.Data;
 
 public partial class Comisiones : System.Web.UI.Page
 {
@@ -33,7 +34,32 @@ public partial class Comisiones : System.Web.UI.Page
             if (!IsPostBack)
             {
                 List<Comision> comTodas = cc.find(mat);
-                dvgComisionesAlumnos.DataSource = comTodas;
+                DataTable table = new DataTable();
+                DataColumn dc = new DataColumn();
+                dc.ColumnName = "id";
+                DataColumn dc1 = new DataColumn();
+                dc1.ColumnName = "turno";
+                DataColumn dc2 = new DataColumn();
+                dc2.ColumnName = "materia";
+                table.Columns.Add(dc);
+                table.Columns.Add(dc1);
+                table.Columns.Add(dc2);
+                foreach (Comision com in comTodas)
+                {
+                    if (com.turno==0)
+                    {
+                        table.Rows.Add(com.id, "Mañana", com.materia);
+                    }
+                    else if (com.turno==1)
+                    {
+                        table.Rows.Add(com.id, "Tarde", com.materia);
+                    }
+                    else
+                    {
+                        table.Rows.Add(com.id, "Noche" , com.materia);
+                    }
+                }
+                dvgComisionesAlumnos.DataSource = table;
                 dvgComisionesAlumnos.DataBind();
                 if (comTodas.Count==0)
                 {
