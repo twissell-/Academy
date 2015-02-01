@@ -1,6 +1,6 @@
 ﻿namespace UserControls
 {
-    partial class ucListaAlumnos
+    partial class ucListaPersona
     {
         /// <summary> 
         /// Variable del diseñador requerida.

@@ -41,10 +41,10 @@ namespace UserControls
 
         #endregion
 
+
         private void ucMBPersona_Load(object sender, EventArgs e)
         {
             this.loader();
         }
-
     }
 }

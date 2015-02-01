@@ -31,6 +31,7 @@ namespace Entidades
         {
             this.cargo = cargo;
         }
+        public Docente() { }
        
     }
      

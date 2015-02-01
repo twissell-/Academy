@@ -20,5 +20,6 @@ namespace Entidades
         {
             this.id = id;
         }
+        public Administrativo() { }
     }
 }

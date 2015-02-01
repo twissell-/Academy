@@ -106,17 +106,17 @@
     <Compile Include="ucEspecialidad\ucAEspecialidad.Designer.cs">
       <DependentUpon>ucAEspecialidad.cs</DependentUpon>
     </Compile>
-    <Compile Include="ucAPersona.cs">
+    <Compile Include="ucPersona\ucAPersona.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucAPersona.Designer.cs">
+    <Compile Include="ucPersona\ucAPersona.Designer.cs">
       <DependentUpon>ucAPersona.cs</DependentUpon>
     </Compile>
-    <Compile Include="ucListaAlumnos.cs">
+    <Compile Include="ucPersona\ucListaPersona.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucListaAlumnos.Designer.cs">
-      <DependentUpon>ucListaAlumnos.cs</DependentUpon>
+    <Compile Include="ucPersona\ucListaPersona.Designer.cs">
+      <DependentUpon>ucListaPersona.cs</DependentUpon>
     </Compile>
     <Compile Include="ucComision\ucListaComisiones.cs">
       <SubType>UserControl</SubType>
@@ -125,12 +125,6 @@
       <DependentUpon>ucListaComisiones.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ucListaDocentes.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ucListaDocentes.Designer.cs">
-      <DependentUpon>ucListaDocentes.cs</DependentUpon>
-    </Compile>
     <Compile Include="ucMateria\ucListaMateria.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -155,10 +149,10 @@
     <Compile Include="ucPlanes\ucListaPlanes.Designer.cs">
       <DependentUpon>ucListaPlanes.cs</DependentUpon>
     </Compile>
-    <Compile Include="ucMBPersona.cs">
+    <Compile Include="ucPersona\ucMBPersona.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucMBPersona.Designer.cs">
+    <Compile Include="ucPersona\ucMBPersona.Designer.cs">
       <DependentUpon>ucMBPersona.cs</DependentUpon>
     </Compile>
     <Compile Include="ucPlanes\ucAPlanes.cs">
@@ -205,17 +199,14 @@
     <EmbeddedResource Include="ucEspecialidad\ucAEspecialidad.resx">
       <DependentUpon>ucAEspecialidad.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucAPersona.resx">
+    <EmbeddedResource Include="ucPersona\ucAPersona.resx">
       <DependentUpon>ucAPersona.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucListaAlumnos.resx">
-      <DependentUpon>ucListaAlumnos.cs</DependentUpon>
+    <EmbeddedResource Include="ucPersona\ucListaPersona.resx">
+      <DependentUpon>ucListaPersona.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ucComision\ucListaComisiones.resx">
       <DependentUpon>ucListaComisiones.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ucListaDocentes.resx">
-      <DependentUpon>ucListaDocentes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ucMateria\ucListaMateria.resx">
       <DependentUpon>ucListaMateria.cs</DependentUpon>
@@ -229,7 +220,7 @@
     <EmbeddedResource Include="ucPlanes\ucListaPlanes.resx">
       <DependentUpon>ucListaPlanes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucMBPersona.resx">
+    <EmbeddedResource Include="ucPersona\ucMBPersona.resx">
       <DependentUpon>ucMBPersona.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ucPlanes\ucAPlanes.resx">

@@ -11,19 +11,19 @@ using Entidades;
 
 namespace UserControls
 {
-    public partial class ucListaAlumnos : UserControl
+    public partial class ucListaPersona : UserControl
     {
         private IControllerPersona controller;
         public ucAPersona Owner { get; set; }
         public int det { get; set; }
 
 
-        public ucListaAlumnos()
+        public ucListaPersona()
         {
             InitializeComponent();
         }
 
-        public ucListaAlumnos(int det)
+        public ucListaPersona(int det)
             :this()
             //det 
             //0: administrativo

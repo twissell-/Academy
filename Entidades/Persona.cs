@@ -29,6 +29,7 @@ namespace Entidades
             this.mail = mail;
             this.nacimiento = nacimiento;
             this.password = Hasher.toMD5(password);
-        }        
+        }
+        public Persona() { }
     }
 }
