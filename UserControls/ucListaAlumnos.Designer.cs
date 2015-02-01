@@ -63,7 +63,6 @@
             this.dgvListaAlumnos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListaAlumnos.Size = new System.Drawing.Size(694, 283);
             this.dgvListaAlumnos.TabIndex = 0;
-            this.dgvListaAlumnos.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListaAlumnos_CellContentDoubleClick);
             this.dgvListaAlumnos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListaAlumnos_CellDoubleClick);
             // 
             // idPersona

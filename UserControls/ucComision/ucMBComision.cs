@@ -14,7 +14,7 @@ namespace UserControls
         public ucMBComision()
         {
             InitializeComponent();
-            this.loader();
+            //this.loader(); borrar si funciona
         }
 
         #region Metodos Propios

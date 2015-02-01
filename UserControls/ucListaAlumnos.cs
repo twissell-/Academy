@@ -15,7 +15,7 @@ namespace UserControls
     {
         private IControllerPersona controller;
         public ucAPersona Owner { get; set; }
-        public int det { get; private set; }
+        public int det { get; set; }
 
 
         public ucListaAlumnos()
@@ -62,6 +62,12 @@ namespace UserControls
             }
         }
 
+        public void reload()
+        {
+            InitializeComponent();
+            loader();
+        }
+
         private Persona giveSelectedPersona()
         {
             return (Persona)dgvListaAlumnos.SelectedRows[0].DataBoundItem;
@@ -72,11 +78,6 @@ namespace UserControls
         private void ucListaAlumnos_Load(object sender, EventArgs e)
         {
             this.loader();
-        }
-
-        private void dgvListaAlumnos_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private void dgvListaAlumnos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

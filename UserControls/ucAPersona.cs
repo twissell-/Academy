@@ -71,6 +71,10 @@ namespace UserControls
             this.txtTelefono.Clear();
             this.txtPassword.Clear();
             this.txtConfirmar.Clear();
+            if (this.Owner != null)
+            {
+                this.Enabled = false;
+            }
         }
 
         #endregion
@@ -101,9 +105,5 @@ namespace UserControls
             }
             this.clear();
         }
-
- 
-
-
     }
 }

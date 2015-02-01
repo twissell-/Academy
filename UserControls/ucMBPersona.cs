@@ -24,15 +24,18 @@ namespace UserControls
             :this()
         {
             this.det = det;
+            this.ucListado.det = det;
+            ucModificaciones.Owner = this.ucListado;
+            ucListado.Owner = this.ucModificaciones;
         }
 
         #region Metodos Propios
 
         private void loader()
         {
-            ucListado = new ucListaAlumnos(this.det);
-            ucModificaciones.Owner = ucListado;
-            ucListado.Owner = ucModificaciones;
+            //this.ucListado = new ucListaAlumnos(this.det);
+            //ucModificaciones.Owner = this.ucListado;
+            //ucListado.Owner = this.ucModificaciones;
             ucModificaciones.Enabled = false;
         }
 
