@@ -18,6 +18,8 @@ namespace UserControls
         private ControllerTipo ct;
         private ControllerAdministrativo cad;
         public ucListaPersona Owner { get; set; }
+
+
         private Persona aux = null;
         String t = "";
 
