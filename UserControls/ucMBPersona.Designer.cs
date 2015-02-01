@@ -31,7 +31,7 @@
             this.pnlModificacion = new System.Windows.Forms.Panel();
             this.ucModificaciones = new UserControls.ucAPersona();
             this.pnlListado = new System.Windows.Forms.Panel();
-            this.ucListado = new UserControls.ucListaAlumnos();
+            this.ucListado = new UserControls.ucListaPersona();
             this.pnlModificacion.SuspendLayout();
             this.pnlListado.SuspendLayout();
             this.SuspendLayout();
@@ -98,7 +98,7 @@
         private System.Windows.Forms.Panel pnlModificacion;
         private ucAPersona ucModificaciones;
         private System.Windows.Forms.Panel pnlListado;
-        private ucListaAlumnos ucListado;
+        private ucListaPersona ucListado;
 
     }
 }

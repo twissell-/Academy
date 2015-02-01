@@ -17,7 +17,7 @@ namespace UserControls
         private ControllerDocente cd;
         private ControllerTipo ct;
         private ControllerAdministrativo cad;
-        public ucListaAlumnos Owner { get; set; }
+        public ucListaPersona Owner { get; set; }
 
 
         public ucAPersona()

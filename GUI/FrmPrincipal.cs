@@ -115,7 +115,7 @@ namespace GUI
         private void tsmListadoDeAlumnos_Click(object sender, EventArgs e)
         {
             this.panAdmGral.Controls.Clear();
-            var uc = new ucListaAlumnos(2);
+            var uc = new ucListaPersona(2);
             this.panAdmGral.Controls.Add(uc);
             uc.Dock = DockStyle.Fill;
         }
@@ -123,7 +123,7 @@ namespace GUI
         private void tsmListadoDeDocentes_Click(object sender, EventArgs e)
         {
             this.panAdmGral.Controls.Clear();
-            var uc = new ucListaAlumnos(1);
+            var uc = new ucListaPersona(1);
             this.panAdmGral.Controls.Add(uc);
             uc.Dock = DockStyle.Fill;
         }
@@ -197,7 +197,7 @@ namespace GUI
         private void tsmListadoDeAdministrativo_Click(object sender, EventArgs e)
         {
             this.panAdmGral.Controls.Clear();
-            var uc = new ucListaAlumnos(0);
+            var uc = new ucListaPersona(0);
             this.panAdmGral.Controls.Add(uc);
             uc.Dock = DockStyle.Fill;
         }
