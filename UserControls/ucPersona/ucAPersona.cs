@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using Bussines;
 using Entidades;
+using Util;
 
 namespace UserControls
 {
@@ -17,6 +18,7 @@ namespace UserControls
         private ControllerDocente cd;
         private ControllerTipo ct;
         private ControllerAdministrativo cad;
+        private ControllerComision cc;
         public ucListaPersona Owner { get; set; }     
 
         public ucAPersona()
@@ -55,6 +57,7 @@ namespace UserControls
             this.cd = new ControllerDocente();
             this.cad = new ControllerAdministrativo();
             this.ct = new ControllerTipo();
+            this.cc = new ControllerComision();
             this.cmbTipo.DataSource = ct.find();
             btnBorrar.Enabled = btnBorrar.Visible = false;
         }
@@ -80,79 +83,100 @@ namespace UserControls
 
         private void btnBorrar_Click(object sender, EventArgs e)
         {
-            Persona aux = null;
-            String t = "";
-            getRol(t,aux);
+            Persona aux = getRol();
+            String t = null; 
+      
             int id = 0;
             if (int.TryParse(txtId.Text, out id))
             {
-
-                if (aux is Administrativo)
+                if (aux is Docente)
                 {
-                    aux = (Administrativo)cad.find(id);
-                    cad.delete(aux);
-                }
-                else if (aux is Docente)
-                {
+                    t = "Docente";
                     aux = (Docente)cd.find(id);
+                    List<Comision>com=cc.find((Docente)aux);
+                    if (com.Count!=0)
+                    {
+                        foreach (Comision item in com)
+                        {
+                            cc.upComision((Docente)aux, item);
+                        }
+                    }
                     cd.delete(aux);
-                }
-                else
-                {
-                    aux = (Alumno)ca.find(id);
-                    ca.delete(aux);
-                }
+                    
+                } else if(aux is Alumno)
+                    {
+                        t = "Alumno";
+                        aux = (Alumno)ca.find(id);
+                        List<Comision> com = cc.find((Alumno)aux);
+                        if (com.Count!=0)
+                        {
+                            foreach (Comision item in com)
+                            {
+                                cc.upComision((Alumno)aux, item);
+                            }    
+                        }
+                        ca.delete(aux);
+                        
+                    }else {
+                        t = "Administrativo";
+                        aux = (Administrativo)cad.find(id);
+                        cad.delete(aux);
+                        }
+                }            
+            Owner.reload();
+            Owner.Refresh();
+            Owner.Update();
+            this.loader();
                 MessageBox.Show(t + " eliminado con exito");
-            }
-            this.clear();
-            
+                this.clear();
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
-        {
-            Persona aux = null;
+        {           
+            Persona aux = getRol(); 
             if (this.Owner == null)
             {
                 if (aux is Administrativo)
                 {
                     cad.insert(new Administrativo(txtDni.Text, txtApellido.Text, txtNombre.Text, txtTelefono.Text,
-                        txtDireccion.Text, txtMail.Text, txtNacimiento.Text, txtPassword.Text));
+                        txtDireccion.Text, txtMail.Text, txtNacimiento.Text, Hasher.toMD5(txtPassword.Text)));
                 }
                 else if (aux is Administrativo)
                 {
                     cd.insert(new Docente(txtDni.Text, txtApellido.Text, txtNombre.Text, txtTelefono.Text,
-                        txtDireccion.Text, txtMail.Text, txtNacimiento.Text, txtPassword.Text));
+                        txtDireccion.Text, txtMail.Text, txtNacimiento.Text, Hasher.toMD5(txtPassword.Text)));
                 }
                 else
                 {
                     ca.insert(new Alumno(txtDni.Text, txtApellido.Text, txtNombre.Text, txtTelefono.Text,
-                        txtDireccion.Text, txtMail.Text, txtNacimiento.Text, txtPassword.Text));
+                        txtDireccion.Text, txtMail.Text, txtNacimiento.Text, Hasher.toMD5(txtPassword.Text)));
                 }
 
             }
             else
             {
-                String t = "";
-               
-                getRol(t, aux);
+                String t = null;
                 int id = 0;
                 if (int.TryParse(txtId.Text, out id))
                 {
 
                     if (aux is Administrativo)
                     {
+                        t = "Adminitrativo";
                         aux = (Administrativo)cad.find(id);
                         completarDatos(aux);
                         cad.update(aux);
                     }
                     else if (aux is Docente)
                     {
+                        t = "Docente";
                         aux = (Docente)cd.find(id);
                         completarDatos(aux);
                         cd.update(aux);
                     }
                     else
                     {
+                        t = "Alumno";
                         aux = (Alumno)ca.find(id);
                         completarDatos(aux);
                         ca.update(aux);
@@ -163,25 +187,24 @@ namespace UserControls
             }
         }
 
-        private void getRol(String t,Persona aux)
+        private Persona getRol()
         {
+            Persona aux = null;
             switch (((Tipo)cmbTipo.SelectedItem).id)
             {
                 case 0:
                     aux = new Administrativo();
-                    t = "Administrativo";
                     break;
                 case 1:
                     aux = new Docente();
-                    t = "Docente";
                     break;
                 case 2:
                     aux = new Alumno();
-                    t = "Alumno";
                     break;
                 default:
                     break;
             }
+            return aux;
         }
 
         private void completarDatos(Persona aux)
@@ -193,7 +216,14 @@ namespace UserControls
             aux.direccion = txtDireccion.Text;
             aux.mail = txtMail.Text;
             aux.nacimiento = txtNacimiento.Text;
-           // aux.password = txtPassword.Text;
+            if (txtPassword.Text!=null && txtPassword.Text==txtConfirmar.Text)
+            {
+                aux.password = Hasher.toMD5(txtPassword.Text);
+            }
+            else if (txtPassword.Text != null && txtPassword.Text != txtConfirmar.Text)
+            {
+                MessageBox.Show("Las contraseñas no coinciden");
+            }
         }
     }
 }

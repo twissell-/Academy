@@ -26,7 +26,7 @@
             <SortedDescendingCellStyle BackColor="#D8D8F0" />
             <SortedDescendingHeaderStyle BackColor="#3E3277" />
         </asp:GridView>
-         <asp:Label ID="lblNoMaterias" runat="server"></asp:Label>
+         <asp:Label ID="lblNoMaterias" runat="server"></asp:Label><br />
        <asp:Button ID="btnVolver" runat="server" OnClick="btnVolver_Click" Text="Volver" />
       
     </form> 

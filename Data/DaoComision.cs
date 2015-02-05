@@ -116,5 +116,17 @@ namespace Data
             }
             save(obj);
         }
+        public void actualizarComision(Alumno a, Comision com)
+        {
+            Alumno al = com.alumnos.Find(x => x.id == (a.id));
+            com.alumnos.Remove(al);
+            this.update(com);
+        }
+        public void actualizarComision(Docente d, Comision com)
+        {
+            Docente doc = com.docentes.Find(x => x.id == (d.id));
+            com.docentes.Remove(doc);
+            this.update(com);
+        }
     }
 }

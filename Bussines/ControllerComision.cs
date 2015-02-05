@@ -55,5 +55,13 @@ namespace Bussines
         {
             return dao.find(a);
         }
+        public void upComision(Alumno a, Comision c)
+        {
+            dao.actualizarComision(a, c);
+        }
+        public void upComision(Docente d, Comision c)
+        {
+            dao.actualizarComision(d, c);
+        }
     }
 }
