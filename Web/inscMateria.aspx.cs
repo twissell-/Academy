@@ -34,10 +34,11 @@ public partial class inscMateria : System.Web.UI.Page
                 List<Comision> comi = new List<Comision>();
                 List<Materia> materias = new List<Materia>();
                 materias = cm.find();
-                comisionesCursando = cc.find((Alumno)Session["Persona"]);
+                Alumno a=(Alumno)Session["Persona"];
+                comisionesCursando = cc.find(a);
                 foreach (Comision item in comisionesCursando)
                 {
-                    var mr =materias.Find(x => x.id==(item.materia.id));
+                    Materia mr =materias.Find(x => x.id==(item.materia.id));
                     materias.Remove(mr);
                 }
                 dvgMaterias.DataSource = materias;

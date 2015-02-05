@@ -25,44 +25,52 @@ public partial class EstadoAcademico : System.Web.UI.Page
         {
             cc = new ControllerComision();
             List<Comision> com = cc.find((Alumno)Session["Persona"]);
-            Alumno al = (Alumno)Session["Persona"];
-            DataTable table = new DataTable();
-            DataColumn dc = new DataColumn();
-            dc.ColumnName = "id";
-            DataColumn dc1 = new DataColumn();
-            dc1.ColumnName = "descripcion";
-            DataColumn dc2 = new DataColumn();
-            dc2.ColumnName = "condicion";
-            table.Columns.Add(dc);
-            table.Columns.Add(dc1);
-            table.Columns.Add(dc2);
-            foreach (var item in com)
+            if (com.Count == 0)
             {
-                foreach(var dsa in item.alumnos)
-			    {
-                    if (dsa.id == al.id)
-                    {
-                        string condicion = null;
-                        string dsaff = dsa.condicion.ToString();
-                        if (dsaff=="0")
-                        {
-                            condicion = "Inscripto";
-                        }
-                        else if (dsaff=="1")
-                        {
-                            condicion = "Regular";
-                        }
-                        else
-                        {
-                            condicion = "Aprobado";
-                        }
-                       
-                        table.Rows.Add(item.materia.id.ToString(),item.materia.descripcion.ToString(), condicion);
-                    }
-			    }     
+                lblNoMaterias.Text = "Usted no esta inscripto/a a ninguna materia";
             }
-            dvgEstadoAcademico.DataSource = table;
-            dvgEstadoAcademico.DataBind();
+            else
+            {
+
+                Alumno al = (Alumno)Session["Persona"];
+                DataTable table = new DataTable();
+                DataColumn dc = new DataColumn();
+                dc.ColumnName = "id";
+                DataColumn dc1 = new DataColumn();
+                dc1.ColumnName = "descripcion";
+                DataColumn dc2 = new DataColumn();
+                dc2.ColumnName = "condicion";
+                table.Columns.Add(dc);
+                table.Columns.Add(dc1);
+                table.Columns.Add(dc2);
+                foreach (var item in com)
+                {
+                    foreach (var dsa in item.alumnos)
+                    {
+                        if (dsa.id == al.id)
+                        {
+                            string condicion = null;
+                            string dsaff = dsa.condicion.ToString();
+                            if (dsaff == "0")
+                            {
+                                condicion = "Inscripto";
+                            }
+                            else if (dsaff == "1")
+                            {
+                                condicion = "Regular";
+                            }
+                            else
+                            {
+                                condicion = "Aprobado";
+                            }
+
+                            table.Rows.Add(item.materia.id.ToString(), item.materia.descripcion.ToString(), condicion);
+                        }
+                    }
+                }
+                dvgEstadoAcademico.DataSource = table;
+                dvgEstadoAcademico.DataBind();
+            }
         }
     }
 

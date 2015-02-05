@@ -48,5 +48,6 @@ public partial class cambPass : System.Web.UI.Page
                 Persona per = ic.find(p.id);
                 per.password = Hasher.toMD5(txtPassN.Text);
                 ic.update(per);
+                lblOk.Text = "Contraseña cambiada con exito";
     }
 }

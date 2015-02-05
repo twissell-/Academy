@@ -17,12 +17,7 @@ namespace UserControls
         private ControllerDocente cd;
         private ControllerTipo ct;
         private ControllerAdministrativo cad;
-        public ucListaPersona Owner { get; set; }
-
-
-        private Persona aux = null;
-        String t = "";
-
+        public ucListaPersona Owner { get; set; }     
 
         public ucAPersona()
         {
@@ -85,7 +80,9 @@ namespace UserControls
 
         private void btnBorrar_Click(object sender, EventArgs e)
         {
-            getRol();
+            Persona aux = null;
+            String t = "";
+            getRol(t,aux);
             int id = 0;
             if (int.TryParse(txtId.Text, out id))
             {
@@ -113,8 +110,7 @@ namespace UserControls
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            getRol();
-
+            Persona aux = null;
             if (this.Owner == null)
             {
                 if (aux is Administrativo)
@@ -136,6 +132,9 @@ namespace UserControls
             }
             else
             {
+                String t = "";
+               
+                getRol(t, aux);
                 int id = 0;
                 if (int.TryParse(txtId.Text, out id))
                 {
@@ -164,7 +163,7 @@ namespace UserControls
             }
         }
 
-        private void getRol()
+        private void getRol(String t,Persona aux)
         {
             switch (((Tipo)cmbTipo.SelectedItem).id)
             {

@@ -31,6 +31,7 @@ namespace Data
             //  recupero los objetos Alumno
             foreach (MapperEstado aux in mapper.alumnos)
             {
+                
                 Alumno a = (Alumno)da.find(aux.id);
                 a.condicion = aux.estado;
                 alumnos.Add(a);
@@ -115,6 +116,5 @@ namespace Data
             }
             save(obj);
         }
-
     }
 }
