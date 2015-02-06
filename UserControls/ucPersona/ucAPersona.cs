@@ -124,8 +124,6 @@ namespace UserControls
                         }
                 }            
             Owner.reload();
-            Owner.Refresh();
-            Owner.Update();
             this.loader();
                 MessageBox.Show(t + " eliminado con exito");
                 this.clear();
@@ -184,6 +182,7 @@ namespace UserControls
                     MessageBox.Show(t+" modificado con exito");
                 }
                 this.clear();
+                Owner.reload();
             }
         }
 

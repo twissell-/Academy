@@ -64,8 +64,7 @@ namespace UserControls
 
         public void reload()
         {
-            InitializeComponent();
-            loader();
+            this.loader();
         }
 
         private Persona giveSelectedPersona()
