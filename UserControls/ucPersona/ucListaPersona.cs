@@ -85,6 +85,7 @@ namespace UserControls
             {
                 Owner.edit(this.giveSelectedPersona());
             }
+            
         }
     }
 }
