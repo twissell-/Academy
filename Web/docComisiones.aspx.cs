@@ -44,15 +44,15 @@ public partial class docComisiones : System.Web.UI.Page
             {
                 if (item.turno == 0)
                 {
-                    table.Rows.Add(mat.id, "Mañana");
+                    table.Rows.Add(item.id, "Mañana");
                 }
                 else if (item.turno == 1)
                 {
-                    table.Rows.Add(mat.id, "Tarde");
+                    table.Rows.Add(item.id, "Tarde");
                 }
                 else
                 {
-                    table.Rows.Add(mat.id, "Noche");
+                    table.Rows.Add(item.id, "Noche");
                 }
             }
             dvgMateriasDocentes.DataSource = table;
