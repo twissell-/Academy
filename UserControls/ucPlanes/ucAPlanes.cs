@@ -80,6 +80,7 @@ namespace UserControls
         {
             cp.delete(bulidPlan());
             this.clear();
+            MessageBox.Show("Plan eliminado con exito");
             this.enabler(false);
         }
 
@@ -90,17 +91,19 @@ namespace UserControls
                 if (txtId.Text == "")
                 {
                     cp.insert(this.bulidPlan());
+                    MessageBox.Show("Plan registrado con exito");
                 }
                 else
                 {
                     cp.update(this.bulidPlan());
                     this.enabler(false);
+                    MessageBox.Show("Plan modificado con exito");
                 }
                 this.clear();
             }
             else
             {
-                MessageBox.Show("La descripcion debe ser solo de letras");
+                MessageBox.Show("La descripcion no puede estar vacia");
             }
         }
 

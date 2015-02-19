@@ -13,19 +13,19 @@ namespace Entidades
         public decimal hsTotales { get; set; } // null
         public Plan plan { get; set; }
 
-        public Materia(int id, String descripcion, decimal hsSemanales, decimal hsTotales, Plan plan) 
+        public Materia(/*int id,*/ String descripcion, decimal hsSemanales, decimal hsTotales, Plan plan) 
         {
-            this.id = id;
+          //  this.id = id;
             this.descripcion = descripcion;
             this.hsSemanales = hsSemanales;
             this.hsTotales = hsTotales;
             this.plan = plan;
         }
 
-        public Materia(String descripcion, decimal hsSemanales, decimal hsTotales, Plan plan)
-            : this(0, descripcion, hsSemanales, hsTotales, plan)
+        public Materia(int id,String descripcion, decimal hsSemanales, decimal hsTotales, Plan plan)
+           : this(descripcion, hsSemanales, hsTotales, plan)
         {
-
+            this.id = id;
         }
 
         public override string ToString()

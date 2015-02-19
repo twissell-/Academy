@@ -16,6 +16,7 @@ namespace UserControls
     {
         ControllerPlan cp;
         ControllerMateria cm;
+        ControllerComision cc;
 
         public ucMBMateria()
         {
@@ -28,6 +29,7 @@ namespace UserControls
         {
             cp = new ControllerPlan();
             cm = new ControllerMateria();
+            cc = new ControllerComision();
             cmbPlan.DisplayMember = "descripcion";
             cmbPlan.ValueMember = "id";
             cmbPlan.DataSource = cp.find();
@@ -68,7 +70,7 @@ namespace UserControls
 
         private Materia buildMateria()
         {
-            return new Materia(Convert.ToInt32(txtId.Text), txtDescripcion.Text, txtHsSemanales.Value, txtHsTotales.Value, (Plan)cmbPlan.SelectedItem);
+            return new Materia(Convert.ToInt32(txtId.Text),txtDescripcion.Text, txtHsSemanales.Value, txtHsTotales.Value, (Plan)cmbPlan.SelectedItem);
         }
 
         #endregion
@@ -83,6 +85,7 @@ namespace UserControls
             if (Validator.validateTexto(txtDescripcion.Text))
             {
                 cm.update(buildMateria());
+                MessageBox.Show("Materia modificada con exito");
                 this.clear();
             }
             else
@@ -94,7 +97,14 @@ namespace UserControls
 
         private void btnBorrar_Click(object sender, EventArgs e)
         {
-            cm.delete(buildMateria());
+            Materia m = buildMateria();
+            List<Comision> listaComisiones=cc.find(m);
+            foreach (Comision item in listaComisiones)
+            {
+                cc.delete(item);
+            }
+            cm.delete(m);
+            MessageBox.Show("Materia eliminada con exito");
             this.clear();
         }
     }

@@ -11,8 +11,8 @@ namespace Entidades
         public int cargo { get; set; }
         public bool asignado { get; set; }
 
-        public Docente(String nombre, String apellido, String dni, String telefono, String direccion,
-            String mail, String nacimiento, String password)
+        public Docente(String dni, String apellido, String nombre, String nacimiento, String telefono,
+            String direccion, String mail, String password)
             : base(nombre, apellido, dni, telefono, direccion, mail, nacimiento, password)
         {
 

@@ -67,10 +67,11 @@ namespace UserControls
             {
                 ce.insert(new Especialidad(this.Owner != null ? Convert.ToInt32(txtId.Text) : 0, txtDescripcion.Text));
                 this.clear();
+                MessageBox.Show("Especialidad registrada con exito");
             }
             else
             {
-                MessageBox.Show("La descripcion de la especialidad debe ser solo letras");
+                MessageBox.Show("La descripcion de la especialidad no puede estar vacia");
             }
         }
 

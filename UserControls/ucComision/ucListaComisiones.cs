@@ -54,9 +54,6 @@ namespace UserControls
             {
                 Owner.edit(this.giveSelectedComision());
             }
-        }
-
-
-        
+        }        
     }
 }

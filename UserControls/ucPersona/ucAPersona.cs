@@ -45,6 +45,7 @@ namespace UserControls
             this.txtNacimiento.Text = p.nacimiento;
             this.txtTelefono.Text = p.telefono;
             btnBorrar.Enabled = btnBorrar.Visible = true;
+            this.cmbTipo.Enabled = false;
             if (!this.Enabled)
             {
                 this.Enabled = true;
@@ -131,25 +132,49 @@ namespace UserControls
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {           
-            Persona aux = getRol(); 
+            Persona aux = getRol();
+            if (!Validator.validateNumero(txtDni.Text))
+            {
+                MessageBox.Show("El dni debe ser solo numeros");
+            }else
+            if (!Validator.validateNumero(txtDni.Text))
+            {
+                MessageBox.Show("El dni debe ser solo numeros");
+            }else
+            if (!Validator.validateTexto(txtNombre.Text))
+            {
+                MessageBox.Show("El nombre deben ser solo letras");
+            }else
+            if (!Validator.validateMail(txtMail.Text))
+            { 
+                MessageBox.Show("El mail no tiene el formato correcto (xx@xx.xx)");
+            }else
             if (this.Owner == null)
             {
+                if (txtPassword.Text != null && txtPassword.Text != txtConfirmar.Text)
+                {
+                    MessageBox.Show("Las contraseñas no coinciden");
+                }else
                 if (aux is Administrativo)
                 {
-                    cad.insert(new Administrativo(txtDni.Text, txtApellido.Text, txtNombre.Text, txtTelefono.Text,
-                        txtDireccion.Text, txtMail.Text, txtNacimiento.Text, Hasher.toMD5(txtPassword.Text)));
+                    cad.insert(new Administrativo(txtDni.Text, txtApellido.Text, txtNombre.Text, txtNacimiento.Text, txtTelefono.Text,
+                        txtDireccion.Text, txtMail.Text, txtPassword.Text));
+                    MessageBox.Show("Administrativo registrado con exito");
+                    
                 }
                 else if (aux is Administrativo)
                 {
-                    cd.insert(new Docente(txtDni.Text, txtApellido.Text, txtNombre.Text, txtTelefono.Text,
-                        txtDireccion.Text, txtMail.Text, txtNacimiento.Text, Hasher.toMD5(txtPassword.Text)));
+                    cd.insert(new Docente(txtDni.Text, txtApellido.Text, txtNombre.Text, txtNacimiento.Text, txtTelefono.Text,
+                        txtDireccion.Text, txtMail.Text, txtPassword.Text));
+                    MessageBox.Show("Docente registrado con exito");
                 }
                 else
                 {
-                    ca.insert(new Alumno(txtDni.Text, txtApellido.Text, txtNombre.Text, txtTelefono.Text,
-                        txtDireccion.Text, txtMail.Text, txtNacimiento.Text, Hasher.toMD5(txtPassword.Text)));
+                    ca.insert(new Alumno(txtDni.Text, txtApellido.Text, txtNombre.Text, txtNacimiento.Text, txtTelefono.Text,
+                        txtDireccion.Text, txtMail.Text, txtPassword.Text));
+                    MessageBox.Show("Alumno registrado con exito");
                 }
-
+                this.clear();
             }
             else
             {

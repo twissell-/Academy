@@ -172,6 +172,7 @@ namespace UserControls
             if (Validator.validateNumero(txtAñoCursado.Text))
             {
                 cc.insert(this.buildComision());
+                MessageBox.Show("Comision registrada con exito");
                 this.clear();
                 this.loader();
             }

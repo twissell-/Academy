@@ -52,7 +52,7 @@ namespace UserControls
 
         private Materia buildMateria()
         {
-            return new Materia(Owner != null ? Convert.ToInt32(txtId.Text) : 0, txtDescripcion.Text, txtHsSemanales.Value, txtHsTotales.Value, (Plan)cmbPlan.SelectedItem);
+                return new Materia(txtDescripcion.Text, txtHsSemanales.Value, txtHsTotales.Value, (Plan)cmbPlan.SelectedItem);
         }
 
         private void center()
@@ -72,18 +72,25 @@ namespace UserControls
         {
             if (Validator.validateTexto(txtDescripcion.Text))
             {
-                cm.update(buildMateria());
+                if (txtHsSemanales.Value > txtHsTotales.Value)
+                {
+                    MessageBox.Show("Las horas semanales no pueden ser mayores a las horas totales.");
+                }
+                cm.insert(buildMateria());
+                MessageBox.Show("Materia registrada con exito");
                 this.clear();
             }
             else
             {
                 MessageBox.Show("La descripcion debe ser solo letras");
             }
+            
         }
 
         private void btnBorrar_Click(object sender, EventArgs e)
         {
             cm.delete(buildMateria());
+            MessageBox.Show("Materia eliminada con exito");
         }
     }
 }

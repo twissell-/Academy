@@ -8,8 +8,8 @@ namespace Entidades
     public class Administrativo : Persona
     {
 
-        public Administrativo(String nombre, String apellido, String dni, String telefono, String direccion,
-           String mail, String nacimiento, String password)
+        public Administrativo(String dni, String apellido, String nombre, String nacimiento, String telefono,
+            String direccion, String mail, String password)
             : base(nombre, apellido, dni, telefono, direccion, mail, nacimiento, password)
         {
 

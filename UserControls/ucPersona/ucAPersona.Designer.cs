@@ -153,7 +153,7 @@
             this.txtMail.Location = new System.Drawing.Point(75, 75);
             this.txtMail.Name = "txtMail";
             this.txtMail.Size = new System.Drawing.Size(195, 20);
-            this.txtMail.TabIndex = 5;
+            this.txtMail.TabIndex = 8;
             // 
             // lblMail
             // 
@@ -185,7 +185,7 @@
             this.txtTelefono.Location = new System.Drawing.Point(75, 23);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(195, 20);
-            this.txtTelefono.TabIndex = 5;
+            this.txtTelefono.TabIndex = 6;
             // 
             // lblTelefono
             // 
