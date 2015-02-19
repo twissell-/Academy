@@ -18,6 +18,7 @@ namespace Data
         private Connection() 
         {
             String connectionString = "mongodb://localhost";
+            //String connectionString = "mongodb://net:silla@ds053648.mongolab.com:53648/dev";
             MongoClient client = new MongoClient(connectionString);
             server = client.GetServer();
        }
@@ -28,7 +29,14 @@ namespace Data
             {
                 if (Instance == null)
                 {
-                    Instance = new Connection();
+                    try
+                    {
+                        Instance = new Connection();
+                    }
+                    catch (MongoConnectionException e)
+                    {
+                        throw e;
+                    }
                 }
                 return Instance;
             }

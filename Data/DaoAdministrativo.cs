@@ -23,8 +23,15 @@ namespace Data
 
         public Persona find(int id) 
         {
-            QueryDocument query = new QueryDocument("_id", id);
-            return (Persona)administrativos.FindOneAs<Administrativo>(query);
+            try
+            {
+                QueryDocument query = new QueryDocument("_id", id);
+                return (Persona)administrativos.FindOneAs<Administrativo>(query);
+            }
+            catch (MongoConnectionException)
+            {
+                throw;
+            }
         }
 
         public List<Persona> find()

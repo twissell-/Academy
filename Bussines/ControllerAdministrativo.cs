@@ -13,7 +13,14 @@ namespace Bussines
 
         public ControllerAdministrativo()
         {
-            dao = new DaoAdministrativo();
+            try
+            {
+                dao = new DaoAdministrativo();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         public Persona find(int id)
