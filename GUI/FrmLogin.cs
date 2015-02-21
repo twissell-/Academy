@@ -37,10 +37,6 @@ namespace GUI
         }
         private void login()
         {
-            try
-            {
-
-
                 if (Validator.validateNumero(txtId.Text))
                 {
                     try
@@ -66,12 +62,9 @@ namespace GUI
                     {
                         MessageBox.Show(ex.ToString());
                     }
-                    catch (Exception exg)
+                    catch (AppConnectionException exg)
                     {
-                        if (exg.GetType().ToString().Equals("MongoDB.Driver.MongoConnectionException"))
-                        {
                             MessageBox.Show("Ocurrio un error al intentar conectarse a la Base de Datos.\nComuniquese con el administrador", "Imposible conectar a la Base de Datos", MessageBoxButtons.OK, MessageBoxIcon.Error);                                   
-                        }
                     }
                 }
                 else
@@ -79,12 +72,6 @@ namespace GUI
                     MessageBox.Show("El Campo Id debe ser un numero", "Id no Valido", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            catch (SocketException dbe)//MongoDB.Driver.MongoConnectionException dbe)
-            {
-                MessageBox.Show("El Campo Id debe ser un numero"+dbe);
-            }
-
-        }
         private void clear()
         {
             txtId.Clear();

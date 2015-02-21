@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Entidades;
 using MongoDB.Driver;
-
+using System.Net.Sockets;
 namespace Data
 {
     public class DaoDocente : IDaoPersona
@@ -22,8 +22,19 @@ namespace Data
 
         public Persona find(int id) 
         {
-            QueryDocument query = new QueryDocument("_id", id);
-            return (Persona)docentes.FindOneAs<Docente>(query);
+            try
+            {
+                QueryDocument query = new QueryDocument("_id", id);
+                return (Persona)docentes.FindOneAs<Docente>(query);
+            }
+            catch (MongoConnectionException)
+            {
+                throw new AppConnectionException();
+            }
+            catch (SocketException)
+            {
+                throw new AppConnectionException();
+            }
         }
 
         public List<Persona> find()

@@ -5,12 +5,12 @@ using System.Text;
 
 namespace Entidades
 {
-    class AppConnectionException : Exception
+    public  class AppConnectionException : Exception
     {
         public AppConnectionException()
-            : base()
+            : base("No se pudo establecer conexion con la base de datos")
         {
-            //falta esto
-        }   
+
+        }
     }
 }

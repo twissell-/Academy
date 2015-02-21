@@ -30,7 +30,7 @@ namespace Data
             }
             catch (MongoConnectionException)
             {
-                throw;
+                throw new AppConnectionException();
             }
         }
 

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using Entidades;
 using MongoDB.Bson;
 using MongoDB.Driver;
 
@@ -18,7 +18,6 @@ namespace Data
         private Connection() 
         {
             String connectionString = "mongodb://localhost";
-            //String connectionString = "mongodb://net:silla@ds053648.mongolab.com:53648/dev";
             MongoClient client = new MongoClient(connectionString);
             server = client.GetServer();
        }
@@ -35,7 +34,7 @@ namespace Data
                     }
                     catch (MongoConnectionException e)
                     {
-                        throw e;
+                        throw new AppConnectionException();
                     }
                 }
                 return Instance;

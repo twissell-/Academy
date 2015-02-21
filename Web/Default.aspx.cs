@@ -57,7 +57,7 @@ public partial class _Default : System.Web.UI.Page
                 txtPss.Text = "";
             }
         }
-        catch (System.Net.Sockets.SocketException)
+        catch (AppConnectionException)
         {
             error.Text="Ocurrio un error al intentar conectarse a la Base de Datos, comuniquese con el administrador";
         }
