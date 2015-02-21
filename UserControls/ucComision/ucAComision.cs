@@ -113,6 +113,8 @@ namespace UserControls
             txtId.Text = c.id.ToString();
             txtAñoCursado.Text = c.anioCursado.ToString();
             cmbMateria.SelectedValue = c.materia.id;
+            cmbTurno.DataSource = Enum.GetValues(typeof(eTurno)).Cast<eTurno>();
+            cmbTurno.SelectedIndex = c.turno;
             if (c.alumnos != null)
             {
                 al = c.alumnos;

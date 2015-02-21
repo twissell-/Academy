@@ -36,6 +36,7 @@ namespace UserControls
         public void edit(Persona p)
         {
             this.txtId.Text = p.id.ToString();
+            this.cmbTipo.DataSource = ct.find();
             this.cmbTipo.SelectedIndex = this.Owner.det;
             this.txtApellido.Text = p.apellido;
             this.txtNombre.Text = p.nombre;

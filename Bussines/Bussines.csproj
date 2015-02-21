@@ -102,7 +102,7 @@
     <Compile Include="ControllerPlan.cs" />
     <Compile Include="ControllerTipo.cs" />
     <Compile Include="ControllerAdministrativo.cs" />
-    <Compile Include="IController.cs" />
+    <Compile Include="IControllerPersona.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
