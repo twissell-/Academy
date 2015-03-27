@@ -13,6 +13,6 @@
 </asp:Content>
 
 <asp:Content ID="MainContent" runat="server" ContentPlaceHolderID="MainContent"> 
-<asp:Label ID="lblNombre" runat="server"></asp:Label>
+    <asp:Label ID="lblNombre" runat="server"></asp:Label>
 </asp:Content>
  
